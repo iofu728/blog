@@ -31,7 +31,7 @@ redux对数据的管理也是基于这个生命周期函数
 但要注意 在react中 所有比较都是浅比较  
 爬一下 `shouldComponentUpdate`的源码
 
-```javascript
+```jsx
 if (this._compositeType === CompositeTypes.PureClass) {
   shouldUpdate = !shallowEqual(prevProps, nextProps) || ! shallowEqual(inst.state, nextState);
 }
@@ -39,7 +39,7 @@ if (this._compositeType === CompositeTypes.PureClass) {
 
 而`shallowEqual`的源码则是
 
-```javascript
+```jsx
 const hasOwn = Object.prototype.hasOwnProperty
 
 function is(x, y) {
@@ -97,7 +97,7 @@ export default function shallowEqual(objA, objB) {
 
 而`immutable`提供`immutable-pure-render-decorator`方法进行比较
 
-```javascript
+```jsx
 import {React} from 'base';
 
 import pureRenderDecorator from '../../../widgets/libs/immutable-pure-render-decorator';
@@ -127,7 +127,7 @@ export default class PartA extends React.Component {
 
 附上 自己写的 比较函数
 
-```javascript
+```jsx
 export const compareArray = (array1, array2) => {
   if (!array2 || !array1) {return false;}
 
@@ -144,7 +144,7 @@ export const compareArray = (array1, array2) => {
 };
 ```
 
-```javascript
+```jsx
 export function compareObject (x, y) {
 
   if (x === null || x === undefined || y === null || y === undefined) {return x === y;}
@@ -160,5 +160,5 @@ export function compareObject (x, y) {
 }
 ```
 
-**`updated 6/6/2018`**
+`updated 6/6/2018`
 
