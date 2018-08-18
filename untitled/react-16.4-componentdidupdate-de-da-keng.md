@@ -1,4 +1,4 @@
-# react 16.4 componentDidUpdate 的大坑
+# bug of react 16.4 componentDidUpdate
 
 几个月前 react 升级到16.3之后
 
@@ -22,16 +22,16 @@
 
 直到 今天 才发现
 
-`componentDidUpdate` 传过来的 prevProps 比 this.props 还晚
+`componentDidUpdate` 传过来的 `prevProps` 比 `this.props` 还晚
 
 我一度 怀疑 是不是 我对 生命周期 有什么 误解
 
 did update 就是 已经 完成 update 的 时候 会 调用 这个 函数
 
-不管怎么样 prevProps 传过来的 参数 肯定 要比 this.props快
+不管怎么样 `prevProps` 传过来的 参数 肯定 要比 `this.props`快
 
-但 实际上 prevProps 比 this.props慢  
-而 prevState 比 this.state快
+但 实际上 `prevProps` 比 `this.props`慢  
+而 `prevState` 比 `this.state`快
 
 这 就 尴尬了 到底 哪个才是 next
 
@@ -39,24 +39,5 @@ did update 就是 已经 完成 update 的 时候 会 调用 这个 函数
 
 应该是 react 16.4引入的 bug
 
-![](http://wyydsb.xin/wp-content/uploads/2018/08/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2018-08-08-%E4%B8%8B%E5%8D%887.59.45.png)
-
-![](http://wyydsb.xin/wp-content/uploads/2018/08/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2018-08-08-%E4%B8%8B%E5%8D%887.59.15.png)
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-```
-// Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-
-
+**`updated 8/8/2018`**
 
