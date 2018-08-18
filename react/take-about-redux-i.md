@@ -10,7 +10,6 @@
 [“You Might Not Need Redux”](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)  
 ————————————————————————
 
-  
 **什么是Redux？**
 
 讲起来`redux`第一次代码提交也就在三年前 一晃作为`react`家族一员 被广泛应用于各web构建
@@ -371,6 +370,5 @@ PS：参考：
 \[1\].[redux官方文档](https://redux.js.org/).  
 \[2\].[阮一峰Redux教程](http://www.ruanyifeng.com/blog/2015/03/react.html).
 
-`updated 4/23/2018`  
-
+`updated 4/23/2018`
 

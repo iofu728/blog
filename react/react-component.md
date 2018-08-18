@@ -1,7 +1,7 @@
 # React component
 
 编者按：React 16之后 对 生命周期函数  
-进行大改增加了一些函数 对于部分函数增加UNSAFE\_头 准备React 17之后正式废弃   
+进行大改增加了一些函数 对于部分函数增加UNSAFE\_头 准备React 17之后正式废弃  
 以下文章适用于**React** **15** 及之前 版本 **React** **16** 的 component function 有空时候补上
 
 对React的使用来说，生命周期对理解、使用渲染至关重要，所以在这里对React的生命周期做一些整理。
@@ -134,6 +134,4 @@ PS：参考：
 \[1\].[react官方文档](https://reactjs.org/docs/react-component.html).
 
 `updated 4/6/2018`
-
-![](http://wyydsb.xin/wp-content/uploads/2018/04/4.6II.png)
 
