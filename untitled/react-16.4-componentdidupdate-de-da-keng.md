@@ -10,9 +10,10 @@
 
 根据 [`官方文旦`](https://reactjs.org/docs/react-component.html)\`\`
 
-往 `static getDerivedStateFromProps(props, state)` 和 `componentDidUpdate(prevProps, prevState, snapshot)`
-
-迁移
+```jsx
+往 static getDerivedStateFromProps(props, state)和
+componentDidUpdate(prevProps, prevState, snapshot) 迁移
+```
 
 一开始并没有 发现任何 异常
 
@@ -39,5 +40,5 @@ did update 就是 已经 完成 update 的 时候 会 调用 这个 函数
 
 应该是 react 16.4引入的 bug
 
-**`updated 8/8/2018`**
+`updated 8/8/2018`
 
