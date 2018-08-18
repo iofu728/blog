@@ -166,6 +166,5 @@ if (LoadStatus === LoadStatus.Loading) {
 
 嗝屁 滚蛋
 
-`updated 5/5/2018`  
-
+`updated 5/5/2018`
 
