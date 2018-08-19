@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React component | 乌云压顶是吧</title>
+    <meta name="description" content="🍿很高兴不认识你🍺">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.6acf8380.css" as="style"><link rel="preload" href="/assets/js/app.1a06be3b.js" as="script"><link rel="preload" href="/assets/js/6.07debd00.js" as="script"><link rel="prefetch" href="/assets/js/5.c10e3c37.js"><link rel="prefetch" href="/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/assets/js/3.243295ab.js"><link rel="prefetch" href="/assets/js/4.812a693c.js"><link rel="prefetch" href="/assets/js/7.cb24975b.js"><link rel="prefetch" href="/assets/js/8.011aa9f7.js"><link rel="prefetch" href="/assets/js/9.27e43862.js"><link rel="prefetch" href="/assets/js/10.9689d68e.js"><link rel="prefetch" href="/assets/js/11.d8c2daac.js"><link rel="prefetch" href="/assets/js/12.8dc92da9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6acf8380.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">乌云压顶是吧</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/react/componentdidupdate.html" class="nav-link">React</a></div><div class="nav-item"><a href="/summary/cs.html" class="nav-link">Summary</a></div> <a href="https://github.com/iofu728/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/react/componentdidupdate.html" class="nav-link">React</a></div><div class="nav-item"><a href="/summary/cs.html" class="nav-link">Summary</a></div> <a href="https://github.com/iofu728/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Component</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/react/componentdidupdate.html" class="sidebar-link">bug of react 16.4 componentDidUpdate</a></li><li><a href="/react/component.html" class="active sidebar-link">React component</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Redux</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/react/redux.html" class="sidebar-link">Take about Redux I</a></li><li><a href="/react/reduxs.html" class="sidebar-link">Take about Redux Ⅱ</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Other</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/react/immutable.html" class="sidebar-link">immutable.js</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="react-component"><a href="#react-component" aria-hidden="true" class="header-anchor">#</a> React component</h1> <p>编者按：React 16之后 对 生命周期函数<br>
+进行大改增加了一些函数 对于部分函数增加UNSAFE_头 准备React 17之后正式废弃<br>
+以下文章适用于<strong>React</strong> <strong>15</strong> 及之前 版本 <strong>React</strong> <strong>16</strong> 的 component function 有空时候补上</p> <p>对React的使用来说，生命周期对理解、使用渲染至关重要，所以在这里对React的生命周期做一些整理。</p> <p>在分析生命周期之前，先明确几个概念，<br>
+1.<code>props</code>：这个东西和<code>this</code>一样，在lz一开始写前端的时候迷迷糊糊的，不知道到底是什么。<br>
+我们知道对于一个类而言，其中的参数，仅在该类有效，如果一个组件被反复调用，那么根据oop的写法，我们应该把它封装成一个通用的组件，为了使得这个组件能够接收到某个类传过来的参数，我们用<code>props</code>来完成。<br>
+在React 0.13之后，<code>props</code>只读，不能在函数中修改其值。<br>
+2.<code>this</code>：<code>this</code>指的就是这个页面目前设定的所有参数及值。<br>
+在ES6中，调用函数的时候不会自动绑定<code>this</code>，需要通过<code>.bind(this)</code>或者<code>=&gt;</code>来实现。<br>
+也可以将绑定方法写到<code>constructor</code>中。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code> <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token constant">ES6</span>方式创建的组件<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+or
+
+ <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>handleClick <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+ <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token constant">ES6</span>方式创建的组件<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+or
+
+<span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>3.<code>render</code>：渲染函数。通过内部的html来实现渲染页面(<code>react</code>支持前端+后端渲染)<br>
+4.父组件、子组件：相当于封装函数，调用位置。<br>
+5.DOM： <code>document object modal</code>。文档对象模型，通常通过节点树来表示。</p> <p>从上面的分析，我们可以推断出React对一个页面的展示，从一些参数的初始化开始。<br>
+在ES5的时候，还是用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>getDefaultProps，getInitialState
+</code></pre></div><p>到了ES6的时候，已经用<code>constructor</code>替代：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      createModalVisible<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      pagination<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        total<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        showSizeChanger<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        size<span class="token punctuation">:</span> <span class="token string">'small'</span><span class="token punctuation">,</span>
+        showTotal<span class="token punctuation">:</span> <span class="token punctuation">(</span>total <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token string">`总条数: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>total<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  `</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      dataSource<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>对于需要另外进行初始化<code>props</code>处理的，可以在class外面调用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>propTypes，defaultProps
+</code></pre></div><p>进行<code>props</code>类型和值的约定。</p> <div class="language-jsx extra-class"><pre class="language-jsx"><code>MyComponent<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  nameProp<span class="token punctuation">:</span> React<span class="token punctuation">.</span>PropTypes<span class="token punctuation">.</span>string
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+MyComponent<span class="token punctuation">.</span>defaultProps <span class="token operator">=</span> <span class="token punctuation">{</span>
+  nameProp<span class="token punctuation">:</span> <span class="token string">''</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>在初始化<code>props</code>和<code>state</code>之后，进行初始函数调用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">componentWillMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>然后第一次渲染。</p> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>渲染之后，会调用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>当父组件调用其<code>render</code>时候，子组件就会调用一次</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">componentWillReceiveProps</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">)</span>
+</code></pre></div><p>当子组件进行一次<code>setState</code>或者父组件/<code>redux</code>的<code>props</code>更新一次值的时候，调用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">shouldComponentUpdate</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">,</span> nextState<span class="token punctuation">)</span>
+</code></pre></div><p>，当<code>shouldComponentUpdate</code>返回true时，</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">componentWillUpdate</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">,</span> nextState<span class="token punctuation">)</span>
+</code></pre></div><p>就会被调用，然后就会重新进行一次渲染，调用一次<code>render</code>。</p> <p>当组件卸载的时候调用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">componentWillUnmount</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>PS：参考：<br>
+[1].<a href="https://reactjs.org/docs/react-component.html" target="_blank" rel="noopener noreferrer">react官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <p><code>updated 4/6/2018</code></p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/react/componentdidupdate.html" class="prev">
+          bug of react 16.4 componentDidUpdate
+        </a></span> <span class="next"><a href="/react/redux.html">
+          Take about Redux I
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/6.07debd00.js" defer></script><script src="/assets/js/app.1a06be3b.js" defer></script>
+  </body>
+</html>
