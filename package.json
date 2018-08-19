@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "doc:dev": "./node_modules/.bin/vuepress dev ./docs",
+    "docs:build": "./node_modules/.bin/vuepress build ./docs"
+  },
+  "devDependencies": {
+    "vuepress": "^0.14.2"
+  }
+}
