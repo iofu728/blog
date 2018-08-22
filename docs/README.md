@@ -1,5 +1,5 @@
 ---
-home: false
+home: true
 actionText: Last →
 actionLink: /react/componentdidupdate
 footer: No Licensed | Copyright © 2017-present
