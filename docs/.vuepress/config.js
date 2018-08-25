@@ -2,9 +2,6 @@ module.exports = {
   title: '乌云压顶是吧',
   description: '㊗️某人生日快乐🎉',
   serviceWorker: true,
-  head: [
-    ['link', { rel: 'icon', href: '../favicon.ico' }]
-  ],
   markdown: {
     lineNumbers: true,
     config: md => {
