@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last →
-actionLink: /react/componentdidupdate
+actionLink: /pdd/
 footer: No Licensed | Copyright © 2017-present
 ---
 
