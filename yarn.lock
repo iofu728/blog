@@ -3584,7 +3584,7 @@ markdown-it-table-of-contents@^0.4.0:
   version "0.4.3"
   resolved "http://npm.corp.yiran.com/markdown-it-table-of-contents/-/markdown-it-table-of-contents-0.4.3.tgz#6453925a76e49b9b3d9569a0d89f1c2168b46982"
 
-markdown-it@^8.4.1:
+markdown-it@^8.4.1, markdown-it@^8.4.2:
   version "8.4.2"
   resolved "http://npm.corp.yiran.com/markdown-it/-/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
   dependencies:
