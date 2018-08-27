@@ -14,6 +14,10 @@ module.exports = {
     lastUpdated: 'Last Updated',
     editLinks: false,
     docsDir: 'docs',
+    algolia: {
+      apiKey: 'c42b71d494ca78750c7094eb2c55eda6',
+      indexName: 'wyydsb'
+    },
     serviceWorker: {
       updatePopup: true
     },
