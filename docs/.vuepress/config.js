@@ -25,6 +25,7 @@ module.exports = {
       { text: 'React', link: '/react/componentdidupdate' },
       { text: 'Summary', link: '/summary/cs' },
       { text: 'Pdd', link: '/pdd/' },
+      { text: 'Collect', link: '/collect/' },
     ],
     sidebar: {
       '/react/': [
