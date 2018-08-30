@@ -1,6 +1,8 @@
 
 yarn
 
+yarn run docs:build
+
 if [ ! -d "/usr/local/var/www/assets" ];then
 echo "文件不存在"
 else
