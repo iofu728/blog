@@ -15,6 +15,12 @@ else
 rm -rf /usr/local/var/www/react
 fi
 
+if [ ! -d "/usr/local/var/www/collect" ];then
+echo "文件不存在"
+else
+rm -rf /usr/local/var/www/collect
+fi
+
 if [ ! -d "/usr/local/var/www/summary" ];then
 echo "文件不存在"
 else
