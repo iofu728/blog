@@ -8,7 +8,6 @@ rebase冲突处理的数量与commit一致，但当commit数过多时，处理�
 以下是我同事给出的一种解决方案
 
 ```bash
-
 git checkout develop # 需要合并入的目标分支 
 git pull origin develop # 拉取最新的目标分支的代码
 git checkout -b new_branch # 一个新的分支，该分支需要合入到目标分支，请起一个有意义的名字
