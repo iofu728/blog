@@ -1,3 +1,6 @@
+---
+pageClass: custom-page-class
+---
 
 # 函数式编程
 
@@ -73,7 +76,7 @@ export const paramsGenerate = values => R.reduce((acc, item) => `${acc}${!acc ? 
 其次
 ```jsx
 // expect return 1, but return { id: 1 }
-[{ id: 1 }].reduce((acc, item) => acc + item.id); 
+[{ id: 1 }].reduce((acc, item) => acc + item.id);
 ```
 
 于是上面的`paramsGenerate`函数我们需要三次特殊处理，这还有什么便捷性可言。。。
@@ -102,7 +105,7 @@ export const listToMap = list => R.reduce((acc, item) => Object.assign(acc, { [i
 
 ```jsx
 const tableId = baseDataColumns.filter(item => Number.parseInt(value, 10) === item.colId)[0].tableId;
-``` 
+```
 ### .map
 .map 说起来，是一种特殊的.reduce，特殊在其返回的是Array
 

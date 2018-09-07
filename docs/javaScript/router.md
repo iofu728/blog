@@ -1,3 +1,6 @@
+---
+pageClass: custom-page-class
+---
 
 # 路由
 
@@ -205,7 +208,7 @@ require('/Users/gunjianpan/Desktop/pdd/taishan/taishan-frontend/src/global.css')
 if (process.env.NODE_ENV === 'production') {
   require('./registerServiceWorker');
 }
-      
+
 ```
 
 ## 参考

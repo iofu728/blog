@@ -1,3 +1,6 @@
+---
+pageClass: custom-page-class
+---
 
 # Style
 

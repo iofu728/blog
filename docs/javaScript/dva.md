@@ -1,3 +1,6 @@
+---
+pageClass: custom-page-class
+---
 
 # Dva
 
@@ -51,7 +54,7 @@ Dva 就做了一件事： 把redux 和 redux-saga 封装在一起， 简化了�
 
 `type State = any`
 
-State 表示 存在`Store`中的数据，通常表现为一个 `javascript` 对象；️️操作的时候每次都要当作不可变数据（immutable data）来对待，特别是js中的原生Map，保证每次都是全新对象，没有引用关系，这样才能保证 State 的独立性，便于测试和追踪变化。  
+State 表示 存在`Store`中的数据，通常表现为一个 `javascript` 对象；️️操作的时候每次都要当作不可变数据（immutable data）来对待，特别是js中的原生Map，保证每次都是全新对象，没有引用关系，这样才能保证 State 的独立性，便于测试和追踪变化。
 
 可通过 dva 的实例属性 `_store` 看到顶部的 state 数据，但是通常你很少会用到:
 
@@ -66,7 +69,7 @@ console.log(app._store); // 顶部的 state 数据
 
 Action 是一个普通 `javascript` 对象，它是改变 `State` 的唯一途径。无论是从 UI 事件、网络回调，还是 WebSocket 等数据源所获得的数据，最终都会通过 dispatch/put 函数调用一个 action，从而改变对应的数据。
 
-action 必须带有 `type` 属性指明具体的行为，其它字段可以自定义，如果要发起一个 action 需要使用 `dispatch` 函数；需要注意的是 `dispatch` 是在组件 connect Models以后，通过 props 传入的。  
+action 必须带有 `type` 属性指明具体的行为，其它字段可以自定义，如果要发起一个 action 需要使用 `dispatch` 函数；需要注意的是 `dispatch` 是在组件 connect Models以后，通过 props 传入的。
 
 在Dva中，action可以作用于 `effect` 和 `reducer`
 ```
@@ -83,7 +86,7 @@ dispatch({
 
 `type dispatch = (a: Action) => Action`
 
-dispatch function 是一个用于触发 action 的函数，action 是改变 State 的唯一途径，但是它只描述了一个行为，而 dipatch 可以看作是触发这个行为的方式，而 Reducer 则是描述如何改变数据的。 
+dispatch function 是一个用于触发 action 的函数，action 是改变 State 的唯一途径，但是它只描述了一个行为，而 dipatch 可以看作是触发这个行为的方式，而 Reducer 则是描述如何改变数据的。
 
 在 dva 中，connect Model 的组件通过 props 可以访问到 dispatch，可以调用 Model 中的 Reducer 或者 Effects，常见的形式如：
 
@@ -98,7 +101,7 @@ dispatch({
 
 `type Reducer<S, A> = (state: S, action: A) => S`
 
-Reducer（也称为 reducing function）函数接受两个参数：之前已经累积运算的结果和当前要被累积的值，返回的是一个新的累积结果。该函数把一个集合归并成一个单值。  
+Reducer（也称为 reducing function）函数接受两个参数：之前已经累积运算的结果和当前要被累积的值，返回的是一个新的累积结果。该函数把一个集合归并成一个单值。
 
 Reducer 的概念来自于是函数式编程，很多语言中都有 reduce API。如在 javascript 中：
 
@@ -106,7 +109,7 @@ Reducer 的概念来自于是函数式编程，很多语言中都有 reduce API�
 [1, 2, 3].reduce((prev, next) => prev + next);
 //expect return 6
 ```
-在 dva 中，reducers 做的就是 拿到新旧数据，并返回将要更新的结果。  
+在 dva 中，reducers 做的就是 拿到新旧数据，并返回将要更新的结果。
 
 一般，reducer只用来做数据更新的工作，不做任何其他作用。（数据比较这些都放在effec中进行，reducer不放任何和业务逻辑有关的东西，相当于redux中同步调用）
 
@@ -140,14 +143,14 @@ dva 为了控制副作用的操作，底层引入了[redux-sagas](http://superra
 
 该函数有两个参数，第一个参数是dispatch传进来的Object，在这里你可以获取需要的参数值；第二个参数是redux-saga Api名称，仅支持低阶APi（高阶利用另外方法掉用）。
 
-可以看到该函数用到了四个saga的`APi`，`call``put``select``all`  
+可以看到该函数用到了四个saga的`APi`，`call``put``select``all`
 分别实现
 
-`select`-从store获取state值,  
-`call`  -调用services里面的request，并传入参数，  
-`put`   -相当于model外的dispatch，发送action请求，在这里主要用于调用下游函数/存储函数reducer  
-`all`   -使得all数组中的请求 同步进行 减小异步等待 造成的时间损耗，  
-还可能使用  
+`select`-从store获取state值,
+`call`  -调用services里面的request，并传入参数，
+`put`   -相当于model外的dispatch，发送action请求，在这里主要用于调用下游函数/存储函数reducer
+`all`   -使得all数组中的请求 同步进行 减小异步等待 造成的时间损耗，
+还可能使用
 `take`  -等待函数，用于实现进度同步,
 
 该函数做了以下几件事：
@@ -183,8 +186,8 @@ dva 为了控制副作用的操作，底层引入了[redux-sagas](http://superra
 和上面的effect 略有不同，当使用高阶APi时候，是在数组的第二项中调用。然后把原来的函数放在数组的第一项。
 目前dva 资瓷 `takeEvery`,`takeLeast`,`throttle` 详见->[dva源码](https://github.com/dvajs/dva/blob/master/packages/dva-core/src/getSaga.js)
 
-其实 特别 期待 支持 `takeLeading`的 虽然 可以通过低阶Api 组合使用 但 目前 测试take 未起作用。// todo 
-        
+其实 特别 期待 支持 `takeLeading`的 虽然 可以通过低阶Api 组合使用 但 目前 测试take 未起作用。// todo
+
 ### Subscription
 
 Subscriptions 是一种从 __源__ 获取数据的方法，它来自于 elm。

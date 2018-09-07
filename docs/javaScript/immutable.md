@@ -1,10 +1,13 @@
+---
+pageClass: custom-page-class
+---
 # immutable.js
 
 毕设做到想砸电脑
 
-很难受了  
+很难受了
 
-![](http://wyydsb.xin/wp-content/uploads/2018/05/5.12II.gif)  
+![](http://wyydsb.xin/wp-content/uploads/2018/05/5.12II.gif)
 
 ------------------------------------------------------------------------
 上周因为一个小问题 接触到**immutable.js**这个东西
@@ -15,22 +18,22 @@
 >
 > While designed to bring these powerful functional concepts to JavaScript, it presents an Object-Oriented API familiar to Javascript engineers and closely mirroring that of Array, Map, and Set. It is easy and efficient to convert to and from plain Javascript types.
 
-简单 翻译一下 `immutable`倡导简单的函数实现（数据输入、数据输出）提供了一些将原生js的object封装成 `map，set` 的接口  
-好像还是一头雾水 ing  
+简单 翻译一下 `immutable`倡导简单的函数实现（数据输入、数据输出）提供了一些将原生js的object封装成 `map，set` 的接口
+好像还是一头雾水 ing
 那么让我们慢慢来说
 
-首先 `immutable` 是用来解决 `react`浅比较 这个问题的  
+首先 `immutable` 是用来解决 `react`浅比较 这个问题的
 它是一种不可变数据结构约定
 
-在`immutable`下 所有数据结构都是不可变的  
+在`immutable`下 所有数据结构都是不可变的
 如果你需要改变`object`下面某个参数的值的时候 只能new 一个
 
-我们知道react 有一个`shouldComponentUpdate(nextProps,nextState){}`方法当props或者state更新的时候  
+我们知道react 有一个`shouldComponentUpdate(nextProps,nextState){}`方法当props或者state更新的时候
 会比较`nextProps`和`props`,`nextState`和`state`之间有无区别，如果有区别就返回true，否则就返回false
 
 redux对数据的管理也是基于这个生命周期函数
 
-但要注意 在react中 所有比较都是浅比较  
+但要注意 在react中 所有比较都是浅比较
 爬一下 `shouldComponentUpdate`的源码
 
 ```jsx
@@ -76,7 +79,7 @@ export default function shallowEqual(objA, objB) {
 }
 ```
 
-从上面我们可以看出 当`props`里面的`object`只要包含的`key`也是`object` 就会判断错误  
+从上面我们可以看出 当`props`里面的`object`只要包含的`key`也是`object` 就会判断错误
 换句话说，你修改`object`里面的`object`的值的时候 不会更新`render`
 
 在实际应用中 比如说前端的`map`这个数据结构
