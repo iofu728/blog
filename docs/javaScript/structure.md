@@ -1,3 +1,6 @@
+---
+pageClass: custom-page-class
+---
 
 # 目录约定
 
@@ -25,18 +28,18 @@ TAISHAN-fe 采用如下 目录 约定
           ├── component            // 页面 1 实现
           ├── daytime.js/index.js     // 页面 1 路由规定 /page1/page # /page1
         ├── page2                  // 页面s 2
-    ├── services                   // http 请求实现层 处理 header头  
+    ├── services                   // http 请求实现层 处理 header头
     ├── utils                      // constant BaseAPi request函数封装 通用函数约定
     ├── global.css                 // 全局样式文件
 ├── .editorconfig                  // js代码风格说明
-├── .eslintrc                      // eslint配置   
+├── .eslintrc                      // eslint配置
 ├── .gitlab-ci.yml                 // gitlab-ci
-├── .gitignore                      
+├── .gitignore
 ├── .umirc.js                      // umi 配置 # 不被路由配置 loading配置
 ├── .umirc.mock.js                 // mock 配置
 ├── .webpackrc.js                  // webpack 配置
 ├── favicon.icon                   // 网站 favicon
 ├── jest.config.js                 // jest 单测配置
-├── package.json                    
+├── package.json
 └── yarn.lock                      // yarn 包管理目录 需要上传到git
 ```

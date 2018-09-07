@@ -1,3 +1,6 @@
+---
+pageClass: custom-page-class
+---
 
 # git rebase 的另解
 
@@ -8,7 +11,7 @@ rebase冲突处理的数量与commit一致，但当commit数过多时，处理�
 以下是我同事给出的一种解决方案
 
 ```bash
-git checkout develop # 需要合并入的目标分支 
+git checkout develop # 需要合并入的目标分支
 git pull origin develop # 拉取最新的目标分支的代码
 git checkout -b new_branch # 一个新的分支，该分支需要合入到目标分支，请起一个有意义的名字
 git merge --squash feature_branch # 本地改动所在的分支
@@ -18,4 +21,3 @@ git commit # 不要带-m参数
 git push origin new_branch # 将改动push到远端
 # 用new_branch提一个merge request
 ```
-

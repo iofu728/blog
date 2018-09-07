@@ -1,3 +1,6 @@
+---
+pageClass: custom-page-class
+---
 
 # Fetch
 
@@ -59,16 +62,16 @@ export default async function request (url, options) {
             response.setHeader("Content-Type", MediaType.APPLICATION_JSON_UTF8_VALUE);
             String response302 = JSONObject.toJSONString(BaseResponse.newFailResponse().errorCode(30200).errorMsg(serverName).build());
             response.setStatus(HttpServletResponse.SC_OK); // 状态码改为200
-            response.getWriter().write(response302); 
+            response.getWriter().write(response302);
             response.getWriter().flush();
         } else {
             response.sendRedirect(potentialRedirectUrl);
         }
     }
-    
+
     // 重写判断规则，并对前端第一个请求Header头加上'application/json'
     private boolean isFetch(HttpServletRequest request) {
-        return StringUtils.contains(request.getContentType(), "application/json"); 
+        return StringUtils.contains(request.getContentType(), "application/json");
     }
 ```
 

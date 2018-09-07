@@ -1,9 +1,12 @@
+---
+pageClass: custom-page-class
+---
 
 # 介绍
 
 ⛰TAISHAN-fe 是基于[Umi](https://umijs.org/)、[Dva](https://dvajs.com/)、[AntD](https://ant.design/docs/react/introduce-cn)的[React](https://reactjs.org/) 项目
 
-适用于压力测试系统 `多用户` `权限化` `表单式` `实时` `数据可视化` 的需求  
+适用于压力测试系统 `多用户` `权限化` `表单式` `实时` `数据可视化` 的需求
 
 从业务层面 上 对标 阿里 [`PTS`](https://pts.aliyun.com/aliyun)
 
@@ -16,7 +19,7 @@
 * redux & redux-saga
 * React fiber & component
 * Promise & Generate & async
-* flex 
+* flex
 * fetch & http header
 
 ## 约定🤝
@@ -24,7 +27,7 @@
 在TAISHAN-fe代码构建过程中，约定：
 
 1. 所有放在`component/`的代码必须写成`Presentational Component`，
-其他pages里面的`Modal` 为了提高复用性及引用便利性，全部使用`Container Component`； 
+其他pages里面的`Modal` 为了提高复用性及引用便利性，全部使用`Container Component`；
 2. 尽量使用 函数式编程
 3. 尽量使用箭头函数 而不是function（）{}
 4. 对于`Component` 尽量使用`function` 而不是 `class`
@@ -41,14 +44,14 @@
     "codemirror": "^5.39.0",            // 在线代码编辑 高亮 组件
     "dva": "^2.1.0",                    // redux 浅封装
     "dva-loading": "^2.0.2",            // dva 在异步 操作时 自动赋予 函数 Load 状态
-    "eslint": "^4.19.1",                // 代码规范插件 
-    "eslint-config-umi": "^0.1.1",      
+    "eslint": "^4.19.1",                // 代码规范插件
+    "eslint-config-umi": "^0.1.1",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-flowtype": "^2.34.1",
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
-    "file-saver": "^1.3.8",             // 文件下载 
+    "file-saver": "^1.3.8",             // 文件下载
     "husky": "^0.12.0",                 // git Hooks 用于 在git commit 进行 代码检测
     "highcharts": "^6.1.0",             // 数据可视化
     "keymaster": "^1.6.2",              // 键盘操控 监听
@@ -62,5 +65,5 @@
     "umi-plugin-dva": "^0.1.5",         // umi的dva插件 可定制文件不被注册成路由
     "umi-plugin-routes": "^0.1.5"       // umi 路由自定义规则
     "vuepress": "^0.14.2"               // 文档组件
-```    
+```
 

@@ -1,23 +1,26 @@
+---
+pageClass: custom-page-class
+---
 # Take about Redux I
 
-本来我们组用的前端技术一般 也就是利用基于`react`的`AntD`脚手架  
+本来我们组用的前端技术一般 也就是利用基于`react`的`AntD`脚手架
 后来组里来了一个pku的dalao 科普了 `react`全家桶
 
 目前我们项目里除了基础的`redux`之外，还用了`saga`中间件 `react-router`
 
-在了解`redux`之前 可能你不一定要用`redux`  
-经常有人会说 不会`redux`说明你不需要用`redux`  
-[“You Might Not Need Redux”](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)  
+在了解`redux`之前 可能你不一定要用`redux`
+经常有人会说 不会`redux`说明你不需要用`redux`
+[“You Might Not Need Redux”](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
 ————————————————————————
 
 **什么是Redux？**
 
 讲起来`redux`第一次代码提交也就在三年前 一晃作为`react`家族一员 被广泛应用于各web构建
 
-先来看一段官方文档的介绍  
+先来看一段官方文档的介绍
 `Redux 是 JavaScript 状态容器，提供可预测化的状态管理。`
 
-通俗的来讲`redux`做的工作类似于`state`做的工作，它是来管理数据状态的，解决数据变化和异步这两个问题的工具。  
+通俗的来讲`redux`做的工作类似于`state`做的工作，它是来管理数据状态的，解决数据变化和异步这两个问题的工具。
 将原来事件驱动的服务，变化为数据驱动的服务。
 
 **redux有什么特点？**
@@ -29,12 +32,12 @@
 3. store
 4. MiddleWare
 
-相对于`state`，首先`redux`里面的数据是可以跨页面的，其次`redux`的数据是只读的，如果需要更改数据必须调用相应的`action`。  
-当然这点也很好理解，因为`redux`读取时用的是`this.props props`本身就是只读的。（从这个角度 也可以把`redux`理解为父组件统一管理状态的库）  
+相对于`state`，首先`redux`里面的数据是可以跨页面的，其次`redux`的数据是只读的，如果需要更改数据必须调用相应的`action`。
+当然这点也很好理解，因为`redux`读取时用的是`this.props props`本身就是只读的。（从这个角度 也可以把`redux`理解为父组件统一管理状态的库）
 `reducer`函数是一个纯函数，只根据对应的`action`和之前的`state`，返回新的`state`。
 
-**Action**  
-顾名思义 是一个存放行为的函数。  
+**Action**
+顾名思义 是一个存放行为的函数。
 组件通过`dispath`调用`action`函数，`action`函数收到`request` 把对应的`type` 和 相应的参数 传递给 `store`
 
 ```javascript
@@ -87,8 +90,8 @@ const LoadStatus = {
 export default LoadStatus;
 ```
 
-**Reducer**  
-当`Action` 执行之后 得到了对应的`Action_type`。根据这些`type`，`reducer`函数更新相应的数据，注意`reducer`是一个纯函数，不执行复杂的数据处理过程。  
+**Reducer**
+当`Action` 执行之后 得到了对应的`Action_type`。根据这些`type`，`reducer`函数更新相应的数据，注意`reducer`是一个纯函数，不执行复杂的数据处理过程。
 `Reducer` 分为初始化，`action`更新两部分。
 
 ```javascript
@@ -163,7 +166,7 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
-**Store**  
+**Store**
 `store`就相当于一个存储库，受到各种函数调用，当`store`里面的参数值更新之后 把更新后的参数返回给各个组件。
 
 ```javascript
@@ -212,7 +215,7 @@ export default withRouter(connect(
 )(AppLayout));
 ```
 
-当`props`更新之后 `render`会重新渲染一次 以实现类似`setState`的功能。  
+当`props`更新之后 `render`会重新渲染一次 以实现类似`setState`的功能。
 此外`redux`可以通过`componentWillReceiveProps` 获取下一次`props`值 根据此值 可以做相应的操作
 
 ```javascript
@@ -232,7 +235,7 @@ export default withRouter(connect(
   }
 ```
 
-**Saga**  
+**Saga**
 `saga`是实现异步`Redux`的一个中间件 负责传递`ajax`请求 和 根据进度返回相应的`loadStatus` 、相应的返回值
 
 ```javascript
@@ -344,30 +347,30 @@ export default function configureStore(initialState) {
 }
 ```
 
-`Saga` 可以实现`ajax`请求统一管理 通过`loadStatus`来判断api调用状态  
+`Saga` 可以实现`ajax`请求统一管理 通过`loadStatus`来判断api调用状态
 通过选择`takeLeading/takeLatest/takeEvery` 来管理`ajax`请求 避免堆积pending
 
-**数据流**  
-`redux`的生命周期 从调用`dispatch`开始  
-当组件开始渲染 调用了 某个`action` 函数 可能是写在`componentDidMount` 亦或是 普通函数中的 `this.props.xxxx()`;  
-之后 调用`mapDispatchToProps` 通过`withRouter`传递给`action`函数  
-`action`拿到请求之后 返回相应的`type`  
+**数据流**
+`redux`的生命周期 从调用`dispatch`开始
+当组件开始渲染 调用了 某个`action` 函数 可能是写在`componentDidMount` 亦或是 普通函数中的 `this.props.xxxx()`;
+之后 调用`mapDispatchToProps` 通过`withRouter`传递给`action`函数
+`action`拿到请求之后 返回相应的`type`
 之后`reducer`执行相应的更新`store`
 
-相对而言 异步调用`action`会分两步走  
-一开始的`type` 是`XXXX.REQUEST`  
-`action`之后调用一次`reducer`  
-之后执行一次api  
-当收到返回值之后 调用saga函数  
-`saga`函数会自动返回一个`type XXXX.SUCCESS`  
-如果超时未收到返回则 `action` 返回 `type XXXX.FAILURED`  
+相对而言 异步调用`action`会分两步走
+一开始的`type` 是`XXXX.REQUEST`
+`action`之后调用一次`reducer`
+之后执行一次api
+当收到返回值之后 调用saga函数
+`saga`函数会自动返回一个`type XXXX.SUCCESS`
+如果超时未收到返回则 `action` 返回 `type XXXX.FAILURED`
 之后第二次`reducer`
 
-此外`Rudux` 自带非常友好的调试机制 通过contr + q 调用 contr + h切换  
-![](http://wyydsb.xin/wp-content/uploads/2018/04/4.23I.png)  
-————————————————————————  
-PS：参考：  
-\[1\].[redux官方文档](https://redux.js.org/).  
+此外`Rudux` 自带非常友好的调试机制 通过contr + q 调用 contr + h切换
+![](http://wyydsb.xin/wp-content/uploads/2018/04/4.23I.png)
+————————————————————————
+PS：参考：
+\[1\].[redux官方文档](https://redux.js.org/).
 \[2\].[阮一峰Redux教程](http://www.ruanyifeng.com/blog/2015/03/react.html).
 
 `updated 4/23/2018`
