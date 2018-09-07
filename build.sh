@@ -9,28 +9,16 @@ else
 rm -rf /usr/local/var/www/assets
 fi
 
-if [ ! -d "/usr/local/var/www/react" ];then
+if [ ! -d "/usr/local/var/www/javaScript" ];then
 echo "文件不存在"
 else
-rm -rf /usr/local/var/www/react
+rm -rf /usr/local/var/www/javaScript
 fi
 
-if [ ! -d "/usr/local/var/www/collect" ];then
+if [ ! -d "/usr/local/var/www/other" ];then
 echo "文件不存在"
 else
-rm -rf /usr/local/var/www/collect
-fi
-
-if [ ! -d "/usr/local/var/www/summary" ];then
-echo "文件不存在"
-else
-rm -rf /usr/local/var/www/summary
-fi
-
-if [ ! -d "/usr/local/var/www/pdd" ];then
-echo "文件不存在"
-else
-rm -rf /usr/local/var/www/pdd
+rm -rf /usr/local/var/www/other
 fi
 
 mv docs/.vuepress/dist/* /usr/local/var/www/
