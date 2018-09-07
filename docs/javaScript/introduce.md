@@ -27,7 +27,7 @@ pageClass: custom-page-class
 在TAISHAN-fe代码构建过程中，约定：
 
 1. 所有放在`component/`的代码必须写成`Presentational Component`，
-其他pages里面的`Modal` 为了提高复用性及引用便利性，全部使用`Container Component`；
+其他pages里面的`Modal` 为了提高复用性及引用便利性，参数过多/dispatch/使用回调函数的使用`Container Component`,其他使用`Presentational Component`；
 2. 尽量使用 函数式编程
 3. 尽量使用箭头函数 而不是function（）{}
 4. 对于`Component` 尽量使用`function` 而不是 `class`
