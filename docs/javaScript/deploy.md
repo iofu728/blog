@@ -1,7 +1,6 @@
 ---
 pageClass: custom-page-class
 ---
-
 # 部署
 
 ## Service Work
@@ -39,7 +38,6 @@ index.html 会加载 umi.{hash}.js 和 umi.{hash}.css，然后按需加载 index
 当Subscription监听到history action 之后，先用fetch 调用list，然后根据list分两次同步加载js。目前实现Load时间在400ms-800ms左右。
 
 ![图片.png | left | 747x558](https://cdn.nlark.com/yuque/0/2018/png/104214/1535016231978-5b9af5e2-e384-4fb1-90d6-c1f4e55611e2.png "")
-
 ```bash
 echo https://cavalry.corp.yiran.com/sdk/js/v1.js >> static/list.js
 for file in static/*layout*.js static/*common*.js static/*pages__index*.js static/*task__index*.js static/*.js
@@ -88,4 +86,5 @@ done
 
 ## 参考
 * [Ant Motion](https://motion.ant.design/components/tween-one)
+
 

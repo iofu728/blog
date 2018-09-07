@@ -301,7 +301,7 @@ export default MyComponent;
 `Presentational Component`是独立的纯粹的，这方面很好的例子，可以参考 [ant.design UI组件的React实现](http://ant.design/docs/react/introduce) ，每个组件跟业务数据并没有耦合关系，只是完成自己独立的任务，需要的数据通过 `props` 传递进来，需要操作的行为通过接口暴露出去。
 而 `Container Component` 更像是状态管理器，它表现为一个容器，订阅子组件需要的数据，组织子组件的交互逻辑和展示。
 
-### 对`Modal`的Component不使用`Presentational`的解释
+### 对`Modal`部分Component不使用`Presentational`的解释
 1. 项目里面几乎所有的数据都存在Store,如果使用`Presentational`会造成，从父组件传递给子组件的参数过多，且对于复用组件而言，参数需要从所有引用处传递，使得代码显得冗余，繁冗，与redux初衷不符，这样额写法更像react最原始的架构；
 2. 如果使用`Presentational`，必须保证不能使用connect，对于调用dispatch函数，都得在父组件处声明，使得回调函数不易实现；
 

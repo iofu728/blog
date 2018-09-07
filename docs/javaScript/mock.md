@@ -71,4 +71,3 @@ export default {
 ```
 
 `dev`启动后，可以通过`/cities`直接在代码请求该API，`1.5s`后得到了返回数据。
-

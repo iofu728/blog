@@ -72,7 +72,7 @@ Action 是一个普通 `javascript` 对象，它是改变 `State` 的唯一途�
 action 必须带有 `type` 属性指明具体的行为，其它字段可以自定义，如果要发起一个 action 需要使用 `dispatch` 函数；需要注意的是 `dispatch` 是在组件 connect Models以后，通过 props 传入的。
 
 在Dva中，action可以作用于 `effect` 和 `reducer`
-```
+```jsx
 dispatch({
   type: 'fetchTaskList',
   filter: {
@@ -278,3 +278,4 @@ app.router(({history}) =>
 * [使用 umi 改进 dva 项目开发](https://github.com/sorrycc/blog/issues/66)
 * [umi + dva，完成用户管理的 CURD 应用](https://github.com/sorrycc/blog/issues/62)
 * [dva文档](https://dvajs.com/guide/concepts.html)
+
