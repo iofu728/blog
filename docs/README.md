@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /javaScript/introduce.md
+actionLink: /other/pdd.md
 footer: No Licensed | Copyright © 2017-present
 pageClass: custom-page-class
 ---
