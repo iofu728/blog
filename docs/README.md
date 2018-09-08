@@ -1,32 +1,39 @@
 ---
 home: true
 actionText: Last
-actionLink: /javaScript/introduce.html
+actionLink: /javaScript/introduce.md
 footer: No Licensed | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
 `很高兴不认识你`
 
+* Cpp
+  + Anoj
+    - [2018模拟II](/pat/anoj2018II.md)
+  + Pat
+    - [目录](/pat/README.md)
+  + Summary
+    - [排队问题分析](/pat/sort.md)
 * JavaScript
-  + [React](/javaScript/immutable.html)
-    - [immutable.js](/javaScript/immutable.html)
-    - [Take about Redux X](/javaScript/reduxs.html)
-    - [Take about Redux I](/javaScript/redux.html)
-    - [React component](/javaScript/component.html)
-  + [Umi & Dva 的一个实践](/javaScript/introduce.html)
-    - [介绍](/javaScript/introduce.html)
-    - [目录约定](/javaScript/structure.html)
-    - [路由](/javaScript/router.html)
-    - [dva](/javaScript/dva.html)
-    - [函数式编程](/javaScript/promise.html)
-    - [fetch](/javaScript/fetch.html)
-    - [部署](/javaScript/deploy.html)
-    - [Style](/javaScript/style.html)
-    - [Mock 数据](/javaScript/mock.html)
-    - [FAQ](/javaScript/faq.html)
+  + [React](/javaScript/immutable.md)
+    - [immutable.js](/javaScript/immutable.md)
+    - [Take about Redux X](/javaScript/reduxs.md)
+    - [Take about Redux I](/javaScript/redux.md)
+    - [React component](/javaScript/component.md)
+  + [Umi & Dva 的一个实践](/javaScript/introduce.md)
+    - [介绍](/javaScript/introduce.md)
+    - [目录约定](/javaScript/structure.md)
+    - [路由](/javaScript/router.md)
+    - [dva](/javaScript/dva.md)
+    - [函数式编程](/javaScript/promise.md)
+    - [fetch](/javaScript/fetch.md)
+    - [部署](/javaScript/deploy.md)
+    - [Style](/javaScript/style.md)
+    - [Mock 数据](/javaScript/mock.md)
+    - [FAQ](/javaScript/faq.md)
 * Git
   + rebase相关
-    - [git rebase 的另解](/other/gitSkill.html)
+    - [git rebase 的另解](/other/gitSkill.md)
 * Summary
-  + [考研](/other/cs.html)
+  + [考研](/other/cs.md)

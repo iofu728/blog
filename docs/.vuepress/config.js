@@ -28,6 +28,11 @@ module.exports = {
       '/pat/': [
         '',
         {
+          title: 'Summary',
+          collapsable: false,
+          children: ['sort'],
+        },
+        {
           title: 'ANOJ',
           collapsable: false,
           children: ['anoj2018II'],
