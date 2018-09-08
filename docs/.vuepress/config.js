@@ -1,35 +1,52 @@
 module.exports = {
-  title : '乌云压顶是吧',
-  description : '㊗️某人生日快乐🎉',
-  serviceWorker : true,
-  markdown : {
-    config : md => {
-      md.set({breaks : true})
+  title: '乌云压顶是吧',
+  description: '㊗️某人生日快乐🎉',
+  serviceWorker: true,
+  markdown: {
+    config: md => {
+      md.set({breaks: true})
       md.use(require('markdown-it'))
     }
   },
-  themeConfig : {
-    repo : 'iofu728/blog',
-    lastUpdated : 'Last Updated',
-    editLinks : false,
-    docsDir : 'docs',
-    algolia :
-        {apiKey : 'c42b71d494ca78750c7094eb2c55eda6', indexName : 'wyydsb'},
-    serviceWorker : {
-      updatePopup :
-          {message : 'New content is available.', buttonText : 'Refresh'}
+  themeConfig: {
+    repo: 'iofu728/blog',
+    lastUpdated: 'Last Updated',
+    editLinks: false,
+    docsDir: 'docs',
+    algolia: {apiKey: 'c42b71d494ca78750c7094eb2c55eda6', indexName: 'wyydsb'},
+    serviceWorker: {
+      updatePopup:
+          {message: 'New content is available.', buttonText: 'Refresh'}
     },
-    nav : [
-      {text : 'JavaScript', link : '/javaScript/introduce'},
-      {text : 'Other', link : '/other/gitSkill'},
+    nav: [
+      {text: 'Pat', link: '/pat/'},
+      {text: 'JavaScript', link: '/javaScript/introduce'},
+      {text: 'Other', link: '/other/gitSkill'},
     ],
-    sidebar : {
-      '/other/' : [ 'gitSkill', 'cs' ],
-      '/javaScript/' : [
+    sidebar: {
+      '/other/': ['gitSkill', 'cs'],
+      '/pat/': [
+        '',
         {
-          title : 'umi & dva 的一个实践',
-          collapsable : false,
-          children : [
+          title: 'ANOJ',
+          collapsable: false,
+          children: [],
+        },
+        {
+          title: 'PAT',
+          collapsable: false,
+          children: [
+            '1014', '1015', '1017', '1018', '1021', '1022', '1026', '1033',
+            '1034', '1038', '1040', '1044', '1049', '1056', '1057', '1063',
+            '1066', '1068', '1072'
+          ],
+        },
+      ],
+      '/javaScript/': [
+        {
+          title: 'umi & dva 的一个实践',
+          collapsable: false,
+          children: [
             'introduce',
             'structure',
             'router',
@@ -42,14 +59,14 @@ module.exports = {
           ],
         },
         {
-          title : 'React',
-          collapsable : false,
-          children : [ 'immutable', 'redux', 'reduxs', 'component' ],
+          title: 'React',
+          collapsable: false,
+          children: ['immutable', 'redux', 'reduxs', 'component'],
         },
         {
-          title : '参考',
-          collapsable : false,
-          children : [ 'faq' ],
+          title: '参考',
+          collapsable: false,
+          children: ['faq'],
         },
       ],
     },
