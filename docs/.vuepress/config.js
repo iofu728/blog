@@ -24,7 +24,7 @@ module.exports = {
       {text: 'Other', link: '/other/gitSkill'},
     ],
     sidebar: {
-      '/other/': ['gitSkill', 'cs'],
+      '/other/': ['gitSkill', 'pdd', 'cs'],
       '/pat/': [
         '',
         {
