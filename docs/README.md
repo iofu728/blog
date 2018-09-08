@@ -36,4 +36,6 @@ pageClass: custom-page-class
   + rebase相关
     - [git rebase 的另解](/other/gitSkill.md)
 * Summary
+  + 实习
+    - [Pdd](/other/pdd.md)
   + [考研](/other/cs.md)
