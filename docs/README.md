@@ -6,7 +6,7 @@ footer: No Licensed | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
-`很高兴不认识你`
+<center>很高兴不认识你</center>
 
 * Cpp
   + Anoj
