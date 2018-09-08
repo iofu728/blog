@@ -9,7 +9,16 @@ pageClass: custom-page-class
 <p align="right">By 滚键盘(iofu728)</p>
 
 github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com/iofu728/PAT-A-by-iofu728)
-- - ANOJ 目录
+- - Summary
+    * [排队问题分析](/pat/sort.md)
+- - ANOJ 目录 [官网](https://logn.me/problem/list)
+
+|Id|Title|Solution|Type|Hard|
+|--|:----:| -----:|----|---:|
+|1022|库洛值（20）|[🤔](/pat/anoj2018II.md##_1022-a-–-库洛值-☆)|hashMap|☆|
+|1023|缺失数（25）|[🤔](/pat/anoj2018II.md##_1023-b-–-缺失数-☆☆☆)|bitMap|☆☆☆|
+|1024|宇宙树（25）|[🤔](/pat/anoj2018II.md##_1024-c-–-宇宙树-★★★☆)|DFS|★★★☆|
+|1025|已经没什么好害怕了（30）|[🤔](/pat/anoj2018II.md##_1025-d-–-已经没什么好害怕了-未知难度)|Dijkstra|未知|
 
 - - PAT A目录 [官网](https://pintia.cn/problem-sets/994805342720868352/problems)
 
@@ -28,15 +37,15 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1011|    World Cup Betting (20)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201011.cpp)|模拟|☆☆|
 |1012|    The Best Rank (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201012.cpp)|sort|☆☆|
 |1013|    Battle Over Cities (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201013.cpp)|DFS,连通分量|☆☆☆|
-|1014|    Waiting in Line (30)|[🤔](/pat/1014.html)|排队模拟,queue,sort|★★★★|
-|1015|    Reversible Primes (20)|[🤔](/pat/1015.html)|素数，进制转换|☆|
+|1014|    Waiting in Line (30)|[🤔](/pat/1014.md)|排队模拟,queue,sort|★★★★|
+|1015|    Reversible Primes (20)|[🤔](/pat/1015.md)|素数，进制转换|☆|
 |1016|    Phone Bills (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201016.cpp)|sort|☆☆|
-|1017|    Queueing at Bank (25)|[🤔](/pat/1017.html)|排队,模拟,sort|☆☆☆|
-|1018|    Public Bike Management (30) |[🤔](/pat/1018.html)|Dijkstra,DFS|★★★★|
+|1017|    Queueing at Bank (25)|[🤔](/pat/1017.md)|排队,模拟,sort|☆☆☆|
+|1018|    Public Bike Management (30) |[🤔](/pat/1018.md)|Dijkstra,DFS|★★★★|
 |1019|    General Palindromic Number (20)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201019.cpp)|进制转换,回文|☆|
 |1020|    Tree Traversals (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201020.cpp)|树的遍历|☆☆|
-|1021|    Deepest Root (25)|[🤔](/pat/1021.html)|无环判断,树深度,最深源点|★★★☆|
-|1022|    Digital Library (30)|[🤔](/pat/1022.html)|map,set|☆☆☆|
+|1021|    Deepest Root (25)|[🤔](/pat/1021.md)|无环判断,树深度,最深源点|★★★☆|
+|1022|    Digital Library (30)|[🤔](/pat/1022.md)|map,set|☆☆☆|
 |1023|    Have Fun with Numbers (20)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201023.cpp)|大整数,前置0|☆★★|
 |1024|    Palindromic Number (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201024.cpp)|大整数,回文|☆|
 |1025|    PAT Ranking (25)    |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201025.cpp)|sort|☆|
@@ -47,46 +56,46 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1030|    Travel Plan (30)    |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201030.cpp)|Dijkstra|☆★|
 |1031|    Hello World for U (20) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201031.cpp)|图形|☆|
 |1032|    Sharing (25)    |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201032.cpp)|链表|☆|
-|1033|    To Fill or Not to Fill (25) |[🤔](/pat/1033.html)|贪心，模拟|★★★★|
-|1034|    Head of a Gang (30) |[🤔](/pat/1034.html)|DFS,map|☆☆☆|
+|1033|    To Fill or Not to Fill (25) |[🤔](/pat/1033.md)|贪心，模拟|★★★★|
+|1034|    Head of a Gang (30) |[🤔](/pat/1034.md)|DFS,map|☆☆☆|
 |1035|    Password (20)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201035.cpp)|字符串|☆|
 |1036|    Boys vs Girls (25)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201036.cpp)|sort|☆|
 |1037|    Magic Coupon (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201037.cpp)|sort|☆|
-|1038|    Recover the Smallest Number (30)|[🤔](/pat/1038.html)|sort，字符串相加|☆★|
+|1038|    Recover the Smallest Number (30)|[🤔](/pat/1038.md)|sort，字符串相加|☆★|
 |1039|    Course List for Student (25)    |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201039.cpp)|手动map|☆★|
-|1040|    Longest Symmetric String (25)   |[🤔](/pat/1040.html)|动态规划|☆☆☆|
+|1040|    Longest Symmetric String (25)   |[🤔](/pat/1040.md)|动态规划|☆☆☆|
 |1041|    Be Unique (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201041.cpp)|hash|☆|
 |1042|    Shuffling Machine (20) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201042.cpp)| 模拟 |☆|
 |1043|    Is It a Binary Search Tree (25) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201043.cpp)|树的遍历|☆★|
-|1044|    Shopping in Mars (25)   |[🤔](/pat/1044.html)|dp,查找 |☆☆☆|
+|1044|    Shopping in Mars (25)   |[🤔](/pat/1044.md)|dp,查找 |☆☆☆|
 |1045|    Favorite Color Stripe (30)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201045.cpp)|dp,最长不下降序列|☆☆☆|
 |1046|    Shortest Distance (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201046.cpp)|模拟 |☆|
 |1047|    Student List for Course (25)    |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201047.cpp)|hash|☆|
 |1048|    Find Coins (25) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201048.cpp)|二分查找|☆★|
-|1049|    Counting Ones (30)  |[🤔](/pat/1049.html)|数学问题，递归|☆☆★|
+|1049|    Counting Ones (30)  |[🤔](/pat/1049.md)|数学问题，递归|☆☆★|
 |1050|    String Subtraction (20) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201050.cpp)|hash| ☆|
 |1051|    Pop Sequence (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201051.cpp)|栈模拟|☆☆|
 |1052|    Linked List Sorting (25)    |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201052.cpp)|链表排序|☆|
 |1053|    Path of Equal Weight (30)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201053.cpp)|树的遍历|☆☆☆|
 |1054|    The Dominant Color (20) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201054.cpp)|map| ☆|
 |1055|    The World’s Richest (25)    |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201055.cpp)|sort|☆|
-|1056|    Mice and Rice (25)  |[🤔](/pat/1056.html)|模拟，晋级 |☆☆★|
-|1057|    Stack (30)  |[🤔](/pat/1057.html)|二分查找，二维哈希，栈模拟 |★★★☆|
+|1056|    Mice and Rice (25)  |[🤔](/pat/1056.md)|模拟，晋级 |☆☆★|
+|1057|    Stack (30)  |[🤔](/pat/1057.md)|二分查找，二维哈希，栈模拟 |★★★☆|
 |1058|    A+B in Hogwarts (20) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201058.cpp)|加法|☆|
 |1059|    Prime Factors (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201059.cpp)|质数|☆★|
 |1060|    Are They Equal (25)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201060.cpp)|科学计数法 |☆☆☆|
 |1061|    Dating (20) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201061.cpp)|字符串对比|☆|
 |1062|    Talent and Virtue (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201062.cpp)|sort|☆|
-|1063|    Set Similarity (25) |[🤔](/pat/1063.html)|set|☆|
+|1063|    Set Similarity (25) |[🤔](/pat/1063.md)|set|☆|
 |1064|    Complete Binary Search Tree (30)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201064.cpp)|BST，遍历|☆☆☆|
 |1065|    A+B and C (64bit) (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201065.cpp)|数运算溢出|☆|
-|1066|    Root of AVL Tree (25)   |[🤔](/pat/1066.html)|AVL，建树 |☆☆☆|
+|1066|    Root of AVL Tree (25)   |[🤔](/pat/1066.md)|AVL，建树 |☆☆☆|
 |1067|    Sort with Swap(0,*) (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201067.cpp)|排序 |☆☆|
-|1068|    Find More Coins (30)    |[🤔](/pat/1068.html)|01背包，动态规划 |★★★★|
+|1068|    Find More Coins (30)    |[🤔](/pat/1068.md)|01背包，动态规划 |★★★★|
 |1069|    The Black Hole of Numbers (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201069.cpp)|string.insert |☆|
 |1070|    Mooncake (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201070.cpp)|sort|☆|
 |1071|    Speech Patterns (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201071.cpp)|map|☆|
-|1072|    Gas Station (30)    |[🤔](/pat/1072.html)|Dijkstra|☆☆☆|
+|1072|    Gas Station (30)    |[🤔](/pat/1072.md)|Dijkstra|☆☆☆|
 |1073|    Scientific Notation (20)   |✖️|||
 |1074|    Reversing Linked List (25) |✖️|||
 |1075|    PAT Judge (25) |✖️|||
