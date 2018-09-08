@@ -21,6 +21,12 @@ else
 rm -rf /usr/local/var/www/other
 fi
 
+if [ ! -d "/usr/local/var/www/pat" ];then
+echo "文件不存在"
+else
+rm -rf /usr/local/var/www/pat
+fi
+
 mv docs/.vuepress/dist/* /usr/local/var/www/
 
 # <link rel="shortcut icon" href="https://cdn.nlark.com/yuque/0/2018/png/104214/1534957905839-d580e42e-3899-4403-be32-c068e5c9eef4.png">
