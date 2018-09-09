@@ -63,7 +63,7 @@ sed -n "/08\/September\/2018:00/,/09\/September\/2018:00/p" /usr/local/nginx/log
 echo '<center>累计访问量:' > pv # 清空pv文件，并添加字符串
 awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
 echo '| 昨日访问量:' >> pv
-sed -n "/08\/September\/2018:00/,/09\/September\/2018:00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l >> pv
+sed -n "/08\/Sep\/2018:00/,/09\/Sep\/2018:00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l >> pv
 echo '</center>' >> pv
 sed -i '$d' docs/README.md # 删除README.md原有的数据
 echo $(cat pv) >> docs/README.md
@@ -94,10 +94,16 @@ Linux下crontab作为定时任务托管平台
 
 但是定时任务的环境与直接运行脚本不太一样
 
+定时任务相当于在/目录下运行command
+
+lz因为这个问题查了好久，最后发现build.sh 里因为一句话权限不够导致不能执行
+
+最后加了一个`sudo`就解决了 坑爹
+
 如果出现定时任务不生效的情况，可以使用打日志的方式
 
 ```bash
-*/10 * * * * cd /usr/local/var/www/wyydsb/blog/crontab.log && ./pv.sh >> crontab.log 2>&1
+*/10 * * * * cd /usr/local/var/www/wyydsb/blog && bash pv.sh >> crontab.log 2>&1
 # 2>&1 打日志
 # 五个* 分别代表 分 时 天 月 年
 # * 代表任意
