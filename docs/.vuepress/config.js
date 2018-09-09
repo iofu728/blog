@@ -21,10 +21,10 @@ module.exports = {
     nav: [
       {text: 'Pat', link: '/pat/'},
       {text: 'JavaScript', link: '/javaScript/introduce'},
-      {text: 'Other', link: '/other/gitSkill'},
+      {text: 'Other', link: '/other/pv'},
     ],
     sidebar: {
-      '/other/': ['gitSkill', 'pdd', 'cs'],
+      '/other/': ['pv', 'gitSkill', 'pdd', 'cs'],
       '/pat/': [
         '',
         {

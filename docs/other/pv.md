@@ -2,7 +2,7 @@
 pageClass: custom-page-class
 ---
 
-# 利用Nginx log实现自动更新访问量的定时任务
+# 自动更新网站访问量的定时脚本
 
 原理：Nginx会把访问日志写入access.log
 
@@ -10,7 +10,96 @@ pageClass: custom-page-class
 
 这种东西Google一下，一大堆
 
-Pv=
-
 本文要实现的功能
-1. 获取总
+1. 获取总page view，注意去重，同一ip只记录一次
+2. 获取时间段中的page view
+3. 脚本化（时间变量化，写入文件自动化）
+4. 定时任务
+
+### 总PV
+
+```bash
+awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
+# sort  - 按ip进行排序
+# uniq  - 去重
+# wc -l - 统计行数
+# awk   - 输出结果
+```
+
+### 时间段Pv
+
+根据上述脚本，我们知道如何获取去重后的总Pv
+
+要获得时间段内的Pv，只需要对access.log中的数据进行一次筛选
+
+```bash
+sed -n "/08\/September\/2018:00/,/09\/September\/2018:00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l
+```
+
+可以看到在原有的代码基础上增加了sed处理
+
+### 脚本化
+
+先来看下我们想实现怎么样的效果
+
+把RADEME.md文件的最后一行替换为新的
+```jsx
+<center>历史访问量：2645 | 昨日访问量: 280</center>
+```
+我们把 这一行文字 分成 五部分
+<center>历史访问量：`$(total Pv)` | 昨日访问量: `$(yesterday Pv)`</center>
+主要是两个数据，需要利用两个脚本分别算出来
+
+为了让数据落盘
+只能通过 `>>` 存到文件中，持久化
+
+剩下的字符串也通过脚本写入文件中
+
+最后再用一条 `echo $(cat xxx)`
+把文件中的字符串压成一行
+
+得到
+```bash
+echo '<center>累计访问量:' > pv # 清空pv文件，并添加字符串
+awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
+echo '| 昨日访问量:' >> pv
+sed -n "/08\/September\/2018:00/,/09\/September\/2018:00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l >> pv
+echo '</center>' >> pv
+sed -i '$d' docs/README.md # 删除README.md原有的数据
+echo $(cat pv) >> docs/README.md
+```
+
+这样的脚本能用，但需要每天改时间
+
+于是，同理把时间改为变量,再在最后调用部署脚本
+
+```bash
+echo '<center>累计访问量:' > pv
+awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
+echo '| 昨日访问量:' >> pv
+yMonth=`date -d yesterday +%B`
+month=`date +%B`
+sed -n "/$(date -d yesterday +%d)\/${yMonth:0:3}\/$(date -d yesterday +%Y):00/,/$(date +%d)\/${month:0:3}\/$(date +%Y):00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l >> pv
+echo '</center>' >> pv
+sed -i '$d' docs/README.md
+echo $(cat pv) >> docs/README.md
+bash build.sh
+```
+
+### 定时任务
+
+Linux下crontab作为定时任务托管平台
+
+通过`crontab -e`定制
+
+但是定时任务的环境与直接运行脚本不太一样
+
+如果出现定时任务不生效的情况，可以使用打日志的方式
+
+```bash
+*/10 * * * * cd /usr/local/var/www/wyydsb/blog/crontab.log && ./pv.sh >> crontab.log 2>&1
+# 2>&1 打日志
+# 五个* 分别代表 分 时 天 月 年
+# * 代表任意
+# */10 时间除以10变化时更新一次 即每个10执行一次
+```

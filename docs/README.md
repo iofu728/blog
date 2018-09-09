@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/pdd.md
+actionLink: /other/pv.md
 footer: No Licensed | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -32,6 +32,8 @@ pageClass: custom-page-class
     - [Style](/javaScript/style.md)
     - [Mock 数据](/javaScript/mock.md)
     - [FAQ](/javaScript/faq.md)
+* Bash
+  + [网站访问量](/other/pv.md)
 * Git
   + rebase相关
     - [git rebase 的另解](/other/gitSkill.md)
