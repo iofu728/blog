@@ -7,3 +7,4 @@ sed -n "/$(date -d yesterday +%d)\/${yMonth:0:3}\/$(date -d yesterday +%Y):00/,/
 echo '</center>' >> pv
 sed -i '$d' docs/README.md
 echo $(cat pv) >> docs/README.md
+bash build.sh
