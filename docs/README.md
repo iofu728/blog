@@ -41,4 +41,4 @@ pageClass: custom-page-class
   + [考研](/other/cs.md)
 
 
-<center>历史访问量：2645 | 昨日访问量: 458</center>
+<center>历史访问量：2645 | 昨日访问量: 280</center>
