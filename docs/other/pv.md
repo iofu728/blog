@@ -63,7 +63,7 @@ sed -n "/08\/September\/2018:00/,/09\/September\/2018:00/p" /usr/local/nginx/log
 echo '<center>累计访问量:' > pv # 清空pv文件，并添加字符串
 awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
 echo '| 昨日访问量:' >> pv
-sed -n "/08\/September\/2018:00/,/09\/September\/2018:00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l >> pv
+sed -n "/08\/Sep\/2018:00/,/09\/Sep\/2018:00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l >> pv
 echo '</center>' >> pv
 sed -i '$d' docs/README.md # 删除README.md原有的数据
 echo $(cat pv) >> docs/README.md
