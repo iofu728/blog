@@ -96,9 +96,9 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1070|    Mooncake (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201070.cpp)|sort|☆|
 |1071|    Speech Patterns (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201071.cpp)|map|☆|
 |1072|    Gas Station (30)    |[🤔](/pat/1072.md)|Dijkstra|☆☆☆|
-|1073|    Scientific Notation (20)   |✖️|||
-|1074|    Reversing Linked List (25) |✖️|||
-|1075|    PAT Judge (25) |✖️|||
+|1073|    Scientific Notation (20)   |[🤔](/pat/1073.md)|字符串转数字|☆☆|
+|1074|    Reversing Linked List (25) |[🤔](/pat/1074.md)|链表翻转|☆☆|
+|1075|    PAT Judge (25) |[🤔](/pat/1075.md)|sort|☆☆☆|
 |1076|    Forwards on Weibo (30) |✖️|||
 |1077|    Kuchiguse (20) |✖️|||
 |1078|    Hashing (25)   |✖️|||
@@ -171,4 +171,8 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1145|    Hashing - Average Search Time(25)|✖️|||
 |1146|    Topological Order(25)|✖️|||
 |1147|    Heaps(30)|✖️|||
+|1148|    Werewolf - Simple Version(20)|✖️|||
+|1149|    Dangerous Goods Packaging(25)|✖️|||
+|1150|    Travelling Salesman Problem(25)|✖️|||
+|1151|    LCA in a Binary Tree(30)|✖️|||
 
