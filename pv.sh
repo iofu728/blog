@@ -1,3 +1,4 @@
+# pv
 echo '<center>累计访问量:' > pv
 awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
 echo '| 昨日访问量:' >> pv
@@ -8,3 +9,8 @@ echo '</center>' >> pv
 sed -i '$d' docs/README.md
 echo $(cat pv) >> docs/README.md
 bash build.sh
+
+# time total Pv
+date +%Y%m%d%T > time
+awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> time
+echo $(cat time) >> total
