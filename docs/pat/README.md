@@ -20,7 +20,7 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1024|宇宙树（25）|[🤔](/pat/anoj2018II.md##_1024-c-–-宇宙树-★★★☆)|DFS|★★★☆|
 |1025|已经没什么好害怕了（30）|[🤔](/pat/anoj2018II.md##_1025-d-–-已经没什么好害怕了-未知难度)|Dijkstra|未知|
 
-- - PAT A目录 [官网](https://pintia.cn/problem-sets/994805342720868352/problems)(87/151)
+- - PAT A目录 [官网](https://pintia.cn/problem-sets/994805342720868352/problems)(90/151)
 
 |Id|Title|Solution|Type|Hard|
 |--|:----:| -----:|----|---:|
@@ -104,9 +104,9 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1078|    Hashing (25)   |[🤔](/pat/1078.md)|散列，平方|☆☆|
 |1079|    Total Sales of Supply Chain (25)|[🤔](/pat/1079.md)|BFS/DFS|☆☆☆|
 |1080|    Graduate Admission (30)|[🤔](/pat/1080.md)|sort|☆☆★|
-|1081|    Rational Sum (20)  |✖️|||
-|1082|    Read Number in Chinese (25)|✖️|||
-|1083|    List Grades (25)   |✖️|||
+|1081|    Rational Sum (20)  |[🤔](/pat/1081.md)|gcd|☆|
+|1082|    Read Number in Chinese (25)|[🤔](/pat/1082.md)|字符串|★★☆|
+|1083|    List Grades (25)   |[🤔](/pat/1083.md)|sort|☆☆|
 |1084|    Broken Keyboard (20)   |✖️|||
 |1085|    Perfect Sequence (25)  |✖️|||
 |1086|    Tree Traversals Again (25) |✖️|||
