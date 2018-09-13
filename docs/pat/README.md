@@ -107,10 +107,10 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1081|    Rational Sum (20)  |[🤔](/pat/1081.md)|gcd|☆|
 |1082|    Read Number in Chinese (25)|[🤔](/pat/1082.md)|字符串|★★☆|
 |1083|    List Grades (25)   |[🤔](/pat/1083.md)|sort|☆☆|
-|1084|    Broken Keyboard (20)   |✖️|||
-|1085|    Perfect Sequence (25)  |✖️|||
-|1086|    Tree Traversals Again (25) |✖️|||
-|1087|    All Roads Lead to Rome (30)|✖️|||
+|1084|    Broken Keyboard (20)   |[🤔](/pat/1084.md)|hash|☆|
+|1085|    Perfect Sequence (25)  |[🤔](/pat/1085.md)|two pointer|☆★|
+|1086|    Tree Traversals Again (25) |[🤔](/pat/1086.md)|二叉树遍历|☆☆★|
+|1087|    All Roads Lead to Rome (30)|[🤔](/pat/1087.md)|Dijkstra DFS|★★☆☆|
 |1088|    Rational Arithmetic (20)   |✖️|||
 |1089|    Insert or Merge (25)   |✖️|||
 |1090|    Highest Price in Supply Chain (25) |✖️|||

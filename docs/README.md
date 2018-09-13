@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/pv.md
+actionLink: /pat/1087.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
