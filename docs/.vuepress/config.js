@@ -30,7 +30,7 @@ module.exports = {
         {
           title: 'Summary',
           collapsable: false,
-          children: ['sort'],
+          children: ['sort', 'entrance'],
         },
         {
           title: 'ANOJ',
