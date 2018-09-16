@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /pat/1087.md
+actionLink: /pat/entrance.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -15,6 +15,7 @@ pageClass: custom-page-class
     - [目录](/pat/README.md)
   + Summary
     - [排队问题分析](/pat/sort.md)
+    - [2018 PKU RW entrance](/pat/entrance.md)
 * JavaScript
   + [React](/javaScript/immutable.md)
     - [immutable.js](/javaScript/immutable.md)
