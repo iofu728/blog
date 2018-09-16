@@ -11,6 +11,7 @@ pageClass: custom-page-class
 github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com/iofu728/PAT-A-by-iofu728)
 - - Summary
     * [排队问题分析](/pat/sort.md)
+    * [2018 PKU RW entrance](/pat/entrance.md)
 - - ANOJ 目录 [官网](https://logn.me/problem/list)
 
 |Id|Title|Solution|Type|Hard|
@@ -20,7 +21,7 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1024|宇宙树（25）|[🤔](/pat/anoj2018II.md##_1024-c-–-宇宙树-★★★☆)|DFS|★★★☆|
 |1025|已经没什么好害怕了（30）|[🤔](/pat/anoj2018II.md##_1025-d-–-已经没什么好害怕了-未知难度)|Dijkstra|未知|
 
-- - PAT A目录 [官网](https://pintia.cn/problem-sets/994805342720868352/problems)(90/151)
+- - PAT A目录 [官网](https://pintia.cn/problem-sets/994805342720868352/problems)(99/151)
 
 |Id|Title|Solution|Type|Hard|
 |--|:----:| -----:|----|---:|
