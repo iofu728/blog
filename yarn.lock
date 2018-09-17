@@ -1482,8 +1482,8 @@ chokidar@^2.0.2, chokidar@^2.0.3:
     fsevents "^1.2.2"
 
 chownr@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
 
 chrome-trace-event@^1.0.0:
   version "1.0.0"
@@ -4782,13 +4782,12 @@ readable-stream@1.0:
     string_decoder "~0.10.x"
 
 readdirp@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.2.0.tgz#cf040e9cb125fc921e6e9771647496edde3666fd"
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.2.1.tgz#0e87622a3325aa33e892285caf8b4e846529a525"
   dependencies:
-    graceful-fs "^4.1.2"
+    graceful-fs "^4.1.11"
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
-    set-immediate-shim "^1.0.1"
 
 redent@^2.0.0:
   version "2.0.0"
@@ -5062,10 +5061,6 @@ serialize-javascript@^1.3.0, serialize-javascript@^1.4.0:
 set-blocking@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
-
-set-immediate-shim@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
 
 set-value@^0.4.3:
   version "0.4.3"
@@ -5858,8 +5853,8 @@ vuepress-html-webpack-plugin@^3.2.0:
     util.promisify "1.0.0"
 
 vuepress@^0.14.2:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-0.14.3.tgz#ed20ab490967e5e4247577e9e2bd8b4506a3635f"
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-0.14.4.tgz#fea77daa840b11429564bdddde3653bbbec4affb"
   dependencies:
     "@babel/core" "7.0.0-beta.47"
     "@vue/babel-preset-app" "3.0.0-beta.11"
@@ -5927,8 +5922,8 @@ watchpack@^1.5.0:
     neo-async "^2.5.0"
 
 webpack-chain@^4.6.0:
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/webpack-chain/-/webpack-chain-4.10.0.tgz#90c4bd0375b438036343ab2bf8cfc1fc50876255"
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/webpack-chain/-/webpack-chain-4.11.0.tgz#41b57773d2dcdcbfd43c9df28a05b40705ae421c"
   dependencies:
     deepmerge "^1.5.2"
     javascript-stringify "^1.6.0"
@@ -6014,8 +6009,8 @@ webpack-sources@^1.1.0, webpack-sources@^1.2.0:
     source-map "~0.6.1"
 
 webpack@^4.8.1:
-  version "4.18.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.18.1.tgz#029042c815443fce23424de1548d9317cfca148a"
+  version "4.19.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.19.0.tgz#252296c8af2d21c0994911007defdb3913a7bc66"
   dependencies:
     "@webassemblyjs/ast" "1.7.6"
     "@webassemblyjs/helper-module-context" "1.7.6"
