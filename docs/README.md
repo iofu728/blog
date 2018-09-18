@@ -1,13 +1,16 @@
 ---
 home: true
 actionText: Last
-actionLink: /pat/entrance.md
+actionLink: /other/pagerank.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
 <center>很高兴不认识你</center>
 
+* ML
+  + NLP
+    - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Cpp
   + Anoj
     - [2018模拟II](/pat/anoj2018II.md)
