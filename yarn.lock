@@ -1200,8 +1200,8 @@ big.js@^3.1.3:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
 
 binary-extensions@^1.0.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.12.0.tgz#c2d780f53d45bba8317a8902d4ceeaf3a6385b14"
 
 bluebird@^3.1.1, bluebird@^3.5.1:
   version "3.5.2"
@@ -1482,8 +1482,8 @@ chokidar@^2.0.2, chokidar@^2.0.3:
     fsevents "^1.2.2"
 
 chownr@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
 
 chrome-trace-event@^1.0.0:
   version "1.0.0"
@@ -2163,8 +2163,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47:
-  version "1.3.67"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.67.tgz#5e8f3ffac89b4b0402c7e1a565be06f3a109abbc"
+  version "1.3.68"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.68.tgz#bb3ccbadcdd06de2afea8fb73e31a60b6558de1f"
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -3301,6 +3301,12 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+katex@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.6.0.tgz#12418e09121c05c92041b6b3b9fb6bab213cb6f3"
+  dependencies:
+    match-at "^0.1.0"
+
 keygrip@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.3.tgz#399d709f0aed2bab0a059e0cdd3a5023a053e1dc"
@@ -3616,6 +3622,12 @@ markdown-it-emoji@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/markdown-it-emoji/-/markdown-it-emoji-1.4.0.tgz#9bee0e9a990a963ba96df6980c4fddb05dfb4dcc"
 
+markdown-it-katex@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/markdown-it-katex/-/markdown-it-katex-2.0.3.tgz#d7b86a1aea0b9d6496fab4e7919a18fdef589c39"
+  dependencies:
+    katex "^0.6.0"
+
 markdown-it-table-of-contents@^0.4.0:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/markdown-it-table-of-contents/-/markdown-it-table-of-contents-0.4.3.tgz#6453925a76e49b9b3d9569a0d89f1c2168b46982"
@@ -3629,6 +3641,10 @@ markdown-it@^8.4.1, markdown-it@^8.4.2:
     linkify-it "^2.0.0"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
+
+match-at@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/match-at/-/match-at-0.1.1.tgz#25d040d291777704d5e6556bbb79230ec2de0540"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -4782,13 +4798,12 @@ readable-stream@1.0:
     string_decoder "~0.10.x"
 
 readdirp@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.2.0.tgz#cf040e9cb125fc921e6e9771647496edde3666fd"
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.2.1.tgz#0e87622a3325aa33e892285caf8b4e846529a525"
   dependencies:
-    graceful-fs "^4.1.2"
+    graceful-fs "^4.1.11"
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
-    set-immediate-shim "^1.0.1"
 
 redent@^2.0.0:
   version "2.0.0"
@@ -5062,10 +5077,6 @@ serialize-javascript@^1.3.0, serialize-javascript@^1.4.0:
 set-blocking@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
-
-set-immediate-shim@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
 
 set-value@^0.4.3:
   version "0.4.3"
@@ -5858,8 +5869,8 @@ vuepress-html-webpack-plugin@^3.2.0:
     util.promisify "1.0.0"
 
 vuepress@^0.14.2:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-0.14.3.tgz#ed20ab490967e5e4247577e9e2bd8b4506a3635f"
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-0.14.4.tgz#fea77daa840b11429564bdddde3653bbbec4affb"
   dependencies:
     "@babel/core" "7.0.0-beta.47"
     "@vue/babel-preset-app" "3.0.0-beta.11"
@@ -5927,8 +5938,8 @@ watchpack@^1.5.0:
     neo-async "^2.5.0"
 
 webpack-chain@^4.6.0:
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/webpack-chain/-/webpack-chain-4.10.0.tgz#90c4bd0375b438036343ab2bf8cfc1fc50876255"
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/webpack-chain/-/webpack-chain-4.11.0.tgz#41b57773d2dcdcbfd43c9df28a05b40705ae421c"
   dependencies:
     deepmerge "^1.5.2"
     javascript-stringify "^1.6.0"
@@ -6014,8 +6025,8 @@ webpack-sources@^1.1.0, webpack-sources@^1.2.0:
     source-map "~0.6.1"
 
 webpack@^4.8.1:
-  version "4.18.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.18.1.tgz#029042c815443fce23424de1548d9317cfca148a"
+  version "4.19.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.19.0.tgz#252296c8af2d21c0994911007defdb3913a7bc66"
   dependencies:
     "@webassemblyjs/ast" "1.7.6"
     "@webassemblyjs/helper-module-context" "1.7.6"
