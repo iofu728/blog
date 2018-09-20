@@ -1,6 +1,6 @@
 module.exports = {
   title: '乌云压顶是吧',
-  description: '㊗️某人生日快乐🎉',
+  description: '886',
   serviceWorker: true,
   markdown: {
     config: md => {
