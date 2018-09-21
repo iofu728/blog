@@ -5,9 +5,7 @@ module.exports = {
   markdown: {
     config: md => {
       md.set({breaks: true})
-      md.use(
-          require('markdown-it-katex'),
-          {'throwOnError': false, 'errorColor': ' #cc0000'})
+      md.use(require('markdown-it-math'))
     }
   },
   themeConfig: {
