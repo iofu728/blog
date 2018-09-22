@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "markdown-it": "^8.4.2",
-    "markdown-it-katex": "^2.0.3"
+    "markdown-it-katex": "^2.0.3",
+    "markdown-it-math": "^4.1.0"
   }
 }
