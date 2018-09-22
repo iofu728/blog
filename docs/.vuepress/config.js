@@ -24,7 +24,7 @@ module.exports = {
       {text: 'Other', link: '/other/pv'},
     ],
     sidebar: {
-      '/other/': ['pv', 'gitSkill', 'pdd', 'cs', 'pagerank'],
+      '/other/': ['pv', 'gitSkill', 'pdd', 'cs', 'pagerank', 'nginx'],
       '/pat/': [
         '',
         {
