@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/pagerank.md
+actionLink: /other/nginx.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -11,6 +11,13 @@ pageClass: custom-page-class
 * ML
   + NLP
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
+* Nginx
+  + [Nginx调优](/other/nginx.md)
+* Bash
+  + [网站访问量](/other/pv.md)
+* Git
+  + rebase相关
+    - [git rebase 的另解](/other/gitSkill.md)
 * Cpp
   + Anoj
     - [2018模拟II](/pat/anoj2018II.md)
@@ -36,11 +43,6 @@ pageClass: custom-page-class
     - [Style](/javaScript/style.md)
     - [Mock 数据](/javaScript/mock.md)
     - [FAQ](/javaScript/faq.md)
-* Bash
-  + [网站访问量](/other/pv.md)
-* Git
-  + rebase相关
-    - [git rebase 的另解](/other/gitSkill.md)
 * Summary
   + 实习
     - [Pdd](/other/pdd.md)
