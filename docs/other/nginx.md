@@ -21,7 +21,7 @@ HTTPS配置就是配置证书
 Https的配置主要难点就是SSL证书的生成+多域名证书的生成
 
 ### OpenSSL
-```bash
+```vim
 ## 生成私钥
 openssl genrsa -out server.key 2048
 ## 修改openssl.cnf文件
@@ -59,7 +59,7 @@ openssl req -new -key server.key -out server.csr -config ./openssl.cnf
 
 ### Certbot
 
-```bash
+```vim
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:certbot/certbot
@@ -90,7 +90,7 @@ server{
 
 另外Mozilla专门做了一个[ssl配置生成器](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 
-```bash
+```vim
 # 生成dhparam.pem文件
 cd /etc/ssl/certs
 openssl dhparam -out dhparam.pem 2048
@@ -131,7 +131,7 @@ HSTS = HTTP Strict Transport Security,即强制使用HTTPS进行连接
 * 当客户端通过HTTP发出请求时，rewrite至443
 * 当客户端通过HTTPS发出请求时，服务器会发送一个带有`Strict-Transport-Security`的`Response Header`头，浏览器在获取该响应头后，在`max-age`的时间内，如果遇到`HTTP`连接，就会通过 307跳转強制使用 HTTPS 进行连接，并忽略其它的跳转设置
 
-```bash
+```vim
 vim /usr/local/nginx/conf/nginx.conf
 
 # 修改为
