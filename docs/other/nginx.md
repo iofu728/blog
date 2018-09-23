@@ -88,6 +88,8 @@ server{
 
 另外参考[凹凸实验室的博客](https://aotu.io/notes/2016/08/16/nginx-https/index.html)对HTTPS还进行了优化
 
+另外Mozilla专门做了一个[ssl配置生成器](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
+
 ```bash
 # 生成dhparam.pem文件
 cd /etc/ssl/certs
