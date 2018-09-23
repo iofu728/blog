@@ -86,6 +86,12 @@ echo $(cat pv) >> docs/README.md
 bash build.sh
 ```
 
+### 剔除Status不为200的数据
+
+```bash
+awk '{if($9==200)print $0}' /var/log/nginx/access.log
+```
+
 ### 定时任务
 
 Linux下crontab作为定时任务托管平台
