@@ -20,11 +20,46 @@ HTTPS配置就是配置证书
 
 Https的配置主要难点就是SSL证书的生成+多域名证书的生成
 
-因为openSSl对多域名证书的支持不太友好
+### OpenSSL
+```vim
+## 生成私钥
+openssl genrsa -out server.key 2048
+## 修改openssl.cnf文件
+cp/etc/ssl/openssl.cnf ./
 
-所以这里使用`Certbot`进行SSl证书的生成及管理
+1. 取消[ req ] 模块下注释：req_extensions = v3_req
+2. 确保[ req_distinguished_name ]下没有 0.xxx 的标签，有的话把0.xxx的0. 去掉
+3. 在 [ v3_req ] 块下增加一行 subjectAltName = @SubjectAlternativeName
+4. 在文件末尾增加所有域名信息：
+[SubjectAlternativeName]
+DNS.1 = *.wyydsb.xin
+DNS.2 = *.wyydsb.cn
+DNS.3 = *.wyydsb.com
 
-```bash
+## 配置证书文件
+openssl req -new -key server.key -out server.csr -config ./openssl.cnf
+## openssl req -new -newkey rsa:2048 -sha256 -nodes -out wyydsb.csr -keyout wyydsb.key -subj "/C=CN/ST=ZheJiang/L=HangZhou/O=wyydsb/OU=wyydsb/CN=wyydsb.xin"
+
+    Country Name (2 letter code) [AU]:CN
+    State or Province Name (full name) [Some-State]:ZheJiang
+    Locality Name (eg, city) []:HangZhou
+    Organization Name (eg, company) [Internet Widgits Pty Ltd]:wyydsb
+    Organizational Unit Name (eg, section) []:wyydsb
+    Common Name (e.g. server FQDN or YOUR name) []:wyydsb.xin # your server site
+    Email Address []:yue.li3@21vianet.com
+
+    Please enter the following 'extra' attributes
+    to be sent with your certificate request
+    A challenge password []:
+    An optional company name []:wyydsb
+
+## 拷贝证书，key地址于nginx.conf内
+```
+
+
+### Certbot
+
+```vim
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:certbot/certbot
@@ -53,7 +88,9 @@ server{
 
 另外参考[凹凸实验室的博客](https://aotu.io/notes/2016/08/16/nginx-https/index.html)对HTTPS还进行了优化
 
-```bash
+另外Mozilla专门做了一个[ssl配置生成器](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
+
+```vim
 # 生成dhparam.pem文件
 cd /etc/ssl/certs
 openssl dhparam -out dhparam.pem 2048
@@ -94,7 +131,7 @@ HSTS = HTTP Strict Transport Security,即强制使用HTTPS进行连接
 * 当客户端通过HTTP发出请求时，rewrite至443
 * 当客户端通过HTTPS发出请求时，服务器会发送一个带有`Strict-Transport-Security`的`Response Header`头，浏览器在获取该响应头后，在`max-age`的时间内，如果遇到`HTTP`连接，就会通过 307跳转強制使用 HTTPS 进行连接，并忽略其它的跳转设置
 
-```bash
+```vim
 vim /usr/local/nginx/conf/nginx.conf
 
 # 修改为
@@ -165,7 +202,10 @@ TLS1.3在2018年8月的RFC 8446会议中正式定稿，其相较于TLS1.2有很�
 1. 安装Nginx时 ./configure --with-openssl-opt=enable-tls1_3
 2. openSSL 升至1.1.1
 3. ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-4. 浏览器打开TLS1.3支持chrome://flags/
+4. ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256;
+5. 浏览器打开TLS1.3支持chrome://flags/
+
+PS:目前测试使用ssl_ciphers 不支持TLS之前的加密算法，故做了个妥协，两种均放于此，SSL Lab测试下TLS1.3未生效
 
 ## 反爬虫
 
@@ -224,6 +264,12 @@ server{
          proxy_max_temp_file_size 128m;
 }
 ```
+PS： 因为使用了Server Work，利用文件的Hash值做版本管理，缓存管理的html文件对这一系统造成了较大的麻烦，故取消配置
+
+## Loading Balance
+
+... Because of qiong, There is only one Server machine.
+
 ## 具体配置
 ```vim
 worker_processes  3;
@@ -267,9 +313,9 @@ http {
          listen [::]:443 ssl http2 ipv6only=on;
          server_name  localhost wyydsb.xin wyydsb.com www.wyydsb.xin wyydsb.cn www.wyydsb.com www.wyydsb.cn;
 
-         limit_conn one 50;
-         limit_rate 500k;
-         limit_req zone=allips burst=5 nodelay;
+         #limit_conn one 50;
+         #limit_rate 500k;
+         #limit_req zone=allips burst=5 nodelay;
 
          if ($http_user_agent ~* (Scrapy|Curl|HttpClient)) {
              return 403;
@@ -288,41 +334,16 @@ http {
          add_header X-Content-Type-Options nosniff;
          add_header X-Xss-Protection 1;
 
-         ssl_certificate   /etc/letsencrypt/live/wyydsb.xin/fullchain.pem;
-         ssl_certificate_key  /etc/letsencrypt/live/wyydsb.xin/privkey.pem;
+         ssl_certificate   /etc/ssl/wyydsb.key;
+         ssl_certificate_key  /etc/ssl/wyydsb.csr;
          ssl_session_timeout 5m;
          ssl_prefer_server_ciphers on;
          ssl_dhparam /etc/ssl/certs/dhparam.pem;
          ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-         ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256;
+         ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4":TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256;
          ssl_buffer_size 1400;
          ssl_session_cache builtin:1000 shared:SSL:10m;
          ssl_ecdh_curve secp384r1;
-
-         proxy_cache content;
-         proxy_cache_valid  200 304 301 302 99s;
-         proxy_cache_valid any 1s;
-         proxy_redirect off;
-         proxy_set_header Host $host;
-         proxy_set_header X-Real-IP $remote_addr;
-         proxy_set_header REMOTE-HOST $remote_addr;
-         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-         proxy_set_header Connection "";
-         proxy_http_version 2;
-         proxy_next_upstream off;
-         proxy_ignore_client_abort on;
-         proxy_ignore_headers Set-Cookie Cache-Control;
-         client_max_body_size 30m;
-         client_body_buffer_size 256k;
-         proxy_connect_timeout 75;
-         proxy_send_timeout 300;
-         proxy_read_timeout 300;
-         proxy_buffer_size 1m;
-         proxy_buffers 8 512k;
-         proxy_busy_buffers_size 2m;
-         proxy_temp_file_write_size 2m;
-         proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
-         proxy_max_temp_file_size 128m;
 
          location / {
              root   /usr/local/var/www/;
