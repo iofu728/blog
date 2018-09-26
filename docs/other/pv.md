@@ -33,10 +33,16 @@ awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
 要获得时间段内的Pv，只需要对access.log中的数据进行一次筛选
 
 ```bash
-sed -n "/08\/September\/2018:00/,/09\/September\/2018:00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l
+awk '{split($4,array,"[");if(array[2]>="25/Sep/2018:00:00:00" && array[2]<="25/Sep/2018:23:59:59"){print $1}}' /usr/local/nginx/logs/access.log|sort | uniq -c | wc -l
 ```
 
 可以看到在原有的代码基础上增加了sed处理
+
+### 剔除Status不为200的数据
+
+```bash
+awk '{if($9==200)print $0}' /var/log/nginx/access.log
+```
 
 ### 脚本化
 
@@ -60,13 +66,14 @@ sed -n "/08\/September\/2018:00/,/09\/September\/2018:00/p" /usr/local/nginx/log
 
 得到
 ```bash
-echo '<center>累计访问量:' > pv # 清空pv文件，并添加字符串
-awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
-echo '| 昨日访问量:' >> pv
-sed -n "/08\/Sep\/2018:00/,/09\/Sep\/2018:00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l >> pv
-echo '</center>' >> pv
-sed -i '$d' docs/README.md # 删除README.md原有的数据
-echo $(cat pv) >> docs/README.md
+loglocal=/usr/local/nginx/logs/access.log
+echo "<center>累计访问量:" > log/pv
+awk '{if($9==200)print $1}' $loglocal|sort | uniq -c |wc -l >> log/pv
+echo "| 昨日访问量:" >> log/pv
+awk '{if($9==200){split($4,array,"[");if(array[2]>="08\/Sep\/2018:00:00:00" && array[2]<="08\/Sep\/2018:23:59:59"){print $1}}}' $loglocal|sort | uniq -c | wc -l >> log/pv
+echo "</center>" >> log/pv
+sed -i '$d' docs/README.md
+echo $(cat log/pv) >> docs/README.md
 ```
 
 这样的脚本能用，但需要每天改时间
@@ -74,22 +81,18 @@ echo $(cat pv) >> docs/README.md
 于是，同理把时间改为变量,再在最后调用部署脚本
 
 ```bash
-echo '<center>累计访问量:' > pv
-awk '{print $1}' /usr/local/nginx/logs/access.log|sort | uniq -c |wc -l >> pv
-echo '| 昨日访问量:' >> pv
+loglocal=/usr/local/nginx/logs/access.log
+echo "<center>累计访问量:" > log/pv
+awk '{if($9==200)print $1}' $loglocal|sort | uniq -c |wc -l >> log/pv
+echo "| 昨日访问量:" >> log/pv
 yMonth=`date -d yesterday +%B`
-month=`date +%B`
-sed -n "/$(date -d yesterday +%d)\/${yMonth:0:3}\/$(date -d yesterday +%Y):00/,/$(date +%d)\/${month:0:3}\/$(date +%Y):00/p" /usr/local/nginx/logs/access.log | awk '{print $1}' | sort | uniq -c | wc -l >> pv
-echo '</center>' >> pv
+today="$(date -d yesterday +%d)/${yMonth:0:3}/$(date -d yesterday +%Y)"
+am="$today:00:00:00"
+pm="$today:23:59:59"
+awk '{if($9==200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/pv
+echo "</center>" >> log/pv
 sed -i '$d' docs/README.md
-echo $(cat pv) >> docs/README.md
-bash build.sh
-```
-
-### 剔除Status不为200的数据
-
-```bash
-awk '{if($9==200)print $0}' /var/log/nginx/access.log
+echo $(cat log/pv) >> docs/README.md
 ```
 
 ### 定时任务
