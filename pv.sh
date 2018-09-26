@@ -15,6 +15,6 @@ echo $(cat log/pv) >> docs/README.md
 bash build.sh
 
 # time total Pv
-date +%Y/%m/%d %T > log/time
+date +%Y/%m/%d:%T > log/time
 awk '{if($9==200)print $1}' $loglocal|sort | uniq -c |wc -l >> log/time
 echo $(cat log/time) >> log/total
