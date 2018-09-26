@@ -51,4 +51,4 @@ pageClass: custom-page-class
   + [è€ƒç ”](/other/cs.md)
 
 
-<center>ÀÛ¼Æ·ÃÎÊÁ¿: 3011 | ×òÈÕ·ÃÎÊÁ¿: 33 </center>
+<center>ç´¯è®¡è®¿é—®é‡: 3011 | æ˜¨æ—¥è®¿é—®é‡: 33 </center>
