@@ -4,7 +4,7 @@ date -d yesterday +%Y%m%d > log/yesterday
 yMonth=`date -d yesterday +%B`
 month=`date +%B`
 awk '{if($9==200)print $0}' $loglocal|sed -n "/$(date -d yesterday +%d)\/${yMonth:0:3}\/$(date -d yesterday +%Y):00/,/$(date +%d)\/${month:0:3}\/$(date +%Y):00/p"| awk '{print $1}' | sort | uniq -c | wc -l >> log/yesterday
-echo $(cat yesterday) >> log/day
+echo $(cat log/yesterday) >> log/day
 
 
 # first=20180820
