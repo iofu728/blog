@@ -25,7 +25,7 @@ Https的配置主要难点就是SSL证书的生成+多域名证书的生成
 ## 生成私钥
 openssl genrsa -out server.key 2048
 ## 修改openssl.cnf文件
-cp/etc/ssl/openssl.cnf ./
+cp /etc/ssl/openssl.cnf ./
 
 1. 取消[ req ] 模块下注释：req_extensions = v3_req
 2. 确保[ req_distinguished_name ]下没有 0.xxx 的标签，有的话把0.xxx的0. 去掉
@@ -63,6 +63,7 @@ openssl req -new -key server.key -out server.csr -config ./openssl.cnf
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
 sudo apt-get install python-certbot-nginx
 
 # 多域名证书生成
@@ -334,8 +335,8 @@ http {
          add_header X-Content-Type-Options nosniff;
          add_header X-Xss-Protection 1;
 
-         ssl_certificate   /etc/ssl/wyydsb.key;
-         ssl_certificate_key  /etc/ssl/wyydsb.csr;
+         ssl_certificate   /etc/ssl/wyydsb.crt;
+         ssl_certificate_key  /etc/ssl/wyydsb.key;
          ssl_session_timeout 5m;
          ssl_prefer_server_ciphers on;
          ssl_dhparam /etc/ssl/certs/dhparam.pem;
