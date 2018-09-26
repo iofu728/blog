@@ -2,21 +2,25 @@
 loglocal=/usr/local/nginx/logs/access.log
 date -d yesterday +%Y%m%d > log/yesterday
 yMonth=`date -d yesterday +%B`
-month=`date +%B`
-awk '{if($9==200)print $0}' $loglocal|sed -n "/$(date -d yesterday +%d)\/${yMonth:0:3}\/$(date -d yesterday +%Y):00/,/$(date +%d)\/${month:0:3}\/$(date +%Y):00/p"| awk '{print $1}' | sort | uniq -c | wc -l >> log/yesterday
+today="$(date -d yesterday +%d)/${yMonth:0:3}/$(date -d yesterday +%Y)"
+am="$today:00:00:00"
+pm="$today:23:59:59"
+awk '{if($9==200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/yesterday
 echo $(cat log/yesterday) >> log/day
 
 
 # first=20180820
-# second=20180923
+# second=20180927
 
 # while [ "$first" != "$second" ]
 # do
-# echo $first
-# date -d "${first}" +%Y%m%d > yesterday
+# date -d "${first}" +%Y%m%d > log/yesterday
 # yMonth=`date -d "${first}" +%B`
-# month=`date -d "-1 days ago ${first}" +%B`
-# awk '{if($9==200)print $0}' /var/log/nginx/access.log|sed -n "/$(date -d "${first}" +%d)\/${yMonth:0:3}\/$(date -d "${first}" +%Y):00/,/$(date -d "-1 days ago ${first}" +%d)\/${month:0:3}\/$(date -d "-1 days ago ${first}" +%Y):00/p"| awk '{print $1}' | sort | uniq -c | wc -l >> yesterday
-# echo $(cat yesterday) >> day
+# today="$(date -d "${first}" +%d)/${yMonth:0:3}/$(date -d "${first}" +%Y)"
+# am="$today:00:00:00"
+# pm="$today:23:59:59"
+# echo $am
+# awk '{if($9==200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/yesterday
+# echo $(cat log/yesterday) >> log/day
 # let first=`date -d "-1 days ago ${first}" +%Y%m%d`
 # done

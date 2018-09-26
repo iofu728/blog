@@ -109,7 +109,7 @@ lz因为这个问题查了好久，最后发现build.sh 里因为一句话权限
 如果出现定时任务不生效的情况，可以使用打日志的方式
 
 ```bash
-*/10 * * * * cd /usr/local/var/www/wyydsb/blog && bash pv.sh >> crontab.log 2>&1
+*/10 * * * * cd /usr/local/www/wyydsb/blog && bash pv.sh >> log/crontab.log 2>&1
 # 2>&1 打日志
 # 五个* 分别代表 分 时 天 月 年
 # * 代表任意
