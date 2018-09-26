@@ -21,6 +21,7 @@ HTTPS配置就是配置证书
 Https的配置主要难点就是SSL证书的生成+多域名证书的生成
 
 ### OpenSSL
+OpenSSL提供的是自签名证书， 自签名访问时会出现不安全字样
 ```vim
 ## 生成私钥
 openssl genrsa -out server.key 2048
@@ -53,12 +54,14 @@ openssl req -new -key server.key -out server.csr -config ./openssl.cnf
     A challenge password []:
     An optional company name []:wyydsb
 
-## 拷贝证书，key地址于nginx.conf内
+## 生成自签名证书.crt
+openssl req -new -x509 -days 3650 -keyout server.key -out server.crt -config openssl.cnf
+## 拷贝.crt, .key地址于nginx.conf内
 ```
 
 
 ### Certbot
-
+Certbot提供的是权威签名证书
 ```vim
 sudo apt-get update
 sudo apt-get install software-properties-common
@@ -206,7 +209,34 @@ TLS1.3在2018年8月的RFC 8446会议中正式定稿，其相较于TLS1.2有很�
 4. ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256;
 5. 浏览器打开TLS1.3支持chrome://flags/
 
-PS:目前测试使用ssl_ciphers 不支持TLS之前的加密算法，故做了个妥协，两种均放于此，SSL Lab测试下TLS1.3未生效
+利用高版本curl,验证TLS1.3配置成功
+```vim
+$ curl -vvv https://wyydsb.xin
+* Rebuilt URL to: https://wyydsb.xin/
+*   Trying 47.75.137.198...
+* TCP_NODELAY set
+* Connected to wyydsb.xin (47.75.137.198) port 443 (#0)
+* ALPN, offering http/2
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+  CApath: none
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (OUT), TLS change cipher, Client hello (1):
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, [no content] (0):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS handshake, [no content] (0):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+```
 
 ## 反爬虫
 
@@ -267,7 +297,7 @@ server{
 ```
 PS： 因为使用了Server Work，利用文件的Hash值做版本管理，缓存管理的html文件对这一系统造成了较大的麻烦，故取消配置
 
-## Loading Balance
+## Load Balance
 
 ... Because of qiong, There is only one Server machine.
 
@@ -341,7 +371,7 @@ http {
          ssl_prefer_server_ciphers on;
          ssl_dhparam /etc/ssl/certs/dhparam.pem;
          ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-         ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4":TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256;
+         ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4";
          ssl_buffer_size 1400;
          ssl_session_cache builtin:1000 shared:SSL:10m;
          ssl_ecdh_curve secp384r1;
