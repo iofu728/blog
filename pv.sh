@@ -1,7 +1,6 @@
 # pv
 
 loglocal=/usr/local/nginx/logs/access.log
-awk '{if($9==200)print $0}' $loglocal|awk '{print $1}'|sort | uniq -c |wc -l
 echo '<center>累计访问量:' > pv
 awk '{if($9==200)print $0}' $loglocal|awk '{print $1}'|sort | uniq -c |wc -l >> pv
 echo '| 昨日访问量:' >> pv
