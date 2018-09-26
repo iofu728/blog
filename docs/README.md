@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/nginx.md
+actionLink: /other/accident.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -13,6 +13,8 @@ pageClass: custom-page-class
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Nginx
   + [Nginx调优](/other/nginx.md)
+* Accident
+  + [Linux内核故障导致服务不可用](/other/accident.md)
 * Bash
   + [网站访问量](/other/pv.md)
 * Git
