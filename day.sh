@@ -6,6 +6,7 @@ today="$(date -d yesterday +%d)/${yMonth:0:3}/$(date -d yesterday +%Y)"
 am="$today:00:00:00"
 pm="$today:23:59:59"
 awk '{if($9==200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/yesterday
+awk '{if($9!=200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/yesterday
 echo $(cat log/yesterday) >> log/day
 
 
