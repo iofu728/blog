@@ -6066,3 +6066,783 @@ $ ./node_modules/.bin/vuepress build ./docs
  DONE  Success! Generated static files in docs/.vuepress/dist.
 
 Done in 22.12s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[5:50:05 PM] Compiling Client
+[5:50:05 PM] Compiling Server
+(node:24294) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[5:50:14 PM] Compiled Server in 9s
+[5:50:22 PM] Compiled Client in 17s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 22.16s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[6:00:05 PM] Compiling Client
+[6:00:05 PM] Compiling Server
+(node:24486) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[6:00:15 PM] Compiled Server in 10s
+[6:00:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.24s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[6:10:05 PM] Compiling Client
+[6:10:05 PM] Compiling Server
+(node:24678) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[6:10:15 PM] Compiled Server in 10s
+[6:10:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.41s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[6:20:05 PM] Compiling Client
+[6:20:05 PM] Compiling Server
+(node:24874) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[6:20:15 PM] Compiled Server in 10s
+[6:20:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.19s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[6:30:05 PM] Compiling Client
+[6:30:05 PM] Compiling Server
+(node:25065) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[6:30:15 PM] Compiled Server in 10s
+[6:30:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.14s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[6:40:05 PM] Compiling Client
+[6:40:05 PM] Compiling Server
+(node:25323) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[6:40:15 PM] Compiled Server in 10s
+[6:40:25 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.67s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[6:50:05 PM] Compiling Client
+[6:50:05 PM] Compiling Server
+(node:25597) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[6:50:15 PM] Compiled Server in 10s
+[6:50:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.65s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[7:00:05 PM] Compiling Client
+[7:00:05 PM] Compiling Server
+(node:25814) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[7:00:15 PM] Compiled Server in 10s
+[7:00:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.72s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[7:10:04 PM] Compiling Client
+[7:10:04 PM] Compiling Server
+(node:26005) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[7:10:14 PM] Compiled Server in 9s
+[7:10:22 PM] Compiled Client in 17s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 21.85s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[7:20:05 PM] Compiling Client
+[7:20:05 PM] Compiling Server
+(node:26201) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[7:20:17 PM] Compiled Server in 12s
+[7:20:26 PM] Compiled Client in 21s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 26.25s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[7:30:04 PM] Compiling Client
+[7:30:04 PM] Compiling Server
+(node:26392) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[7:30:13 PM] Compiled Server in 9s
+[7:30:21 PM] Compiled Client in 17s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 22.04s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[7:40:05 PM] Compiling Client
+[7:40:05 PM] Compiling Server
+(node:26583) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[7:40:15 PM] Compiled Server in 10s
+[7:40:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.48s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[7:50:05 PM] Compiling Client
+[7:50:05 PM] Compiling Server
+(node:26782) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[7:50:15 PM] Compiled Server in 10s
+[7:50:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.43s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[8:00:05 PM] Compiling Client
+[8:00:05 PM] Compiling Server
+(node:26975) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[8:00:15 PM] Compiled Server in 10s
+[8:00:23 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.13s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[8:10:05 PM] Compiling Client
+[8:10:05 PM] Compiling Server
+(node:27245) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[8:10:15 PM] Compiled Server in 10s
+[8:10:25 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.77s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[8:20:05 PM] Compiling Client
+[8:20:05 PM] Compiling Server
+(node:27449) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[8:20:15 PM] Compiled Server in 10s
+[8:20:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.58s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[8:30:05 PM] Compiling Client
+[8:30:05 PM] Compiling Server
+(node:27641) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[8:30:15 PM] Compiled Server in 10s
+[8:30:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.53s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[8:40:05 PM] Compiling Client
+[8:40:05 PM] Compiling Server
+(node:27832) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[8:40:15 PM] Compiled Server in 10s
+[8:40:24 PM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.86s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[8:50:05 PM] Compiling Client
+[8:50:05 PM] Compiling Server
+(node:28031) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[8:50:15 PM] Compiled Server in 10s
+[8:50:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.58s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[9:00:05 PM] Compiling Client
+[9:00:05 PM] Compiling Server
+(node:28223) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[9:00:15 PM] Compiled Server in 10s
+[9:00:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.36s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[9:10:05 PM] Compiling Client
+[9:10:05 PM] Compiling Server
+(node:28413) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[9:10:15 PM] Compiled Server in 10s
+[9:10:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.73s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[9:20:05 PM] Compiling Client
+[9:20:06 PM] Compiling Server
+(node:28609) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[9:20:16 PM] Compiled Server in 10s
+[9:20:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.18s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[9:30:05 PM] Compiling Client
+[9:30:05 PM] Compiling Server
+(node:28800) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[9:30:16 PM] Compiled Server in 11s
+[9:30:25 PM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 25.49s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[9:40:05 PM] Compiling Client
+[9:40:05 PM] Compiling Server
+(node:28993) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[9:40:15 PM] Compiled Server in 10s
+[9:40:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.38s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[9:50:05 PM] Compiling Client
+[9:50:05 PM] Compiling Server
+(node:29189) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[9:50:15 PM] Compiled Server in 10s
+[9:50:25 PM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 25.15s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[10:00:05 PM] Compiling Client
+[10:00:05 PM] Compiling Server
+(node:29383) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[10:00:16 PM] Compiled Server in 11s
+[10:00:27 PM] Compiled Client in 22s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 27.61s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[10:10:05 PM] Compiling Client
+[10:10:05 PM] Compiling Server
+(node:29574) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[10:10:15 PM] Compiled Server in 10s
+[10:10:24 PM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.98s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[10:20:06 PM] Compiling Client
+[10:20:06 PM] Compiling Server
+(node:29768) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[10:20:17 PM] Compiled Server in 11s
+[10:20:26 PM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 25.95s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[10:30:05 PM] Compiling Client
+[10:30:05 PM] Compiling Server
+(node:29961) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[10:30:15 PM] Compiled Server in 10s
+[10:30:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.57s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[10:40:05 PM] Compiling Client
+[10:40:05 PM] Compiling Server
+(node:30151) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[10:40:15 PM] Compiled Server in 10s
+[10:40:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.96s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[10:50:08 PM] Compiling Client
+[10:50:08 PM] Compiling Server
+(node:5888) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[10:50:19 PM] Compiled Server in 11s
+[10:50:31 PM] Compiled Client in 22s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 30.63s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[11:00:05 PM] Compiling Client
+[11:00:05 PM] Compiling Server
+(node:6213) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[11:00:16 PM] Compiled Server in 11s
+[11:00:25 PM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 26.03s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[11:10:05 PM] Compiling Client
+[11:10:05 PM] Compiling Server
+(node:6404) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[11:10:16 PM] Compiled Server in 10s
+[11:10:25 PM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 25.18s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[11:20:05 PM] Compiling Client
+[11:20:05 PM] Compiling Server
+(node:6602) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[11:20:16 PM] Compiled Server in 11s
+[11:20:25 PM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 25.21s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[11:30:05 PM] Compiling Client
+[11:30:05 PM] Compiling Server
+(node:6798) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[11:30:15 PM] Compiled Server in 10s
+[11:30:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.66s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[11:40:05 PM] Compiling Client
+[11:40:05 PM] Compiling Server
+(node:6989) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[11:40:15 PM] Compiled Server in 10s
+[11:40:24 PM] Compiled Client in 19s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.67s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[11:50:05 PM] Compiling Client
+[11:50:05 PM] Compiling Server
+(node:7186) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[11:50:14 PM] Compiled Server in 9s
+[11:50:22 PM] Compiled Client in 18s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 22.53s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[12:00:05 AM] Compiling Client
+[12:00:05 AM] Compiling Server
+(node:7388) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[12:00:15 AM] Compiled Server in 11s
+[12:00:25 AM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 24.97s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[12:10:05 AM] Compiling Client
+[12:10:06 AM] Compiling Server
+(node:7578) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[12:10:17 AM] Compiled Server in 12s
+[12:10:26 AM] Compiled Client in 21s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /[2K[1GRendering page: /javaScript/component.html[2K[1GRendering page: /javaScript/deploy.html[2K[1GRendering page: /javaScript/dva.html[2K[1GRendering page: /javaScript/faq.html[2K[1GRendering page: /javaScript/fetch.html[2K[1GRendering page: /javaScript/immutable.html[2K[1GRendering page: /javaScript/introduce.html[2K[1GRendering page: /javaScript/mock.html[2K[1GRendering page: /javaScript/promise.html[2K[1GRendering page: /javaScript/redux.html[2K[1GRendering page: /javaScript/reduxs.html[2K[1GRendering page: /javaScript/router.html[2K[1GRendering page: /javaScript/structure.html[2K[1GRendering page: /javaScript/style.html[2K[1GRendering page: /other/accident.html[2K[1GRendering page: /other/ali.html[2K[1GRendering page: /other/cs.html[2K[1GRendering page: /other/gitSkill.html[2K[1GRendering page: /other/nginx.html[2K[1GRendering page: /other/pagerank.html[2K[1GRendering page: /other/pdd.html[2K[1GRendering page: /other/pv.html[2K[1GRendering page: /other/redirect.html[2K[1GRendering page: /pat/1014.html[2K[1GRendering page: /pat/1015.html[2K[1GRendering page: /pat/1017.html[2K[1GRendering page: /pat/1018.html[2K[1GRendering page: /pat/1021.html[2K[1GRendering page: /pat/1022.html[2K[1GRendering page: /pat/1026.html[2K[1GRendering page: /pat/1033.html[2K[1GRendering page: /pat/1034.html[2K[1GRendering page: /pat/1038.html[2K[1GRendering page: /pat/1040.html[2K[1GRendering page: /pat/1044.html[2K[1GRendering page: /pat/1049.html[2K[1GRendering page: /pat/1056.html[2K[1GRendering page: /pat/1057.html[2K[1GRendering page: /pat/1063.html[2K[1GRendering page: /pat/1066.html[2K[1GRendering page: /pat/1068.html[2K[1GRendering page: /pat/1072.html[2K[1GRendering page: /pat/1073.html[2K[1GRendering page: /pat/1074.html[2K[1GRendering page: /pat/1075.html[2K[1GRendering page: /pat/1076.html[2K[1GRendering page: /pat/1077.html[2K[1GRendering page: /pat/1078.html[2K[1GRendering page: /pat/1079.html[2K[1GRendering page: /pat/1080.html[2K[1GRendering page: /pat/1081.html[2K[1GRendering page: /pat/1082.html[2K[1GRendering page: /pat/1083.html[2K[1GRendering page: /pat/1084.html[2K[1GRendering page: /pat/1085.html[2K[1GRendering page: /pat/1086.html[2K[1GRendering page: /pat/1087.html[2K[1GRendering page: /pat/[2K[1GRendering page: /pat/anoj2018II.html[2K[1GRendering page: /pat/entrance.html[2K[1GRendering page: /pat/sort.html[2K[1GRendering page: /404.html[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 26.30s.
