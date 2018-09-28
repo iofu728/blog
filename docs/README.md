@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/accident.md
+actionLink: /other/redirect.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -17,6 +17,7 @@ pageClass: custom-page-class
   + [Linux内核故障导致服务不可用](/other/accident.md)
 * Bash
   + [网站访问量](/other/pv.md)
+  + [2>&1](/other/redirect.md)
 * Git
   + rebase相关
     - [git rebase 的另解](/other/gitSkill.md)
@@ -51,4 +52,4 @@ pageClass: custom-page-class
   + [考研](/other/cs.md)
 
 
-<center>累计访问量: 3011 | 昨日访问量: 33 </center>
+<center>累计访问量: 3057 | 昨日访问量: 48 | 昨日爬虫数: 138 </center>
