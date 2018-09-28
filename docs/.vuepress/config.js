@@ -15,8 +15,7 @@ module.exports = {
     docsDir: 'docs',
     algolia: {apiKey: 'c42b71d494ca78750c7094eb2c55eda6', indexName: 'wyydsb'},
     serviceWorker: {
-      updatePopup:
-          {message: 'New content is available.', buttonText: 'Refresh'}
+      updatePopup: {message: 'New content is available.', buttonText: 'Refresh'}
     },
     nav: [
       {text: 'Pat', link: '/pat/'},
@@ -24,8 +23,23 @@ module.exports = {
       {text: 'Other', link: '/other/pv'},
     ],
     sidebar: {
-      '/other/':
-          ['pv', 'gitSkill', 'pdd', 'cs', 'pagerank', 'nginx', 'accident'],
+      '/other/': [
+        {
+          title: 'Bash',
+          collapsable: false,
+          children: ['pv', 'redirect'],
+        },
+        {
+          title: 'Sundry',
+          collapsable: false,
+          children: ['gitSkill', 'pagerank', 'nginx'],
+        },
+        {
+          title: 'Summary',
+          collapsable: false,
+          children: ['pdd', 'accident', 'cs'],
+        },
+      ],
       '/pat/': [
         '',
         {
