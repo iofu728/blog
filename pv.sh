@@ -1,15 +1,15 @@
 # pv
 
 loglocal=/usr/local/nginx/logs/access.log
-echo "<center>ÀÛ¼Æ·ÃÎÊÁ¿:" > log/pv
+echo "<center>ç´¯è®¡è®¿é—®é‡:" > log/pv
 awk '{if($9==200)print $1}' $loglocal|sort | uniq -c |wc -l >> log/pv
-echo "| ×òÈÕ·ÃÎÊÁ¿:" >> log/pv
+echo "| æ˜¨æ—¥è®¿é—®é‡:" >> log/pv
 yMonth=`date -d yesterday +%B`
 today="$(date -d yesterday +%d)/${yMonth:0:3}/$(date -d yesterday +%Y)"
 am="$today:00:00:00"
 pm="$today:23:59:59"
 awk '{if($9==200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/pv
-echo "| ×òÈÕÅÀ³æÊý:" >> log/pv
+echo "| æ˜¨æ—¥çˆ¬è™«æ•°:" >> log/pv
 awk '{if($9!=200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/pv
 echo "</center>" >> log/pv
 sed -i '$d' docs/README.md
