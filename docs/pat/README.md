@@ -21,7 +21,7 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1024|宇宙树（25）|[🤔](/pat/anoj2018II.md##_1024-c-–-宇宙树-★★★☆)|DFS|★★★☆|
 |1025|已经没什么好害怕了（30）|[🤔](/pat/anoj2018II.md##_1025-d-–-已经没什么好害怕了-未知难度)|Dijkstra|未知|
 
-- - PAT A目录 [官网](https://pintia.cn/problem-sets/994805342720868352/problems)(99/151)
+- - PAT A目录 [官网](https://pintia.cn/problem-sets/994805342720868352/problems)(107/151)
 
 |Id|Title|Solution|Type|Hard|
 |--|:----:| -----:|----|---:|
@@ -112,26 +112,26 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1085|    Perfect Sequence (25)  |[🤔](/pat/1085.md)|two pointer|☆★|
 |1086|    Tree Traversals Again (25) |[🤔](/pat/1086.md)|二叉树遍历|☆☆★|
 |1087|    All Roads Lead to Rome (30)|[🤔](/pat/1087.md)|Dijkstra DFS|★★☆☆|
-|1088|    Rational Arithmetic (20)   |✖️|||
-|1089|    Insert or Merge (25)   |✖️|||
-|1090|    Highest Price in Supply Chain (25) |✖️|||
-|1091|    Acute Stroke (30)  |✖️|||
-|1092|    To Buy or Not to Buy (20)  |✖️|||
-|1093|    Count PAT’s (25)   |✖️|||
-|1094|    The Largest Generation (25)|✖️|||
-|1095|    Cars on Campus (30)|✖️|||
-|1096|    Consecutive Factors (20)   |✖️|||
-|1097|    Deduplication on a Linked List (25)|✖️|||
-|1098|    Insertion or Heap Sort (25)|✖️|||
-|1099|    Build A Binary Search Tree (30)|✖️|||
-|1100|    Mars Numbers (20)  |✖️|||
-|1101|    Quick Sort (25)|✖️|||
-|1102|    Invert a Binary Tree (25)  |✖️|||
-|1103|    Integer Factorization (30) |✖️|||
-|1104|    Sum of Number Segments (20)|✖️|||
-|1105|    Spiral Matrix (25) |✖️|||
-|1106|    Lowest Price in Supply Chain (25)  |✖️|||
-|1107|    Social Clusters (30)   |✖️|||
+|1088|    Rational Arithmetic (20)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201088.cpp)|||
+|1089|    Insert or Merge (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201089.cpp)|||
+|1090|    Highest Price in Supply Chain (25) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201090.cpp)|||
+|1091|    Acute Stroke (30)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201091.cpp)|||
+|1092|    To Buy or Not to Buy (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201092.cpp)|||
+|1093|    Count PAT’s (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201093.cpp)|||
+|1094|    The Largest Generation (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201094.cpp)|||
+|1095|    Cars on Campus (30)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201095.cpp)|||
+|1096|    Consecutive Factors (20)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201096.cpp)|||
+|1097|    Deduplication on a Linked List (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201097.cpp)|||
+|1098|    Insertion or Heap Sort (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201098.cpp)|||
+|1099|    Build A Binary Search Tree (30)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201099.cpp)|||
+|1100|    Mars Numbers (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201100.cpp)|||
+|1101|    Quick Sort (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201101.cpp)|||
+|1102|    Invert a Binary Tree (25)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201102.cpp)|||
+|1103|    Integer Factorization (30) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201103.cpp)|||
+|1104|    Sum of Number Segments (20)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201104.cpp)|||
+|1105|    Spiral Matrix (25) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201105.cpp)|||
+|1106|    Lowest Price in Supply Chain (25)  |[🤔](/pat/1106.md)|BFS 剪枝|☆★|
+|1107|    Social Clusters (30)   |[🤔](/pat/1107.md)|合并 并查集|☆☆★|
 |1108|    Finding Average (20)   |✖️|||
 |1109|    Group Photo (25)   |✖️|||
 |1110|    Complete Binary Tree (25)  |✖️|||
