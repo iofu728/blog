@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/redirect.md
+actionLink: /other/nohup.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -18,6 +18,7 @@ pageClass: custom-page-class
 * Bash
   + [网站访问量](/other/pv.md)
   + [2>&1](/other/redirect.md)
+  + [nohup](/other/nohup.md)
 * Git
   + rebase相关
     - [git rebase 的另解](/other/gitSkill.md)
