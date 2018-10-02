@@ -1,42 +1,41 @@
+
 function integrateGitment(router) {
   const linkGitment = document.createElement('link')
-  linkGitment.href = 'https://unpkg.com/gitalk/dist/gitalk.css'
+  linkGitment.href = 'https://imsun.github.io/gitment/style/default.css'
   linkGitment.rel = 'stylesheet'
-  const scriptGitalk = document.createElement('script')
+  const scriptGitment = document.createElement('script')
   document.body.appendChild(linkGitment)
-  scriptGitalk.src = 'https://unpkg.com/gitalk/dist/gitalk.min.js'
-  document.body.appendChild(scriptGitalk)
+  scriptGitment.src = 'https://imsun.github.io/gitment/dist/gitment.browser.js'
+  document.body.appendChild(scriptGitment)
 
   router.afterEach((to) => {
-    if (scriptGitalk.onload) {
-      renderGitalk(to.fullPath)
+    // 已被初始化则根据页面重新渲染 评论区
+    if (scriptGitment.onload) {
+      renderGitment(to.fullPath)
     } else {
-      scriptGitalk.onload = () => {
+      scriptGitment.onload = () => {
         const commentsContainer = document.createElement('div')
         commentsContainer.id = 'comments-container'
         commentsContainer.classList.add('content')
         const $page = document.querySelector('.page')
         if ($page) {
           $page.appendChild(commentsContainer)
-          renderGitalk(to.fullPath)
+          renderGitment(to.fullPath)
         }
       }
     }
   })
 
-  function renderGitalk(fullPath) {
-    const gitalk = new Gitalk({
-      clientID: '6ac606b7bad30bff534c',
-      clientSecret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
-      repo: 'https://github.com/iofu728/blog',
+  function renderGitment(fullPath) {
+    const gitment = new Gitment({
       owner: 'iofu728',
-      admin: ['iofu728'],
-      language: ['zh-CN', 'en'],
-      id: fullPath,
-      distractionFreeMode: false  // Facebook-like distraction free mode
+      repo: 'https://github.com/iofu728/blog',
+      oauth: {
+        client_id: '6ac606b7bad30bff534c',
+        client_secret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
+      },
     })
-
-    gitalk.render('comments-container')
+    gitment.render('comments-container')
   }
 }
 
@@ -48,7 +47,7 @@ export default ({
 }) => {
   try {
     // 生成静态页时在node中执行，没有document对象
-    integrateGitment(router)
+    document && integrateGitment(router)
   } catch (e) {
     console.error(e.message)
   }
