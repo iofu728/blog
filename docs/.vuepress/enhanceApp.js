@@ -13,7 +13,7 @@ function integrateGitment(router) {
     } else {
       scriptGitalk.onload = () => {
         const commentsContainer = document.createElement('div')
-        commentsContainer.id = 'comments-container'
+        commentsContainer.id = 'comments'
         commentsContainer.classList.add('content')
         const $page = document.querySelector('.page')
         if ($page) {
@@ -36,7 +36,7 @@ function integrateGitment(router) {
       distractionFreeMode: false
     })
 
-    gitalk.render('comments-container')
+    gitalk.render('comments')
   }
 }
 
