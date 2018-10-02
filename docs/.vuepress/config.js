@@ -17,6 +17,7 @@ module.exports = {
     serviceWorker: {
       updatePopup: {message: 'New content is available.', buttonText: 'Refresh'}
     },
+    tags: true,
     nav: [
       {text: 'Pat', link: '/pat/'},
       {text: 'JavaScript', link: '/javaScript/introduce'},
