@@ -31,9 +31,8 @@ function integrateGitment(router) {
       repo: 'https://github.com/iofu728/blog',
       owner: 'iofu728',
       admin: ['iofu728'],
-      language: ['zh-CN', 'en'],
       id: fullPath,
-      distractionFreeMode: false
+      distractionFreeMode: false,
     })
 
     gitalk.render('comments-container')
