@@ -28,7 +28,7 @@ function integrateGitment(router) {
     const gitalk = new Gitalk({
       clientID: '6ac606b7bad30bff534c',
       clientSecret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
-      repo: 'iofu728/blog',
+      repo: 'blog',
       owner: 'iofu728',
       admin: ['iofu728'],
       language: ['zh-CN', 'en'],
