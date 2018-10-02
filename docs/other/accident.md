@@ -18,7 +18,7 @@ pageClass: custom-page-class
 
 ### 事故经过
 
-![图片.png | left | 400x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1537964986987-9aa9e0f1-7542-45a6-8556-460b63f57afd.png "")
+![图片.png | left | 400x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1538236889689-8f365ddc-be82-40b1-ad69-9323ffee72cd.png "")
 
  * 2018-09-24 00:02 Ali Yun 上ECS 跑完最后一次脚本任务，CPU从打满降落至11%左右，与平常回落至0%不一致，且出现ssh不能连接的现象
  * 2018-09-24 00:13 在尝试解决问题未果的前提下，对实例进行正常重启操作
