@@ -27,7 +27,7 @@ module.exports = {
         {
           title: 'Bash',
           collapsable: false,
-          children: ['pv', 'redirect'],
+          children: ['pv', 'redirect', 'nohup'],
         },
         {
           title: 'Sundry',
