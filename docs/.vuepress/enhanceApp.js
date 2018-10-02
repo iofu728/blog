@@ -1,4 +1,4 @@
-ifunction integrateGitment(router) {
+function integrateGitment(router) {
   const linkGitment = document.createElement('link')
   linkGitment.href = 'https://imsun.github.io/gitment/style/default.css'
   linkGitment.rel = 'stylesheet'
