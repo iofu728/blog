@@ -1,3 +1,5 @@
+import Gitalk from 'gitalk'
+
 function integrateGitment(router) {
   const linkGitalk = document.createElement('link')
   linkGitalk.href = 'https://unpkg.com/gitalk/dist/gitalk.css'
