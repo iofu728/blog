@@ -1,41 +1,41 @@
-function integrateGitalk(router) {
-  const linkGitalk = document.createElement('link')
-  linkGitalk.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'
-  linkGitalk.rel = 'stylesheet'
-  const scriptGitalk = document.createElement('script')
-  document.body.appendChild(linkGitalk)
-  scriptGitalk.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js'
-  document.body.appendChild(scriptGitalk)
+function integrateGitment(router) {
+  const linkGitment = document.createElement('link')
+  linkGitment.href = 'https://imsun.github.io/gitment/style/default.css'
+  linkGitment.rel = 'stylesheet'
+  const scriptGitment = document.createElement('script')
+  document.body.appendChild(linkGitment)
+  scriptGitment.src = 'https://imsun.github.io/gitment/dist/gitment.browser.js'
+  document.body.appendChild(scriptGitment)
 
   router.afterEach((to) => {
-    if (scriptGitalk.onload) {
-      renderGitalk(to.fullPath)
+    // 已被初始化则根据页面重新渲染 评论区
+    if (scriptGitment.onload) {
+      renderGitment(to.fullPath)
     } else {
-      scriptGitalk.onload = () => {
+      scriptGitment.onload = () => {
         const commentsContainer = document.createElement('div')
-        commentsContainer.id = 'gitalk-container'
+        commentsContainer.id = 'comments-container'
         commentsContainer.classList.add('content')
         const $page = document.querySelector('.page')
         if ($page) {
           $page.appendChild(commentsContainer)
-          renderGitalk(to.fullPath)
+          renderGitment(to.fullPath)
         }
       }
     }
   })
-function renderGitalk(fullPath) {
-  const gitalk = new Gitalk({
-    clientID: '6ac606b7bad30bff534c',
-    clientSecret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
-    repo: 'blog',
-    owner: 'iofu728',
-    admin: ['iofu728'],
-    id: 'comment',
-    distractionFreeMode: false,
-    language: 'zh-CN',
-})
 
-gitalk.render('gitalk-container')
+  function renderGitment(fullPath) {
+    const gitment = new Gitment({
+      id: 'comment',
+      owner: 'iofu728',
+      repo: 'blog',
+      oauth: {
+        client_id: '6ac606b7bad30bff534c',
+        client_secret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
+      },
+    })
+    gitment.render('comments-container')
   }
 }
 
@@ -47,7 +47,7 @@ export default ({
 }) => {
   try {
     // 生成静态页时在node中执行，没有document对象
-    document && integrateGitalk(router)
+    document && integrateGitment(router)
   } catch (e) {
     console.error(e.message)
   }
