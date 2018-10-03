@@ -1,14 +1,14 @@
 function integrateGitment(router) {
   const linkGitment = document.createElement('link')
-  linkGitment.href = 'https://unpkg.com/gitalk/dist/gitalk.css'
+  linkGitment.href = 'https://imsun.github.io/gitment/style/default.css'
   linkGitment.rel = 'stylesheet'
   const scriptGitment = document.createElement('script')
   document.body.appendChild(linkGitment)
-  scriptGitment.src = 'https://unpkg.com/gitalk/dist/gitalk.min.js'
+  scriptGitment.src = 'https://imsun.github.io/gitment/dist/gitment.browser.js'
   document.body.appendChild(scriptGitment)
 
   router.afterEach((to) => {
-    // å·²è¢«åˆå§‹åŒ–åˆ™æ ¹æ®é¡µé¢é‡æ–°æ¸²æŸ“ è¯„è®ºåŒº
+    // ÒÑ±»³õÊ¼»¯Ôò¸ù¾İÒ³ÃæÖØĞÂäÖÈ¾ ÆÀÂÛÇø
     if (scriptGitment.onload) {
       renderGitment(to.fullPath)
     } else {
@@ -26,28 +26,28 @@ function integrateGitment(router) {
   })
 
   function renderGitment(fullPath) {
-    const gitalk = new Gitalk({
-      clientID: '6ac606b7bad30bff534c',
-      clientSecret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
-      repo: 'blog',
+    const gitment = new Gitment({
+      id: 'https://wyydsb.xin',
       owner: 'iofu728',
-      admin: ['iofu728'],
-      language: ['zh-CN', 'en'],
-      id: fullPath,
-      distractionFreeMode: false
+      repo: 'blog',
+      oauth: {
+        client_id: '6ac606b7bad30bff534c',
+        client_secret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
+      },
     })
-    gitalk.render('comments-container')
+    gitment.render('comments-container')
   }
 }
 
 export default ({
-  Vue,      // VuePress æ­£åœ¨ä½¿ç”¨çš„ Vue æ„é€ å‡½æ•°
-  options,  // é™„åŠ åˆ°æ ¹å®ä¾‹çš„ä¸€äº›é€‰é¡¹
-  router,   // å½“å‰åº”ç”¨çš„è·¯ç”±å®ä¾‹
-  siteData  // ç«™ç‚¹å…ƒæ•°æ®
+  Vue,      // VuePress ÕıÔÚÊ¹ÓÃµÄ Vue ¹¹Ôìº¯Êı
+  options,  // ¸½¼Óµ½¸ùÊµÀıµÄÒ»Ğ©Ñ¡Ïî
+  router,   // µ±Ç°Ó¦ÓÃµÄÂ·ÓÉÊµÀı
+  siteData  // Õ¾µãÔªÊı¾İ
 }) => {
   try {
-    integrateGitment(router)
+    // Éú³É¾²Ì¬Ò³Ê±ÔÚnodeÖĞÖ´ĞĞ£¬Ã»ÓĞdocument¶ÔÏó
+    document && integrateGitment(router)
   } catch (e) {
     console.error(e.message)
   }
