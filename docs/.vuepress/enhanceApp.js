@@ -32,7 +32,7 @@ function renderGitalk(fullPath) {
     admin: ['iofu728'],
     id: 'comment',
     distractionFreeMode: false,
-    language: 'zh-CN',
+    language: navigator.language || navigator.userLanguage || 'zh-CN',
 })
 
 gitalk.render('gitalk-container')
