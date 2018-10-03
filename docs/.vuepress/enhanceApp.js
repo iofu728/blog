@@ -27,7 +27,7 @@ function integrateGitment(router) {
 
   function renderGitment(fullPath) {
     const gitment = new Gitment({
-      id: 'https://wyydsb.xin',
+      id: fullPath,
       owner: 'iofu728',
       repo: 'blog',
       oauth: {
@@ -40,10 +40,10 @@ function integrateGitment(router) {
 }
 
 export default ({
-  Vue,      // VuePress 正在使用的 Vue 构造函数
-  options,  // 附加到根实例的一些选项
-  router,   // 当前应用的路由实例
-  siteData  // 站点元数据
+  Vue, // VuePress 正在使用的 Vue 构造函数
+  options, // 附加到根实例的一些选项
+  router, // 当前应用的路由实例
+  siteData // 站点元数据
 }) => {
   try {
     // 生成静态页时在node中执行，没有document对象
