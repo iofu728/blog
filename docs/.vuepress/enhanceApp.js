@@ -1,10 +1,10 @@
 function integrateGitment(router) {
   const linkGitment = document.createElement('link')
-  linkGitment.href = 'https://imsun.github.io/gitment/style/default.css'
+  linkGitment.href = 'https://unpkg.com/gitalk/dist/gitalk.css'
   linkGitment.rel = 'stylesheet'
   const scriptGitment = document.createElement('script')
   document.body.appendChild(linkGitment)
-  scriptGitment.src = 'https://imsun.github.io/gitment/dist/gitment.browser.js'
+  scriptGitment.src = 'https://unpkg.com/gitalk/dist/gitalk.min.js'
   document.body.appendChild(scriptGitment)
 
   router.afterEach((to) => {
@@ -26,27 +26,27 @@ function integrateGitment(router) {
   })
 
   function renderGitment(fullPath) {
-    const gitment = new Gitment({
-      id: fullPath,
-      owner: 'iofu728',
+    const gitalk = new Gitalk({
+      clientID: '6ac606b7bad30bff534c',
+      clientSecret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
       repo: 'blog',
-      oauth: {
-        client_id: '6ac606b7bad30bff534c',
-        client_secret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
-      },
+      owner: 'iofu728',
+      admin: ['iofu728'],
+      language: ['zh-CN', 'en'],
+      id: fullPath,
+      distractionFreeMode: false
     })
-    gitment.render('comments-container')
+    gitalk.render('comments-container')
   }
 }
 
 export default ({
-  Vue, // VuePress 正在使用的 Vue 构造函数
-  options, // 附加到根实例的一些选项
-  router, // 当前应用的路由实例
-  siteData // 站点元数据
+  Vue,      // VuePress 正在使用的 Vue 构造函数
+  options,  // 附加到根实例的一些选项
+  router,   // 当前应用的路由实例
+  siteData  // 站点元数据
 }) => {
   try {
-    // 生成静态页时在node中执行，没有document对象
     document && integrateGitment(router)
   } catch (e) {
     console.error(e.message)
