@@ -47,8 +47,7 @@ export default ({
   siteData  // 站点元数据
 }) => {
   try {
-    // 生成静态页时在node中执行，没有document对象
-    document && integrateGitment(router)
+    integrateGitment(router)
   } catch (e) {
     console.error(e.message)
   }
