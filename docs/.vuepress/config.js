@@ -67,6 +67,11 @@ module.exports = {
       ],
       '/javaScript/': [
         {
+          title: 'Vuepress',
+          collapsable: false,
+          children: ['comment'],
+        },
+        {
           title: 'umi & dva 的一个实践',
           collapsable: false,
           children: [
