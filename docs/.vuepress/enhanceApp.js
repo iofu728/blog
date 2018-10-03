@@ -27,7 +27,7 @@ function integrateGitment(router) {
 
   function renderGitment(fullPath) {
     const gitment = new Gitment({
-      id: '/coment',
+      id: 'comment',
       owner: 'iofu728',
       repo: 'blog',
       oauth: {
