@@ -8,6 +8,13 @@ function integrateGitalk(router) {
   document.body.appendChild(scriptGitalk)
 
   router.afterEach((to) => {
+    const commentsContainer = document.createElement('div')
+    commentsContainer.id = 'gitalk-container'
+    commentsContainer.classList.add('content')
+    const $page = document.querySelector('.page')
+    if ($page) {
+      $page.appendChild(commentsContainer)
+    }
     if (scriptGitalk.onload) {
       renderGitalk(to.fullPath)
     } else {
