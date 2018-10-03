@@ -67,6 +67,13 @@ function integrateGitalk(router) {
   document.body.appendChild(scriptGitalk)
 
   router.afterEach((to) => {
+    const commentsContainer = document.createElement('div')
+    commentsContainer.id = 'gitalk-container'
+    commentsContainer.classList.add('content')
+    const $page = document.querySelector('.page')
+    if ($page) {
+      $page.appendChild(commentsContainer)
+    }
     if (scriptGitalk.onload) {
       renderGitalk(to.fullPath)
     } else {
@@ -110,6 +117,8 @@ export default ({Vue, options, router, siteData}) => {
 ## FAQ
 1. 如果出现Error: Container not found, document.getElementById: gitalk-container
   * 确保本地启动没这个报错，可能是service 缓存的问题
+  * 也有可能是真的没有初始化gitalk-container div
+    - 为解决这个问题，对已经scriptGitalk的页面重新建立gitalk-container div
 2. GET https://api.github.com/user 401 (Unauthorized)
   * 无影响
 3. vue-router.esm.js?8c4f:1905 ReferenceError: Gitalk is not defined
