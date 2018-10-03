@@ -30591,3 +30591,267 @@ $ ./node_modules/.bin/vuepress build ./docs
  DONE  Success! Generated static files in docs/.vuepress/dist.
 
 Done in 25.51s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[11:50:07 PM] Compiling Client
+[11:50:07 PM] Compiling Server
+(node:29119) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[11:50:29 PM] Compiled Server in 23s
+[11:55:19 PM] Compiled Client in 5m
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /document is not defined
+[2K[1GRendering page: /javaScript/comment.htmldocument is not defined
+[2K[1GRendering page: /javaScript/component.htmldocument is not defined
+[2K[1GRendering page: /javaScript/deploy.htmldocument is not defined
+[2K[1GRendering page: /javaScript/dva.htmldocument is not defined
+[2K[1GRendering page: /javaScript/faq.htmldocument is not defined
+[2K[1GRendering page: /javaScript/fetch.htmldocument is not defined
+[2K[1GRendering page: /javaScript/immutable.htmldocument is not defined
+[2K[1GRendering page: /javaScript/introduce.htmldocument is not defined
+[2K[1GRendering page: /javaScript/mock.htmldocument is not defined
+[2K[1GRendering page: /javaScript/promise.htmldocument is not defined
+[2K[1GRendering page: /javaScript/redux.htmldocument is not defined
+[2K[1GRendering page: /javaScript/reduxs.htmldocument is not defined
+[2K[1GRendering page: /javaScript/router.htmldocument is not defined
+[2K[1GRendering page: /javaScript/structure.htmldocument is not defined
+[2K[1GRendering page: /javaScript/style.htmldocument is not defined
+[2K[1GRendering page: /other/accident.htmldocument is not defined
+[2K[1GRendering page: /other/ali.htmldocument is not defined
+[2K[1GRendering page: /other/cs.htmldocument is not defined
+[2K[1GRendering page: /other/gitSkill.htmldocument is not defined
+[2K[1GRendering page: /other/nginx.htmldocument is not defined
+[2K[1GRendering page: /other/nohup.htmldocument is not defined
+[2K[1GRendering page: /other/pagerank.htmldocument is not defined
+[2K[1GRendering page: /other/pdd.htmldocument is not defined
+[2K[1GRendering page: /other/pv.htmldocument is not defined
+[2K[1GRendering page: /other/redirect.htmldocument is not defined
+[2K[1GRendering page: /pat/1014.htmldocument is not defined
+[2K[1GRendering page: /pat/1015.htmldocument is not defined
+[2K[1GRendering page: /pat/1017.htmldocument is not defined
+[2K[1GRendering page: /pat/1018.htmldocument is not defined
+[2K[1GRendering page: /pat/1021.htmldocument is not defined
+[2K[1GRendering page: /pat/1022.htmldocument is not defined
+[2K[1GRendering page: /pat/1026.htmldocument is not defined
+[2K[1GRendering page: /pat/1033.htmldocument is not defined
+[2K[1GRendering page: /pat/1034.htmldocument is not defined
+[2K[1GRendering page: /pat/1038.htmldocument is not defined
+[2K[1GRendering page: /pat/1040.htmldocument is not defined
+[2K[1GRendering page: /pat/1044.htmldocument is not defined
+[2K[1GRendering page: /pat/1049.htmldocument is not defined
+[2K[1GRendering page: /pat/1056.htmldocument is not defined
+[2K[1GRendering page: /pat/1057.htmldocument is not defined
+[2K[1GRendering page: /pat/1063.htmldocument is not defined
+[2K[1GRendering page: /pat/1066.htmldocument is not defined
+[2K[1GRendering page: /pat/1068.htmldocument is not defined
+[2K[1GRendering page: /pat/1072.htmldocument is not defined
+[2K[1GRendering page: /pat/1073.htmldocument is not defined
+[2K[1GRendering page: /pat/1074.htmldocument is not defined
+[2K[1GRendering page: /pat/1075.htmldocument is not defined
+[2K[1GRendering page: /pat/1076.htmldocument is not defined
+[2K[1GRendering page: /pat/1077.htmldocument is not defined
+[2K[1GRendering page: /pat/1078.htmldocument is not defined
+[2K[1GRendering page: /pat/1079.htmldocument is not defined
+[2K[1GRendering page: /pat/1080.htmldocument is not defined
+[2K[1GRendering page: /pat/1081.htmldocument is not defined
+[2K[1GRendering page: /pat/1082.htmldocument is not defined
+[2K[1GRendering page: /pat/1083.htmldocument is not defined
+[2K[1GRendering page: /pat/1084.htmldocument is not defined
+[2K[1GRendering page: /pat/1085.htmldocument is not defined
+[2K[1GRendering page: /pat/1086.htmldocument is not defined
+[2K[1GRendering page: /pat/1087.htmldocument is not defined
+[2K[1GRendering page: /pat/1106.htmldocument is not defined
+[2K[1GRendering page: /pat/1107.htmldocument is not defined
+[2K[1GRendering page: /pat/document is not defined
+[2K[1GRendering page: /pat/anoj2018II.htmldocument is not defined
+[2K[1GRendering page: /pat/entrance.htmldocument is not defined
+[2K[1GRendering page: /pat/sort.htmldocument is not defined
+[2K[1GRendering page: /404.htmldocument is not defined
+[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 321.88s.
+文件不存在
+文件不存在
+文件不存在
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[12:00:06 AM] Compiling Client
+[12:00:06 AM] Compiling Server
+(node:30119) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[12:00:16 AM] Compiled Server in 10s
+[12:00:26 AM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /document is not defined
+[2K[1GRendering page: /javaScript/comment.htmldocument is not defined
+[2K[1GRendering page: /javaScript/component.htmldocument is not defined
+[2K[1GRendering page: /javaScript/deploy.htmldocument is not defined
+[2K[1GRendering page: /javaScript/dva.htmldocument is not defined
+[2K[1GRendering page: /javaScript/faq.htmldocument is not defined
+[2K[1GRendering page: /javaScript/fetch.htmldocument is not defined
+[2K[1GRendering page: /javaScript/immutable.htmldocument is not defined
+[2K[1GRendering page: /javaScript/introduce.htmldocument is not defined
+[2K[1GRendering page: /javaScript/mock.htmldocument is not defined
+[2K[1GRendering page: /javaScript/promise.htmldocument is not defined
+[2K[1GRendering page: /javaScript/redux.htmldocument is not defined
+[2K[1GRendering page: /javaScript/reduxs.htmldocument is not defined
+[2K[1GRendering page: /javaScript/router.htmldocument is not defined
+[2K[1GRendering page: /javaScript/structure.htmldocument is not defined
+[2K[1GRendering page: /javaScript/style.htmldocument is not defined
+[2K[1GRendering page: /other/accident.htmldocument is not defined
+[2K[1GRendering page: /other/ali.htmldocument is not defined
+[2K[1GRendering page: /other/cs.htmldocument is not defined
+[2K[1GRendering page: /other/gitSkill.htmldocument is not defined
+[2K[1GRendering page: /other/nginx.htmldocument is not defined
+[2K[1GRendering page: /other/nohup.htmldocument is not defined
+[2K[1GRendering page: /other/pagerank.htmldocument is not defined
+[2K[1GRendering page: /other/pdd.htmldocument is not defined
+[2K[1GRendering page: /other/pv.htmldocument is not defined
+[2K[1GRendering page: /other/redirect.htmldocument is not defined
+[2K[1GRendering page: /pat/1014.htmldocument is not defined
+[2K[1GRendering page: /pat/1015.htmldocument is not defined
+[2K[1GRendering page: /pat/1017.htmldocument is not defined
+[2K[1GRendering page: /pat/1018.htmldocument is not defined
+[2K[1GRendering page: /pat/1021.htmldocument is not defined
+[2K[1GRendering page: /pat/1022.htmldocument is not defined
+[2K[1GRendering page: /pat/1026.htmldocument is not defined
+[2K[1GRendering page: /pat/1033.htmldocument is not defined
+[2K[1GRendering page: /pat/1034.htmldocument is not defined
+[2K[1GRendering page: /pat/1038.htmldocument is not defined
+[2K[1GRendering page: /pat/1040.htmldocument is not defined
+[2K[1GRendering page: /pat/1044.htmldocument is not defined
+[2K[1GRendering page: /pat/1049.htmldocument is not defined
+[2K[1GRendering page: /pat/1056.htmldocument is not defined
+[2K[1GRendering page: /pat/1057.htmldocument is not defined
+[2K[1GRendering page: /pat/1063.htmldocument is not defined
+[2K[1GRendering page: /pat/1066.htmldocument is not defined
+[2K[1GRendering page: /pat/1068.htmldocument is not defined
+[2K[1GRendering page: /pat/1072.htmldocument is not defined
+[2K[1GRendering page: /pat/1073.htmldocument is not defined
+[2K[1GRendering page: /pat/1074.htmldocument is not defined
+[2K[1GRendering page: /pat/1075.htmldocument is not defined
+[2K[1GRendering page: /pat/1076.htmldocument is not defined
+[2K[1GRendering page: /pat/1077.htmldocument is not defined
+[2K[1GRendering page: /pat/1078.htmldocument is not defined
+[2K[1GRendering page: /pat/1079.htmldocument is not defined
+[2K[1GRendering page: /pat/1080.htmldocument is not defined
+[2K[1GRendering page: /pat/1081.htmldocument is not defined
+[2K[1GRendering page: /pat/1082.htmldocument is not defined
+[2K[1GRendering page: /pat/1083.htmldocument is not defined
+[2K[1GRendering page: /pat/1084.htmldocument is not defined
+[2K[1GRendering page: /pat/1085.htmldocument is not defined
+[2K[1GRendering page: /pat/1086.htmldocument is not defined
+[2K[1GRendering page: /pat/1087.htmldocument is not defined
+[2K[1GRendering page: /pat/1106.htmldocument is not defined
+[2K[1GRendering page: /pat/1107.htmldocument is not defined
+[2K[1GRendering page: /pat/document is not defined
+[2K[1GRendering page: /pat/anoj2018II.htmldocument is not defined
+[2K[1GRendering page: /pat/entrance.htmldocument is not defined
+[2K[1GRendering page: /pat/sort.htmldocument is not defined
+[2K[1GRendering page: /404.htmldocument is not defined
+[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 26.27s.
+build.sh: line 2: yarn: command not found
+sudo: unable to resolve host gunjianpan
+yarn run v1.9.4
+$ ./node_modules/.bin/vuepress build ./docs
+
+ WAIT  Extracting site metadata...
+ TIP  override.styl has been split into 2 APIs, we recommend you upgrade to continue.
+      See: https://vuepress.vuejs.org/default-theme-config/#simple-css-override
+[12:10:06 AM] Compiling Client
+[12:10:06 AM] Compiling Server
+(node:30590) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+[12:10:17 AM] Compiled Server in 11s
+[12:10:26 AM] Compiled Client in 20s
+ WAIT  Rendering static HTML...
+[2K[1GRendering page: /document is not defined
+[2K[1GRendering page: /javaScript/comment.htmldocument is not defined
+[2K[1GRendering page: /javaScript/component.htmldocument is not defined
+[2K[1GRendering page: /javaScript/deploy.htmldocument is not defined
+[2K[1GRendering page: /javaScript/dva.htmldocument is not defined
+[2K[1GRendering page: /javaScript/faq.htmldocument is not defined
+[2K[1GRendering page: /javaScript/fetch.htmldocument is not defined
+[2K[1GRendering page: /javaScript/immutable.htmldocument is not defined
+[2K[1GRendering page: /javaScript/introduce.htmldocument is not defined
+[2K[1GRendering page: /javaScript/mock.htmldocument is not defined
+[2K[1GRendering page: /javaScript/promise.htmldocument is not defined
+[2K[1GRendering page: /javaScript/redux.htmldocument is not defined
+[2K[1GRendering page: /javaScript/reduxs.htmldocument is not defined
+[2K[1GRendering page: /javaScript/router.htmldocument is not defined
+[2K[1GRendering page: /javaScript/structure.htmldocument is not defined
+[2K[1GRendering page: /javaScript/style.htmldocument is not defined
+[2K[1GRendering page: /other/accident.htmldocument is not defined
+[2K[1GRendering page: /other/ali.htmldocument is not defined
+[2K[1GRendering page: /other/cs.htmldocument is not defined
+[2K[1GRendering page: /other/gitSkill.htmldocument is not defined
+[2K[1GRendering page: /other/nginx.htmldocument is not defined
+[2K[1GRendering page: /other/nohup.htmldocument is not defined
+[2K[1GRendering page: /other/pagerank.htmldocument is not defined
+[2K[1GRendering page: /other/pdd.htmldocument is not defined
+[2K[1GRendering page: /other/pv.htmldocument is not defined
+[2K[1GRendering page: /other/redirect.htmldocument is not defined
+[2K[1GRendering page: /pat/1014.htmldocument is not defined
+[2K[1GRendering page: /pat/1015.htmldocument is not defined
+[2K[1GRendering page: /pat/1017.htmldocument is not defined
+[2K[1GRendering page: /pat/1018.htmldocument is not defined
+[2K[1GRendering page: /pat/1021.htmldocument is not defined
+[2K[1GRendering page: /pat/1022.htmldocument is not defined
+[2K[1GRendering page: /pat/1026.htmldocument is not defined
+[2K[1GRendering page: /pat/1033.htmldocument is not defined
+[2K[1GRendering page: /pat/1034.htmldocument is not defined
+[2K[1GRendering page: /pat/1038.htmldocument is not defined
+[2K[1GRendering page: /pat/1040.htmldocument is not defined
+[2K[1GRendering page: /pat/1044.htmldocument is not defined
+[2K[1GRendering page: /pat/1049.htmldocument is not defined
+[2K[1GRendering page: /pat/1056.htmldocument is not defined
+[2K[1GRendering page: /pat/1057.htmldocument is not defined
+[2K[1GRendering page: /pat/1063.htmldocument is not defined
+[2K[1GRendering page: /pat/1066.htmldocument is not defined
+[2K[1GRendering page: /pat/1068.htmldocument is not defined
+[2K[1GRendering page: /pat/1072.htmldocument is not defined
+[2K[1GRendering page: /pat/1073.htmldocument is not defined
+[2K[1GRendering page: /pat/1074.htmldocument is not defined
+[2K[1GRendering page: /pat/1075.htmldocument is not defined
+[2K[1GRendering page: /pat/1076.htmldocument is not defined
+[2K[1GRendering page: /pat/1077.htmldocument is not defined
+[2K[1GRendering page: /pat/1078.htmldocument is not defined
+[2K[1GRendering page: /pat/1079.htmldocument is not defined
+[2K[1GRendering page: /pat/1080.htmldocument is not defined
+[2K[1GRendering page: /pat/1081.htmldocument is not defined
+[2K[1GRendering page: /pat/1082.htmldocument is not defined
+[2K[1GRendering page: /pat/1083.htmldocument is not defined
+[2K[1GRendering page: /pat/1084.htmldocument is not defined
+[2K[1GRendering page: /pat/1085.htmldocument is not defined
+[2K[1GRendering page: /pat/1086.htmldocument is not defined
+[2K[1GRendering page: /pat/1087.htmldocument is not defined
+[2K[1GRendering page: /pat/1106.htmldocument is not defined
+[2K[1GRendering page: /pat/1107.htmldocument is not defined
+[2K[1GRendering page: /pat/document is not defined
+[2K[1GRendering page: /pat/anoj2018II.htmldocument is not defined
+[2K[1GRendering page: /pat/entrance.htmldocument is not defined
+[2K[1GRendering page: /pat/sort.htmldocument is not defined
+[2K[1GRendering page: /404.htmldocument is not defined
+[2K[1G
+ WAIT  Generating service worker...
+
+ DONE  Success! Generated static files in docs/.vuepress/dist.
+
+Done in 26.17s.
