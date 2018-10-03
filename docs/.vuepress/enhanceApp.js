@@ -33,7 +33,7 @@ function integrateGitment(router) {
       owner: 'iofu728',
       admin: ['iofu728'],
       language: ['zh-CN', 'en'],
-      id: fullPath,
+      id: '/comment/',
       distractionFreeMode: false
     })
     gitalk.render('comments-container')
