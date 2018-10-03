@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/nohup.md
+actionLink: /javaScript/comment.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -31,6 +31,8 @@ pageClass: custom-page-class
     - [排队问题分析](/pat/sort.md)
     - [2018 PKU RW entrance](/pat/entrance.md)
 * JavaScript
+  + Vuepress
+    - [comment](/javaScript/comment.md)
   + [React](/javaScript/immutable.md)
     - [immutable.js](/javaScript/immutable.md)
     - [Take about Redux X](/javaScript/reduxs.md)
