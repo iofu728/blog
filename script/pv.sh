@@ -14,7 +14,7 @@ awk '{if($9!=200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}
 echo "</center>" >> log/pv
 sed -i '$d' docs/README.md
 echo $(cat log/pv) >> docs/README.md
-bash build.sh
+bash script/build.sh
 
 # time total Pv
 date +%Y/%m/%d:%T > log/time
