@@ -84,10 +84,13 @@ public class KPI {
         if (kpi.getHttp_user_agent() != null && keywordList.stream().filter(key -> !kpi.getHttp_user_agent().contains(key)).collect(Collectors.toList()).size() != keywordList.size()){
             kpi.setValid(0);
         }
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd", Locale.US);
+        System.out.println(df.format(kpi.getTime_local()));
+        if (kpi.getTime_local())
         return kpi;
     }
-//    public static void main(String args[]) {
-//        String line = "103.192.224.177 - - [19/Aug/2018:17:54:00 +0800] \"GET / HTTP/1.1\" 301 612 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3526.0 Safari/537.36\"";
-//        System.out.println(filterPVs(line).toString());
-//    }
+    public static void main(String args[]) {
+        String line = "103.192.224.177 - - [19/Aug/2018:17:54:00 +0800] \"GET / HTTP/1.1\" 301 612 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3526.0 Safari/537.36\"";
+        System.out.println(filterPVs(line).toString());
+    }
 }

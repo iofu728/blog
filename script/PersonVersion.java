@@ -55,6 +55,40 @@ public class PersonVersion {
         }
     }
 
+    public static class MapPreSection extends MapReduceBase implements
+            Mapper<LongWritable, Text, Text, IntWritable> {
+        private IntWritable one = new IntWritable(1);
+        private Text word = new Text();
+
+        @Override
+        public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter)
+                throws IOException {
+
+            KPI kpi = KPI.filterPVs(value.toString());
+            if (kpi.getValid() == 1 && kpi.getRemote_addr() != null) {
+                word.set(kpi.getRemote_addr());
+                output.collect(word, one);
+            }
+        }
+    }
+
+    public static class MapSpiderSection extends MapReduceBase implements
+            Mapper<LongWritable, Text, Text, IntWritable> {
+        private IntWritable one = new IntWritable(1);
+        private Text word = new Text();
+
+        @Override
+        public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter)
+                throws IOException {
+
+            KPI kpi = KPI.filterPVs(value.toString());
+            if (kpi.getValid() == 0 && kpi.getRemote_addr() != null) {
+                word.set(kpi.getRemote_addr());
+                output.collect(word, one);
+            }
+        }
+    }
+
     public static class ReducePre extends MapReduceBase implements
             Reducer<Text, IntWritable, Text, IntWritable> {
         private IntWritable result = new IntWritable();
