@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # pv
 
 loglocal=/usr/local/nginx/logs/access.log
