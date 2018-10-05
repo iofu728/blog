@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 loglocal=/usr/local/nginx/logs/access.log
 date -d yesterday +%Y%m%d > log/yesterday
