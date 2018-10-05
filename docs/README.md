@@ -1,13 +1,16 @@
 ---
 home: true
 actionText: Last
-actionLink: /javaScript/comment.md
+actionLink: /other/mapreduce.md
 footer: 浙ICP备18001556号 | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
 <center>很高兴不认识你</center>
 
+* Hadoop
+  + MapReduce
+    - [MapReduce 处理 日志log](/other/mapreduce.md)
 * ML
   + NLP
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
