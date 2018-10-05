@@ -421,7 +421,7 @@ bin/hadoop jar PersonVersion.jar PersonVersion log logresult 'dfs[a-z.]+'
 
 1. 实际生产过程中日志数据有很多来源，格式也会比较复杂。在数据统计之前会有一个很重要的ETL过程（Extract-Transform-Load）。
 2. 以上在介绍MapReduce的时候，是仿照Hadoop里的相关实现来进行的，而Hadoop是受谷歌的Jeffrey Dean在2004年发表的一篇论文所启发的。那篇论文叫做[《MapReduce: Simplified Data Processing on Large Clusters》](http://research.google.com/archive/mapreduce.html)
-3. 本文介绍的是单机版Hadoop，未涉及到HDFS和YARN
+3. Hadoop全家桶还没开始讲
   * 其中YARN是Hadoop集群的资源管理和任务调度监控系统
   * HDFS是为了让Mapper和Reducer在不同的机器上都能对文件进行读写，而实现的一个分布式文件系统
   * Hadoop和HDFS的一个重要设计思想是，移动计算本身比移动数据成本更低。因此，Mapper的执行会尽量就近执行。这部分本文没有涉及。
