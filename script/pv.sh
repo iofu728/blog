@@ -3,7 +3,7 @@
 # PV
 loglocal=/usr/local/nginx/logs/access.log
 echo "<center>累计访问量:" > log/pv
-awk '{if($9==200&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$0!~/POST/&&$0!~/Verification/&&$0!~/\x/&&$0!~/"-" "-"/&&$0!~/Python/&&$0!~/go/&&$0!~/Go/&&$0!~/python/&&$0!~/curl/){print $0}}' $loglocal|sort | uniq -c | wc -l >> log/pv
+awk '{if($9==200&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$0!~/POST/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/Python/&&$0!~/go/&&$0!~/Go/&&$0!~/python/&&$0!~/curl/){print $0}}' $loglocal|sort | uniq -c | wc -l >> log/pv
 echo "| 昨日访问量:" >> log/pv
 cat log/yesterday | tail -n +2 | head -n 1 >> log/pv
 echo "| 昨日爬虫数:" >> log/pv
@@ -16,5 +16,5 @@ bash script/build.sh
 # time total Pv
 date +%Y/%m/%d:%T > log/time
 cat log/pv | tail -n +2 | head -n 1 >> log/time
-awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$0~/POST/||$0~/Verification/||$0~/\x/||$0~/"-" "-"/||$0~/Python/||$0~/go/||$0~/Go/||$0~/python/||$0~/curl/))print $0}' log/user $loglocal|sort | uniq -c | wc -l >> log/time
+awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$0~/POST/||$0~/Verification/||$0~/"-" "-"/||$0~/Python/||$0~/go/||$0~/Go/||$0~/python/||$0~/curl/))print $0}' log/user $loglocal|sort | uniq -c | wc -l >> log/time
 echo $(cat log/time) >> log/total
