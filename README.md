@@ -16,6 +16,7 @@
 * 支持log自动备份 :-1:prepare change to HDFS
 * 支持Docker部署
 * 支持的不是很好的公式显示
+* 支持Google Analysis，Algolia等<script/>自动部署
 
 ## 开发指南
 
