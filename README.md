@@ -3,15 +3,11 @@
 
 > 很高兴不认识你
 
----
-
 <div align="center">
   <strong>
     基于 <a href="https://vuepress.vuejs.org/">VuePress</a> 搭建的blog: https://wyydsb.xin
   </strong>
 </div>
-
----
 
 ## 二次开发
 * 支持Gitalk评论
