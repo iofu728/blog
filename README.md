@@ -1,13 +1,18 @@
 <p align="center"><a href="https://wyydsb.xin" target="_blank" rel="noopener noreferrer"><img width="100" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1534957905839-d580e42e-3899-4403-be32-c068e5c9eef4.png" alt="Wyydsb logo"></a></p>
 <h1 align="center">乌云压顶是吧</h1>
 
+[![GitHub](https://img.shields.io/github/license/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog//master/LICENSE)
+[![GitHub tag](https://img.shields.io/github/tag/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog)
+
 > 很高兴不认识你
 
 <div align="center">
   <strong>
-    基于 <a href="https://vuepress.vuejs.org/">VuePress</a> 搭建的blog: https://wyydsb.xin
+     基于 <a href="https://vuepress.vuejs.org/">VuePress</a> 构建的blog: https://wyydsb.xin
   </strong>
 </div>
+
 
 ## 二次开发
 * 支持Gitalk评论
