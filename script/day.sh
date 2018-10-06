@@ -10,7 +10,6 @@ awk '{if($9==200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}
 awk '{if($9!=200){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $1}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/yesterday
 echo $(cat log/yesterday) >> log/day
 
-
 # first=20180820
 # second=20180929
 
