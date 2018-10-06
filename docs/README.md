@@ -2,7 +2,7 @@
 home: true
 actionText: Last
 actionLink: /other/mapreduce.md
-footer: 浙ICP备18001556号 | Copyright © 2017-present
+footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
@@ -58,4 +58,4 @@ pageClass: custom-page-class
   + [考研](/other/cs.md)
 
 
-<center>累计访问量: 3330 | 昨日访问量: 55 | 昨日爬虫数: 105 </center>
+<center>累计访问量: 3384 | 昨日访问量: 268 | 昨日爬虫数: 230 </center>

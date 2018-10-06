@@ -2,6 +2,7 @@ module.exports = {
   title: '乌云压顶是吧',
   description: '886',
   serviceWorker: true,
+  ga: 'UA-113936890-1',
   markdown: {
     config: md => {
       md.set({breaks: true})
