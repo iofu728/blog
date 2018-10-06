@@ -1,11 +1,9 @@
 <p align="center"><a href="https://wyydsb.xin" target="_blank" rel="noopener noreferrer"><img width="100" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1534957905839-d580e42e-3899-4403-be32-c068e5c9eef4.png" alt="Wyydsb logo"></a></p>
 <h1 align="center">乌云压顶是吧</h1>
 
-<p align="center">
-  <a href="https://github.com/iofu728/blog/master/LICENSE"><img src="https://img.shields.io/github/license/iofu728/blog.svg?style=popout-square" alt="GitHub"></a>
-  <a href="https://github.com/iofu728/blog"><img src="https://img.shields.io/github/tag/iofu728/blog.svg?style=popout-square" alt="GitHub tag"></a>
-  <a href="https://github.com/iofu728/blog"><img src="https://img.shields.io/github/languages/code-size/iofu728/blog.svg?style=popout-squar" alt="GitHub code size in bytes"></a>
-</p>
+[![GitHub](https://img.shields.io/github/license/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog//master/LICENSE)
+[![GitHub tag](https://img.shields.io/github/tag/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog)
 
 > 很高兴不认识你
 
