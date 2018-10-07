@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/mapreduce.md
+actionLink: /other/brew.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -19,9 +19,11 @@ pageClass: custom-page-class
 * Accident
   + [Linux内核故障导致服务不可用](/other/accident.md)
 * Bash
-  + [网站访问量](/other/pv.md)
-  + [2>&1](/other/redirect.md)
+  + [brew | brew cask | yum | apt-get](/other/brew.md)
+  + [spider](/other/spider.md)
   + [nohup](/other/nohup.md)
+  + [2>&1](/other/redirect.md)
+  + [网站访问量](/other/pv.md)
 * Git
   + rebase相关
     - [git rebase 的另解](/other/gitSkill.md)
@@ -36,12 +38,12 @@ pageClass: custom-page-class
 * JavaScript
   + Vuepress
     - [comment](/javaScript/comment.md)
-  + [React](/javaScript/immutable.md)
+  + React
     - [immutable.js](/javaScript/immutable.md)
     - [Take about Redux X](/javaScript/reduxs.md)
     - [Take about Redux I](/javaScript/redux.md)
     - [React component](/javaScript/component.md)
-  + [Umi & Dva 的一个实践](/javaScript/introduce.md)
+  + Umi & Dva 的一个实践
     - [介绍](/javaScript/introduce.md)
     - [目录约定](/javaScript/structure.md)
     - [路由](/javaScript/router.md)
@@ -58,4 +60,4 @@ pageClass: custom-page-class
   + [考研](/other/cs.md)
 
 
-<center>累计访问量: 3384 | 昨日访问量: 268 | 昨日爬虫数: 230 </center>
+<center>累计访问量: 2386 | 昨日访问量: 44 | 昨日爬虫数: 228 </center>
