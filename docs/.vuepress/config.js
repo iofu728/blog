@@ -21,15 +21,15 @@ module.exports = {
     tags: true,
     nav: [
       {text: 'Pat', link: '/pat/'},
-      {text: 'JavaScript', link: '/javaScript/introduce'},
-      {text: 'Other', link: '/other/mapreduce'},
+      {text: 'JavaScript', link: '/javaScript/introduce.md'},
+      {text: 'Other', link: '/other/pseudo.md'},
     ],
     sidebar: {
       '/other/': [
         {
           title: 'Hadoop',
           collapsable: false,
-          children: ['mapreduce'],
+          children: ['pseudo', 'mapreduce'],
         },
         {
           title: 'Bash',
