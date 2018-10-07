@@ -37,12 +37,12 @@ pageClass: custom-page-class
 * JavaScript
   + Vuepress
     - [comment](/javaScript/comment.md)
-  + [React](/javaScript/immutable.md)
+  + React
     - [immutable.js](/javaScript/immutable.md)
     - [Take about Redux X](/javaScript/reduxs.md)
     - [Take about Redux I](/javaScript/redux.md)
     - [React component](/javaScript/component.md)
-  + [Umi & Dva 的一个实践](/javaScript/introduce.md)
+  + Umi & Dva 的一个实践
     - [介绍](/javaScript/introduce.md)
     - [目录约定](/javaScript/structure.md)
     - [路由](/javaScript/router.md)
