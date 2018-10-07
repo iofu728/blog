@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/spider.md
+actionLink: /other/brew.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -19,6 +19,7 @@ pageClass: custom-page-class
 * Accident
   + [Linux内核故障导致服务不可用](/other/accident.md)
 * Bash
+  + [brew | brew cask | yum | apt-get](/other/brew.md)
   + [spider](/other/spider.md)
   + [nohup](/other/nohup.md)
   + [2>&1](/other/redirect.md)
