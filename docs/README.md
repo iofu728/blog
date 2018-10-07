@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/brew.md
+actionLink: /other/pseudo.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -11,6 +11,8 @@ pageClass: custom-page-class
 * Hadoop
   + MapReduce
     - [MapReduce 处理 日志log](/other/mapreduce.md)
+  + HDFS
+    - [伪分布式Hadoop集群](/other/pseudo.md)
 * ML
   + NLP
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
