@@ -38,3 +38,5 @@ echo $(cat log/yesterday) >> log/day
 #awk 'NR==FNR {a[$1]=$0} NR!=FNR {if(FNR>1 &&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$0~/POST/||$0~/Verification/))print a[$1]}' log/user log/test.log|sort | uniq -c | wc -l
 #
 #awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$0~/POST/||$0~/Verification/||$0~/\x/||$0~/"-" "-"/||$0~/Python/||$0~/go/||$0~/Go/||$0~/python/||$0~/curl/)){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/user $loglocal|sort | uniq -c | wc -l
+
+awk '{print $11}' $loglocal|sort|uniq-c|sort -nr >> test1
