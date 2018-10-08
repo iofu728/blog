@@ -1,13 +1,16 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/pseudo.md
+actionLink: /other/truncate.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
 <center>很高兴不认识你</center>
 
+* MySQL
+  + Innodb
+    - [Innodb MySQL中如何优雅的删除大表跑路🏃](/other/truncate.md)
 * Hadoop
   + MapReduce
     - [MapReduce 处理 日志log](/other/mapreduce.md)

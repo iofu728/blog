@@ -32,6 +32,11 @@ module.exports = {
           children: ['pseudo', 'mapreduce'],
         },
         {
+          title: 'MySQL',
+          collapsable: false,
+          children: ['truncate'],
+        },
+        {
           title: 'Bash',
           collapsable: false,
           children: ['brew', 'spider', 'pv', 'redirect', 'nohup'],
