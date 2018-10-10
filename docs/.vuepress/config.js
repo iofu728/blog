@@ -27,6 +27,11 @@ module.exports = {
     sidebar: {
       '/other/': [
         {
+          title: 'Data Mining',
+          collapsable: false,
+          children: ['frequent'],
+        },
+        {
           title: 'Hadoop',
           collapsable: false,
           children: ['pseudo', 'mapreduce'],
