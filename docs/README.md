@@ -8,6 +8,8 @@ pageClass: custom-page-class
 
 <center>很高兴不认识你</center>
 
+* Data Mining
+  + [Frequnent Pattern](/other/frequent.md)
 * MySQL
   + Innodb
     - [Innodb MySQL中如何优雅的删除大表跑路🏃](/other/truncate.md)
