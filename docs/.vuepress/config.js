@@ -1,6 +1,6 @@
 module.exports = {
   title: '乌云压顶是吧',
-  description: '886',
+  description: '永久维护',
   serviceWorker: true,
   ga: 'UA-113936890-1',
   markdown: {
@@ -22,7 +22,7 @@ module.exports = {
     nav: [
       {text: 'Pat', link: '/pat/'},
       {text: 'JavaScript', link: '/javaScript/introduce.md'},
-      {text: 'Other', link: '/other/pseudo.md'},
+      {text: 'Other', link: '/other/frequent.md'},
     ],
     sidebar: {
       '/other/': [

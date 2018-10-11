@@ -164,8 +164,31 @@ PrefixSpan的思路就是
 
 只要遍历一次建立区间索引之后，再次确认节点间的祖孙关系只需O(1)
 
-比较懒 今天就先写到这里吧 明天继续
-(未完待续)
+---
+### String Representation of Trees
+
+利用string表示一棵二叉树
+
+按先序遍历二叉树
+* 如果第一次遍历到该节点则输出节点值
+* 如果到达边界条件，跳出递归则输出-1
+
+那么可以利用输出的节点值唯一的表示一棵二叉树
+
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539231544990-6322a524-5e49-456b-a1d1-84ef0720df60.png "")
+
+### Equivalence Classes
+
+因为前面用String来表示一棵树
+
+如果两棵树具有相同的前缀，我们就称这两棵树为Equivalence Classes
+
+举个例子, 右侧的几棵树都有相同的前缀3 4 2 -1
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539231980142-5da3ffa8-808c-4b4a-b0f7-76030761639e.png "")
+
+其中Element List(m, n)中m指的是插入值，n为父节点id
+
+###
 
 
 
