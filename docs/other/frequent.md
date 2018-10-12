@@ -292,5 +292,8 @@ Step4. | Fk |=0, STOP; otherwise k=k+1, and goto Step 2.
 7. [An Apriori-based Algorithm for Mining Frequent Substructures from Graph Data](https://www.eecs.wsu.edu/~holder/courses/cse6363/spr04/present/Inokuchi00.pdf)
 8. [gSpan: Graph-Based Substructure Pattern Mining](https://www.cs.ucsb.edu/~xyan/papers/gSpan-short.pdf)
 
+Hakai|Gemini|Shinka|LMAO|Ronin|
+login
+
 
 

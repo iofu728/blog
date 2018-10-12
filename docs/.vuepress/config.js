@@ -1,6 +1,6 @@
 module.exports = {
   title: '乌云压顶是吧',
-  description: '永久维护',
+  description: '🍥',
   serviceWorker: true,
   ga: 'UA-113936890-1',
   markdown: {
