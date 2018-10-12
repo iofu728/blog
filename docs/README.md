@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/truncate.md
+actionLink: /other/frequent.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -67,4 +67,4 @@ pageClass: custom-page-class
   + [考研](/other/cs.md)
 
 
-<center>累计访问量: 2451 | 昨日访问量: 45 | 昨日爬虫数: 367 </center>
+<center>累计访问量: 2457 | 昨日访问量: 25 | 昨日爬虫数: 339 </center>
