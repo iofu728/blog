@@ -22,6 +22,7 @@ pageClass: custom-page-class
 `A->B support`: 即模式A, B出现频率
 `A->B configure`: 即模式A发生情况下B发生的概率
 
+
 ## Item Sets
 
 Item Sets指的是假设不考虑数据之间的顺序
@@ -164,8 +165,135 @@ PrefixSpan的思路就是
 
 只要遍历一次建立区间索引之后，再次确认节点间的祖孙关系只需O(1)
 
-比较懒 今天就先写到这里吧 明天继续
-(未完待续)
+---
+### String Representation of Trees
+
+利用string表示一棵二叉树
+
+按先序遍历二叉树
+* 如果第一次遍历到该节点则输出节点值
+* 如果到达边界条件，跳出递归则输出-1
+
+那么可以利用输出的节点值唯一的表示一棵二叉树
+
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539231544990-6322a524-5e49-456b-a1d1-84ef0720df60.png "")
+
+### Equivalence Classes
+
+因为前面用String来表示一棵树
+
+如果两棵树具有相同的前缀，我们就称这两棵树为Equivalence Classes
+
+举个例子, 右侧的几棵树都有相同的前缀3 4 2 -1
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539231980142-5da3ffa8-808c-4b4a-b0f7-76030761639e.png "")
+
+其中Element List(m, n)中m指的是插入值，n为父节点id
+
+### TreeMiner
+
+当我们用String来表示一个一棵树的时候，那么我们就把问题转化成Sequence Pattern
+
+Mohammed Javeed Zaki在2002年提出TreeMiner算法
+
+当父节点包含子节点，则链路可以加长
+
+```vim
+for each element (x, i) ∈ [P] do
+    [Px] = ∅;
+    for each element (y, j) ∈ [P] do
+       R = {(x, i)⊗(y, j)};
+       L(R) = {L(x) ∩⊗ L(y)};
+       if for any R ∈ R, R is frequent then
+          [Px] = [Px] ∪ {R};
+    Enumerate-Frequent-Subtrees([Px]);
+```
+
+举个🌰
+
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539240851335-f76cdaec-afc6-4128-826d-72b4ec39dd6c.png "")
+
+### PrefixTreeESpan
+
+上面TreeMiner算法类似于Apriori，属于DFS类型的算法
+
+于是很容易想到是否有类似于FP-tree，PrefixSpan属于BFS的算法
+
+Lei Zou, Yansheng Lu等人在2006年提出PrefixTreeESpan算法
+
+从结构上看，从一个节点开始，找所有满足该前缀的结构
+
+如果该结构的个数满足min_support则进入下一步
+
+对所有后缀结构首位进行分析，如果满足前缀-后缀首位的结构数大于min_support时，则进入下一部
+
+直到没有可分析的结构 则该结构为频繁树
+
+举个栗子
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539242586989-cb9052e4-9f7c-4a54-afc5-647ab9c534cf.png "")
+
+## Graph Pattern
+
+如果我们把前面的树结构再进一步推广到图，那么我们要求的就是频繁子图
+
+### AGM
+
+AGM = Apriori-base graph Mining
+
+```vim
+1. S1  数据集中的单个频繁元素;
+2. 调用AprioriGraph(D, min_sup, S1)
+   Procedure AprioriGraph(D, min_sup, Sk)
+ {   1.  初始化Sk+1
+     2.   For each 频繁子图 gi ∈Sk
+     3.        For each频繁子图 gj∈Sk
+     4.             For each 通过合并gi和gj形成规模为(k+1)的图g
+     5.                    If g是频繁的，并且g不属于 Sk+1
+     6.                              把g插入Sk+1
+     7.   IF  Sk+1不为空， then调用AprioriGraph(D, min_sup, Sk+1)
+  }
+```
+
+Akihiro Inokuchi提出用邻接矩阵存储图数据，通过basket analysis得到图的频繁子图
+
+通过定义编码方式把n×m的矩阵变成水平扩展的string
+
+与Apriori算法类似，候选频繁子图的生成是根据子图的大小通过水平搜索来进行的
+
+令Xk和Yk是两个大小为k的频繁图G(Xk)和G(Yk)的顶点排序的邻接矩阵
+
+如果G(Xk)和G(Yk)除了第k行和第k列的元素之外具有相等的矩阵元素，则它们被连接以生成Zk+1
+
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539245852680-fd0df59d-3a11-4d37-97ac-36631f07c94c.png "")
+
+### FSG
+
+```vim
+Framework in FSG:
+Step1.  Enumerating all frequent single- and double-edge subgraphs;
+Step2.  Generating all candidate subgraphs whose size is greater than the previous ones by one edge.  (Ck)
+Step3. Count the frequency for each of these candidates and prune infrequent subgraph patterns. (Fk)
+Step4. | Fk |=0, STOP; otherwise k=k+1, and goto Step 2.
+```
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539246303282-b49cab28-450f-477b-85e3-4b7c4fa045e0.png "")
+
+### gSpan
+
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1539247108519-28a62798-a8e6-40e7-bf66-5002619d0c63.png "")
+
+额 最后有点水了 等我消化消化 再来写
+
+## 参考
+1. [Fast Algorithms for Mining Association Rules](http://www.rsrikant.com/papers/vldb94_rj.pdf)
+2. [Mining Frequent Patterns without Candidate Generation](https://www.cs.sfu.ca/~jpei/publications/sigmod00.pdf)
+3. [Mining Sequential Patterns: Generalizations and Performance Improvements](https://pdfs.semanticscholar.org/d420/ea39dc136b9e390d05e964488a65fcf6ad33.pdf)
+4. [PrefixSpan: Mining Sequential Patterns Efficiently by Prefix-Projected Pattern Growth](http://hanj.cs.illinois.edu/pdf/span01.pdf)
+5. [Efficiently Mining Frequent Trees in a Forest](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.8511&rep=rep1&type=pdf)
+6. [PrefixTreeESpan: A Pattern Growth Algorithm for Mining Embedded Subtrees ](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.136.4076&rep=rep1&type=pdf)
+7. [An Apriori-based Algorithm for Mining Frequent Substructures from Graph Data](https://www.eecs.wsu.edu/~holder/courses/cse6363/spr04/present/Inokuchi00.pdf)
+8. [gSpan: Graph-Based Substructure Pattern Mining](https://www.cs.ucsb.edu/~xyan/papers/gSpan-short.pdf)
+
+Hakai|Gemini|Shinka|LMAO|Ronin|
+login
 
 
 
