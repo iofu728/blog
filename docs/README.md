@@ -67,4 +67,4 @@ pageClass: custom-page-class
   + [考研](/other/cs.md)
 
 
-<center>累计访问量: 2457 | 昨日访问量: 25 | 昨日爬虫数: 339 </center>
+<center>累计访问量: 2488 | 昨日访问量: 26 | 昨日爬虫数: 333 </center>
