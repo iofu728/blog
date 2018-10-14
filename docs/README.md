@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/frequent.md
+actionLink: /other/netease.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -18,6 +18,9 @@ pageClass: custom-page-class
     - [MapReduce 处理 日志log](/other/mapreduce.md)
   + HDFS
     - [伪分布式Hadoop集群](/other/pseudo.md)
+* Spider
+  + Easy modal
+    - [Netease Music Spider](/other/netease.md)
 * ML
   + NLP
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
@@ -67,4 +70,4 @@ pageClass: custom-page-class
   + [考研](/other/cs.md)
 
 
-<center>累计访问量: 2457 | 昨日访问量: 25 | 昨日爬虫数: 339 </center>
+<center>累计访问量: 2534 | 昨日访问量: 37 | 昨日爬虫数: 150 </center>
