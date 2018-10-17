@@ -81,7 +81,7 @@ PS: Hadoop 1.* 和 2.* 关于Map Reduce的写法不太一样，需针对版本�
 先放code
 1. prepare class
 ```java
-package com.pdd.service.taishan.api.controller;
+package com.wyydsb.service.blog.api.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -202,7 +202,7 @@ public class KPI {
 ```
 2. Map Reduce class
 ```java
-package com.pdd.service.taishan.api.controller;
+package com.wyydsb.service.blog.api.controller;
 
 import java.io.IOException;
 import java.util.Iterator;
