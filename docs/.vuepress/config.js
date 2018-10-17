@@ -93,23 +93,9 @@ module.exports = {
           children: ['comment'],
         },
         {
-          title: 'umi & dva 的一个实践',
-          collapsable: false,
-          children: [
-            'promise',
-            'fetch',
-            'mock',
-          ],
-        },
-        {
           title: 'React',
           collapsable: false,
           children: ['immutable', 'redux', 'reduxs', 'component'],
-        },
-        {
-          title: '参考',
-          collapsable: false,
-          children: ['faq'],
         },
       ],
     },
