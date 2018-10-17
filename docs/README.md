@@ -54,8 +54,6 @@ pageClass: custom-page-class
     - [Take about Redux I](/javaScript/redux.md)
     - [React component](/javaScript/component.md)
 * Summary
-  + 实习
-    - [Pdd](/other/pdd.md)
   + [考研](/other/cs.md)
 
 
