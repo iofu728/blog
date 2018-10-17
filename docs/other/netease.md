@@ -12,7 +12,7 @@ pageClass: custom-page-class
 
 看着日志 表示很难受 所以决定自己来研究一下如何来写爬虫~~(我不会说这是作业的)~~
 
-本文对近2w个热门歌单的歌曲数据进行爬取及分析
+本文对近2w个热门歌单的3024511首歌曲数据进行爬取及分析
 
 # 为什么选择爬网易云音乐
 
@@ -274,69 +274,85 @@ netease_music 真的是最基础的爬虫 未来路还长呢
 
 ## 分析数据
 
+总共收集到3024511首歌
+
+去重之后556432首
+
 可以看出被收入歌曲次数较高的 还是挺多是我们耳熟能详的歌曲
 
 好 最后附上前50+的歌曲详单
 
 ```vim
- 163 Home
- 162 Time
- 155 You
- 151 Something Just Like This
- 137 Alone
- 134 往后余生
- 133 Closer
- 129 遇见
- 129 Shape of You
- 127 心做し
- 126 Summer
- 125 夜空中最亮的星
- 125 Stay
- 119 说散就散
- 119 Rain
- 117 起风了（Cover 高橋優）
- 117 海阔天空
- 117 Intro
- 112 天空之城
- 112 Hello
- 110 春风十里
- 109 爱你
- 107 平凡之路
- 105 那些花儿
- 104 Creep
- 104 Counting Stars
- 102 晚安
- 102 喜欢你
- 101 Faded
- 100 Yellow
-  99 追光者
-  99 I Love You
-  97 成都
-  97 千本桜
-  95 我想
-  95 That Girl
-  95 Dreams
-  94 喜欢
-  94 Let Her Go
-  94 Angel
-  93 Let It Go
-  92 アイロニ
-  91 同桌的你
-  91 Sugar
-  91 Goodbye
-  90 理想三旬
-  90 The truth that you leave
-  90 Hero
-  89 Lullaby
-  88 全部都是你
-  88 Try
-  88 See You Again
-  87 黄昏
-  87 岁月神偷
-  87 小半
-  87 We Can't Stop
-  86 可能否
-  86 Autumn Leaves
-  85 安和桥
+1224 Time
+1186 Something Just Like This
+1152 Alone
+1129 Intro
+1072 Shape of You
+1062 You
+1061 Hello
+1026 Closer
+ 965 Stay
+ 913 Home
+ 802 Faded
+ 777 Counting Stars
+ 765 Animals
+ 757 Without You
+ 757 Nevada
+ 752 说散就散
+ 702 Forever
+ 690 Higher
+ 685 Summer
+ 683 往后余生
+ 673 Victory
+ 667 Rain
+ 662 Sugar
+ 647 Fade
+ 645 Life
+ 636 いつも何度でも
+ 625 Fire
+ 621 Unity
+ 611 Hope
+ 607 起风了（Cover 高橋優）
+ 606 Try
+ 604 アイロニ
+ 601 Havana
+ 596 HandClap
+ 594 海阔天空
+ 593 The truth that you leave
+ 583 See You Again
+ 578 Please Don't Go
+ 577 Dreams
+ 574 Hero
+ 566 Despacito (Remix)
+ 565 Seve
+ 563 Lullaby
+ 560 That Girl
+ 553 Beautiful Now
+ 553 Angel
+ 552 Viva La Vida
+ 552 Let It Go
+ 550 追光者
+ 550 Let Me Love You
+ 550 Alive
+ 549 遇见
+ 548 Breathe
+ 544 Luv Letter
+ 534 I Love You
+ 532 We Don't Talk Anymore
+ 532 A Little Story
+ 528 Superstar
+ 528 Journey
+ 523 Maps
+ 521 Trip
+ 520 Memories
+ 518 Goodbye
+ 516 Horizon
+ 516 Flower Dance
+ 514 Summertime
+ 512 牵丝戏
+ 508 #Lov3 #Ngẫu Hứng
+ 506 喜欢你
+ 503 可能否
+ 503 Uptown Funk
 ```
 
