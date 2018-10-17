@@ -30,7 +30,7 @@ pageClass: custom-page-class
   + [Linux内核故障导致服务不可用](/other/accident.md)
 * Bash
   + [brew | brew cask | yum | apt-get](/other/brew.md)
-  + [spider](/other/spider.md)
+  + [identify spider](/other/spider.md)
   + [nohup](/other/nohup.md)
   + [2>&1](/other/redirect.md)
   + [网站访问量](/other/pv.md)
