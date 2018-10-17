@@ -4,7 +4,7 @@ pageClass: custom-page-class
 
 # Fetch
 
-TAISHAN 使用fetch代替原有的ajax实现Http请求
+使用fetch代替原有的ajax实现Http请求
 
 其实原生fetch很简单，
 ```jsx harmony
