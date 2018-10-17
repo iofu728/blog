@@ -53,10 +53,6 @@ pageClass: custom-page-class
     - [Take about Redux X](/javaScript/reduxs.md)
     - [Take about Redux I](/javaScript/redux.md)
     - [React component](/javaScript/component.md)
-  + Umi & Dva 的一个实践
-    - [函数式编程](/javaScript/promise.md)
-    - [fetch](/javaScript/fetch.md)
-    - [Mock 数据](/javaScript/mock.md)
 * Summary
   + 实习
     - [Pdd](/other/pdd.md)
