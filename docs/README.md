@@ -53,21 +53,10 @@ pageClass: custom-page-class
     - [Take about Redux X](/javaScript/reduxs.md)
     - [Take about Redux I](/javaScript/redux.md)
     - [React component](/javaScript/component.md)
-  + Umi & Dva 的一个实践
-    - [介绍](/javaScript/introduce.md)
-    - [目录约定](/javaScript/structure.md)
-    - [路由](/javaScript/router.md)
-    - [dva](/javaScript/dva.md)
-    - [函数式编程](/javaScript/promise.md)
-    - [fetch](/javaScript/fetch.md)
-    - [部署](/javaScript/deploy.md)
-    - [Style](/javaScript/style.md)
-    - [Mock 数据](/javaScript/mock.md)
-    - [FAQ](/javaScript/faq.md)
 * Summary
   + 实习
     - [Pdd](/other/pdd.md)
   + [考研](/other/cs.md)
 
 
-<center>累计访问量: 2534 | 昨日访问量: 37 | 昨日爬虫数: 150 </center>
+<center>累计访问量: 2604 | 昨日访问量: 55 | 昨日爬虫数: 167 </center>
