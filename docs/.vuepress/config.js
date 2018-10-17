@@ -59,7 +59,7 @@ module.exports = {
         {
           title: 'Summary',
           collapsable: false,
-          children: ['pdd', 'accident', 'cs'],
+          children: ['accident', 'cs'],
         },
       ],
       '/pat/': [
