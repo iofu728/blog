@@ -21,7 +21,7 @@ module.exports = {
     tags: true,
     nav: [
       {text: 'Pat', link: '/pat/'},
-      {text: 'JavaScript', link: '/javaScript/introduce.md'},
+      {text: 'JavaScript', link: '/javaScript/comment.md'},
       {text: 'Other', link: '/other/frequent.md'},
     ],
     sidebar: {
@@ -96,14 +96,8 @@ module.exports = {
           title: 'umi & dva 的一个实践',
           collapsable: false,
           children: [
-            'introduce',
-            'structure',
-            'router',
-            'dva',
             'promise',
             'fetch',
-            'deploy',
-            'style',
             'mock',
           ],
         },
