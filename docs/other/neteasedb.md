@@ -4,6 +4,8 @@ pageClass: custom-page-class
 
 # Netease Music Spider for DB
 
+首先 ㊗️大家 1024 快乐
+
 之前写了[第一版 网易云爬虫](/other/netease.md)
 
 逻辑比较简单
