@@ -1,13 +1,18 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/netease.md
+actionLink: /other/neteasedb.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
 <center>很高兴不认识你</center>
 
+* Spider
+  + Easy modal
+    - [Netease Music Spider](/other/netease.md)
+  + Proxy & DB
+    - [Netease Music Spider for DB](/other/neteasedb.md)
 * Data Mining
   + [Frequnent Pattern](/other/frequent.md)
 * MySQL
@@ -18,9 +23,6 @@ pageClass: custom-page-class
     - [MapReduce 处理 日志log](/other/mapreduce.md)
   + HDFS
     - [伪分布式Hadoop集群](/other/pseudo.md)
-* Spider
-  + Easy modal
-    - [Netease Music Spider](/other/netease.md)
 * ML
   + NLP
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
