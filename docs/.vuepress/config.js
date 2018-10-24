@@ -22,10 +22,15 @@ module.exports = {
     nav: [
       {text: 'Pat', link: '/pat/'},
       {text: 'JavaScript', link: '/javaScript/comment.md'},
-      {text: 'Other', link: '/other/frequent.md'},
+      {text: 'Other', link: '/other/neteasedb.md'},
     ],
     sidebar: {
       '/other/': [
+        {
+          title: 'Spider',
+          collapsable: false,
+          children: ['neteasedb', 'netease'],
+        },
         {
           title: 'Data Mining',
           collapsable: false,
@@ -40,11 +45,6 @@ module.exports = {
           title: 'MySQL',
           collapsable: false,
           children: ['truncate'],
-        },
-        {
-          title: 'Spider',
-          collapsable: false,
-          children: ['netease'],
         },
         {
           title: 'Bash',
