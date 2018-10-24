@@ -21,7 +21,7 @@ pageClass: custom-page-class
 
 整体架构图
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1540319949783-619af7cc-c205-4ad8-8d45-cf3f4f36c5a1.png "")
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1540344152388-7382ef87-a7e9-492c-a7ca-deca6e8bb148.png "")
 
 ## Trouble
 
@@ -254,6 +254,16 @@ tds[0].find_all(['div', 'span', not 'p'], class_=not 'port')
 
 如果可用一次is_failured置为0
 
+### 不可靠
+
+实际上就算之前的三层检验 拿到的可用的代理
+
+在实际运用当中 还是会出现请求失败的现象
+
+所以 对于真实爬取场景 为保证每一个数据的都能被爬取到
+
+对每个任务增加Retry机制 并记录爬取进度 To DB
+
 ## DB
 
 DB 采用MySQL
@@ -316,3 +326,72 @@ DB 采用MySQL
 1. 通过Kafka消费消息队列 来解决 写库量大的问题
 2. 数据分析 [挖模式](/other/frequent.md)
 
+## Result
+
+附上出现频次排名前55的歌曲
+
+~~至于为什么是前55 e~~
+
+-- 数据采样于2018.10.23 --
+
+前1k名单见[GitHub](https://github.com/iofu728/spider)
+
+```vim
+time song_name
+----|-----
+6784 Something Just Like This
+5814 Shape of You
+5720 Time
+5585 Alone
+5151 Intro
+4916 Hello
+4833 You
+4787 Closer
+4312 Nevada
+4217 Stay
+4142 Faded
+4089 说散就散
+4070 Animals
+3894 往后余生
+3650 Home
+3645 Without You
+3535 Counting Stars
+3515 That Girl
+3410 HandClap
+3300 Higher
+3265 Despacito (Remix)
+3229 Unity
+3198 Havana
+3181 起风了（Cover 高橋優）
+3148 Forever
+3141 Victory
+3108 Please Don't Go
+3101 Sugar
+3080 Beautiful Now
+3077 See You Again
+3022 Fade
+2969 Summer
+2940 Seve
+2938 The truth that you leave
+2861 Life
+2853 可能否
+2825 We Don't Talk Anymore
+2799 Superstar
+2795 #Lov3 #Ngẫu Hứng
+2793 Try
+2759 アイロニ
+2730 Hope
+2714 Hero
+2705 追光者
+2679 遇见
+2678 いつも何度でも
+2654 Let Me Love You
+2646 There For You
+2643 Trip
+2634 BOOM
+2626 Fire
+2606 Wolves
+2600 Friendships (Original Mix)
+2597 Freaks (Radio Edit)
+2577 全部都是你
+```
