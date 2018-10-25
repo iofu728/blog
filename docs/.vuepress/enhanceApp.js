@@ -8,28 +8,25 @@ function integrateGitalk(router) {
   document.body.appendChild(scriptGitalk)
 
   router.afterEach((to) => {
+    if (scriptGitalk.onload) {
+      loadGitalk(to)
+    } else {
+      scriptGitalk.onload = () => {
+        loadGitalk(to)
+      }
+    }
+  })
+
+  function loadGitalk(to) {
     const commentsContainer = document.createElement('div')
     commentsContainer.id = 'gitalk-container'
     commentsContainer.classList.add('content')
     const $page = document.querySelector('.page')
     if ($page) {
       $page.appendChild(commentsContainer)
-    }
-    if (scriptGitalk.onload) {
       renderGitalk(to.fullPath)
-    } else {
-      scriptGitalk.onload = () => {
-        const commentsContainer = document.createElement('div')
-        commentsContainer.id = 'gitalk-container'
-        commentsContainer.classList.add('content')
-        const $page = document.querySelector('.page')
-        if ($page) {
-          $page.appendChild(commentsContainer)
-          renderGitalk(to.fullPath)
-        }
-      }
     }
-  })
+  }
   function renderGitalk(fullPath) {
     const gitalk = new Gitalk({
       clientID: '6ac606b7bad30bff534c',
