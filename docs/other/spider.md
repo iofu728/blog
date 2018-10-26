@@ -2,7 +2,7 @@
 pageClass: custom-page-class
 ---
 
-# 从日志中识别 Spider 脚本
+# 从日志中识别 Spider
 
 前面讲了[如何利用脚本统计PV、UV](/other/pv.md)，[如何利用MapReduce对日志处理进行分布式操作](/other/mapreduce.md)
 
@@ -131,7 +131,7 @@ awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/s
 但是没事 这本来你们正常访问也看得见
 
 ```vim
-        if ($request_uri !~ "\/(service-worker\/[a-zA-Z0-9]{2,20}.html|robots.txt|assets.*|javascript\/[a-zA-Z0-9]{2,20}.html.*|other\/[a-zA-Z0-9]{2,20}.html.*|pat\/[a-zA-Z0-9]{2,20}.html.*|)$") {
+        if ($request_uri !~ "\/(service-worker.js|robots.txt|assets.*|javascript\/[a-zA-Z0-9]{2,20}.html.*|other\/[a-zA-Z0-9]{2,20}.html.*|pat\/[a-zA-Z0-9]{2,20}.html.*|)$") {
             return 403;
         }
 ```
