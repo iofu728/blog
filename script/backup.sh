@@ -5,6 +5,6 @@
 cp /usr/local/nginx/logs/access.log log/
 
 git add .
-git commit -m "backup $(date +%Y/%m/%d)"
+git commit -m ":label: backup $(date +%Y/%m/%d)"
 git push origin develop
 
