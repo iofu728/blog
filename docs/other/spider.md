@@ -2,7 +2,7 @@
 pageClass: custom-page-class
 ---
 
-# 从日志中识别 Spider 脚本
+# 从日志中识别 Spider
 
 前面讲了[如何利用脚本统计PV、UV](/other/pv.md)，[如何利用MapReduce对日志处理进行分布式操作](/other/mapreduce.md)
 
