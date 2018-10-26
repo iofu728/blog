@@ -119,3 +119,19 @@ awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/s
 仔细观察会发现它的转入地址和请求地址都是各大网站，且一直在变，没有规律
 
 这种想了想 只能利用建立黑名单来规避 也许不久以后会有好思路
+
+## 限制请求URI
+
+因为log里面多了好多404，甚至400的record
+
+想了想还是做一下URI限制吧
+
+其实我放出这些code相当于暴露了 我所有的目录结构
+
+但是没事 这本来你们正常访问也看得见
+
+```vim
+        if ($request_uri !~ "\/(service-worker\/[a-zA-Z0-9]{2,20}.html|robots.txt|assets.*|javascript\/[a-zA-Z0-9]{2,20}.html|other\/\*|pat\/[a-zA-Z0-9]{2,20}.html|)$") {
+            return 403;
+        }
+```
