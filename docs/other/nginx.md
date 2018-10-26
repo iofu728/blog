@@ -252,13 +252,21 @@ http{
              return 403;
          }
 
-         if ($http_user_agent ~ "WinHttp|WebZIP|FetchURL|node-superagent|java/|FeedDemon|Jullo|JikeSpider|Indy Library|Alexa Toolbar|AskTbFXTV|AhrefsBot|CrawlDaddy|Java|Feedly|Apache-HttpAsyncClient|UniversalFeedParser|ApacheBench|Microsoft URL Control|Swiftbot|ZmEu|oBot|jaunty|Python-urllib|lightDeckReports Bot|YYSpider|DigExt|HttpClient|MJ12bot|heritrix|EasouSpider|Ezooms|BOT/0.1|YandexBot|FlightDeckReports|Linguee Bot|^$" ) {
+         if ($http_user_agent ~* "ython|Hakai|Gemini|Shinka|LMAO|Ronin|Go-http-client|WinHttp|WebZIP|Postman|FetchURL|node-superagent|java/|FeedDemon|Jullo|JikeSpider|Indy Library|Alexa Toolbar|AskTbFXTV|AhrefsBot|CrawlDaddy|Java|Feedly|Apache-HttpAsyncClient|UniversalFeedParser|ApacheBench|Microsoft URL Control|Swiftbot|ZmEu|oBot|jaunty|Python-urllib|lightDeckReports Bot|YYSpider|DigExt|HttpClient|MJ12bot|heritrix|EasouSpider|Ezooms|BOT/0.1|YandexBot|FlightDeckReports|Linguee Bot|^$" ) {
              return 403;
          }
 
-         if ($request_method !~ ^(GET|HEAD|POST)$) {
+         if ($request_method !~ "GET|^$") {
              return 403;
          }
+
+         if ($request_uri ~* "login|php|wp|^$") {
+             return 403;
+         }
+
+        if ($request_uri !~ "\/(service-worker.js|robots.txt|assets.*|javascript\/[a-zA-Z0-9]{2,20}.html.*|other\/[a-zA-Z0-9]{2,20}.html.*|pat\/[a-zA-Z0-9]{2,20}.html.*|)$") {
+            return 403;
+        }
     }
 }
 ```
