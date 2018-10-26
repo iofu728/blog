@@ -12,4 +12,5 @@ yarn-error.log
 #npm
 npm-debug.log
 
-
+# crontab.log
+crontab.log
