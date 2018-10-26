@@ -22,7 +22,7 @@
 * 支持Docker部署
 * 支持的不是很好的公式显示
 * 支持Google Analysis，Algolia等<script/>自动部署
-* 参考[`Nginx 调优`](https://wyydsb.xin/other/nginx.html), [`从日志中识别 Spider`]](https://wyydsb.xin/other/spider.html) 进行反爬处理
+* 参考[`Nginx 调优`](https://wyydsb.xin/other/nginx.html), [`从日志中识别 Spider`](https://wyydsb.xin/other/spider.html) 进行反爬处理
 
 ## 开发指南
 
