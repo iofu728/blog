@@ -2,8 +2,8 @@ function integrateGitalk(router) {
   const linkGitalk = document.createElement('link')
   linkGitalk.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'
   linkGitalk.rel = 'stylesheet'
-  const scriptGitalk = document.createElement('script')
   document.body.appendChild(linkGitalk)
+  const scriptGitalk = document.createElement('script')
   scriptGitalk.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js'
   document.body.appendChild(scriptGitalk)
 
