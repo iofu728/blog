@@ -6,7 +6,7 @@ module.exports = {
   markdown: {
     config: md => {
       md.set({breaks: true})
-      md.use(require('markdown-it-katex'));
+      md.use(require('markdown-it-katex'), require('markdown-it-emoji'));
     }
   },
   themeConfig: {
