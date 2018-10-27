@@ -2,10 +2,20 @@ function integrateGitalk(router) {
   const linkGitalk = document.createElement('link')
   linkGitalk.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'
   linkGitalk.rel = 'stylesheet'
-  const scriptGitalk = document.createElement('script')
   document.body.appendChild(linkGitalk)
+  const scriptGitalk = document.createElement('script')
   scriptGitalk.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js'
   document.body.appendChild(scriptGitalk)
+  const katex = document.createElement('link')
+  katex.href =
+      'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'
+  katex.rel = 'stylesheet'
+  const markdownCss = document.createElement('link')
+  markdownCss.href =
+      'https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css'
+  markdownCss.rel = 'stylesheet'
+  document.body.appendChild(katex)
+  document.body.appendChild(markdownCss)
 
   router.afterEach((to) => {
     if (scriptGitalk.onload) {
