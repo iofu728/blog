@@ -6,7 +6,7 @@ pageClass: custom-page-class
 
 前面讲了[如何利用脚本统计PV、UV](/other/pv.md)，[如何利用MapReduce对日志处理进行分布式操作](/other/mapreduce.md)
 
-再继续探讨Hadoop全家桶之前，先把bash脚本做进一步优化
+在继续探讨Hadoop全家桶之前，先把bash脚本做进一步优化
 
 维护一个网站 真的很累
 
@@ -135,3 +135,7 @@ awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/s
             return 403;
         }
 ```
+
+然后结果就是基本上拦截了所有看上去奇奇怪怪的东西
+
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1540616774453-678d0d7a-ecba-40e1-bfa2-c5512e1c7809.png "")
