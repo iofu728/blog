@@ -9,17 +9,6 @@ module.exports = {
       md.use(require('markdown-it-katex'));
     }
   },
-  head: [[
-    'link', {
-      rel: 'stylesheet',
-      href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'
-    },
-    'link', {
-      rel: 'stylesheet',
-      href:
-          'https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css'
-    }
-  ]],
   themeConfig: {
     repo: 'iofu728/blog',
     lastUpdated: 'Last Updated',
