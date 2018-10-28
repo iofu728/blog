@@ -2,6 +2,7 @@
 
 loglocal=/usr/local/nginx/logs/access.log
 truncate -s 0 log/userpre
+truncate -s 0 log/user
 awk '{if($9==200&&$7~/\/assets\/js\/app/&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){print $1}}' $loglocal|sort | uniq -c | sort -nr >> log/userpre
 awk '{if($1>5)print $0}' log/userpre >> log/user
 date -d yesterday +%Y%m%d > log/yesterday
