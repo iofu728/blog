@@ -16,7 +16,7 @@ pattern=\<center\>累.*\<\/center\>
 sed -i -e s@$pattern@$xxx@g ../../index.html
 
 # time total pv
-hour=date +%T
+hour=`date +%T`
 if [ ${hour:4:1} -eq "0" ]
 then
     date +%Y/%m/%d:%T > log/time
