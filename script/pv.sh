@@ -17,7 +17,7 @@ sed -i -e s@$pattern@$insertword@g ../../index.html
 
 # time total pv
 hour=`date +%T`
-if [ ${hour:4:1} -eq "0" ]
+if [ ${hour:4:3} -eq "0:0" ]
 then
     date +%Y/%m/%d:%T > log/time
     cat log/pv | tail -n +2 | head -n 1 >> log/time
