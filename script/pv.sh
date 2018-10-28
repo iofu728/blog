@@ -13,7 +13,7 @@ sed -i '$d' docs/README.md
 echo $(cat log/pv) >> docs/README.md
 insertword=$(echo $(cat log/pv))
 pattern=\<center\>累.*\<\/center\>
-sed -i -e s@$pattern@$xxx@g ../../index.html
+sed -i -e s@$pattern@$insertword@g ../../index.html
 
 # time total pv
 hour=`date +%T`
