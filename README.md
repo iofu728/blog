@@ -21,6 +21,7 @@
 * 支持log自动备份 :-1:prepare change to HDFS
 * 支持Docker部署
 * 支持的不是很好的公式显示-Katex语法
+* 支持markdown-it-emoji 8-)
 * 支持Google Analysis，Algolia等<script/>自动部署
 * 参考[`Nginx 调优`](https://wyydsb.xin/other/nginx.html), [`从日志中识别 Spider`](https://wyydsb.xin/other/spider.html) 进行反爬处理
 

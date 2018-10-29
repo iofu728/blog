@@ -256,7 +256,11 @@ http{
              return 403;
          }
 
-         if ($request_method !~ "GET|^$") {
+         if ($request !~ "^GET") {
+             return 403;
+         }
+
+         if ($request_method !~ "^GET$") {
              return 403;
          }
 
