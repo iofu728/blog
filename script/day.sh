@@ -35,5 +35,3 @@ echo $(cat log/yesterday) >> log/day
 # echo $(cat log/yesterday) >> log/day
 # let first=`date -d "-1 days ago ${first}" +%Y%m%d`
 # done
-#
-
