@@ -15,3 +15,5 @@ npm-debug.log
 # crontab.log
 crontab.log
 
+# access.log
+access.log
