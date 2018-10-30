@@ -163,7 +163,12 @@ $max|\vec {PR}^{(l+1)}(i) - \vec {PR}^{(l)}(i)|\le \epsilon$
 
 Next maybe Talk About PPR/SimRank or maybe Top-k PPR
 
+## Reference
 
+1. [The PageRank Citation Ranking: Bringing Order to the Web](http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf)
+2. [Fast Distributed PageRank Computation](https://arxiv.org/pdf/1208.3071.pdf)
+3. [PageRank and The Random Surfer Model](http://www.math.cmu.edu/~pmelsted/papers/pagerank.pdf)
+4. [bidirectional-random-walk, 大图的随机游走( 个性化 PageRank ) 算法](https://www.helplib.com/GitHub/article_133250)
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
