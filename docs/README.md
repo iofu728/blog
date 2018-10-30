@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/neteasedb.md
+actionLink: /other/pageranks.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
@@ -14,6 +14,7 @@ pageClass: custom-page-class
   + Proxy & DB
     - [Netease Music Spider for DB](/other/neteasedb.md)
 * Data Mining
+  + [PageRank](/other/pageranks.md)
   + [Frequnent Pattern](/other/frequent.md)
 * MySQL
   + Innodb
