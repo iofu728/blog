@@ -34,7 +34,7 @@ module.exports = {
         {
           title: 'Data Mining',
           collapsable: false,
-          children: ['frequent'],
+          children: ['pageranks', 'frequent'],
         },
         {
           title: 'Hadoop',
