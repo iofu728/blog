@@ -95,7 +95,7 @@ $r_1=P(p_1\le S_1)×(p_1-c_1)=\dfrac{u_1-p_1}{u_1}×(p_1-c_1)$
 
 故求得$S$的概率密度，从而求得$r_{12}$
 
-$$r_{12}=\begin{equation}
+$r_{12}=\begin{equation}
 \left\{
 ​             \begin{array}{}
 ​             \dfrac{1}{2u_1u_2}(u_1+u_2-p_{12})^2(p_{12}-c_{12}), & max(u_1, u_2)\le p_{12} \le u_1+u_2 \\
@@ -103,9 +103,9 @@ $$r_{12}=\begin{equation}
 ​             \dfrac{2u_1u_2-p_{12}^2}{2u_1u_2}(p_{12}-c_{12}), & c_{12}\le p_{12}\le min(u_1, u_2)\\
 ​             \end{array}
 \right.
-\end{equation}$$
+\end{equation}$
 
-则$$r_{12}’=\begin{equation}
+则$r_{12}’=\begin{equation}
 \left\{
 ​             \begin{array}{}
 ​             k_1(p_{12}-(u_1+u_2))(3p_{12}-(2c_{12}+u_1+u_2)), & max(u_1, u_2)\le p_{12} \le u_1+u_2 \\
@@ -113,7 +113,7 @@ $$r_{12}=\begin{equation}
 ​             k_3(-3p_{12}^2+2p_{12}c_{12}+2u_1u_2), & c_{12} \le p_{12}\le min(u_1, u_2)\\
 ​             \end{array}
 \right.
-\end{equation}$$
+\end{equation}$
 
 可以看出函数$r_{12}$呈现`w`形趋势，故在$\dfrac{2c_{12}+2max(u_1,u_2)+min(u_1,u_2)}{4},\dfrac{2c_{12}+u_1+u_2}{3}$两处可能取到最大值
 
