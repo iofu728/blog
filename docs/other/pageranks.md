@@ -87,7 +87,7 @@ $max|\vec {PR}^{(l+1)}(i) - \vec {PR}^{(l)}(i)|\le \epsilon$
 
 当然还有解的存在性，唯一性 等等
 
-#### Flaw 1 Multiple Solutions
+### Flaw 1 Multiple Solutions
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1540887190754-efc5d2fe-8a78-46da-9906-4705a84377e5.png "")
 
@@ -95,7 +95,7 @@ $max|\vec {PR}^{(l+1)}(i) - \vec {PR}^{(l)}(i)|\le \epsilon$
 
 只要满足$PR_a = PR_b = PR_c, PR_p = PR_q = PR_r$
 
-#### Flaw 2 Link Spam
+### Flaw 2 Link Spam
 
 还是上面的例子a, b, c 此时$PR_a = PR_b = PR_c = \dfrac{1}{3}$
 
