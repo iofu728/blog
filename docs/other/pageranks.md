@@ -63,7 +63,7 @@ $Adamic-Adar Index=\sum \dfrac{1}{logN(v)}$
 
 最后需要提一句 $Node Similarity\not = Node Proximity$
 
-一般而言, $sim(u, v) = sim(v, u)$, 但$p(u, v) \not = p(v, u)$
+一般而言, $sim(u, v) = sim(v, u)$, 但$p(u, v) ≠ p(v, u)$
 
 ## Naive PageRank
 
