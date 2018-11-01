@@ -58,13 +58,30 @@ pageClass: custom-page-class
 
 网易云在这里做的比较好 不是直接提供一个API接口
 
-而是把信息封装到html [https: // music.163.com / discover / playlist?order = hot & cat = %E5 % 8D % 8E % E8 % AF % AD & limit = 35 & offset = 1](https: // music.163.com / discover / playlist?order=hot & cat= % E5 % 8D % 8E % E8 % AF % AD & limit=35 & offset=1)中 增加写爬虫的门槛
+而是把信息封装到html [http://music.163.com/discover/playlist/?order=hot&cat=华语&limit=35&offset=1](http://music.163.com/discover/playlist/?order=hot&cat=华语&limit=35&offset=1)中 增加写爬虫的门槛
 
-找到'div'中的'data-res-id'参数 就是所要求的playListId
+找到`div`中的`data-res-id`参数 就是所要求的playListId
 
-找到playListId之后，调用 [http: // music.163.com / api / playlist / detail?id = 1](http: // music.163.com / api / playlist / detail?id=1) 就可以获得所需要的歌曲信息
+找到playListId之后，调用 [http://music.163.com/api/playlist/detail?id=1](http://music.163.com/api/playlist/detail?id=1) 就可以获得所需要的歌曲信息
 
 因为返回的是JSON 实际上要做的也就是JSON解析的工作
+
+PS: 注意网易云有两个html
+* 第一个是放在cdn里真正的静态html 存放layout
+* 另外一个是通过微服务 动态生成的 html
+- 这个是因为为了封装一层 不直接把api暴露给用户做的
+
+举个例子
+你去爬[https://music.163.com/#/discover/playlist](https://music.163.com/#/discover/playlist)和你真正看到的不一样
+是因为[https://music.163.com/#/discover/playlist](https://music.163.com/#/discover/playlist)指向的是最外层通用Layout的HTML不包含你所需要的数据
+实际上数据在[https://music.163.com/discover/playlist](https://music.163.com/discover/playlist)这个html内
+
+再举个例子
+你去爬[https://music.163.com/#/playlist?id=2392202198](https://music.163.com/#/playlist?id=2392202198) 也一样拿不到想要的歌曲数据
+去爬[https://music.163.com/playlist?id=2392202198](https://music.163.com/playlist?id=2392202198)就可以拿到数据
+其实 这个HTML是对[http://music.163.com/api/playlist/detail?id=2392202198](http://music.163.com/api/playlist/detail?id=2392202198)  这个API的封装
+
+`写爬虫最重要的是梳理业务逻辑`
 
 # 多线程
 
