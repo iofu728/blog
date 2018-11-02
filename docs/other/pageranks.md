@@ -2,7 +2,9 @@
 pageClass: custom-page-class
 ---
 
-# PageRank
+# 如何`一口气`理解PageRank
+
+`一口气`开始~~别憋气~~
 
 终于Tex调好了 刚好最近又多次提及PageRank 于是~
 
@@ -162,6 +164,8 @@ $max|\vec {PR}^{(l+1)}(i) - \vec {PR}^{(l)}(i)|\le \epsilon$
   * $\alpha-Walk$相对于Random Walk，方差更小，复杂度很低，实际效果更好，是目前研究的热点方向
 
 Next maybe Talk About PPR/SimRank or maybe Top-k PPR
+
+好 `一口气`结束 hhh
 
 ## Reference
 

@@ -12,9 +12,9 @@ pageClass: custom-page-class
   + Easy modal
     - [Netease Music Spider](/other/netease.md)
   + Proxy & DB
-    - [Netease Music Spider for DB](/other/neteasedb.md)
+    - [从高可用IP代理池到千万级网易云音乐数据爬取的实现](/other/neteasedb.md)
 * Data Mining
-  + [PageRank](/other/pageranks.md)
+  + [如何一口气理解PageRank](/other/pageranks.md)
   + [Frequnent Pattern](/other/frequent.md)
 * MySQL
   + Innodb
