@@ -42,7 +42,7 @@ pageClass: custom-page-class
     - [git rebase 的另解](/other/gitSkill.md)
 * Cpp
   + Anoj
-    - [2018模拟II](/pat/anoj2018II.md)
+    - [Anoj 2018模拟II](/pat/anoj2018II.md)
   + Pat
     - [目录](/pat/README.md)
   + Summary
