@@ -2,7 +2,7 @@
 <h1 align="center">乌云压顶是吧</h1>
 
 [![GitHub](https://img.shields.io/github/license/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog//master/LICENSE)
-[![GitHub tag](https://img.shields.io/github/tag/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog)
+[![GitHub tag](https://img.shields.io/github/tag/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog/releases)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/iofu728/blog.svg?style=popout-square)](https://github.com/iofu728/blog)
 
 > 很高兴不认识你
@@ -15,6 +15,7 @@
 
 
 ## 二次开发
+* `Gothic` style
 * 支持Gitalk评论
 * 支持自动处理、并更新访问量
 * 支持MapReduce分布式处理大数据量log
@@ -26,6 +27,8 @@
 * 参考[`Nginx 调优`](https://wyydsb.xin/other/nginx.html), [`从日志中识别 Spider`](https://wyydsb.xin/other/spider.html) 进行反爬处理
 
 ## 开发指南
+
+[Latest release 👉 ](https://github.com/iofu728/blog/releases)
 
 ```bash
 $ git clone https://github.com/iofu728/blog.git
