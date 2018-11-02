@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Century+Gothic');
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Raleway:600,400&subset=latin,latin-ext);
+@import url('https://fonts.loli.net/css?family=Century+Gothic');
+@import url(https://fonts.loli.net/css?family=Ubuntu:400,700,400italic,700italic);
+@import url(https://fonts.loli.net/css?family=Raleway:600,400&subset=latin,latin-ext);
 
 @charset "UTF-8";
 
@@ -18,61 +18,8 @@ $contentWidth = 800px
 .theme-container.custom-page-class {
   font-family: "Apple Gothic", "Century Gothic", Nunito, AppleGothic, CenturyGothic, sans-serif;
 
-  :root {
-    --window-border: none;
-    --typora-center-window-title: true;
-    --active-file-bg-color: #f3f3f3;
-    --bg-color: #fcfcfc;
-    --control-text-color: #777;
-  }
-
-  .mac-seamless-mode #typora-sidebar {
-    top: 20px;
-    padding-top: 0;
-    height: auto;
-  }
-
-  html,
-  body,
-  #write{
-    background: #fcfcfc;
-    background: var(--bg-color);
-    font-family: 'TeXGyreAdventor', "Century Gothic", 'Yu Gothic', 'Raleway', sans-serif;
-    font-weight: 300;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #111;
-    font-family: 'TeXGyreAdventor', "Century Gothic", 'Yu Gothic', 'Ubuntu', sans-serif;
-  }
-
-  html {
-    font-size:16px;
-  }
-
-  #write {
-    max-width: 914px;
-    text-align: justify;
-  }
-
-  #write>h1:first-child {
-    margin-top: 2.75rem;
-  }
-  #write>h2:first-child {
-    margin-top: 1.75rem;
-  }
-  #write>h3:first-child {
-    margin-top: 1rem;
-  }
-  #write>h4:first-child {
-    margin-top: 0.5rem;
-  }
   h1 {
-    font-size: 25px;
+    font-size: 26px;
     font-weight: normal;
     line-height: 4rem;
     margin: 0 0 1.75rem;
@@ -107,6 +54,8 @@ $contentWidth = 800px
   h6 {
     font-size: 1rem;
     font-weight: bold;
+    color: #111;
+    font-family: 'TeXGyreAdventor', "Century Gothic", 'Yu Gothic', 'Ubuntu', sans-serif;
   }
   p {
     color: #111;
@@ -114,25 +63,22 @@ $contentWidth = 800px
     line-height: 1.75rem;
     margin: 0 0 1.25rem;
   }
-  #write>h3.md-focus:before {
-    left: -1.875rem;
-    top: 0.5rem;
-    padding: 2px;
+  pre {
+    font-size: 15px
   }
-  #write>h4.md-focus:before {
-    left: -1.875rem;
-    top: 0.3125rem;
-    padding: 2px;
+  html {
+    font-size:16px;
   }
-  #write>h5.md-focus:before {
-    left: -1.875rem;
-    top: 0.25rem;
-    padding: 2px;
+  blockquote {
+    margin: 0 0 1.11111rem;
+    padding: 0.5rem 1.11111rem 0 1.05556rem;
+    border-left: 2px solid #FFBF00;
   }
-  #write>h6.md-focus:before {
-    left: -1.875rem;
-    top: .125rem;
-    padding: 2px;
+  blockquote,
+  blockquote p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #6f6f6f;
   }
   @media screen and (max-width: 48em) {
     blockquote {
@@ -142,27 +88,27 @@ $contentWidth = 800px
     }
     .h1,
     h1 {
-      font-size: 2.827rem;
+      font-size: 25px;
     }
     .h2,
     h2 {
-      font-size: 1.999rem;
+      font-size: 21px;
     }
     .h3,
     h3 {
-      font-size: 1.413rem;
+      font-size: 19px;
     }
     .h4,
     h4 {
-      font-size: 1.250rem;
+      font-size: 18px;
     }
     .h5,
     h5 {
-      font-size: 1.150rem;
+      font-size: 15px;
     }
     .h6,
     h6 {
-      font-size: 1rem;
+      font-size: 15px;
     }
   }
   a,
@@ -203,7 +149,6 @@ $contentWidth = 800px
   code, .md-fences {
     padding: .5em;
     background: #f0f0f0;
-    /*border: 1px solid #ccc;*/
     padding: .1em;
     font-size: 0.9em;
     margin-left: 0.2em;
@@ -259,18 +204,6 @@ $contentWidth = 800px
     line-height: 0.9375rem;
   }
 
-
-  blockquote {
-    margin: 0 0 1.11111rem;
-    padding: 0.5rem 1.11111rem 0 1.05556rem;
-    border-left: 2px solid #FFBF00;
-  }
-  blockquote,
-  blockquote p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #6f6f6f;
-  }
   #write pre.md-meta-block {
     min-height: 30px;
     background: #f8f8f8;
@@ -306,9 +239,7 @@ $contentWidth = 800px
   .md-image>.md-meta:first-of-type:before {
     padding-left: 4px;
   }
-  pre {
-    font-size: 15px
-  }
+
 }
 
 
