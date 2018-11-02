@@ -2,7 +2,7 @@
 pageClass: custom-page-class
 ---
 
-# Using Gitalk support comment for Vuepress
+# 利用Gitalk给Vuepress搭建的blog增加评论功能
 
 这两天折腾了一下comment功能
 
@@ -57,6 +57,58 @@ vuepress 支持个性定制
 附上enhanceApp.js作为参考
 
 ```js
+function integrateGitalk(router) {
+  const linkGitalk = document.createElement('link')
+  linkGitalk.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'
+  linkGitalk.rel = 'stylesheet'
+  document.body.appendChild(linkGitalk)
+  const scriptGitalk = document.createElement('script')
+  scriptGitalk.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js'
+  document.body.appendChild(scriptGitalk)
+
+  router.afterEach((to) => {
+    if (scriptGitalk.onload) {
+      loadGitalk(to)
+    } else {
+      scriptGitalk.onload = () => {
+        loadGitalk(to)
+      }
+    }
+  })
+
+  function loadGitalk(to) {
+    const commentsContainer = document.createElement('div')
+    commentsContainer.id = 'gitalk-container'
+    commentsContainer.classList.add('content')
+    const $page = document.querySelector('.page')
+    if ($page) {
+      $page.appendChild(commentsContainer)
+      renderGitalk(to.fullPath)
+    }
+  }
+  function renderGitalk(fullPath) {
+    const gitalk = new Gitalk({
+      clientID: 'xxx',
+      clientSecret: 'xxx', // come from github
+      repo: 'blog',
+      owner: 'iofu728',
+      admin: ['iofu728'],
+      id: 'comment',
+      distractionFreeMode: false,
+      language: 'zh-CN',
+    })
+
+    gitalk.render('gitalk-container')
+  }
+}
+
+export default ({Vue, options, router, siteData}) => {
+  try {
+    document && integrateGitalk(router)
+  } catch (e) {
+    console.error(e.message)
+  }
+}
 function integrateGitalk(router) {
   const linkGitalk = document.createElement('link')
   linkGitalk.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'
