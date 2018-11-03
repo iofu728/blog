@@ -9,6 +9,35 @@ module.exports = {
       md.use(require('markdown-it-katex'), require('markdown-it-emoji'));
     }
   },
+  head: [
+    [
+      'link', {
+        rel: 'shortcut icon',
+        href:
+            'https://cdn.nlark.com/yuque/0/2018/png/104214/1534957905839-d580e42e-3899-4403-be32-c068e5c9eef4.png'
+      }
+    ],
+    [
+      'link', {
+        rel: 'stylesheet',
+        href:
+            'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
+      }
+    ],
+    [
+      'meta', {
+        name: 'google-site-verification',
+        content: '7ULbF13p7e6Z16vpi2tbAPHXHJBVu83TaxPTnvwnA8I'
+      }
+    ],
+    [
+      'link', {
+        rel: 'shortcut icon',
+        href:
+            'https://cdn.nlark.com/yuque/0/2018/png/104214/1534957905839-d580e42e-3899-4403-be32-c068e5c9eef4.png'
+      }
+    ]
+  ]
   themeConfig: {
     repo: 'iofu728/blog',
     lastUpdated: 'Last Updated',
