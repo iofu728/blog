@@ -8,7 +8,7 @@ module.exports = {
       md.set({breaks: true})
       md.use(require('markdown-it-katex'), require('markdown-it-emoji'));
     }
-  },.
+  },
   themeConfig: {
     repo: 'iofu728/blog',
     lastUpdated: 'Last Updated',
