@@ -79,7 +79,7 @@ CNN 可以在下一个时间点 把输出作用在节点自身
 
 ## LSTM
 
-比如说最著名的LSTM
+比如说最著名的LSTM[4]
 
 > LSTM = LONG SHORT-TERM MEMORY
 
@@ -175,7 +175,7 @@ Output Gate负责到点把东西从传送带输出（Forget是无用的 Output�
 
 在计算时这三个门都需要进行迭代 在计算时耗时较大 并行操作空间较小
 
-故提出了GRU模型
+故提出了GRU模型[9]
 
 其通过`Update Gates` 替代`Output Gates` + `Forget Gates`
 
@@ -226,7 +226,7 @@ GRU的结果实际上已经比较好了
 我这里写SRU不太恰当 `Quasi-RNN`, `MRU`都是类似的思想 这里以SRU为例来进行分析
 
 直接来看
-* SRU的转态转移方程
+* SRU的转态转移方程[8]
 
     $\tilde{s_t}=Ws_t$
 
@@ -301,11 +301,13 @@ position的方式更容易计算之间的关系 而不用担心`梯度消失`
 
 必须在前者进行完之后才能进行下一步
 
-有人就对这样的链式结构进行优化
+有人就对这样的链式结构进行优化[7]
 
 通过类似二分的思想对RNN运行顺序进行优化 也得到了较好的结果
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541339736748-b27dab09-9d06-4289-8385-e2d6fad1f762.png "")
+
+然后[6]中周志华dalao 利用FSA 对RNN 过程进行捕捉 从而进行可解释分析
 
 ## Reference
 
@@ -315,6 +317,9 @@ position的方式更容易计算之间的关系 而不用担心`梯度消失`
 4. [LONG SHORT-TERM MEMORY](https://www.bioinf.jku.at/publications/older/2604.pdf)
 5. [Supervised Sequence Labelling with Recurrent Neural Networks](https://www.cs.toronto.edu/~graves/preprint.pdf)
 6. [Learning with Interpretable Structure from RNN](https://arxiv.org/pdf/1810.10708.pdf)
+7. [Sliced Recurrent Neural Networks](https://arxiv.org/ftp/arxiv/papers/1807/1807.02291.pdf)
+8. [Simple Recurrent Units for Highly Parallelizable Recurrence](https://arxiv.org/abs/1709.02755)
+9. [Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling](http://www.arxiv.org/abs/1412.3555)
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 
