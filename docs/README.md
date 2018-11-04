@@ -1,20 +1,24 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/pageranks.md
+actionLink: /other/rnn.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
 <center>很高兴不认识你</center>
 
+* ML
+  + NLP
+    - [试谈RNN中门的变迁](/other/rnn.md)
+    - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Spider
   + Easy modal
     - [Netease Music Spider](/other/netease.md)
   + Proxy & DB
-    - [Netease Music Spider for DB](/other/neteasedb.md)
+    - [从高可用IP代理池到千万级网易云音乐数据爬取的实现](/other/neteasedb.md)
 * Data Mining
-  + [PageRank](/other/pageranks.md)
+  + [如何一口气理解PageRank](/other/pageranks.md)
   + [Frequnent Pattern](/other/frequent.md)
 * MySQL
   + Innodb
@@ -24,9 +28,6 @@ pageClass: custom-page-class
     - [MapReduce 处理 日志log](/other/mapreduce.md)
   + HDFS
     - [伪分布式Hadoop集群](/other/pseudo.md)
-* ML
-  + NLP
-    - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Nginx
   + [Nginx调优](/other/nginx.md)
 * Accident
@@ -42,7 +43,7 @@ pageClass: custom-page-class
     - [git rebase 的另解](/other/gitSkill.md)
 * Cpp
   + Anoj
-    - [2018模拟II](/pat/anoj2018II.md)
+    - [Anoj 2018模拟II](/pat/anoj2018II.md)
   + Pat
     - [目录](/pat/README.md)
   + Summary
@@ -60,4 +61,4 @@ pageClass: custom-page-class
   + [考研](/other/cs.md)
 
 
-<center>累计访问量: 1894 | 昨日访问量: 30 | 昨日爬虫数: 638 </center>
+<center>累计访问量: 1988 | 昨日访问量: 23 | 昨日爬虫数: 311 </center>
