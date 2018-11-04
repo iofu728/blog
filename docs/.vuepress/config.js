@@ -22,10 +22,15 @@ module.exports = {
     nav: [
       {text: 'Pat', link: '/pat/'},
       {text: 'JavaScript', link: '/javaScript/comment.md'},
-      {text: 'Other', link: '/other/neteasedb.md'},
+      {text: 'Other', link: '/other/rnn.md'},
     ],
     sidebar: {
       '/other/': [
+        {
+          title: 'NLP',
+          collapsable: false,
+          children: ['rnn', 'pagerank'],
+        },
         {
           title: 'Spider',
           collapsable: false,
@@ -54,7 +59,7 @@ module.exports = {
         {
           title: 'Sundry',
           collapsable: false,
-          children: ['gitSkill', 'pagerank', 'nginx'],
+          children: ['gitSkill', 'nginx'],
         },
         {
           title: 'Summary',
