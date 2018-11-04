@@ -1,13 +1,17 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/pageranks.md
+actionLink: /other/rnn.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
 <center>很高兴不认识你</center>
 
+* ML
+  + NLP
+    - [试谈RNN中门的变迁](/other/rnn.md)
+    - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Spider
   + Easy modal
     - [Netease Music Spider](/other/netease.md)
@@ -24,9 +28,6 @@ pageClass: custom-page-class
     - [MapReduce 处理 日志log](/other/mapreduce.md)
   + HDFS
     - [伪分布式Hadoop集群](/other/pseudo.md)
-* ML
-  + NLP
-    - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Nginx
   + [Nginx调优](/other/nginx.md)
 * Accident
