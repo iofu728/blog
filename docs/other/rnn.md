@@ -8,7 +8,7 @@ pageClass: custom-page-class
 
 ~~希望明天不要被怼的太惨~~
 
-已经连续 ~~高强度（hua shui)~~看paper n天了
+已经连续 ~~高强度（hua shui)~~ 看paper n天了
 
 一切 索然无味
 
@@ -143,7 +143,7 @@ LSTM每个时刻的hidden state包含了多个memory `blocks`
 
 * $Forget Gates$
 
-  $\epsilon_\phi^t=f'(a_\phi^t)\sum\limits_{c=1}^Cs_{c}^{t-1}\epsilon_s^t​$
+  $\epsilon_\phi^t=f'(a_\phi^t)\sum\limits_{c=1}^Cs_{c}^{t-1}\epsilon_s^t$
 
 * $Input Gates$
 
