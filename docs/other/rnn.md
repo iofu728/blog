@@ -226,7 +226,7 @@ GRU的结果实际上已经比较好了
 我这里写SRU不太恰当 `Quasi-RNN`, `MRU`都是类似的思想 这里以SRU为例来进行分析
 
 直接来看
-* [SRU的转态转移方程[7]](https://arxiv.org/abs/1709.02755)
+* [SRU的转态转移方程[8]](https://arxiv.org/abs/1709.02755)
 
     $\tilde{s_t}=Ws_t$
 
