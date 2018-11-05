@@ -119,7 +119,7 @@ $max|\vec {PR}^{(l+1)}(i) - \vec {PR}^{(l)}(i)|\le \epsilon$
 
 ## PageRank
 
-为解决上述的问题 `佩奇` 提出 $PR() =\alpha \sum\limits_{v \in N_{in}(u)}^N \dfrac{1}{N_{out}(v)}PR(v) + (1-\alpha) \dfrac{1}{n}$
+为解决上述的问题 `佩奇` 提出 $PR(u) =\alpha \sum\limits_{v \in N_{in}(u)}^N \dfrac{1}{N_{out}(v)}PR(v) + (1-\alpha) \dfrac{1}{n}​$
 
 相对于Naive PageRank 相对于做了一个平滑处理 给一个偏置量
 
