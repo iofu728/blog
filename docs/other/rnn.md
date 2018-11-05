@@ -79,7 +79,7 @@ CNN 可以在下一个时间点 把输出作用在节点自身
 
 ## LSTM
 
-比如说最著名的LSTM[4]
+比如说最著名的[LSTM[4]](https://www.bioinf.jku.at/publications/older/2604.pdf)
 
 > LSTM = LONG SHORT-TERM MEMORY
 
@@ -175,7 +175,7 @@ Output Gate负责到点把东西从传送带输出（Forget是无用的 Output�
 
 在计算时这三个门都需要进行迭代 在计算时耗时较大 并行操作空间较小
 
-故提出了GRU模型[9]
+故提出了[GRU模型[9]](http://www.arxiv.org/abs/1412.3555)
 
 其通过`Update Gates` 替代`Output Gates` + `Forget Gates`
 
@@ -226,7 +226,7 @@ GRU的结果实际上已经比较好了
 我这里写SRU不太恰当 `Quasi-RNN`, `MRU`都是类似的思想 这里以SRU为例来进行分析
 
 直接来看
-* SRU的转态转移方程[8]
+* [SRU的转态转移方程[7]](https://arxiv.org/abs/1709.02755)
 
     $\tilde{s_t}=Ws_t$
 
@@ -266,7 +266,7 @@ GRU的结果实际上已经比较好了
 
 `Google Brain`的dalao 发了一篇题目就很拉风的paper
 
-`Attention is all you need`
+[`Attention is all you need`[10]](https://arxiv.org/pdf/1706.03762.pdf)
 
 简单来说 其一次性计算出带较长语句的`word encodeing`
 
@@ -301,13 +301,13 @@ position的方式更容易计算之间的关系 而不用担心`梯度消失`
 
 必须在前者进行完之后才能进行下一步
 
-有人就对这样的链式结构进行优化[7]
+[有人就对这样的链式结构进行优化[7]](https://arxiv.org/ftp/arxiv/papers/1807/1807.02291.pdf)
 
 通过类似二分的思想对RNN运行顺序进行优化 也得到了较好的结果
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541339736748-b27dab09-9d06-4289-8385-e2d6fad1f762.png "")
 
-然后[6]中周志华dalao 利用FSA 对RNN 过程进行捕捉 从而进行可解释分析
+然后[[6](https://arxiv.org/pdf/1810.10708.pdf)]中周志华dalao 利用FSA 对RNN 过程进行捕捉 从而进行可解释分析
 
 ## Reference
 
@@ -320,6 +320,7 @@ position的方式更容易计算之间的关系 而不用担心`梯度消失`
 7. [Sliced Recurrent Neural Networks](https://arxiv.org/ftp/arxiv/papers/1807/1807.02291.pdf)
 8. [Simple Recurrent Units for Highly Parallelizable Recurrence](https://arxiv.org/abs/1709.02755)
 9. [Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling](http://www.arxiv.org/abs/1412.3555)
+10. [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 
