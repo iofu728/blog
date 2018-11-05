@@ -227,7 +227,7 @@ GRU的结果实际上已经比较好了
 
 直接来看
 
-* [SRU的转态转移方程[7]](https://arxiv.org/abs/1709.02755)
+* [SRU的转态转移方程[8]](https://arxiv.org/abs/1709.02755)
 
     $\tilde{s_t}=Ws_t$
 
