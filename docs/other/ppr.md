@@ -35,7 +35,7 @@ PageRank相当于站在上帝视角进行评价所有节点的重要程度值
 
 $PPR_s(u) =\alpha \sum\limits_{v \in N_{in}(u)}^N \dfrac{1}{N_{out}(v)}PPR_s(v) + (1-\alpha) \dfrac{1}{n}$
 
-PPR的值都是基于某一个节点s的，这样的话就可以对PPR的研究就可以分为两个维度
+PPR的公式和PR的没什么区别 只是PPR的值都是基于某一个节点s 这样的话就对PPR的研究就可以分为两个维度
 
 * 给定一个Source S, 返回所有节点关于s的PPR值
 * 给定一个Source S, 返回Top-K节点关于s的PPR值
@@ -309,7 +309,7 @@ A/B test的核心就是`控制变量`
 
 但$\epsilon$-Greedy 忽略了可能已经表征出来的特征 从始至终的都是随机筛选 可能会花费过多的时间才能收敛
 
-当然$\epsilon$-Greedy 也有很多变种 
+当然$\epsilon$-Greedy 也有很多变种
 
 * 比如说一开始尝试概率高 之后概率慢慢减小
 * 通过预筛选 先框定小范围 再进行$\epsilon$-Greedy
