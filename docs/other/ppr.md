@@ -8,7 +8,7 @@ pageClass: custom-page-class
 > 然后 发现 知识点好多 害啪
 > 回想一下 现在ML领域逐渐走向交叉态势 不应该再拘泥于一个小方向
 > 还是要多学习
-> 关键词: `PPR` `TopPPR` `Alias Method` `Multi-armed Bandit`
+> 关键词: `PPR` `TopPPR` `Chernoff bound` `Alias Method` `Multi-armed Bandit`
 > `本文预计需要20-30min`
 
 首先我们应该对[什么是PageRank](/other/pageranks.md)有了一定概念 没有的话请点👈
@@ -198,7 +198,7 @@ Forward的cost大概在MC的$1-\alpha$倍左右, 举个栗子 还是Forward那�
 
 例如如图情况，先掷一次骰子, 先确定是四种情况中的哪一种，如果是A，则100%采样A; 如果是B, 则$\dfrac{2}{3}$概率为B，$\dfrac{1}{3}$重试
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541522557180-a99d841f-13a0-4499-8ca0-a946317e412f.png "")
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541585266431-be4c92ce-4879-4935-9cf6-ded9f860b035.png "")
 
 当然这样做 等同于 把按最大值归一化再进行分析
 
@@ -214,7 +214,7 @@ Forward的cost大概在MC的$1-\alpha$倍左右, 举个栗子 还是Forward那�
 
 看起来没什么用 如果我们做一些拼接 得到下图
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541523278932-47c5d594-50a6-4d75-8e4f-90631c7b3395.png "")
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541586140859-151d6b1f-473c-4d3c-b9fa-af6196b4dd35.png "")
 
 是不是只需要掷两次骰子就能确定到底是哪个采样
 
@@ -270,6 +270,8 @@ MC: $O(\dfrac{n\ln{n}}{\epsilon^2})$
 
 这就是`多臂老虎机MAB`问题
 
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541586337664-b78a0498-f89c-43f3-9396-34a2e1e9b1e7.png "")
+
 其实这是一个在Reinforcement learning, RL领域很火的问题
 
 也拥有极强的应用场景
@@ -313,8 +315,8 @@ A/B test的核心就是`控制变量`
 
 大致思路就是 根据现有的信息进行估计最可能的情况
 
-1. 根据之前的情况计算每一台老虎机的$p_k=\dfrac{e^{\dfrac{\widehat{\mu}_k}{k}}}{\sum e^{\dfrac{\widehat{\mu}_k}{k}}}$值
-2. 选择$p_k​$值最大的作为下一阶段选择的老虎机
+1. 根据之前的情况计算每一台老虎机的$p_k=\dfrac{e^{\bar\mu_k/k}}{\sum e^{\bar\mu_k/k}}$ 值
+2. 选择$p_k$值最大的作为下一阶段选择的老虎机
 
 好像和前面的没啥区别 都是根据现有的信息 来估计分布
 
@@ -344,9 +346,9 @@ T-温度，直观的感受，随着时间的增大，T随着减小 那么在分�
 
 那么 为何叫做上置信区间算法呢？其实这个式子是从置信区间推出来的
 
-根据上置信区间公式可得$P(\widehat{\mu}\ge\epsilon)\leexp(-n\epsilon^2/2)$, 令右侧=$\delta$ $P(\widehat{\mu}\ge\sqrt{\dfrac{2}{n}\log(\dfrac{1}{\delta})})\le \delta$
+根据上置信区间公式可得$P(\bar{\mu}\ge\epsilon)\le exp(-n\epsilon^2/2)$, 令右侧=$\delta$ $P(\bar{\mu}\ge\sqrt{\dfrac{2}{n}\log{\dfrac{1}{\delta})}}\le \delta$
 
-则其 均值估计就为$\widehat{\mu_i}(t-1)+\sqrt{\dfrac{2}{T_i(t-1)}\log{\dfrac{1}{\delta}}}​$
+则其 均值估计就为$\bar{\mu}_i(t-1)+\sqrt{\dfrac{2}{T_i(t-1)}\log{\dfrac{1}{\delta}}}$
 
 当然 UCB还有很多改进版 在这就提出一个最朴素的思想
 
