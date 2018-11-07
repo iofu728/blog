@@ -139,7 +139,7 @@ A厂主营业务TB的`『千人千面』`算法
 ## Backward Search
 <p align="right">[WAW’07]</p>
 
-有``Forward` 很容易想到是不是有`Backward`
+有`Forward` 很容易想到是不是有`Backward`
 
 此时$\pi_b(v,t), r_b(v,t)$的定义和Forward基本一致
 
