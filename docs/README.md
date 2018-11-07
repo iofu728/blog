@@ -1,13 +1,17 @@
 ---
 home: true
 actionText: Last
-actionLink: /other/rnn.md
+actionLink: /other/ppr.md
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
 <center>很高兴不认识你</center>
 
+* Data Mining
+  + [大图中如何快速计算PPR](/other/ppr.md)
+  + [如何一口气理解PageRank](/other/pageranks.md)
+  + [Frequnent Pattern](/other/frequent.md)
 * ML
   + NLP
     - [试谈RNN中门的变迁](/other/rnn.md)
@@ -17,9 +21,6 @@ pageClass: custom-page-class
     - [Netease Music Spider](/other/netease.md)
   + Proxy & DB
     - [从高可用IP代理池到千万级网易云音乐数据爬取的实现](/other/neteasedb.md)
-* Data Mining
-  + [如何一口气理解PageRank](/other/pageranks.md)
-  + [Frequnent Pattern](/other/frequent.md)
 * MySQL
   + Innodb
     - [Innodb MySQL中如何优雅的删除大表跑路🏃](/other/truncate.md)
