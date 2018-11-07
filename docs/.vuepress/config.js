@@ -22,10 +22,15 @@ module.exports = {
     nav: [
       {text: 'Pat', link: '/pat/'},
       {text: 'JavaScript', link: '/javaScript/comment.md'},
-      {text: 'Other', link: '/other/rnn.md'},
+      {text: 'Other', link: '/other/ppr.md'},
     ],
     sidebar: {
       '/other/': [
+        {
+          title: 'Data Mining',
+          collapsable: false,
+          children: ['ppr', 'pageranks', 'frequent'],
+        },
         {
           title: 'NLP',
           collapsable: false,
@@ -35,11 +40,6 @@ module.exports = {
           title: 'Spider',
           collapsable: false,
           children: ['neteasedb', 'netease'],
-        },
-        {
-          title: 'Data Mining',
-          collapsable: false,
-          children: ['pageranks', 'frequent'],
         },
         {
           title: 'Hadoop',
