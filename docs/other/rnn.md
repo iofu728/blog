@@ -55,7 +55,7 @@ NN起源于多层感知机MLP
 
 比如说预处理 高速公路网络(highway network)和深度残差学习(deep residual learning)
 
-时序的效果不仅仅是训练结果和之前的转态有关 还带来了变长度输出的特性 这点和其他NN尤为不同
+时序 不仅仅是 训练结果和之前的转态有关 还是得输出结果长度可变的效果 这点和其他NN尤为不同
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/jpeg/104214/1541332485205-b85ae494-1091-4ffb-8844-bcc783dde068.jpeg "")
 
