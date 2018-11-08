@@ -15,7 +15,8 @@
 
 
 ## 二次开发
-* `Gothic` style
+* 实时显示访问量
+* 定制化主题 `Gothic` style
 * 支持Gitalk评论
 * 支持自动处理、并更新访问量
 * 支持MapReduce分布式处理大数据量log
