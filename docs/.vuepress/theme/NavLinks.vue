@@ -101,6 +101,8 @@ export default {
 @import './styles/config.styl'
 
 .nav-links
+  font-size 15px
+  font-weight 666
   display inline-block
   a
     line-height 1.8rem

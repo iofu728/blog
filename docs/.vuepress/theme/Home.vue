@@ -30,10 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="footer" v-if="data.footer">
-      <p></p>
-      <p></p>
-    </div>
+    <div class="end" v-if="data.footer"></div>
   </div>
 </template>
 
@@ -82,7 +79,7 @@ export default {
     max-width 960px
     margin 0 auto
   &_main
-    background url('https://cdn.nlark.com/yuque/0/2018/jpeg/104214/1541691232778-956f812a-c2e1-4d1c-98d3-578660a0f138.jpeg')
+    background url('./../public/main-bg.png')
     background-attachment fixed
     background-size cover
     background-position left bottom
@@ -102,7 +99,7 @@ export default {
       border-bottom none
       margin 0 0 38px 0
   &_features
-    background url('https://cdn.nlark.com/yuque/0/2018/jpeg/104214/1541691277175-27f95aa8-bf87-467f-a80d-19b8661677fa.jpeg')
+    background url('./../public/features-bg.png')
     background-attachment fixed
     background-size cover
     background-position left top
@@ -130,7 +127,7 @@ export default {
       margin 30px auto
     .description
       max-width 35rem
-      font-size 17px
+      font-size 27px
       line-height 1.3
       color #fff
     .description-text
@@ -185,10 +182,14 @@ export default {
     display flex
     justify-content center
     align-items center
+  .end
+    margin 0.1rem 0 0 0
+    padding 0.9rem 1rem
   .footer
     padding 0.9rem 1rem
     background #fff
     text-align center
+    font-size 17px
     color: #324157
     display flex
     justify-content center
