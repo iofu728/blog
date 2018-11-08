@@ -1,12 +1,11 @@
 ---
 home: true
-actionText: Last
+actionText: View Last
 actionLink: /other/ppr.md
+descriptionText: 很高兴不认识你
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
-
-<center>很高兴不认识你</center>
 
 * Data Mining
   + [大图中如何快速计算PPR](/other/ppr.md)

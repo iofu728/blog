@@ -1,0 +1,25 @@
+.button
+  background-color $accentColor
+  border-radius 5px
+  color white
+  display inline-block
+  padding 0.5em 0
+  transition background-color .1s ease
+
+  &:hover
+    background-color lighten(#fff, 10%)
+
+  a, a:hover
+    color white
+    padding 0.5rem 0.5em 0.5em
+    text-decoration none !important
+
+    &>svg
+      margin-left 0.25rem
+
+  .icon.outbound
+    color #fff
+    display inline-block
+    height 1.0rem
+    vertical-align top
+    width 1.0rem
