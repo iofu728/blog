@@ -10,7 +10,8 @@ yMonth=`date -d yesterday +%B`
 today="$(date -d yesterday +%d)/${yMonth:0:3}/$(date -d yesterday +%Y)"
 am="$today:00:00:00"
 pm="$today:23:59:59"
-awk '{if($9==200&&$7~/\/assets\/js\/app/&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l >> log/yesterday
+num=`awk '{if($9==200&&$7~/pv.txt/&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" $loglocal|sort | uniq -c | wc -l`
+expr $num + 2130 >> log/yesterday
 awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$6!~/GET/||$0~/Verification/||$0~/"-" "-"/||$0~/[gG]o/||$0~/[pP]ython/||$0~/curl/)){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/user $loglocal|sort | uniq -c | wc -l >> log/yesterday
 echo $(cat log/yesterday) >> log/day
 

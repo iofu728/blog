@@ -3,7 +3,8 @@
 # pv
 loglocal=/usr/local/nginx/logs/access.log
 echo "累计访问量:" > log/pv
-awk '{if($9==200&&$7~/\/assets\/js\/app/&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){print $0}}' $loglocal|sort | uniq -c | wc -l >> log/pv
+num=`awk '{if($9==200&&$7~/pv.txt/&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){print $0}}' $loglocal|sort | uniq -c | wc -l`
+expr $num + 2130 >> log/pv
 echo "| 昨日访问量:" >> log/pv
 cat log/yesterday | tail -n +2 | head -n 1 >> log/pv
 echo "| 昨日爬虫数:" >> log/pv
