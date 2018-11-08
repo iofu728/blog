@@ -1,10 +1,10 @@
 # @Author: gunjianpan
 # @Date:   2018-10-28 22:21:08
 # @Last Modified by:   gunjianpan
-# @Last Modified time: 2018-10-28 22:45:58
+# @Last Modified time: 2018-11-09 00:31:52
 #!/bin/bash
 
-step=20
+step=10
 
 for (( i = 0; i < 60; i=(i+step) ));
 do
