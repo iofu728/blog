@@ -29,13 +29,12 @@ const checkStatus = response => {
 export default async function request(url, options) {
 
   try {
-    const response = await fetch(url, {...options, mode: 'cors', credentials: 'include'});
+    const response = await fetch(url, {...options, credentials: 'include'});
 
     const data = await response.text();
 
     return {data, headers: {}};
   } catch (error) {
-    return error;
   }
 }
 
