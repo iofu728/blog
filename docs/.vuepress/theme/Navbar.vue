@@ -2,8 +2,9 @@
   <header class="navbar">
     <router-link :to="$localePath" class="home-link">
       <img class="logo" :src="$withBase(logo)" alt="Logo">
+      <span class="title">{{data}}</span>
     </router-link>
-    <!--<div><p>{{data}}</p></div>-->
+
     <div class="links">
       <NavLinks class="can-hide"/>
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
@@ -48,9 +49,13 @@ export default {
   box-shadow: 1px 0 3px #d6d6d6;
   a, span, img
     display inline-block
+  .title
+    color: #000
+    margin 0 0 0 20px
+    font-size 21px
   .logo
-    height $navbarHeight - 1.4rem
-    min-width $navbarHeight - 1.4rem
+    height $navbarHeight - 2rem
+    min-width $navbarHeight - 2rem
     margin-right 0
     vertical-align top
   .site-name
