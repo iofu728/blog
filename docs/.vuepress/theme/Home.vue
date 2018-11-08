@@ -75,7 +75,6 @@ export default {
 
 <style lang="stylus">
 @import './styles/config.styl'
-@require './../public/search.svg'
 
 .home
   &-wrap
