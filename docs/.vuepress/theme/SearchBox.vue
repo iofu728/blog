@@ -1,5 +1,3 @@
-@require('./../public/logo.png')
-
 <template>
   <div class="search-box">
     <input
@@ -139,6 +137,7 @@ export default {
 
 <style lang="stylus">
 @import './styles/config.styl'
+@require './../public/search.svg'
 
 $border-radius = 10px
 
