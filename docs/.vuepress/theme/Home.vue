@@ -18,7 +18,7 @@
     <div class="home_about">
       <div class="home-wrap">
         <Content custom/>
-        <div class="pv">{{getpv.data}}</div>
+        <div class="pv">{{getPv}}</div>
         <div class="footer">{{data.footer}}</div>
       </div>
     </div>
@@ -53,7 +53,7 @@ export default {
         text: this.data.actionText
       }
     },
-    getpv(){
+    getPv(){
       return request('https://wyydsb.xin/pv.txt')
     }
   }
@@ -69,7 +69,7 @@ export default {
     max-width 960px
     margin 0 auto
   &_main
-    background url('~/main-bg.jpg')
+    background url('~/main-bg.png')
     background-attachment fixed
     background-size cover
     background-position left bottom
@@ -89,7 +89,7 @@ export default {
       border-bottom none
       margin 0 0 38px 0
   &_features
-    background url('~/features-bg.jpg')
+    background url('~/features-bg.png')
     background-attachment fixed
     background-size cover
     background-position left top
