@@ -1,7 +1,7 @@
 module.exports = {
   title: '乌云压顶是吧',
   description: '🍥 ',
-  serviceWorker: true,
+  serviceWorker: false,
   ga: 'UA-113936890-1',
   markdown: {
     config: md => {
