@@ -137,7 +137,6 @@ export default {
 
 <style lang="stylus">
 @import './styles/config.styl'
-@require './../public/search.svg'
 
 $border-radius = 10px
 
@@ -153,7 +152,7 @@ $border-radius = 10px
     color transparent
     cursor pointer
     outline none
-    background #000 url('~/search.svg') no-repeat 8px center
+    background #000 url('./../public/search.svg') no-repeat 8px center
     border 1px solid #000
     padding 9px
     border-radius 29px
