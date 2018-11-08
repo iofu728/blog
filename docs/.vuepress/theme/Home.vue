@@ -18,7 +18,7 @@
     <div class="home_about">
       <div class="home-wrap">
         <Content custom/>
-        <div class="pv">{{getPv}}</div>
+        <div class="pv">{{pv}}</div>
         <div class="footer">{{data.footer}}</div>
       </div>
     </div>
@@ -42,6 +42,11 @@ import NavLink from './NavLink.vue'
 import request from './requests'
 
 export default {
+  data(){
+    return{
+      pv: '',
+    }
+  },
   components: { NavLink },
   computed: {
     data () {
@@ -53,9 +58,17 @@ export default {
         text: this.data.actionText
       }
     },
-    getPv(){
-      return request('https://wyydsb.xin/pv.txt')
-    }
+  },
+  created: function () {
+     this.getPv()
+  },
+  methods: {
+    getPv: function () {
+      const vm = this;
+      request('https://wyydsb.xin/pv.txt')
+        .then(res => {vm.pv = res;})
+        .catch(reason => console.log(reason.message));
+    },
   }
 }
 </script>
@@ -69,7 +82,7 @@ export default {
     max-width 960px
     margin 0 auto
   &_main
-    background url('~/main-bg.png')
+    background url('https://cdn.nlark.com/yuque/0/2018/jpeg/104214/1541691232778-956f812a-c2e1-4d1c-98d3-578660a0f138.jpeg')
     background-attachment fixed
     background-size cover
     background-position left bottom
@@ -89,7 +102,7 @@ export default {
       border-bottom none
       margin 0 0 38px 0
   &_features
-    background url('~/features-bg.png')
+    background url('https://cdn.nlark.com/yuque/0/2018/jpeg/104214/1541691277175-27f95aa8-bf87-467f-a80d-19b8661677fa.jpeg')
     background-attachment fixed
     background-size cover
     background-position left top

@@ -29,11 +29,11 @@ const checkStatus = response => {
 export default async function request(url, options) {
 
   try {
-    const response = await fetch(url, {...options, credentials: 'include'});
+    const response = await fetch(url, {...options});
 
     const data = await response.text();
 
-    return {data, headers: {}};
+    return data;
   } catch (error) {
   }
 }

@@ -1,3 +1,5 @@
+@require('./../public/logo.png')
+
 <template>
   <div class="search-box">
     <input
