@@ -1,10 +1,10 @@
 # @Author: gunjianpan
 # @Date:   2018-10-28 22:21:08
 # @Last Modified by:   gunjianpan
-# @Last Modified time: 2018-11-09 17:21:22
+# @Last Modified time: 2018-11-09 17:58:07
 #!/bin/bash
 
-source ./constant.sh
+source script/constant.sh
 
 step=5
 
