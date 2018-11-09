@@ -17,3 +17,6 @@ crontab.log
 
 # access.log
 access.log
+
+# log
+/log
