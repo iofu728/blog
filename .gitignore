@@ -19,4 +19,4 @@ crontab.log
 access.log
 
 # log
-log/
+log
