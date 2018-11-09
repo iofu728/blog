@@ -1,31 +1,33 @@
 #!/usr/bin/env bash
 
+source ./constant.sh
+
 yarn
 
 sudo yarn run docs:build
 
-if [ ! -d "/usr/local/www/assets" ];then
+if [ ! -d "${nginxpath}/assets" ];then
 echo "文件不存在"
 else
-rm -rf /usr/local/www/assets
+rm -rf ${nginxpath}/assets
 fi
 
-if [ ! -d "/usr/local/www/javaScript" ];then
+if [ ! -d "${nginxpath}/javaScript" ];then
 echo "文件不存在"
 else
-rm -rf /usr/local/www/javaScript
+rm -rf ${nginxpath}/javaScript
 fi
 
-if [ ! -d "/usr/local/www/other" ];then
+if [ ! -d "${nginxpath}/other" ];then
 echo "文件不存在"
 else
-rm -rf /usr/local/www/other
+rm -rf ${nginxpath}/other
 fi
 
-if [ ! -d "/usr/local/www/pat" ];then
+if [ ! -d "${nginxpath}/pat" ];then
 echo "文件不存在"
 else
-rm -rf /usr/local/www/pat
+rm -rf ${nginxpath}/pat
 fi
 
 for htmlfile in docs/.vuepress/dist/*/*.html docs/.vuepress/dist/*.html
@@ -39,5 +41,5 @@ do
     sed -i '/<body>/a\<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>' $htmlfile
 done
 
-mv docs/.vuepress/dist/* /usr/local/www/
+mv docs/.vuepress/dist/* ${nginxpath}/
 
