@@ -5,8 +5,8 @@ source script/constant.sh
 # Load yestday Data
 truncate -s 0 log/today
 awk '{if($12!="\"Chrome/57\"")print $0}' $logpath >> log/today
-# cat log/today >> $backuppath
-# truncate -s 0 $logpath
+cat log/today >> $backuppath
+truncate -s 0 $logpath
 
 # Build User File
 truncate -s 0 log/user
@@ -23,10 +23,10 @@ originpv=`cat log/basic | tail -n +1 | head -n 1`
 originspider=`cat log/basic | tail -n +2 | head -n 1`
 num=`awk '{if($9==200&&$7~/pv.txt/&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/today|sort | uniq -c | wc -l`
 echo $num >> log/yesterday
-expr $num + $originpv >> log/basicpre
+expr $num + $originpv > log/basicpre
 num=`awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$6!~/GET/||$0~/Verification/||$0~/"-" "-"/||$0~/[gG]o/||$0~/[pP]ython/||$0~/curl/)){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/user log/today|sort | uniq -c | wc -l`
 echo $num >> log/yesterday
-echo $num + $originspider >> log/basicpre
+expr $num + $originspider >> log/basicpre
 cp log/basicpre log/basic
 echo $(cat log/yesterday) >> log/day
 
