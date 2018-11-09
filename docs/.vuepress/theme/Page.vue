@@ -31,6 +31,7 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
+import request from './requests'
 
 export default {
   props: ['sidebarItems'],
@@ -107,6 +108,16 @@ export default {
         `Edit this page`
       )
     }
+  },
+  created: function () {
+    this.getPv()
+  },
+  methods: {
+    getPv: function () {
+      request('https://wyydsb.xin/pv.txt')
+        .then(res => res)
+        .catch(reason => console.log(reason.message));
+    },
   }
 }
 

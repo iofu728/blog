@@ -17,6 +17,7 @@
 ## 二次开发
 * 实时显示访问量
 * 自定义主题 `Gothic` style
+* 天粒度增量Load数据 数据处理由全量改为增量 减小内存CPU占用率
 * 支持Gitalk评论
 * 支持自动处理、并更新访问量
 * 支持MapReduce分布式处理大数据量log
@@ -36,18 +37,23 @@ $ git clone https://github.com/iofu728/blog.git
 $ cd blog
 $ yarn
 $ yarn doc:dev
+
+# Before Deploy
+$ vim script/constant.sh  #Change Service Path
 ```
 
 ## 部署指南
 ```bash
 .
-├── script                         // 脚本
-│   ├── backup.sh                  // 备份脚本
-│   ├── build.sh                   // 部署脚本
-│   ├── day.sh                     // 每日数据采集脚本
-│   ├── KPI.java                   // MapReduce prepare.java
-│   ├── PersonVersion.java         // MapReduce Map&Reduce.java
-└── └── pv.sh                      // pv计算及更新脚本
+├── script
+│   ├── KPI.java                   // MapReduce prepare.java
+│   ├── PersonVersion.java         // MapReduce Map&Reduce.java
+│   ├── backup.sh                  // backup shell
+│   ├── build.sh                   // build shell
+│   ├── constant.sh                // Services Path *important 需设置(Need Set when you deploy)
+│   ├── crontable.sh               // 每分钟调用pv.sh设置
+│   ├── day.sh                     // 每日数据采集脚本  天粒度
+└── └── pv.sh                      // pv计算及更新脚本 5s粒度
 ```
 
 
