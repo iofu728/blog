@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./constant.sh
+source script/constant.sh
 
 yarn
 

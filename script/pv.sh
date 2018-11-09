@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./constant.sh
+source script/constant.sh
 
 # Pv
 originpv=`cat log/basic | tail -n +1 | head -n 1`
