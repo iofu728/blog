@@ -5,8 +5,8 @@ source script/constant.sh
 # Load yestday Data
 truncate -s 0 log/today
 awk '{if($12!="\"Chrome/57\"")print $0}' $logpath >> log/today
-cat log/today >> $backuppath
-truncate -s 0 $logpath
+# cat log/today >> $backuppath
+# truncate -s 0 $logpath
 
 # Build User File
 truncate -s 0 log/user
