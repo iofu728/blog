@@ -1,11 +1,8 @@
 <template>
   <div class="page">
+    <div class="empty"></div>
     <Content :custom="false"/>
     <div class="page-edit">
-      <div class="edit-link" v-if="editLink">
-        <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
-        <OutboundLink/>
-      </div>
       <div class="last-updated" v-if="lastUpdated">
         <span class="prefix">{{ lastUpdatedText }}: </span>
         <span class="time">{{ lastUpdated }}</span>
@@ -114,7 +111,7 @@ export default {
   },
   methods: {
     getPv: function () {
-      request('https://wyydsb.xin/pv.txt')
+      request('https://localhost/pv.txt')
         .then(res => res)
         .catch(reason => console.log(reason.message));
     },
@@ -156,6 +153,7 @@ function find (page, items, offset) {
 
 .page-edit
   @extend $wrapper
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2),0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,0);
   padding-top 1rem
   padding-bottom 1rem
   overflow auto
@@ -178,14 +176,18 @@ function find (page, items, offset) {
   @extend $wrapper
   padding-top 1rem
   padding-bottom 0
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2),0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,0);
   .inner
     min-height 2rem
-    margin-top 0
+    margin 1rem 0 1rem 0
     border-top 1px solid $borderColor
-    padding-top 1rem
+    padding 1rem 0 1rem 0
     overflow auto // clear float
   .next
     float right
+.empty
+  padding  44px
+  background-color #f6f6f6
 
 @media (max-width: $MQMobile)
   .page-edit

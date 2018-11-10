@@ -62,7 +62,7 @@ export default {
   methods: {
     getPv: function () {
       const vm = this;
-      request('https://wyydsb.xin/pv.txt')
+      request('https://localhost/pv.txt')
         .then(res => {vm.pv = res;})
         .catch(reason => console.log(reason.message));
     },
