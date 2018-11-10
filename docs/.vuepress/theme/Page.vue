@@ -111,7 +111,7 @@ export default {
   },
   methods: {
     getPv: function () {
-      request('https://localhost/pv.txt')
+      request('https://wyydsb.xin/pv.txt')
         .then(res => res)
         .catch(reason => console.log(reason.message));
     },
