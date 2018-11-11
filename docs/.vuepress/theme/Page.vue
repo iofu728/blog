@@ -1,24 +1,31 @@
 <template>
   <div class="page">
     <div class="empty"></div>
+    <div class="page-edit">{{title + ' ' + lastUpdated}}</div>
     <Content :custom="false"/>
-    <div class="page-edit">
-      <div class="last-updated" v-if="lastUpdated">
-        <span class="prefix">{{ lastUpdatedText }}: </span>
-        <span class="time">{{ lastUpdated }}</span>
-      </div>
-    </div>
+    <!--<div class="page-edit">-->
+      <!--<div class="last-updated" v-if="lastUpdated">-->
+        <!--<span class="prefix">{{ lastUpdatedText }}: </span>-->
+        <!--<span class="time">{{ lastUpdated }}</span>-->
+      <!--</div>-->
+    <!--</div>-->
     <div class="page-nav" v-if="prev || next">
       <p class="inner">
-        <span v-if="prev" class="prev">
-          ← <router-link v-if="prev" class="prev" :to="prev.path">
-            {{ prev.title || prev.path }}
-          </router-link>
+        <span class="prev">
+          <span class="prev-a">
+            <router-link v-if="prev" :to="prev.path">
+              <div class="link-left"> <span class="amp">&lt;</span> PREV</div>
+              <div class="title">{{ prev.title || prev.path||' '}}</div>
+            </router-link>
+          </span>
         </span>
-        <span v-if="next" class="next">
-          <router-link v-if="next" :to="next.path">
-            {{ next.title || next.path }}
-          </router-link> →
+        <span class="next">
+          <span class="prev-a">
+            <router-link v-if="next" :to="next.path">
+              <div class="link-left">NEXT <span class="amp">&gt;</span></div>
+              <div class="title">{{ next.title || next.path||' '}}</div>
+            </router-link>
+          </span>
         </span>
       </p>
     </div>
@@ -48,9 +55,9 @@ export default {
       return 'Last Updated'
     },
     prev () {
-      const prev = this.$page.frontmatter.prev
+      const prev = this.$page.frontmatter.prev;
       if (prev === false) {
-        return
+        return;
       } else if (prev) {
         return resolvePage(this.$site.pages, prev, this.$route.path)
       } else {
@@ -58,14 +65,17 @@ export default {
       }
     },
     next () {
-      const next = this.$page.frontmatter.next
+      const next = this.$page.frontmatter.next;
       if (next === false) {
-        return
+        return;
       } else if (next) {
         return resolvePage(this.$site.pages, next, this.$route.path)
       } else {
         return resolveNext(this.$page, this.sidebarItems)
       }
+    },
+    title () {
+      return this.$page.title;
     },
     editLink () {
       if (this.$page.frontmatter.editLink === false) {
@@ -111,7 +121,7 @@ export default {
   },
   methods: {
     getPv: function () {
-      request('https://wyydsb.xin/pv.txt')
+      request('https://localhost/pv.txt')
         .then(res => res)
         .catch(reason => console.log(reason.message));
     },
@@ -153,7 +163,6 @@ function find (page, items, offset) {
 
 .page-edit
   @extend $wrapper
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2),0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,0);
   padding-top 1rem
   padding-bottom 1rem
   overflow auto
@@ -173,18 +182,68 @@ function find (page, items, offset) {
       color #aaa
 
 .page-nav
-  @extend $wrapper
-  padding-top 1rem
-  padding-bottom 0
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2),0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,0);
+  max-width $contentWidth + 150px
+  margin 10px auto
+  padding: 5px;
   .inner
     min-height 2rem
     margin 1rem 0 1rem 0
-    border-top 1px solid $borderColor
-    padding 1rem 0 1rem 0
     overflow auto // clear float
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    flex: 1 1 auto;
+  .prev
+    flex-basis: 50%;
+    flex-grow: 0;
+    max-width: 50%;
+    text-align: left!important;
+    flex-shrink: 1;
+    cursor: pointer;
+    transition: all 0.3s;
+  .prev-a
+    padding 10px
+    cursor: pointer;
+    align-items: center;
+    border-radius: 2px;
+    display: inline-flex;
+    flex: 0 1 auto;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    min-width: 88px;
+    outline: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .3s cubic-bezier(.25,.8,.5,1),color 1ms;
+    position: relative;
+    vertical-align: middle;
+  .prev-a:hover
+    background-color #dddddd;
   .next
-    float right
+    text-align: right!important;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    flex-grow: 0;
+    max-width: 50%;
+  .link-left
+    color: #9e9e9e!important;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    content: "\F053";
+    font-size 17px
+    font-weight: 900;
+  .amp
+    font-weight: 1000;
+    font-size 18px
+  .title
+    font-size 18px
+    font-weight 555
+
 .empty
   padding  44px
   background-color #f6f6f6

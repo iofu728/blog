@@ -2,7 +2,7 @@
   <header class="navbar">
     <router-link :to="$localePath" class="home-link">
       <img class="logo" :src="$withBase(logo)" alt="Logo">
-      <span class="title">{{data}}</span>
+      <span class="site-name">{{data}}</span>
     </router-link>
 
     <div class="links">
@@ -43,31 +43,28 @@ export default {
 @import './styles/config.styl'
 
 .navbar
-  padding 0.9rem 3.5rem
+  padding 9px 3.5rem
   line-height $navbarHeight - 1.4rem
   position relative
   box-shadow: 1px 0 3px #d6d6d6;
   a, span, img
     display inline-block
-  .title
+  .site-name
     color: #000
-    margin 0 0 0 20px
+    margin 0 0 0 50px
     font-size 21px
+    top 3px
+    position absolute
   .logo
-    height $navbarHeight - 2rem
-    min-width $navbarHeight - 2rem
+    height $navbarHeight - 16px
+    min-width $navbarHeight - 16px
     margin-right 0
     vertical-align top
-  .site-name
-    font-size 1.3rem
-    font-weight 600
-    color #fff
-    position relative
   .links
     font-size 0.9rem
     position absolute
     right 3.5rem
-    top 0.7rem
+    top 2px
 
 @media (max-width: $MQMobile)
   .navbar
