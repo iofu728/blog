@@ -1,5 +1,5 @@
 ---
-pageClass: custom - page - class
+pageClass: custom-page-class
 ---
 
 # 关于VSM性能优化的思考🤔
