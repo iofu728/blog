@@ -14,7 +14,7 @@ pageClass: custom-page-class
 * ML
   + NLP
     - [试谈RNN中门的变迁](/other/rnn.md)
-    - [](/other/vsm.md)
+    - [于VSM性能优化的思考🤔](/other/vsm.md)
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Spider
   + Easy modal
