@@ -34,7 +34,7 @@ module.exports = {
         {
           title: 'NLP',
           collapsable: false,
-          children: ['rnn', 'pagerank'],
+          children: ['rnn', 'vsm', 'pagerank'],
         },
         {
           title: 'Spider',
