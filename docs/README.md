@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: View Last
-actionLink: /other/ppr.md
+actionLink: /other/vsm.md
 descriptionText: 很高兴不认识你
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
@@ -14,6 +14,7 @@ pageClass: custom-page-class
 * ML
   + NLP
     - [试谈RNN中门的变迁](/other/rnn.md)
+    - [](/other/vsm.md)
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Spider
   + Easy modal
