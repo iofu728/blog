@@ -38,6 +38,12 @@ pageClass: custom-page-class
 
 做了个小统计发现整个词袋里面有5477个词有多重词性的 高等词还有8个词性 so 呢
 
+根据蔡同学的思路 把词频小于10的词过滤掉
+
+26s就跑完了 但感觉 信息丢失的有点多
+
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542257683610-d69de86e-f09c-4fe5-bacf-316f20740d90.png "")
+
 ---
 
 VSM很简单 但hand write起来 还是会有一些问题的
