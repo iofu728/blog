@@ -15,7 +15,7 @@ echo $(cat log/pv) > ${nginxpath}/pv.txt
 
 # Time Total Pv
 hour=`date +%T`
-if [ ${hour:4:1} -eq 0 ] && [ ${hour:6:1} -eq 0 ]
+if [ ${hour:4:1} -eq 0 ] && [ ${hour:6:1} -eq 0 ] && [ ${hour:7:1} -eq 0 ]
 then
     originspider=`cat log/basic | tail -n +2 | head -n 1`
     date +%Y/%m/%d:%T > log/time
