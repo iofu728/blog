@@ -1,21 +1,22 @@
 ---
 home: true
 actionText: View Last
-actionLink: /other/vsm.md
+actionLink: /other/chatbot.md
 descriptionText: 很高兴不认识你
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 pageClass: custom-page-class
 ---
 
+* ML
+  + NLP
+    - [检索式人工智障识记](/other/chatbot.md)
+    - [试谈RNN中门的变迁](/other/rnn.md)
+    - [关于VSM性能优化的思考🤔](/other/vsm.md)
+    - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Data Mining
   + [大图中如何快速计算PPR](/other/ppr.md)
   + [如何一口气理解PageRank](/other/pageranks.md)
   + [Frequnent Pattern](/other/frequent.md)
-* ML
-  + NLP
-    - [试谈RNN中门的变迁](/other/rnn.md)
-    - [关于VSM性能优化的思考🤔](/other/vsm.md)
-    - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Spider
   + Easy modal
     - [Netease Music Spider](/other/netease.md)
