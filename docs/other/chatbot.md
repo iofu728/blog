@@ -230,6 +230,8 @@ DAM最核心的地方 在于2H层Attention的构造 Paper中给出了具体的�
 6. [Sequential matching network: A new architecture for multi-turn response selection in retrieval-based chatbots [`Yu Wu et al. 2017`]](https://arxiv.org/pdf/1612.01627)
 7. [Modeling multi-turn conversation with deep utterance aggregation [`Zhuosheng Zhang et al. 2018`]](https://arxiv.org/pdf/1806.09102)
 8. [Multi-Turn Response Selection for Chatbots with Deep Attention Matching Network [`Xiangyang Zhou et al. 2018`]](http://www.aclweb.org/anthology/P18-1103)
+9. [小哥哥，检索式chatbot了解一下？](https://zhuanlan.zhihu.com/p/44539292)
+10. [深度文本匹配发展总结](https://blog.csdn.net/xiayto/article/details/81247461)
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 
