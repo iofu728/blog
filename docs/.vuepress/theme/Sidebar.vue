@@ -95,7 +95,7 @@ function resolveOpenGroupIndex (route, items) {
       text-align right
       margin 0
   .sidebar-links
-    padding 1.5rem 0
+    padding 1.5rem 1rem 0 0
 
 @media (max-width: $MQMobile)
   .sidebar
