@@ -54,7 +54,7 @@ pageClass: custom-page-class
 
 那个时候 还没有Word2vector 更不用说小学五年级就可以学得TF 对词向量的计算 还都是传统的Hash优化思路
 
-这个时候出现了一个名叫DSSM的模型[Po-Sen Huang et al. 2013]  [Learning Deep Structured Semantic Models for Web Search using Clickthrough Data](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf)
+这个时候出现了一个名叫DSSM的模型[`Po-Sen Huang et al. 2013`]  [Learning Deep Structured Semantic Models for Web Search using Clickthrough Data](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf)
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542345404535-fde510e8-39e7-40b8-a620-b0eeb4b9fba0.png "")
 
@@ -79,7 +79,7 @@ pageClass: custom-page-class
 
 ### `MV-LSTM`
 
-就有学者提出理由构造对齐矩阵 然后再做池化的方式 计算句粒度之间相似度 的[`MV-LSTM`模型[Shengxian Wan et al. 2015]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11897/12030)
+就有学者提出理由构造对齐矩阵 然后再做池化的方式 计算句粒度之间相似度 的[`MV-LSTM`模型[`Shengxian Wan et al. 2015`]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11897/12030)
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542351846290-e23d67f2-5c47-4284-9e01-612b9a03ac7d.png "")
 
@@ -92,7 +92,7 @@ pageClass: custom-page-class
 
 > MM = Matching Matrix
 
-这个[模型[Liang Pang et al. 2016]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11895/12024)主要是从多个角度 构造对齐矩阵 然后讲多个对齐矩阵 类比图像处理 一起喂入CNN中进行 卷积池化操作
+这个[模型[`Liang Pang et al. 2016`]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11895/12024)主要是从多个角度 构造对齐矩阵 然后讲多个对齐矩阵 类比图像处理 一起喂入CNN中进行 卷积池化操作
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542353262588-eed0a08d-2a37-41d6-8cbb-b03054846889.png "")
 
@@ -110,7 +110,7 @@ pageClass: custom-page-class
 
 > BiMPM = Bilateral Multi-Perspective Matching
 
-在前面学者的基础上 进一步针对多角度句词匹配进行研究 提出[BiMPM模型[Zhiguo Wang et al. 2017]](https://arxiv.org/pdf/1702.03814)
+在前面学者的基础上 进一步针对多角度句词匹配进行研究 提出[BiMPM模型[`Zhiguo Wang et al. 2017`]](https://arxiv.org/pdf/1702.03814)
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542354627538-9500438e-7e1b-4f92-872e-5275e76b9df0.png "")
 
@@ -130,7 +130,7 @@ pageClass: custom-page-class
 
 ### `Multi-view model`
 
-说到交互式 必须 提到这篇论文[Multi-view Response Selection for Human-Computer Conversation[Xiangyang Zhou et al. 2016]](http://www.aclweb.org/anthology/D16-1036) 虽然它不算完全使用了交互思想的论文 但算作给交互打开了一些思路
+说到交互式 必须 提到这篇论文[Multi-view Response Selection for Human-Computer Conversation [`Xiangyang Zhou et al. 2016`]](http://www.aclweb.org/anthology/D16-1036) 虽然它不算完全使用了交互思想的论文 但算作给交互打开了一些思路
 
 然后 看完这篇Paper 很久以后 才发现 这篇论文是我老师写的 ~~（虽然他的名字 藏在最后）~~
 
@@ -154,7 +154,7 @@ pageClass: custom-page-class
 
 > SMN = Sequential Matching Network
 
-然后 就到了大名鼎鼎的SMN
+然后 就到了大名鼎鼎的[SMN [`Yu Wu et al. 2017`]](https://arxiv.org/pdf/1612.01627)
 
 `SMN` 把多粒度、基于交互的思想运用在多轮对话中
 
@@ -185,7 +185,7 @@ pageClass: custom-page-class
 
 那么如果把GRU换成RNN的其他模型呢
 
-就有学者把前面M1, M2分别换为GRU, self-attention
+就有学者提出[DUA模型[`Zhuosheng Zhang et al. 2018`]](https://arxiv.org/pdf/1806.09102)，把前面M1, M2分别换为GRU, self-attention
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542361352470-4c4da4a9-2c4a-4db9-a234-decb9baf0582.png "")
 
@@ -203,7 +203,7 @@ pageClass: custom-page-class
 
 前面的`SMN`给了两层对齐矩阵 那么为啥选两层 不选三层 四层 100层 8848层呢
 
-于是有dalao借助 `transformer` (其实 也就是 `self-attentation`)
+于是有dalao借助 `transformer` (其实 也就是 `self-attentation`) 提出了[Deep Attention Matching [`Xiangyang Zhou et al. 2018`]](http://www.aclweb.org/anthology/P18-1103)
 
 构造了一些对齐矩阵
 1. 原始word embedding 矩阵
@@ -222,9 +222,18 @@ DAM最核心的地方 在于2H层Attention的构造 Paper中给出了具体的�
 
 ## Reference
 
-1. [Learning Deep Structured Semantic Models for Web Search using Clickthrough Data[Po-Sen Huang et al. 2013]](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf)
-2. [A Deep Architecture for Semantic Matching with Multiple Positional Sentence Representations[Shengxian Wan et al. 2015]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11897/12030)
-3. [Text Matching as Image Recognition[Liang Pang et al. 2016]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11895/12024)
-4. [Bilateral Multi-Perspective Matching for Natural Language Sentences[Zhiguo Wang et al. 2017]](https://arxiv.org/pdf/1702.03814)
+1. [Learning Deep Structured Semantic Models for Web Search using Clickthrough Data [`Po-Sen Huang et al. 2013`]](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf)
+2. [A Deep Architecture for Semantic Matching with Multiple Positional Sentence Representations[`Shengxian Wan et al. 2015`]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11897/12030)
+3. [Text Matching as Image Recognition [`Liang Pang et al. 2016`]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11895/12024)
+4. [Bilateral Multi-Perspective Matching for Natural Language Sentences [`Zhiguo Wang et al. 2017`]](https://arxiv.org/pdf/1702.03814)
+5. [Multi-view Response Selection for Human-Computer Conversation [`Xiangyang Zhou et al. 2016`]](http://www.aclweb.org/anthology/D16-1036)
+6. [Sequential matching network: A new architecture for multi-turn response selection in retrieval-based chatbots [`Yu Wu et al. 2017`]](https://arxiv.org/pdf/1612.01627)
+7. [Modeling multi-turn conversation with deep utterance aggregation [`Zhuosheng Zhang et al. 2018`]](https://arxiv.org/pdf/1806.09102)
+8. [Multi-Turn Response Selection for Chatbots with Deep Attention Matching Network [`Xiangyang Zhou et al. 2018`]](http://www.aclweb.org/anthology/P18-1103)
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+
 
 
