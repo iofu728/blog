@@ -16,7 +16,7 @@
 
 ## 二次开发
 * 实时显示访问量
-* 自定义主题 `Gothic` style
+* 自定义主题 `Gothic` Style + Card Style
 * 天粒度增量Load数据 数据处理由全量改为增量 减小内存CPU占用率
 * 支持Gitalk评论
 * 支持自动处理、并更新访问量
