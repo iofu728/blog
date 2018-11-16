@@ -85,7 +85,7 @@ pageClass: custom-page-class
 
 1. 用对齐矩阵计算句子间的两两匹配度 从细粒度描述句子间关系
 2. 利用双向LSTM模型 减轻模型权重偏向句末的问题
-3. Similarity不只是简单的cosine值计算 $s(u,v)=f(u^TM^{[1:c]}v+W_{uv}\bigl(\begin{smallmatrix} u\\ v \end{smallmatrix}\bigr)+b)$
+3. Similarity不只是简单的cosine值计算 $s(u,v)=f(u^TM^{[1:c]}v+W_{uv}[u;v])+b)$
 4. 处理最后一步使用多层感知机MLP进行压缩和分类 因为效果较好 这个做法在之后的论文中被广泛采用
 
 ### `MM`
