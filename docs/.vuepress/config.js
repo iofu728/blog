@@ -22,19 +22,19 @@ module.exports = {
     nav: [
       {text: 'Pat', link: '/pat/'},
       {text: 'JavaScript', link: '/javaScript/comment.md'},
-      {text: 'Other', link: '/other/ppr.md'},
+      {text: 'Other', link: '/other/chatbot.md'},
     ],
     sidebar: {
       '/other/': [
         {
+          title: 'NLP',
+          collapsable: false,
+          children: ['chatbot', 'rnn', 'vsm', 'pagerank'],
+        },
+        {
           title: 'Data Mining',
           collapsable: false,
           children: ['ppr', 'pageranks', 'frequent'],
-        },
-        {
-          title: 'NLP',
-          collapsable: false,
-          children: ['rnn', 'vsm', 'pagerank'],
         },
         {
           title: 'Spider',
