@@ -10,7 +10,7 @@ truncate -s 0 $logpath
 
 # Build User File
 truncate -s 0 log/user
-awk '{if($9==200&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){if($7~/\/assets\/js\/app/&&last&&$1==last)print $1;last=$1;}}' log/today >> log/userpre
+awk '{if($9==200&&$0!~/bot/&&($0!~/spider/||$0~/other\/spider.html/)&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){if($7~/\/assets\/js\/app/&&last&&$1==last)print $1;last=$1;}}' log/today >> log/userpre
 awk '{print $0}' log/userpre|sort | uniq -c | sort -nr >> log/user
 
 # Basic pv & Yesterday pv
@@ -21,7 +21,7 @@ am="$yestday:00:00:00"
 pm="$yestday:23:59:59"
 originpv=`cat log/basic | tail -n +1 | head -n 1`
 originspider=`cat log/basic | tail -n +2 | head -n 1`
-num=`awk '{if($9==200&&$7~/pv.txt/&&$0!~/bot/&&$0!~/spider/&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/today|sort | uniq -c | wc -l`
+num=`awk '{if($9==200&&$7~/pv.txt/&&$0!~/bot/&&($0!~/spider/||$0~/other\/spider.html/)&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/&&$0!~/localhost/){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/today|sort | uniq -c | wc -l`
 echo $num >> log/yesterday
 expr $num + $originpv > log/basicpre
 num=`awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$6!~/GET/||$0~/Verification/||$0~/"-" "-"/||$0~/[gG]o/||$0~/[pP]ython/||$0~/curl/)){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/user log/today|sort | uniq -c | wc -l`
