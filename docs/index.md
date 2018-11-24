@@ -48,7 +48,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   + Anoj
     - [Anoj 2018模拟II](/pat/anoj2018II.md)
   + Pat
-    - [目录](/pat/README.md)
+    - [目录](/pat/catalog.md)
   + Summary
     - [排队问题分析](/pat/sort.md)
     - [2018 PKU RW entrance](/pat/entrance.md)
