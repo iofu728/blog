@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 2>&1
+date: 2018-09-28 09:44:06
+tags: [Linux]
+description: 重定向符解析
 ---
-
-# `2>&1`
 
 初识这个命令的时候，还是山川dalao帮我在开发机上部署java程序时，打印日志的时候使用的
 

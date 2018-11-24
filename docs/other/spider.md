@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 从日志中识别 Spider
+date: 2018-10-07 16:23:12
+tags: [Linux, Bash]
+description: Bash 解析日志
 ---
-
-# 从日志中识别 Spider
 
 前面讲了[如何利用脚本统计PV、UV](/other/pv.md)，[如何利用MapReduce对日志处理进行分布式操作](/other/mapreduce.md)
 

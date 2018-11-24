@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: immutable.js
+date: 2018-06-06 11:57:34
+tags: [immutable]
+description: immutable
 ---
-# immutable.js
 
 毕设做到想砸电脑
 
