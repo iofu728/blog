@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: NLP, Knowledge graph, PageRank
+date: 2018-09-18 06:22:22
+tags: [PageRank]
+description: some think about ml
 ---
-
-# NLP, Knowledge graph, PageRank
 
 这里慢慢的会记录一些上课或者其他途径获得的各方面知识的理解
 

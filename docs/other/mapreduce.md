@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 『Hadoop』MapReduce 处理 日志log(单机版)
+date: 2018-10-05 09:03:17
+tags: [hadoop]
+description: mapreduce 日志分析
 ---
-# 『Hadoop』MapReduce 处理 日志log(单机版)
 
 10.2晚又出现上次CPU打满
 

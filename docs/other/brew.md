@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: brew | brew cask | yum | apt-get
+date: 2018-10-07 06:10:52
+tags: [Linux]
+description: 包管理器概述
 ---
-# brew | brew cask | yum | apt-get
 
 用过Mac的肯定 或多或少的 用过 brew这个命令
 
