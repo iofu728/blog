@@ -1,20 +1,46 @@
-// colors
-$accentColor = #DC143C
-$textColor = #2c3e50
-$borderColor = #fff
-$codeBgColor = #434852
-$shadowColor = #bdbdbd
+$body-font-family = -apple-system,BlinkMacSystemFont,Roboto,"Segoe UI","Helvetica Neue",Helvetica,"PingFang SC", "Hiragino Sans GB","Microsoft YaHei",SimSun,sans-serif
+$font-size-root = 14px
+$line-height-root = 1.5
+$card-border-radius = 4px
 
-// layout
-$navbarHeight = 4rem
-$sidebarWidth = 20rem
-$contentWidth = 740px
-$internalHeroHeight = 15em
+$font-roboto = './fonts/roboto'
+$font-code = Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
 
-// responsive breakpoints
-$MQNarrow = 959px
-$MQMobile = 719px
-$MQMobileNarrow = 419px
+$container-max-width = 1000px
+$body-background = #f6f6f6
+$primary-color = #07527a
+$light-primary-color = lighten($primary-color, 90%)
+$content-color = #4d4d4d
+$gray-color = #7e7e7e
 
-// code
-$lineNumbersWrapperWidth = 1rem
+$custom-blocks = {
+  tip: #1DA57A
+  warning: #e6af5f
+  danger: #DC143C
+}
+
+$code-languages = {
+  js: 'js' 'javascript'
+  html: 'html' 'markup'
+  md: 'md' 'markdown'
+  vue: 'vue'
+  css: 'css'
+  less: 'less'
+  sass: 'sass'
+  scss: 'scss'
+  stylus: 'stylus'
+  jsx: 'jsx'
+  ts: 'ts' 'typescript'
+  json: 'json'
+  yaml: 'yaml'
+  bash: 'bash'
+  c: 'c'
+  java: 'java'
+  kotlin: 'kotlin'
+  python: 'py' 'python'
+  csharp: 'c#' 'csharp'
+  go: 'go'
+  sql: 'sql'
+}
+
+@import '~@source/.vuepress/override.styl'

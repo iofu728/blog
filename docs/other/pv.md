@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 自动更新网站访问量的定时脚本
+date: 2018-09-09 14:37:16
+tags: [Bash]
+description: 定时脚本 Pv
 ---
-
-# 自动更新网站访问量的定时脚本
 
 原理：Nginx会把访问日志写入access.log
 

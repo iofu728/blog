@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: Frequent  Pattern
+date: 2018-10-10 15:56:56
+tags: [Data Mining]
+description: 频繁模式挖掘
 ---
-
-# Frequent  Pattern
 
 作为Data mining 的第一篇 先来讲讲频繁模式
 
@@ -292,8 +293,6 @@ Step4. | Fk |=0, STOP; otherwise k=k+1, and goto Step 2.
 7. [An Apriori-based Algorithm for Mining Frequent Substructures from Graph Data](https://www.eecs.wsu.edu/~holder/courses/cse6363/spr04/present/Inokuchi00.pdf)
 8. [gSpan: Graph-Based Substructure Pattern Mining](https://www.cs.ucsb.edu/~xyan/papers/gSpan-short.pdf)
 
-Hakai|Gemini|Shinka|LMAO|Ronin|
-login
 
 
 

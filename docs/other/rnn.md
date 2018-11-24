@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 试谈`RNN`中`门`的变迁
+date: 2018-11-04 14:23:35
+tags: [RNN, NLP]
+description: RNN 家族 解析
 ---
-
-# 试谈`RNN`中`门`的变迁
 
 终于发完proposal 的邮件 深吸一口气
 

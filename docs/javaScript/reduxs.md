@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
----
-# Take about Redux Ⅱ
+title: Take about Redux Ⅱ
+date: 2018-05-05 13:14:14
+tags: [Redux]
+description: Take about Redux Ⅱ
+--- 
 
 毕设 跑程序一次要跑1h+ 很是无聊
 想来 还是写点博客 嗯 在服务器到期前 hhh 好像没几天了
