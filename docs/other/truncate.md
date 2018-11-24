@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: Innodb MySQL中如何优雅的删除大表跑路🏃
+date: 2018-10-08 15:47:54
+tags: [MySQL]
+description: MySQL 删除大表 truncate
 ---
-# `Innodb` MySQL中如何优雅的删除大表跑路🏃
 
 最近很想写写MySQL相关的内容，就从这个话题出发吧
 

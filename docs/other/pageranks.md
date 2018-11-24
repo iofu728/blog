@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 如何`一口气`理解PageRank
+date: 2018-10-30 17:00:08
+tags: [PageRank, Data Mining]
+description: PageRank
 ---
-
-# 如何`一口气`理解PageRank
 
 `一口气`开始~~别憋气~~
 

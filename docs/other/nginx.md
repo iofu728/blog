@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: Nginx 调优
+date: 2018-09-22 12:54:10
+tags: [Nginx]
+description: Nginx 调优
 ---
-# Nginx 调优
 
 环境:
 > Ubuntu18.04.1 LTS - aliYun

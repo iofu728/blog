@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
----
-
-# git rebase 的另解
+title: git rebase 的另解
+date: 2018-09-07 13:38:52
+tags: [Git]
+description: git rebase 另解
+--- 
 
 我们都知道git rebase在合并的时候能把这一段时间内一堆commit变成一个，对理清开发思路有着不可磨灭的功效
 
