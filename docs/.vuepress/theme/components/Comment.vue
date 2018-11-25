@@ -6,7 +6,7 @@
     </v-card>
 </template>
 <script>
-// import 'gitalk/dist/gitalk.css'
+import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
 
   export default {
