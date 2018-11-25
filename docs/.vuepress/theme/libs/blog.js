@@ -22,7 +22,7 @@ const install = (Vue, { theme, pages }) => {
   const tags = {}
   const tagList = []
   postList.forEach(slug => {
-    const list = posts[slug].frontmatter.tags || []
+    const list = posts[slug].frontmatter ? posts[slug].frontmatter.tags || [] : []
     list.forEach(tagName => {
       if (!tags[tagName]) {
         tags[tagName] = []
@@ -53,7 +53,7 @@ const install = (Vue, { theme, pages }) => {
         const { path, meta } = this.$route
         for (let i = 0; i < pages.length; i++) {
           const page = pages[i]
-          const layout = page.frontmatter.layout || 'post'
+          const layout = page.frontmatter ? page.frontmatter.layout || 'post' : 'post'
           if (page.path === path || layout === meta.layout) {
             return { ...page, path } // rewrite path
           }
