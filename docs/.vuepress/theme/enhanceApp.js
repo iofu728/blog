@@ -20,7 +20,7 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(i18n, theme.lang)
   Vue.use(blog, { theme, pages })
   Vue.use(routes, { router, theme })
-  Vue.use(components, theme)Ï
+  Vue.use(components, theme)
   // try {
   //   document && frontmatter && router !== '/404.html' && getGitalk()
   // } catch (e) {
