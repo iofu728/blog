@@ -22,7 +22,7 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(routes, { router, theme })
   Vue.use(components, theme)
   try {
-    document && frontmatter && getGitalk()
+    document && frontmatter && router !== '/404.html' && getGitalk()
   } catch (e) {
     console.error(e.message)
   }
