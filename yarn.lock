@@ -3725,10 +3725,10 @@ git-semver-tags@^1.3.6:
     meow "^4.0.0"
     semver "^5.5.0"
 
-gitalk@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/gitalk/-/gitalk-1.4.1.tgz#49c099f9cfe44d9c7ca6e1b24283189f6ace787d"
-  integrity sha512-fbGeJBHpqNj6FgLr4OzilvHlH058vrsOu91IipLRrxE5jUdV3VgW8kXmo52oarPIHAR3hyGU0HQLHgrXLeyEEQ==
+gitalk@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gitalk/-/gitalk-1.2.0.tgz#edb810757cb778520fefe34cfd145e65a1844730"
+  integrity sha512-Xmi5UwL29tWbJa8fe4LvCS5S8XB4sYic2lhYm+IPufUeK0oF60JuGiml9HW+ess9hRiGJgx4I8OCREeyNc5XCA==
   dependencies:
     autosize "3.0.21"
     axios "0.16.2"
