@@ -7,7 +7,7 @@
 </template>
 <script>
 // import 'gitalk/dist/gitalk.css'
-// import Gitalk from 'gitalk'
+import Gitalk from 'gitalk'
 
   export default {
     name: '',
@@ -26,7 +26,11 @@
       }
     },
     mounted(){
-      this.gitalk.render("gitalk-container");
+      try {
+        document && this.gitalk.render("gitalk-container");
+      } catch (e) {
+        console.error(e.message)
+      }
     }
 
   }
