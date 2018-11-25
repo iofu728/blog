@@ -27,7 +27,7 @@ import Gitalk from 'gitalk'
     },
     mounted(){
       try {
-        document && this.gitalk.render("gitalk-container");
+        document && window && this.gitalk.render("gitalk-container");
       } catch (e) {
         console.error(e.message)
       }
