@@ -89,13 +89,6 @@ export default {
     }
   },
   created() {
-    const linkGitalk = document.createElement('link');
-    linkGitalk.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css';
-    linkGitalk.rel = 'stylesheet';
-    document.body.appendChild(linkGitalk);
-    const scriptGitalk = document.createElement('script');
-    scriptGitalk.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js';
-    document.body.appendChild(scriptGitalk);
     if (this.$ssrContext) {
       this.$ssrContext.title = this.createTitle()
       this.$ssrContext.lang = this.$lang
