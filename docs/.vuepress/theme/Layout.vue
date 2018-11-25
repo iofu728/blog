@@ -66,7 +66,7 @@ export default {
   },
   computed: {
     layout() {
-      return this.$page.frontmatter.layout || 'post'
+      return this.$page.frontmatter && this.$page.frontmatter.layout || 'post'
     }
   },
   methods: {
@@ -108,7 +108,7 @@ export default {
           name: 'description',
           content: this.$description
         },
-        ...(this.$page.frontmatter.meta || [])
+        ...(this.$page.frontmatter ? this.$page.frontmatter.meta || [] : [])
       ]
       this.currentMetaTags = updateMetaTags(meta, this.currentMetaTags)
     }

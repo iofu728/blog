@@ -54,7 +54,7 @@ export default {
       return this.layout === 'list'
     },
     notHome() {
-      return this.page.frontmatter.layout !== 'home'
+      return this.page.frontmatter && this.page.frontmatter.layout !== 'home'
     },
     page() {
       return typeof this.post === 'string' ? this.$blog.posts[this.post] : this.post
