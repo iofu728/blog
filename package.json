@@ -46,7 +46,7 @@
     "escape-html": "^1.0.3",
     "file-loader": "^1.1.11",
     "fs-extra": "^5.0.0",
-    "gitalk": "1.4.0",
+    "gitalk": "1.4.1",
     "github-markdown-css": "^2.10.0",
     "globby": "^8.0.1",
     "gray-matter": "^4.0.1",
