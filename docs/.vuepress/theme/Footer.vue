@@ -20,7 +20,7 @@
           Power by
           <a href="https://vuepress.vuejs.org"
              target="_blank"
-             rel="noopener noreferrer">VuePress</a> Set
+             rel="noopener noreferrer">VuePress</a> for
           <a href="https://github.com/iofu728/blog"
              target="_blank"
              rel="noopener noreferrer">blog</a>
