@@ -24,7 +24,7 @@
           language: 'zh-CN',
         })
         try {
-          document && frontmatter && gitalk.render("gitalk-container");
+          // document && frontmatter && gitalk.render("gitalk-container");
         } catch (e) {
           console.error(e.message)
         }
