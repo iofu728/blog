@@ -7,13 +7,13 @@
 </template>
 <script>
 // import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
+// import Gitalk from 'gitalk'
 
   export default {
     name: '',
-    data() {
-      return {
-        gitalk: new Gitalk({
+    mounted(){
+      if (typeof Gitalk !== 'undefined' && Gitalk instanceof Function) {
+        const gitalk = new Gitalk({
           clientID: '6ac606b7bad30bff534c',
           clientSecret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
           repo: 'blog',
@@ -23,16 +23,13 @@ import Gitalk from 'gitalk'
           distractionFreeMode: false,
           language: 'zh-CN',
         })
-      }
-    },
-    mounted(){
-      try {
-        document && window && this.gitalk.render("gitalk-container");
-      } catch (e) {
-        console.error(e.message)
+        try {
+          document && gitalk.render("gitalk-container");
+        } catch (e) {
+          console.error(e.message)
+        }
       }
     }
-
   }
 </script>
 <style lang="stylus">
