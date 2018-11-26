@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 检索式人工智障识记
+date: 2018-11-16 10:12:02
+tags: [NLP, QA]
+description: 检索式 QA
 ---
-
-# `检索式`人工智障识记
 
 拖了一个多星期了 都快拖到Final Presentation DDL了 我这个`懒癌晚期`都看不下去了
 

@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 『HDFS』伪分布式Hadoop集群
+date: 2018-10-07 15:43:00
+tags: [hadoop]
+description: hadoop 伪分布式
 ---
-# 『HDFS』伪分布式Hadoop集群
 
 本文是[『Hadoop』MapReduce 处理 日志log(单机版)](/other/mapreduce.md)的旭文, maybe还有后续
 

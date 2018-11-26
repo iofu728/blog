@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: React component
+date: 2018-04-06 12:40:14
+tags: [React]
+description: React Component
 ---
-# React component
 
 编者按：React 16之后 对 生命周期函数
 进行大改增加了一些函数 对于部分函数增加UNSAFE\_头 准备React 17之后正式废弃

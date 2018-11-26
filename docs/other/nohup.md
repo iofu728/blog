@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: nohup
+date: 2018-10-02 13:18:43
+tags: [Linux]
+description: nohup 探究
 ---
-# nohup
 
 `nohup` = `no hang up`
 作用在当用户从终端页面退出时，程序任务仍可以保持运行
