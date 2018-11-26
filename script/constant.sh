@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # @Author: gunjianpan
 # @Date:   2018-11-09 16:09:31
 # @Last Modified by:   gunjianpan

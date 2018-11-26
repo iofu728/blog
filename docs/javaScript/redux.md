@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: Take about Redux I
+date: 2018-04-23 13:23:43
+tags: [Redux]
+description: Take about Redux I
 ---
-# Take about Redux I
 
 本来我们组用的前端技术一般 也就是利用基于`react`的`AntD`脚手架
 后来组里来了一个pku的dalao 科普了 `react`全家桶

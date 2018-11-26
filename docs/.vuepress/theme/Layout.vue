@@ -1,133 +1,138 @@
 <template>
-  <div class="theme-container"
-    :class="pageClasses"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd">
-    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
-    <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
-    <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
-      <slot name="sidebar-top" slot="top"/>
-      <slot name="sidebar-bottom" slot="bottom"/>
-    </Sidebar>
-    <div class="custom-layout" v-if="$page.frontmatter.layout">
-      <component :is="$page.frontmatter.layout"/>
-    </div>
-    <Home v-else-if="$page.frontmatter.home"/>
-    <Page v-else :sidebar-items="sidebarItems">
-      <slot name="page-top" slot="top"/>
-      <slot name="page-bottom" slot="bottom"/>
-    </Page>
-  </div>
+  <v-app v-scroll="onScroll">
+    <v-progress-linear :height="3"
+                       color="accent"
+                       :indeterminate="progressRunning"
+                       :background-opacity="0.4"
+                       class="blog-progress"
+                       v-show="progressRunning"></v-progress-linear>
+    <v-navigation-drawer app
+                         :mobile-break-point="mobilePoint"
+                         :mini-variant.sync="miniNav"
+                         :width="240"
+                         v-model="navVisible">
+      <SideNav></SideNav>
+    </v-navigation-drawer>
+    <Header :layout="layout"
+            @toggleNav="toggleNav"></Header>
+    <v-content>
+      <component :is="layout"></component>
+      <Footer></Footer>
+    </v-content>
+    <transition name="scale-transition">
+      <v-btn fab
+             fixed
+             right
+             bottom
+             color="accent"
+             @click="$vuetify.goTo(0)"
+             v-show="offsetTop > 300">
+        <i class="fa fa-lg fa-chevron-up"></i>
+      </v-btn>
+    </transition>
+  </v-app>
 </template>
-
 <script>
 import Vue from 'vue'
-import nprogress from 'nprogress'
-import Home from './Home.vue'
-import Navbar from './Navbar.vue'
-import Page from './Page.vue'
-import Sidebar from './Sidebar.vue'
-import { resolveSidebarItems } from './util'
+import SideNav from './SideNav'
+import Header from './Header'
+import Footer from './Footer'
+import Home from './Home'
+import Tags from './Tags'
+import Post from './Post'
+import About from './About'
+import { pathToComponentName, updateMetaTags } from './libs/utils'
 
 export default {
-  components: { Home, Page, Sidebar, Navbar },
-  data () {
+  name: 'layout',
+  components: {
+    SideNav,
+    Header,
+    Footer,
+    Home,
+    Tags,
+    Post,
+    About
+  },
+  data() {
+    const mobilePoint = 1264
     return {
-      isSidebarOpen: false
+      navVisible: true,
+      miniNav: false,
+      mobilePoint: 1264,
+      offsetTop: 0,
+      progressRunning: false
     }
   },
-
   computed: {
-    shouldShowNavbar () {
-      const { themeConfig } = this.$site
-      const { frontmatter } = this.$page
-      if (
-        frontmatter.navbar === false ||
-        themeConfig.navbar === false) {
-        return false
-      }
-      return (
-        this.$title ||
-        themeConfig.logo ||
-        themeConfig.repo ||
-        themeConfig.nav ||
-        this.$themeLocaleConfig.nav
-      )
-    },
-    shouldShowSidebar () {
-      const { frontmatter } = this.$page
-      return (
-        !frontmatter.layout &&
-        !frontmatter.home &&
-        frontmatter.sidebar !== false &&
-        this.sidebarItems.length
-      )
-    },
-    sidebarItems () {
-      return resolveSidebarItems(
-        this.$page,
-        this.$route,
-        this.$site,
-        this.$localePath
-      )
-    },
-    pageClasses () {
-      const userPageClass = this.$page.frontmatter.pageClass
-      return [
-        {
-          'no-navbar': !this.shouldShowNavbar,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar
-        },
-        userPageClass
-      ]
+    layout() {
+      return this.$page.frontmatter && this.$page.frontmatter.layout || 'post'
     }
   },
-
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
-
-    // configure progress bar
-    nprogress.configure({ showSpinner: false })
+  methods: {
+    createTitle() {
+      const title = `${this.$siteTitle}`
+      const pageTitle = this.$page.title
+      const subTitle = this.$site.themeConfig.subTitle.replace(/^\s+|\s+$/g,"")
+      return (pageTitle && pageTitle !== 'Home' ? `${pageTitle} · ` : '') + title + `${subTitle ? `· ${subTitle}` : ''}`
+    },
+    toggleNav() {
+      if (window.innerWidth > this.mobilePoint) {
+        this.miniNav = !this.miniNav
+      } else {
+        this.navVisible = !this.navVisible
+        this.miniNav = false
+      }
+    },
+    onScroll(e) {
+      this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
+    }
+  },
+  created() {
+    if (this.$ssrContext) {
+      this.$ssrContext.title = this.createTitle()
+      this.$ssrContext.lang = this.$lang
+      this.$ssrContext.description = this.$page.description || this.$description
+    } else {
+      this.navVisible = window.innerWidth > this.mobilePoint
+    }
+  },
+  mounted() {
+    // update title / meta tags
+    this.currentMetaTags = new Set()
+    const updateMeta = () => {
+      document.title = this.createTitle()
+      document.documentElement.lang = this.$lang
+      const meta = [
+        {
+          name: 'description',
+          content: this.$description
+        },
+        ...(this.$page.frontmatter ? this.$page.frontmatter.meta || [] : [])
+      ]
+      this.currentMetaTags = new Set(updateMetaTags(meta, this.currentMetaTags))
+    }
+    this.$watch('$page', updateMeta)
+    updateMeta()
 
     this.$router.beforeEach((to, from, next) => {
-      if (to.path !== from.path && !Vue.component(to.name)) {
-        nprogress.start()
+      if (to.path !== from.path && !Vue.component(pathToComponentName(to.path))) {
+        this.progressRunning = true
       }
       next()
     })
 
     this.$router.afterEach(() => {
-      nprogress.done()
-      this.isSidebarOpen = false
+      this.progressRunning = false
     })
   },
-
-  methods: {
-    toggleSidebar (to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
-    },
-    // side swipe
-    onTouchStart (e) {
-      this.touchStart = {
-        x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
-      }
-    },
-    onTouchEnd (e) {
-      const dx = this.touchStart.x - e.changedTouches[0].clientX
-      const dy = this.touchStart.y - e.changedTouches[0].clientY
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 200) {
-        if (dx > 0 && this.touchStart.x >= 280) {
-          this.toggleSidebar(true)
-        } else {
-          this.toggleSidebar(false)
-        }
-      }
-    }
-  }
+  beforeDestroy() {
+    updateMetaTags(null, this.currentMetaTags)
+  },
 }
 </script>
-
+<style src="@fortawesome/fontawesome-free-webfonts/css/fa-solid.css"></style>
+<style src="@fortawesome/fontawesome-free-webfonts/css/fa-regular.css"></style>
+<style src="@fortawesome/fontawesome-free-webfonts/css/fa-brands.css"></style>
+<style src="@fortawesome/fontawesome-free-webfonts/css/fontawesome.css"></style>
 <style src="prismjs/themes/prism-tomorrow.css"></style>
-<style src="./styles/theme.styl" lang="stylus"></style>
