@@ -1,7 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 传统工科跨考cs的一些经验
+date: 2018-03-19 17:57:10
+tags: [Summary]
+description: 跨考经验
 ---
-# 传统工科跨考cs的一些经验
 
 **可能比较长，大家见谅。**
 

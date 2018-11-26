@@ -1,5 +1,8 @@
 ---
-pageClass: custom-page-class
+title: Ali Test
+date: 2018-09-21 14:56:01
+tags: [Math]
+description: Test Latex
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 

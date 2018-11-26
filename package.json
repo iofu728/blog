@@ -1,17 +1,49 @@
 {
-  "private": true,
+  "name": "iofu728-blog",
+  "version": "4.0.0",
+  "description": "blog for wyydsb",
   "scripts": {
     "doc:dev": "./node_modules/.bin/vuepress dev ./docs",
     "docs:build": "./node_modules/.bin/vuepress build ./docs"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iofu728/blog"
+  },
+  "keywords": [
+    "VuePress",
+    "blog"
+  ],
+  "author": "gunjianpan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://wyydsb.xin"
+  },
   "devDependencies": {
-    "vuepress": "^0.14.2"
+    "conventional-changelog": "^1.1.23",
+    "eslint": "^4.19.1",
+    "eslint-plugin-vue-libs": "^2.1.0",
+    "lint-staged": "^7.0.4",
+    "vuepress": "^0.14.0",
+    "vuepress-theme-vue": "^1.0.0",
+    "yorkie": "^1.0.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.6",
+    "buble": "^0.19.3",
+    "dayjs": "^1.5.16",
+    "es6-promise": "^4.2.4",
     "github-markdown-css": "^2.10.0",
     "katex": "^0.10.0-rc.1",
-    "markdown-it": "^8.4.2",
-    "markdown-it-emoji": "^1.4.0",
-    "markdown-it-katex": "^2.0.3"
+    "lodash": "^4.17.10",
+    "markdown-it": "^8.4.1",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-katex": "^2.0.3",
+    "object-assign": "^4.1.1",
+    "vue": "^2.5.16",
+    "vuetify": "1.0.17",
+    "webpack": "^4.8.1",
+    "webpack-node-externals": "1.7.2",
+    "webpack-serve": "^0.3.1"
   }
 }
