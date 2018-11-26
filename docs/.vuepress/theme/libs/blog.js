@@ -12,7 +12,11 @@ const install = (Vue, { theme, pages }) => {
   // Example： { postList: [], posts: {}, tagList: [], tags: { }  }
   const postList = []
   const posts = {}
-
+  pages.forEach(page => {
+    if (!page.frontmatter) {
+      page.frontmatter = {}
+    }
+  })
   sortBy(pages, page => -new Date(page.frontmatter.date)).forEach(page => {
     const slug = matchSlug(page.path)
     postList.push(slug)
