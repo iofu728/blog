@@ -15,7 +15,22 @@ function getGitalk() {
   document.body.appendChild(scriptGitalk);
 }
 
+function prepare (siteData) {
+  siteData.pages.forEach(page => {
+    if (!page.frontmatter) {
+      page.frontmatter = {}
+    }
+  })
+  if (siteData.locales) {
+    Object.keys(siteData.locales).forEach(path => {
+      siteData.locales[path].path = path
+    })
+  }
+  Object.freeze(siteData)
+}
+
 export default ({ Vue, options, router, siteData }) => {
+  prepare(siteData)
   const { themeConfig: theme, pages } = siteData
   Vue.use(i18n, theme.lang)
   Vue.use(blog, { theme, pages })
