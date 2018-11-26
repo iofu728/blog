@@ -4,9 +4,13 @@ home: true
 title: 乌云压顶是吧
 actionText: View Last
 actionLink: /other/chatbot.md
-descriptionText: 很高兴不认识你
+descriptionText: 
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
+
+> 很高兴不认识你
+
+[Last 👉](/other/chatbot.html)
 
 * ML
   + NLP

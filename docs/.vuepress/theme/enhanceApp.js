@@ -21,6 +21,12 @@ function prepare (siteData) {
       page.frontmatter = {}
     }
   })
+  siteData.pages.push({
+    frontmatter: {},
+    key: "v-8848",
+    path: "/404.html",
+    title: "404",
+  })
   if (siteData.locales) {
     Object.keys(siteData.locales).forEach(path => {
       siteData.locales[path].path = path
@@ -36,9 +42,9 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(blog, { theme, pages })
   Vue.use(routes, { router, theme })
   Vue.use(components, theme)
-  // try {
-  //   document && frontmatter && router !== '/404.html' && getGitalk()
-  // } catch (e) {
-  //   console.error(e.message)
-  // }
+  try {
+    document && router !== '/404.html' && getGitalk()
+  } catch (e) {
+    console.error(e.message)
+  }
 }
