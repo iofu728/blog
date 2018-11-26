@@ -30,6 +30,18 @@ else
 rm -rf ${nginxpath}/pat
 fi
 
+if [ ! -d "${nginxpath}/tags" ];then
+echo "文件不存在"
+else
+rm -rf ${nginxpath}/other
+fi
+
+if [ ! -d "${nginxpath}/icons" ];then
+echo "文件不存在"
+else
+rm -rf ${nginxpath}/other
+fi
+
 for htmlfile in docs/.vuepress/dist/*/*.html docs/.vuepress/dist/*.html
 do
     sed -i '/<head>/a\<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />' $htmlfile
