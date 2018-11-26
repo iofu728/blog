@@ -20,13 +20,13 @@
     "url": "https://wyydsb.xin"
   },
   "devDependencies": {
-    "conventional-changelog": "^1.1.23",
+    "conventional-changelog": "1.1.23",
     "eslint": "^4.19.1",
     "eslint-plugin-vue-libs": "^2.1.0",
     "lint-staged": "^7.0.4",
-    "vuepress": "^0.14.2",
-    "vuepress-theme-vue": "^1.0.0",
-    "yorkie": "^1.0.3"
+    "vuepress": "0.14.2",
+    "vuepress-theme-vue": "1.0.0",
+    "yorkie": "1.0.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "1.0.6",
@@ -91,12 +91,12 @@
     "webpack-serve": "0.3.1",
     "webpackbar": "2.6.1",
     "workbox-build": "3.1.0",
-    "conventional-changelog": "^1.1.23",
+    "conventional-changelog": "1.1.23",
     "eslint": "^4.19.1",
     "eslint-plugin-vue-libs": "^2.1.0",
     "lint-staged": "^7.0.4",
-    "vuepress": "^0.14.2",
-    "vuepress-theme-vue": "^1.0.0",
-    "yorkie": "^1.0.3"
+    "vuepress": "0.14.2",
+    "vuepress-theme-vue": "1.0.0",
+    "yorkie": "1.0.3"
   }
 }
