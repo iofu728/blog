@@ -33,13 +33,13 @@ fi
 if [ ! -d "${nginxpath}/tags" ];then
 echo "文件不存在"
 else
-rm -rf ${nginxpath}/other
+rm -rf ${nginxpath}/tags
 fi
 
 if [ ! -d "${nginxpath}/icons" ];then
 echo "文件不存在"
 else
-rm -rf ${nginxpath}/other
+rm -rf ${nginxpath}/icons
 fi
 
 for htmlfile in docs/.vuepress/dist/*/*.html docs/.vuepress/dist/*.html
