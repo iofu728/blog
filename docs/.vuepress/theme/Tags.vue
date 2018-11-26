@@ -19,7 +19,7 @@
                      :key="slug"
                      :to="$blog.posts[slug].path">
           <v-list-tile-sub-title class="list-inline-time">
-            <PostTime :date="$blog.posts[slug].frontmatter.date"></PostTime>
+            <PostTime v-if="$blog.posts[slug].frontmatter" :date="$blog.posts[slug].frontmatter.date"></PostTime>
           </v-list-tile-sub-title>
           <v-list-tile-title class="primary--text">{{ $blog.posts[slug].title }}</v-list-tile-title>
         </v-list-tile>

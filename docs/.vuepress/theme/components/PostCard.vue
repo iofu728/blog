@@ -11,7 +11,7 @@
         <h2 class="display-1 mb-3"
             v-else>{{page.title}}</h2>
         <div class="post-meta">
-          <PostTime :date="page.frontmatter.date"></PostTime>
+          <PostTime v-if="page.frontmatter" :date="page.frontmatter.date"></PostTime>
         </div>
       </v-flex>
     </v-card-title>
@@ -22,7 +22,7 @@
     </v-card-text>
     <v-card-actions>
       <v-flex xs12>
-        <Tag v-for="tag in page.frontmatter.tags"
+        <Tag v-if="page.frontmatter" v-for="tag in page.frontmatter.tags"
              :key="tag"
              :slug="tag">{{tag}}</Tag>
       </v-flex>
