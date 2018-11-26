@@ -24,7 +24,7 @@
     "eslint": "4.19.1",
     "eslint-plugin-vue-libs": "2.1.0",
     "lint-staged": "7.0.4",
-    "vuepress": "0.10.0",
+    "vuepress": "0.12.0",
     "vuepress-theme-vue": "1.0.0",
     "yorkie": "1.0.3"
   },
@@ -83,12 +83,12 @@
     "vue-template-compiler": "2.5.16",
     "vuepress-html-webpack-plugin": "3.2.0",
     "vuetify": "1.0.17",
-    "webpack": "^4.5.0",
-    "webpack-chain": "^4.6.0",
-    "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.7.2",
-    "webpack-serve": "^0.3.1",
-    "webpackbar": "^2.6.1",
+    "webpack": "4.5.0",
+    "webpack-chain": "4.6.0",
+    "webpack-merge": "4.1.2",
+    "webpack-node-externals": "1.7.2",
+    "webpack-serve": "0.3.1",
+    "webpackbar": "2.6.1",
     "workbox-build": "3.1.0"
   }
 }
