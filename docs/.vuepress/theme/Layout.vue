@@ -99,7 +99,7 @@ export default {
   },
   mounted() {
     // update title / meta tags
-    this.currentMetaTags = []
+    this.currentMetaTags = new Set()
     const updateMeta = () => {
       document.title = this.createTitle()
       document.documentElement.lang = this.$lang
@@ -110,7 +110,7 @@ export default {
         },
         ...(this.$page.frontmatter ? this.$page.frontmatter.meta || [] : [])
       ]
-      this.currentMetaTags = updateMetaTags(meta, this.currentMetaTags)
+      this.currentMetaTags = new Set(updateMetaTags(meta, this.currentMetaTags))
     }
     this.$watch('$page', updateMeta)
     updateMeta()
