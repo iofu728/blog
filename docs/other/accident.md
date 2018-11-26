@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 线上事故通报 -『9.24』 Linux内核导致服务不可用
+date: 2018-09-26 12:40:14
+tags: [Linux]
+description: 18.9.24 线上事故 记录
 ---
-
-# 线上事故通报 -『9.24』 Linux内核导致服务不可用
 
 ## 事故说明
 

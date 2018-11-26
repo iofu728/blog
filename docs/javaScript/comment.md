@@ -1,8 +1,11 @@
 ---
-pageClass: custom-page-class
+title: 利用`Gitalk`给Vuepress搭建的blog增加评论功能
+date: 2018-10-03 15:45:06
+tags: [Gitalk]
+description: Vuepress Gitalk
 ---
 
-# 利用`Gitalk`给Vuepress搭建的blog增加评论功能
+`Update Vue version` 👉
 
 这两天折腾了一下`comment`功能
 
@@ -115,6 +118,50 @@ export default ({Vue, options, router}) => {
 }
 ```
 
+## Vue 版本
+但 因为Gitalk 写的时候是用React 所以import 其实会报错 所以 还是第一种Work
+```vue
+<template>
+    <v-card>
+        <v-card-title>
+            <div id="gitalk-container" class="comment"></div>
+        </v-card-title>
+    </v-card>
+</template>
+<script>
+import 'gitalk/dist/gitalk.css'
+import Gitalk from 'gitalk'
+
+  export default {
+    name: '',
+    data() {
+      return {
+        gitalk: new Gitalk({
+          clientID: 'xxx',
+          clientSecret: 'xxx',
+          repo: 'blog',
+          owner: 'iofu728',
+          admin: ['iofu728'],
+          id: 'comment',
+          distractionFreeMode: false,
+          language: 'zh-CN',
+        })
+      }
+    },
+    mounted(){
+      this.gitalk.render("gitalk-container");
+    }
+
+  }
+</script>
+<style lang="stylus">
+  .comment
+    padding 1rem
+    margin 0 auto
+
+</style>
+```
+
 ## FAQ
 1. 如果出现`Error: Container not found, document.getElementById: gitalk-container`
     * 确保本地启动没这个报错，可能是`service 缓存`的问题
@@ -132,5 +179,5 @@ export default ({Vue, options, router}) => {
 如果有其他问题 可以在comment中留言
 
 ## 参考
-. [VuePress 集成第三方评论模块](https://hughfenghen.github.io/fe/vuepress-gitment.html)
+. [VuePress 集成第三方评论模块](https://hughfenghen.github.io/fe/vuepress-gitment.html)  
 . [评论系统](https://wuwaki.me/yubisaki/usage.html#%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F)
