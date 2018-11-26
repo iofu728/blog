@@ -119,6 +119,7 @@ export default ({Vue, options, router}) => {
 ```
 
 ## Vue 版本
+但 因为Gitalk 写的时候是用React 所以import 其实会报错 所以 还是第一种Work
 ```vue
 <template>
     <v-card>
