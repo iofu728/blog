@@ -24,7 +24,7 @@
     "eslint": "^4.19.1",
     "eslint-plugin-vue-libs": "^2.1.0",
     "lint-staged": "^7.0.4",
-    "vuepress": "^0.14.2",
+    "vuepress": "0.12.0",
     "vuepress-theme-vue": "^1.0.0",
     "yorkie": "^1.0.3"
   },
@@ -46,7 +46,6 @@
     "escape-html": "^1.0.3",
     "file-loader": "^1.1.11",
     "fs-extra": "^5.0.0",
-    "gitalk": "1.4.0",
     "github-markdown-css": "^2.10.0",
     "globby": "^8.0.1",
     "gray-matter": "^4.0.1",
