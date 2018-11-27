@@ -40,7 +40,7 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1012|    The Best Rank (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201012.cpp)|sort|☆☆|
 |1013|    Battle Over Cities (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201013.cpp)|DFS,连通分量|☆☆☆|
 |1014|    Waiting in Line (30)|[🤔](/pat/1014.md)|排队模拟,queue,sort|★★★★|
-|1015|    Reversible Primes (20)|[🤔](/pat/1015.md)|素数，进制转换|☆|
+|1015|    Reversible Primes (20)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201015.cpp)|素数，进制转换|☆|
 |1016|    Phone Bills (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201016.cpp)|sort|☆☆|
 |1017|    Queueing at Bank (25)|[🤔](/pat/1017.md)|排队,模拟,sort|☆☆☆|
 |1018|    Public Bike Management (30) |[🤔](/pat/1018.md)|Dijkstra,DFS|★★★★|
@@ -63,7 +63,7 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1035|    Password (20)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201035.cpp)|字符串|☆|
 |1036|    Boys vs Girls (25)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201036.cpp)|sort|☆|
 |1037|    Magic Coupon (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201037.cpp)|sort|☆|
-|1038|    Recover the Smallest Number (30)|[🤔](/pat/1038.md)|sort，字符串相加|☆★|
+|1038|    Recover the Smallest Number (30)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201038.cpp)|sort，字符串相加|☆★|
 |1039|    Course List for Student (25)    |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201039.cpp)|手动map|☆★|
 |1040|    Longest Symmetric String (25)   |[🤔](/pat/1040.md)|动态规划|☆☆☆|
 |1041|    Be Unique (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201041.cpp)|hash|☆|
@@ -88,7 +88,7 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1060|    Are They Equal (25)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201060.cpp)|科学计数法 |☆☆☆|
 |1061|    Dating (20) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201061.cpp)|字符串对比|☆|
 |1062|    Talent and Virtue (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201062.cpp)|sort|☆|
-|1063|    Set Similarity (25) |[🤔](/pat/1063.md)|set|☆|
+|1063|    Set Similarity (25) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201063.cpp)|set|☆|
 |1064|    Complete Binary Search Tree (30)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201064.cpp)|BST，遍历|☆☆☆|
 |1065|    A+B and C (64bit) (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201065.cpp)|数运算溢出|☆|
 |1066|    Root of AVL Tree (25)   |[🤔](/pat/1066.md)|AVL，建树 |☆☆☆|
@@ -98,19 +98,19 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1070|    Mooncake (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201070.cpp)|sort|☆|
 |1071|    Speech Patterns (25)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201071.cpp)|map|☆|
 |1072|    Gas Station (30)    |[🤔](/pat/1072.md)|Dijkstra|☆☆☆|
-|1073|    Scientific Notation (20)   |[🤔](/pat/1073.md)|字符串转数字|☆☆|
-|1074|    Reversing Linked List (25) |[🤔](/pat/1074.md)|链表翻转|☆☆|
+|1073|    Scientific Notation (20)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201073.cpp)|字符串转数字|☆☆|
+|1074|    Reversing Linked List (25) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201074.cpp)|链表翻转|☆☆|
 |1075|    PAT Judge (25) |[🤔](/pat/1075.md)|sort|☆☆☆|
 |1076|    Forwards on Weibo (30) |[🤔](/pat/1076.md)|BFS|☆☆☆|
 |1077|    Kuchiguse (20) |[🤔](/pat/1077.md)|字符串|☆|
-|1078|    Hashing (25)   |[🤔](/pat/1078.md)|散列，平方|☆☆|
+|1078|    Hashing (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201078.cpp)|散列，平方|☆☆|
 |1079|    Total Sales of Supply Chain (25)|[🤔](/pat/1079.md)|BFS/DFS|☆☆☆|
 |1080|    Graduate Admission (30)|[🤔](/pat/1080.md)|sort|☆☆★|
-|1081|    Rational Sum (20)  |[🤔](/pat/1081.md)|gcd|☆|
+|1081|    Rational Sum (20)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201081.cpp)|gcd|☆|
 |1082|    Read Number in Chinese (25)|[🤔](/pat/1082.md)|字符串|★★☆|
-|1083|    List Grades (25)   |[🤔](/pat/1083.md)|sort|☆☆|
-|1084|    Broken Keyboard (20)   |[🤔](/pat/1084.md)|hash|☆|
-|1085|    Perfect Sequence (25)  |[🤔](/pat/1085.md)|two pointer|☆★|
+|1083|    List Grades (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201083.cpp)|sort|☆☆|
+|1084|    Broken Keyboard (20)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201084.cpp)|hash|☆|
+|1085|    Perfect Sequence (25)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201085.cpp)|two pointer|☆★|
 |1086|    Tree Traversals Again (25) |[🤔](/pat/1086.md)|二叉树遍历|☆☆★|
 |1087|    All Roads Lead to Rome (30)|[🤔](/pat/1087.md)|Dijkstra DFS|★★☆☆|
 |1088|    Rational Arithmetic (20)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201088.cpp)|||
@@ -131,7 +131,7 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1103|    Integer Factorization (30) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201103.cpp)|||
 |1104|    Sum of Number Segments (20)|[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201104.cpp)|||
 |1105|    Spiral Matrix (25) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/finish/PAT%20A%201105.cpp)|||
-|1106|    Lowest Price in Supply Chain (25)  |[🤔](/pat/1106.md)|BFS 剪枝|☆★|
+|1106|    Lowest Price in Supply Chain (25)  |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201106.cpp)|BFS 剪枝|☆★|
 |1107|    Social Clusters (30)   |[🤔](/pat/1107.md)|合并 并查集|☆☆★|
 |1108|    Finding Average (20)   |✖️|||
 |1109|    Group Photo (25)   |✖️|||
