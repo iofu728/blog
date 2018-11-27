@@ -1,7 +1,7 @@
 <template>
   <v-app v-scroll="onScroll">
     <v-progress-linear :height="3"
-                       color="accent"
+                       color="error"
                        :indeterminate="progressRunning"
                        :background-opacity="0.4"
                        class="blog-progress"
@@ -24,7 +24,7 @@
              fixed
              right
              bottom
-             color="accent"
+             color="error"
              @click="$vuetify.goTo(0)"
              v-show="offsetTop > 300">
         <i class="fa fa-lg fa-chevron-up"></i>
