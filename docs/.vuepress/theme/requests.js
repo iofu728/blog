@@ -27,9 +27,11 @@ const checkStatus = response => {
  * @return {object}           An object containing either "data" or "err"
  */
 export default async function request(url, options) {
+  const frontendDomainTem = window.location.href.split('/')[2];
+  const nowUrl = 'https://' + frontendDomainTem + url
   try {
     const response =
-        await fetch(url, {...options, mode: 'cors', credentials: 'include'});
+        await fetch(nowUrl, {...options, mode: 'cors', credentials: 'include'});
 
     const data = await response.text();
 
