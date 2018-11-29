@@ -51,7 +51,8 @@ export default {
   methods: {
     getPv: function () {
       const vm = this;
-      request('https://wyydsb.xin/pv.txt')
+      const frontendDomainTem = location.href.split('/')[2];
+      request('https://'+frontendDomainTem+'/pv.txt')
         .then(res => {vm.pv = res;})
         .catch(reason => console.log(reason.message));
     },

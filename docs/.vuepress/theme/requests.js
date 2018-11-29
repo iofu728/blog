@@ -27,9 +27,9 @@ const checkStatus = response => {
  * @return {object}           An object containing either "data" or "err"
  */
 export default async function request(url, options) {
-
   try {
-    const response = await fetch(url, {...options});
+    const response =
+        await fetch(url, {...options, mode: 'cors', credentials: 'include'});
 
     const data = await response.text();
 
@@ -37,5 +37,3 @@ export default async function request(url, options) {
   } catch (error) {
   }
 }
-
-
