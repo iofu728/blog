@@ -4,13 +4,13 @@ home: true
 title: 乌云压顶是吧
 actionText: View Last
 actionLink: /other/chatbot.md
-descriptionText: 
+descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/chatbot.html)
+[Last 👉](/other/peloton.html)
 
 * ML
   + NLP
@@ -28,6 +28,8 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   + Proxy & DB
     - [从高可用IP代理池到千万级网易云音乐数据爬取的实现](/other/neteasedb.md)
 * MySQL
+  + In-Memory
+    - [](/other/peloton.md)
   + Innodb
     - [Innodb MySQL中如何优雅的删除大表跑路🏃](/other/truncate.md)
 * Hadoop
