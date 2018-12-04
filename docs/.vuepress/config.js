@@ -30,7 +30,8 @@ module.exports = {
           loader: resolve('./ignoreStylus'),
         }]
       }
-    } if (isServer) {
+    };
+    if (isServer) {
       myConfig.externals =
           nodeExternals({whitelist: [/vuetify/, /fortawesome/, /prismjs/]})
     }
