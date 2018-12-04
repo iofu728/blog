@@ -25,7 +25,7 @@
     "eslint-plugin-vue-libs": "^2.1.0",
     "lint-staged": "^7.0.4",
     "vuepress": "0.12.0",
-    "vuepress-theme-vue": "^1.0.0",
+    "vuepress-theme-vue": "1.0.0",
     "yorkie": "^1.0.3"
   },
   "dependencies": {
@@ -50,8 +50,5 @@
     "webpack": "^4.5.0",
     "webpack-node-externals": "1.7.2",
     "webpack-serve": "^0.3.1"
-  },
-  "resolutions": {
-    "vue": "2.5.16"
   }
 }
