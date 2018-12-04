@@ -8419,10 +8419,10 @@ vuepress-html-webpack-plugin@3.2.0, vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress-theme-vue@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-vue/-/vuepress-theme-vue-1.0.0.tgz#d70c90a691c31d3a39e5a32073d216520a12809e"
-  integrity sha512-U8sC68NKcNU19wJmSf+IZYFY2srxToMHPh4V+GlDRmHNxW0wqDjvoelbWv9YaL89EFW+1ZO1O5etrIPU2pF2Zg==
+vuepress-theme-vue@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-vue/-/vuepress-theme-vue-1.1.0.tgz#8b109e3db8cad7b18459f4d77076808110c2bcaa"
+  integrity sha512-oYbfWkeaQ6aUU8sl8fMzLnBnvsd23V0wkiqI0bR3Tq3mlI8EJu26PFOyyF7KvJu0qNo/lcL7CDSmX7ymUVpnvw==
 
 vuepress@0.12.0:
   version "0.12.0"
