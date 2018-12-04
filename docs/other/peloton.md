@@ -1,6 +1,6 @@
 ---
 title: In-Memory DBMS 『Peloton』技术简述
-date: 2018-12-04 8:40:00
+date: 2018-12-04 10:40:00
 tags: [SQL, In-Memory]
 description: Peloton DBMS 技术解析
 ---
@@ -236,19 +236,19 @@ GP还会出现读写冲突的情况 比如说Hash Table建立时 必须先解决
 
 由于ROF只有一个活动阶段 则可以保证输入、输出向量都在CPU的高速缓存
 
-ROF是a tuple a time 与SIMD之间的混合体
+> ROF是a tuple a time 与SIMD之间的混合体
 
 ROF与SIMD最大的区别：
-* ROF总是向下一个阶段提供完整的向量，而SIMD则是可选择限制输入向量的
-* 其次ROF支持跨多个序列operation的向量化，而SIMD则在单个operation中运行
+* ROF总是向下一个阶段提供`完整`的向量，而SIMD则是可选择限制输入向量的
+* 其次`ROF`支持`跨多个序列`operation的向量化，而SIMD则在单个operation中运行
 
 以TPC-Q19为例，见前(b)图
 
-在σ1之后加了一个stage，⌅1 表示输出向量
+在`σ1`之后加了一个stage，`⌅1` 表示输出向量
 
 把该pipeline分为两个阶段
-1. 从LineItem中获取元组并通过过滤器确定其有效性，将其结果添加到stage的输出向量中，直到向量达到容量上限
-2. 第二个阶段使用此向量来获取有效的LineItem，以便是的Hash能够找到匹配项 如果匹配到了则在σ2中再一次检查其有效性
+1. 从`LineItem`中获取元组并通过过滤器确定其有效性，将其结果添加到`stage`的输出向量中，直到向量达到容量上限
+2. 第二个阶段使用此向量来获取有效的`LineItem`，以便是的Hash能够找到匹配项 如果匹配到了则在`σ2`中再一次检查其有效性
 
 若能通过σ2，则在Ω聚合
 
@@ -271,6 +271,8 @@ ROF与SIMD最大的区别：
 
 然后ROF利用掩码谓词进行优化
 
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543928673323-6bfa986a-7401-49bd-955c-032c0c926e33.png "")
+
 ### Prefetching
 
 除了顺序访问，内存数据库的DBMS存在更为复杂的内存访问
@@ -287,7 +289,7 @@ DBMS必须提前足够多时间来预取，足够抵消内存延迟的时间(当
 
 这样可以确保启用预取的operation接收到完整的输入元组 使得其能重叠计算内存访问
 
-我们选用了MurmurHash3 hash function
+我们选用了`MurmurHash3` hash function
 1. 可以处理多种不同的非整形数据
 2. 提供多样Hash分布
 3. 快速执行
@@ -298,11 +300,11 @@ Hash表设计为，由一个8字节的状态字段开始，其描述了（1）�
 
 通过前加载状态字段和密钥 确保最多只需要one memory来检查存储桶是否被占用以及Hash值是否匹配
 
-选择GP 最重要的是生成GP的代码比较简单
+选择`GP` 最重要的是生成GP的代码比较简单
 
 ### Query Planning
 
-* 是否启用SIMD
+* 是否启用`SIMD`
 * 是否启用预取
 
 如果SIMD-able 则在scan之后添加Stage
@@ -310,18 +312,18 @@ Hash表设计为，由一个8字节的状态字段开始，其描述了（1）�
 1. 查询operation依赖的数据量来估计中间表的大小 对需要随机访问大小超过缓存大小的operation 在输入处stage预取
 2. 在所有执行随机存储的operation输入处加Stage 但一部分预取 一部分不预取
 
-
 ## Experiment
 
-### Baseline
-使用Hyper及其他支持查询编译的DBMS进行TPC-H
+使用Hyper及其他支持查询编译的DBMS进行TPC-H 测试 并选取了其中八条 进行 针对性的优化 得到不错的结果
 
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543928921708-347fcfaa-5ed5-44b0-b142-5bbec395b708.png "")
 
+其中Q13最能反映优化效果 具体过程就是在一些步骤间增加Stage 以聚集SIMD向量 然后在聚集的过程中 做一些预取操作
 
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543929324254-d3407743-4347-4d89-b68b-8aa6063a9c0b.png "")
 
-
-
-
-
-
+## Reference
+1. [Relaxed Operator Fusion for In-Memory Databases: Making Compilation, Vectorization, and Prefetching Work Together At Last[`Menon, P. et al. 2017`]](https://15721.courses.cs.cmu.edu/spring2018/papers/22-vectorization2/menon-vldb2017.pdf)
+2. [Improving Hash Join Performance through Prefetching[`SHIMIN C. et al. 2007`]](http://www.cs.cmu.edu/afs/cs.cmu.edu/user/tcm/www/tcm_papers/hashjoin_tods_preliminary.pdf)
+3. [Asynchronous Memory Access Chaining[`Onur K. et al. 2015`]](https://infoscience.epfl.ch/record/220654/files/p252-kocberber.pdf)
 
