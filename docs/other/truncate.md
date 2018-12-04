@@ -1,7 +1,7 @@
 ---
 title: Innodb MySQL中如何优雅的删除大表跑路🏃
 date: 2018-10-08 15:47:54
-tags: [MySQL]
+tags: [SQL, Linux]
 description: MySQL 删除大表 truncate
 ---
 

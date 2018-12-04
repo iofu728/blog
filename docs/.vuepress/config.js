@@ -5,7 +5,7 @@ const resolve = pathName => path.join(__dirname, pathName)
 
 module.exports = {
   base: '/',
-  title: "乌云压顶是吧",
+  title: '乌云压顶是吧',
   description: '🍥',
   ga: 'UA-113936890-1',
   head: [
@@ -20,31 +20,20 @@ module.exports = {
   ],
   serviceWorker: true,
   theme: '',
-  locales: {
-    '/': {
-      lang: 'zh-CN',
-      title: "乌云压顶是吧",
-      description: '🍥'
-    }
-  },
+  locales: {'/': {lang: 'zh-CN', title: '乌云压顶是吧', description: '🍥'}},
   configureWebpack: (config, isServer) => {
     const myConfig = {
-      resolve: {
-        alias: {
-          '@pub': resolve('./public')
-        }
-      },
+      resolve: {alias: {'@pub': resolve('./public')}},
       module: {
         rules: [{
           test: /vuetify.+\.js$/,
           loader: resolve('./ignoreStylus'),
         }]
       }
-    }
+    };
     if (isServer) {
-      myConfig.externals = nodeExternals({
-        whitelist: [/vuetify/, /fortawesome/, /prismjs/]
-      })
+      myConfig.externals =
+          nodeExternals({whitelist: [/vuetify/, /fortawesome/, /prismjs/]})
     }
     return myConfig
   },
@@ -68,31 +57,15 @@ module.exports = {
     },
     menus: [
       // icons by https://fontawesome.com/icons
-      {
-        text: 'Home',
-        icon: 'fa fa-home',
-        url: '/'
-      },
-      {
-        text: 'Skr',
-        icon: 'fab fa-earlybirds',
-        url: '/other/rnn.html'
-      },
-      {
-        text: 'Pat',
-        icon: 'fas fa-chess-bishop',
-        url: '/pat/catalog.html'
-      },
+      {text: 'Home', icon: 'fa fa-home', url: '/'},
+      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/peloton.html'},
+      {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
       {
         text: 'JavaScript',
         icon: 'fas fa-plane',
         url: '/javaScript/comment.html'
       },
-      {
-        text: 'Tags',
-        icon: 'fa fa-tag',
-        url: '/tags/'
-      },
+      {text: 'Tags', icon: 'fa fa-tag', url: '/tags/'},
       {
         text: 'Github',
         icon: 'fab fa-github',
@@ -110,20 +83,11 @@ module.exports = {
       info: '#00B8D4',
       success: '#1DA57A'
     },
-    format: {
-      date: 'YYYY年MM月DD日 HH:mm:ss',
-      dateTime: 'YYYY年MM月DD日 HH:mm:ss'
-    },
-    pagination: {
-      path: '/page/:pageNum',
-      pageSize: 5
-    },
-    tags: {
-      path: '/tags/:tagName'
-    },
-    categories: {
-      path: '/categories/:category'
-    },
+    format:
+        {date: 'YYYY年MM月DD日 HH:mm:ss', dateTime: 'YYYY年MM月DD日 HH:mm:ss'},
+    pagination: {path: '/page/:pageNum', pageSize: 5},
+    tags: {path: '/tags/:tagName'},
+    categories: {path: '/categories/:category'},
     sidebar: {
       '/other/': [
         {
