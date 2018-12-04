@@ -29,7 +29,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
     - [从高可用IP代理池到千万级网易云音乐数据爬取的实现](/other/neteasedb.md)
 * MySQL
   + In-Memory
-    - [](/other/peloton.md)
+    - [In-Memory DBMS 『Peloton』技术简述](/other/peloton.md)
   + Innodb
     - [Innodb MySQL中如何优雅的删除大表跑路🏃](/other/truncate.md)
 * Hadoop
