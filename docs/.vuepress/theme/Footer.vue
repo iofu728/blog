@@ -20,10 +20,10 @@
           Power by
           <a href="https://vuepress.vuejs.org"
              target="_blank"
-             rel="noopener noreferrer">VuePress</a> for
+             rel="noopener noreferrer">VuePress</a> &
           <a href="https://github.com/iofu728/blog"
              target="_blank"
-             rel="noopener noreferrer">blog</a>
+             rel="noopener noreferrer">iofu728/blog</a>
         </span>
       </v-card-text>
     </v-card>
@@ -51,7 +51,7 @@ export default {
   methods: {
     getPv: function () {
       const vm = this;
-      request('https://wyydsb.xin/pv.txt')
+      request('/pv.txt')
         .then(res => {vm.pv = res;})
         .catch(reason => console.log(reason.message));
     },
