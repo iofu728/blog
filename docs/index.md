@@ -10,8 +10,11 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 
 > 很高兴不认识你
 
-[Last 👉](/other/peloton.html)
+[Last 👉](/other/chip.html)
 
+* Hardware
+  + chip
+    - [底层码农眼中的芯片](/other/chip.md)
 * ML
   + NLP
     - [检索式人工智障识记](/other/chatbot.md)
