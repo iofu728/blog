@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 2018 PKU RW entrance
+date: 2018-09-16 09:16:11
+tags: [cpp, entrance]
+description: PKU RW entrance
 ---
-
-# 2018 PKU RW entrance
 
 因为这场考试与是否需要选课基础编程课有关，之前还是很认真的准备了一下
 

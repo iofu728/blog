@@ -58,7 +58,7 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/peloton.html'},
+      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/chip.html'},
       {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
       {
         text: 'JavaScript',
