@@ -3,7 +3,7 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/chatbot.md
+actionLink: /other/ecmo.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
@@ -12,11 +12,9 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 
 [Last 👉](/other/chip.html)
 
-* Hardware
-  + chip
-    - [底层码农眼中的芯片](/other/chip.md)
 * ML
   + NLP
+    - [从ECMo、Bert看Word Embedding](/other/ecmo.md)
     - [检索式人工智障识记](/other/chatbot.md)
     - [试谈RNN中门的变迁](/other/rnn.md)
     - [关于VSM性能优化的思考🤔](/other/vsm.md)
@@ -25,6 +23,9 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   + [大图中如何快速计算PPR](/other/ppr.md)
   + [如何一口气理解PageRank](/other/pageranks.md)
   + [Frequnent Pattern](/other/frequent.md)
+* Hardware
+  + chip
+    - [底层码农眼中的芯片](/other/chip.md)
 * Spider
   + Easy modal
     - [Netease Music Spider](/other/netease.md)
