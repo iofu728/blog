@@ -40,7 +40,6 @@ import Footer from './Footer'
 import Home from './Home'
 import Tags from './Tags'
 import Post from './Post'
-import About from './About'
 import { pathToComponentName, updateMetaTags } from './libs/utils'
 
 export default {
@@ -52,7 +51,6 @@ export default {
     Home,
     Tags,
     Post,
-    About
   },
   data() {
     const mobilePoint = 1264

@@ -12,9 +12,12 @@
     </v-btn>
     <v-toolbar-title>{{$page.title === 'Home' ? $siteTitle : $page.title || $siteTitle}}</v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn icon>
-      <i class="fa fa-search"></i>
-    </v-btn>
+    <!--<v-btn icon @click="clickSearch">-->
+      <!--<i class="fa fa-search"></i>-->
+    <!--</v-btn>-->
+    <span class="links">
+      <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
+    </span>
     <Share origin="top right">
       <v-btn icon>
         <i class="fa fa-share-alt"></i>
@@ -24,10 +27,25 @@
 </template>
 <script>
 import Share from './components/Share'
+import AlgoliaSearchBox from './AlgoliaSearchBox'
 
 export default {
   components: {
-    Share
+    Share,
+    AlgoliaSearchBox,
+  },
+  data() {
+    return {
+      searchStatus: null,
+    }
+  },
+  computed: {
+    algolia () {
+      return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+    },
+    isAlgoliaSearch () {
+      return this.algolia && this.algolia.apiKey && this.algolia.indexName
+    },
   },
   props: {
     layout: String
@@ -35,7 +53,7 @@ export default {
   methods: {
     toggleNav() {
       this.$emit('toggleNav')
-    }
+    },
   }
 }
 </script>
@@ -47,4 +65,10 @@ export default {
     font-size: 18px;
   }
 }
+
+.links
+  display inline-block
+  position relative
+  margin-right 0.5rem
+
 </style>
