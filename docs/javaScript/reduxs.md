@@ -1,7 +1,7 @@
 ---
 title: Take about Redux Ⅱ
 date: 2018-05-05 13:14:14
-tags: [Redux, JavaScript]
+tags: [Redux, JavaScript, React]
 description: Take about Redux Ⅱ
 --- 
 

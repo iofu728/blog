@@ -1,7 +1,7 @@
 ---
 title: immutable.js
 date: 2018-06-06 11:57:34
-tags: [immutable, JavaScript]
+tags: [React, JavaScript]
 description: immutable
 ---
 

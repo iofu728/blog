@@ -1,7 +1,7 @@
 ---
 title: Take about Redux I
 date: 2018-04-23 13:23:43
-tags: [Redux, JavaScript]
+tags: [Redux, JavaScript, React]
 description: Take about Redux I
 ---
 
