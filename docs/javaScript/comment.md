@@ -1,7 +1,7 @@
 ---
 title: 利用`Gitalk`给Vuepress搭建的blog增加评论功能
 date: 2018-10-03 15:45:06
-tags: [Gitalk]
+tags: [Gitalk, Vue, JavaScript]
 description: Vuepress Gitalk
 ---
 

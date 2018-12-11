@@ -58,7 +58,7 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/chip.html'},
+      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/ecmo.html'},
       {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
       {
         text: 'JavaScript',
@@ -70,6 +70,12 @@ module.exports = {
         text: 'Github',
         icon: 'fab fa-github',
         url: 'https://github.com/iofu728/blog',
+        external: true
+      },
+      {
+        text: 'Zhihu',
+        icon: 'fas fa-adjust',
+        url: 'https://zhuanlan.zhihu.com/wyydsb',
         external: true
       },
     ],

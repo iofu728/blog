@@ -1,7 +1,7 @@
 ---
 title: 『Hadoop』MapReduce 处理 日志log(单机版)
 date: 2018-10-05 09:03:17
-tags: [hadoop]
+tags: [hadoop, Java]
 description: mapreduce 日志分析
 ---
 

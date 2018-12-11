@@ -1,7 +1,7 @@
 ---
 title: nohup
 date: 2018-10-02 13:18:43
-tags: [Linux]
+tags: [Linux, Bash]
 description: nohup 探究
 ---
 

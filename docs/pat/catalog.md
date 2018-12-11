@@ -1,7 +1,7 @@
 ---
 title: PAT 目录
 date: 2017-12-31 15:23:23
-tags: [PAT]
+tags: [PAT, cpp]
 description: PAT catalog
 ---
 
@@ -102,7 +102,7 @@ github 地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com
 |1074|    Reversing Linked List (25) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201074.cpp)|链表翻转|☆☆|
 |1075|    PAT Judge (25) |[🤔](/pat/1075.md)|sort|☆☆☆|
 |1076|    Forwards on Weibo (30) |[🤔](/pat/1076.md)|BFS|☆☆☆|
-|1077|    Kuchiguse (20) |[🤔](/pat/1077.md)|字符串|☆|
+|1077|    Kuchiguse (20) |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201077.cpp)|字符串|☆|
 |1078|    Hashing (25)   |[✔️](https://github.com/iofu728/PAT-A-by-iofu728/blob/master/wait/PAT%20A%201078.cpp)|散列，平方|☆☆|
 |1079|    Total Sales of Supply Chain (25)|[🤔](/pat/1079.md)|BFS/DFS|☆☆☆|
 |1080|    Graduate Admission (30)|[🤔](/pat/1080.md)|sort|☆☆★|

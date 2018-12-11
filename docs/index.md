@@ -10,7 +10,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 
 > 很高兴不认识你
 
-[Last 👉](/other/chip.html)
+[Last 👉](/other/ecmo.html)
 
 * ML
   + NLP

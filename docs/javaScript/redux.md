@@ -1,7 +1,7 @@
 ---
 title: Take about Redux I
 date: 2018-04-23 13:23:43
-tags: [Redux]
+tags: [Redux, JavaScript, React]
 description: Take about Redux I
 ---
 
@@ -369,11 +369,10 @@ export default function configureStore(initialState) {
 之后第二次`reducer`
 
 此外`Rudux` 自带非常友好的调试机制 通过contr + q 调用 contr + h切换
-![](http://wyydsb.xin/wp-content/uploads/2018/04/4.23I.png)
 ————————————————————————
 PS：参考：
-\[1\].[redux官方文档](https://redux.js.org/).
-\[2\].[阮一峰Redux教程](http://www.ruanyifeng.com/blog/2015/03/react.html).
+1. [redux官方文档](https://redux.js.org/).
+2. [阮一峰Redux教程](http://www.ruanyifeng.com/blog/2015/03/react.html).
 
 `updated 4/23/2018`
 
