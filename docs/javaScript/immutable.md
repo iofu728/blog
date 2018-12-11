@@ -1,15 +1,13 @@
 ---
 title: immutable.js
 date: 2018-06-06 11:57:34
-tags: [immutable]
+tags: [immutable, JavaScript]
 description: immutable
 ---
 
 毕设做到想砸电脑
 
 很难受了
-
-![](http://wyydsb.xin/wp-content/uploads/2018/05/5.12II.gif)
 
 ------------------------------------------------------------------------
 上周因为一个小问题 接触到**immutable.js**这个东西
