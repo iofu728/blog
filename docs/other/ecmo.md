@@ -1,7 +1,7 @@
 ---
 title: 从ECMo、Bert看Word Embedding
 date: 2018-12-08 14:44:33
-tags: [NLP]
+tags: [NLP, Machine Learn]
 description: ECMo Bert word2Vec
 ---
 

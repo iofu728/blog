@@ -1,7 +1,7 @@
 ---
 title: 自动更新网站访问量的定时脚本
 date: 2018-09-09 14:37:16
-tags: [Bash]
+tags: [Linux, Bash]
 description: 定时脚本 Pv
 ---
 

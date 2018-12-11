@@ -1,7 +1,7 @@
 ---
 title: NLP, Knowledge graph, PageRank
 date: 2018-09-18 06:22:22
-tags: [PageRank]
+tags: [PageRank, Machine Learn]
 description: some think about ml
 ---
 

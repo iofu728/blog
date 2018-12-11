@@ -1,7 +1,7 @@
 ---
 title: 『HDFS』伪分布式Hadoop集群
 date: 2018-10-07 15:43:00
-tags: [hadoop]
+tags: [hadoop, Java]
 description: hadoop 伪分布式
 ---
 

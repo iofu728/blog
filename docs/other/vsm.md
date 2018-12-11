@@ -1,7 +1,7 @@
 ---
 title: 关于VSM性能优化的思考🤔
 date: 2018-11-13 02:12:23
-tags: [ML]
+tags: [Machine Learn]
 description: VSM 优化
 ---
 
