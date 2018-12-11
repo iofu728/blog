@@ -1,7 +1,7 @@
 ---
 title: React component
 date: 2018-04-06 12:40:14
-tags: [React]
+tags: [React, JavaScript]
 description: React Component
 ---
 

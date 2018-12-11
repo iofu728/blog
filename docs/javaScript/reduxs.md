@@ -1,13 +1,12 @@
 ---
 title: Take about Redux Ⅱ
 date: 2018-05-05 13:14:14
-tags: [Redux]
+tags: [Redux, JavaScript]
 description: Take about Redux Ⅱ
 --- 
 
 毕设 跑程序一次要跑1h+ 很是无聊
 想来 还是写点博客 嗯 在服务器到期前 hhh 好像没几天了
-![](http://wyydsb.xin/wp-content/uploads/2018/05/5.5I.png)
 
 额 PC还“绿”屏了 命途多舛呀
 
