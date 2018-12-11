@@ -1,7 +1,7 @@
 ---
 title: 2>&1
 date: 2018-09-28 09:44:06
-tags: [Linux]
+tags: [Linux, Bash]
 description: 重定向符解析
 ---
 

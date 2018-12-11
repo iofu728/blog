@@ -1,7 +1,7 @@
 ---
 title: 大图中如何快速计算`PPR`
 date: 2018-11-05 11:25:33
-tags: [PageRank, Data Mining, Chernoff bound, Alias Method, Multi-armed Bandit]
+tags: [PageRank, Data Mining, Chernoff bound, Alias Method, Multi-armed Bandit, Random Work, Machine Learn]
 description: 大图中计算PPR
 ---
 

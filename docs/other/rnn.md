@@ -1,7 +1,7 @@
 ---
 title: 试谈`RNN`中`门`的变迁
 date: 2018-11-04 14:23:35
-tags: [RNN, NLP]
+tags: [RNN, NLP, Machine Learn]
 description: RNN 家族 解析
 ---
 

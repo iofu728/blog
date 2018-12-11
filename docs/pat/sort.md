@@ -1,8 +1,9 @@
 ---
-pageClass: custom-page-class
+title: 排队模拟问题分析
+date: 2018-02-11 17:29:14
+tags: [PAT, cpp]
+description: sort problem
 ---
-
-# 排队模拟问题分析
 
 排队模拟问题，是建立在实际叫号排队问题基础上的，算法分析问题。
 
@@ -37,6 +38,6 @@ pageClass: custom-page-class
 解决了这三个问题，排队模拟问题基本上就解决了，
 虽然具体操作过程中，用到的数组会多的让人心烦，momo
 
-具体code 可以参见 本博客的[PAT A 1026](/pat/1026.html), [PAT A 1014](/pat/1014.html) 和 [PAT A 1017](/pat/1017.html)
-github地址：https://github.com/iofu728/PAT-A-by-iofu728
+具体code 可以参见 本博客的[PAT A 1026](/pat/1026.md), [PAT A 1014](/pat/1014.md) 和 [PAT A 1017](/pat/1017.md)
+github地址：[https://github.com/iofu728/PAT-A-by-iofu728](https://github.com/iofu728/PAT-A-by-iofu728)
 

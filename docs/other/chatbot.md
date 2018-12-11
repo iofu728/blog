@@ -1,7 +1,7 @@
 ---
 title: 检索式人工智障识记
 date: 2018-11-16 10:12:02
-tags: [NLP, QA]
+tags: [NLP, QA, Machine Learn]
 description: 检索式 QA
 ---
 
