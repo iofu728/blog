@@ -72,6 +72,12 @@ module.exports = {
         url: 'https://github.com/iofu728/blog',
         external: true
       },
+      {
+        text: 'Zhihu',
+        icon: 'fas fa-adjust',
+        url: 'https://zhuanlan.zhihu.com/wyydsb',
+        external: true
+      },
     ],
     socials: ['Weibo', 'QQ', 'Facebook', 'Twitter', 'GooglePlus'],
     colors: {
