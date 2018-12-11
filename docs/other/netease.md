@@ -1,7 +1,7 @@
 ---
 title: Netease Music Spider
 date: 2018-10-14 16:14:43
-tags: [Spider]
+tags: [Spider, Python]
 description: 网易云音乐 爬虫
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 从高可用IP代理池到千万级网易云音乐数据爬取的实现
 date: 2018-10-23 18:40:52
-tags: [Spider]
+tags: [Spider, Python]
 description: 网易云音乐 爬虫 db版
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 底层码农眼中的芯片
 date: 2018-12-05 18:24:01
-tags: [chip]
+tags: [Hardware]
 description: chip
 ---
 
