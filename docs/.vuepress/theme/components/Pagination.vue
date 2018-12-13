@@ -12,10 +12,10 @@
     <v-flex xs12
             class="text-xs-center"
             tag="nav">
-      <v-pagination :length="pagesLength"
+      <VPagination :length="pagesLength"
                     v-model="pageNum"
                     prev-icon="fa-chevron-left"
-                    next-icon="fa-chevron-right"></v-pagination>
+                    next-icon="fa-chevron-right"></VPagination>
     </v-flex>
   </v-layout>
 </template>

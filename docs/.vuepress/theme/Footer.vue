@@ -1,13 +1,13 @@
 <template>
-  <v-footer dark
+  <VFooter dark
             height="auto"
             class="blog-footer darken-1 mt-3">
-    <v-card flat
+    <VCard flat
             tile
             color="primary"
-            class="primary--text text--lighten-4 text-xs-center py-3">
-      <v-card-text class="pb-0 mt-1">{{pv}}</v-card-text>
-      <v-card-text class="pt-0 mt-1">
+            class="primary--text text--lighten-4 text-xs-center py-3 width-footer">
+      <VCard-text class="pb-0 mt-1 card__text">{{pv}}</VCard-text>
+      <VCard-text class="pt-0 mt-1 card__text">
         <span>{{$site.themeConfig.author}} &copy; {{since}}</span>
         <span>
           <template v-if="$site.themeConfig.icpLicense">
@@ -25,9 +25,9 @@
              target="_blank"
              rel="noopener noreferrer">iofu728/blog</a>
         </span>
-      </v-card-text>
-    </v-card>
-  </v-footer>
+      </VCard-text>
+    </VCard>
+  </VFooter>
 </template>
 <script>
 import request from './requests'
@@ -87,4 +87,6 @@ export default {
     }
   }
 }
+.width-footer
+  width 100%
 </style>

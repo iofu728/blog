@@ -6,8 +6,8 @@
     <template slot="activator">
       <slot></slot>
     </template>
-    <v-list>
-      <v-list-tile ripple
+    <VList>
+      <VListTile ripple
                    color="secondary"
                    v-for="item in socials"
                    :key="item.text"
@@ -19,8 +19,8 @@
              :class="`fa-${item.icon}`"></i>
         </v-list-tile-avatar>
         <v-list-tile-title class="capitalize">{{$tt(item.text)}}</v-list-tile-title>
-      </v-list-tile>
-      <v-list-tile ripple
+      </VListTile>
+      <VListTile ripple
                    color="secondary"
                    key="copy"
                    @click="copyLink">
@@ -28,8 +28,8 @@
           <i class="fa fa-lg fa-copy"></i>
         </v-list-tile-avatar>
         <v-list-tile-title>{{$tt('copyLink')}}</v-list-tile-title>
-      </v-list-tile>
-    </v-list>
+      </VListTile>
+    </VList>
     <input type="text"
            :value="url"
            ref="copyEl"

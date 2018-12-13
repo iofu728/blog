@@ -3,12 +3,12 @@
                :tag="tag"
                exact
                exact-active-class="tag-active">
-    <v-chip label
+    <VChip label
             small
             v-ripple
             class="capitalize chip-tag">
       <slot>{{slug}}</slot>
-    </v-chip>
+    </VChip>
   </router-link>
 </template>
 <script>

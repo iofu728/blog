@@ -1,26 +1,26 @@
 <template>
-  <v-toolbar app
+  <VToolbar app
              dark
              scroll-off-screen
              color="primary"
              :height="56"
              :scroll-threshold="100"
              class="blog-toolbar">
-    <v-btn icon
+    <VBtn icon
            @click="toggleNav">
       <i class="fa fa-bars"></i>
-    </v-btn>
-    <v-toolbar-title>{{$page.title === 'Home' ? $siteTitle : $page.title || $siteTitle}}</v-toolbar-title>
+    </VBtn>
+    <VToolbar-title>{{$page.title === 'Home' ? $siteTitle : $page.title || $siteTitle}}</VToolbar-title>
     <v-spacer></v-spacer>
     <span class="links">
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
     </span>
     <Share origin="top right">
-      <v-btn icon>
+      <VBtn icon>
         <i class="fa fa-share-alt"></i>
-      </v-btn>
+      </VBtn>
     </Share>
-  </v-toolbar>
+  </VToolbar>
 </template>
 <script>
 import Share from './components/Share'

@@ -8,13 +8,13 @@
            :key="item"
            :slug="item">#{{item}} {{$blog.tags[item].length}}</Tag>
     </v-layout>
-    <v-list row
+    <VList row
             wrap
             v-if="pageList"
             tag="ul"
             class="reset elevation-1 mt-4">
       <template v-for="(slug, index) in pageList">
-        <v-list-tile xs12
+        <VListTile xs12
                      ripple
                      :key="slug"
                      :to="$blog.posts[slug].path">
@@ -22,11 +22,11 @@
             <PostTime v-if="$blog.posts[slug].frontmatter" :date="$blog.posts[slug].frontmatter.date"></PostTime>
           </v-list-tile-sub-title>
           <v-list-tile-title class="primary--text">{{ $blog.posts[slug].title }}</v-list-tile-title>
-        </v-list-tile>
+        </VListTile>
         <v-divider v-if="index + 1 < pageList.length"
                    :key="index"></v-divider>
       </template>
-    </v-list>
+    </VList>
   </v-container>
 </template>
 <script>
