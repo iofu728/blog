@@ -1,9 +1,9 @@
 <template>
-  <v-card :class="cardClass"
+  <VCard :class="cardClass"
           tag="article">
     <!-- <v-card-media>
     </v-card-media> -->
-    <v-card-title>
+    <VCardTitle>
       <v-flex xs12 v-if="notHome">
         <router-link :to="page.path"
                      class="headline post-title-link"
@@ -14,7 +14,7 @@
           <PostTime v-if="page.frontmatter" :date="page.frontmatter.date"></PostTime>
         </div>
       </v-flex>
-    </v-card-title>
+    </VCardTitle>
     <v-card-text class="pt-0 pb-0">
       <v-flex xs12>
         <slot>{{page.excerpt}}</slot>
@@ -27,7 +27,7 @@
              :slug="tag">{{tag}}</Tag>
       </v-flex>
     </v-card-actions>
-  </v-card>
+  </VCard>
 </template>
 <script>
 import Tag from './Tag'
