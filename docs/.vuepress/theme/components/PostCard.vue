@@ -1,9 +1,7 @@
 <template>
-  <VCard :class="cardClass"
+  <v-card :class="cardClass"
           tag="article">
-    <!-- <v-card-media>
-    </v-card-media> -->
-    <VCardTitle>
+    <v-card-title>
       <v-flex xs12 v-if="notHome">
         <router-link :to="page.path"
                      class="headline post-title-link"
@@ -14,20 +12,20 @@
           <PostTime v-if="page.frontmatter" :date="page.frontmatter.date"></PostTime>
         </div>
       </v-flex>
-    </VCardTitle>
+    </v-card-title>
     <v-card-text class="pt-0 pb-0">
       <v-flex xs12>
         <slot>{{page.excerpt}}</slot>
       </v-flex>
     </v-card-text>
-    <v-card-actions>
-      <v-flex xs12>
-        <Tag v-if="page.frontmatter" v-for="tag in page.frontmatter.tags"
+    <VCard-actions>
+      <v-flex xs12 v-if="notHome">
+        <Tag v-if="notHome && page.frontmatter" v-for="tag in page.frontmatter.tags"
              :key="tag"
              :slug="tag">{{tag}}</Tag>
       </v-flex>
-    </v-card-actions>
-  </VCard>
+    </VCard-actions>
+  </v-card>
 </template>
 <script>
 import Tag from './Tag'
