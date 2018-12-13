@@ -32,8 +32,8 @@
         <v-list-tile-content>{{item.text}}</v-list-tile-content>
       </v-list-tile>
     </v-list>
-    <div class="bottom-sidebar" v-if="sidebarGroup.length"/>
-    <ul class="sidebar-links" v-if="sidebarGroup.length">
+    <div class="bottom-sidebar" v-if="sidebarGroup.length && !miniNav"/>
+    <ul class="sidebar-links" v-if="sidebarGroup.length && !miniNav">
       <li v-for="(item, i) in sidebarGroup" :key="i">
         <SidebarGroup
                 v-if="item.type === 'group'"
@@ -54,8 +54,9 @@ import SidebarGroup from './SidebarGroup.vue'
 import SidebarLink from './SidebarLink.vue'
 
 export default {
-  name: '',
+  name: 'SideNav',
   components: { SidebarGroup, SidebarLink },
+  props: ['miniNav'],
   data () {
     return {
       openGroupIndex: 0
@@ -93,14 +94,9 @@ export default {
         this.openGroupIndex = index
       }
     },
-
     toggleGroup (index) {
       this.openGroupIndex = index === this.openGroupIndex ? -1 : index
     },
-
-    isActive (page) {
-      return isActive(this.$route, page.path)
-    }
   }
 }
 

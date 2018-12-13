@@ -1,8 +1,7 @@
 <template>
-  <!--<transition name="scale-transition">-->
-    <form id="search-form" class="algolia-search-wrapper search-box">
-      <input id="algolia-search-input" class="search-query search-input">
-    </form>
+  <form id="search-form" class="algolia-search-wrapper search-box">
+    <input id="algolia-search-input" class="search-query search-input" @blur="notFocus">
+  </form>
 </template>
 
 <script>
@@ -24,6 +23,11 @@ export default {
         }))
       })
     },
+    notFocus () {
+      const search = document.getElementById('algolia-autocomplete-listbox-0');
+      const parentSearch = search.parentNode;
+      parentSearch.removeChild(search);
+    }
   },
   watch: {
     options (newValue) {
