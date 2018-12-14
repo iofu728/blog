@@ -87,6 +87,4 @@ export default {
     }
   }
 }
-.width-footer
-  width 100%
 </style>

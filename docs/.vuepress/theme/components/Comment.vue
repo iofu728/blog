@@ -1,9 +1,9 @@
 <template>
-    <VCard>
-        <VCardTitle>
+    <v-card>
+        <v-card-title>
             <div id="gitalk-container" class="comment"></div>
-        </VCardTitle>
-    </VCard>
+        </v-card-title>
+    </v-card>
 </template>
 <script>
 

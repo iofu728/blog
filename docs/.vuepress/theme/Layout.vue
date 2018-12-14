@@ -6,13 +6,13 @@
                      :background-opacity="0.4"
                      class="blog-progress"
                      v-show="progressRunning"></VProgressLinear>
-    <VNavDrawer app
-                :mobile-break-point="mobilePoint"
-                :mini-variant.sync="miniNav"
-                :width="240"
-                v-model="navVisible">
+    <v-navigation-drawer app
+                         :mobile-break-point="mobilePoint"
+                         :mini-variant.sync="miniNav"
+                         :width="240"
+                         v-model="navVisible">
       <SideNav :miniNav="miniNav"></SideNav>
-    </VNavDrawer>
+    </v-navigation-drawer>
     <Header :layout="layout"
             @toggleNav="toggleNav"></Header>
     <VContent>

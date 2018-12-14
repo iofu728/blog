@@ -57,7 +57,6 @@ export default {
 .post-nav {
   &.btn {
     height: auto;
-    flex auto
   }
 
   .btn__content {
