@@ -1,6 +1,8 @@
 <template>
   <v-card :class="cardClass"
           tag="article">
+    <!-- <v-card-media>
+    </v-card-media> -->
     <v-card-title>
       <v-flex xs12 v-if="notHome">
         <router-link :to="page.path"
