@@ -1,7 +1,8 @@
 <template>
-  <form id="search-form" class="algolia-search-wrapper search-box">
-    <input id="algolia-search-input" class="search-query search-input" @focus="visibleList" @blur="hiddenList">
-  </form>
+  <!--<transition name="scale-transition">-->
+    <form id="search-form" class="algolia-search-wrapper search-box">
+      <input id="algolia-search-input" class="search-query search-input">
+    </form>
 </template>
 
 <script>
@@ -23,18 +24,6 @@ export default {
         }))
       })
     },
-    hiddenList () {
-      const search = document.getElementById('algolia-autocomplete-listbox-0');
-      if(search && search.textContent) {
-        search.style.display = 'none'
-      }
-    },
-    visibleList (){
-      const search = document.getElementById('algolia-autocomplete-listbox-0');
-      if(search && search.textContent) {
-        search.style.display = ''
-      }
-    }
   },
   watch: {
     options (newValue) {
