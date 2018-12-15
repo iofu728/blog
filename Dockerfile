@@ -3,14 +3,13 @@ FROM node:10
 WORKDIR /usr/local/www/
 
 COPY . .
-# RUN npm install yarn@latest
+
+#RUN npm install yarn@latest
 
 # yarn 1.9.4 have bug for yarn install
-# RUN ./node_modules/.bin/yarn
+RUN yarn
 
-COPY . .
-
-EXPOSE ${app_port}
+EXPOSE 8848
 
 # RUN yarn doc:dev
 
