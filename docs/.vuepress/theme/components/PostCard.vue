@@ -20,13 +20,13 @@
         <slot>{{page.excerpt}}</slot>
       </v-flex>
     </v-card-text>
-    <VCard-actions>
-      <v-flex xs12 v-if="notHome">
-        <Tag v-if="notHome && page.frontmatter" v-for="tag in page.frontmatter.tags"
+    <v-card-actions>
+      <v-flex xs12>
+        <Tag v-if="page.frontmatter" v-for="tag in page.frontmatter.tags"
              :key="tag"
              :slug="tag">{{tag}}</Tag>
       </v-flex>
-    </VCard-actions>
+    </v-card-actions>
   </v-card>
 </template>
 <script>

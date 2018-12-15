@@ -1,11 +1,11 @@
 <template>
-  <VApp v-scroll="onScroll">
-    <VProgressLinear :height="3"
-                     color="error"
-                     :indeterminate="progressRunning"
-                     :background-opacity="0.4"
-                     class="blog-progress"
-                     v-show="progressRunning"></VProgressLinear>
+  <v-app v-scroll="onScroll">
+    <v-progress-linear :height="3"
+                       color="error"
+                       :indeterminate="progressRunning"
+                       :background-opacity="0.4"
+                       class="blog-progress"
+                       v-show="progressRunning"></v-progress-linear>
     <v-navigation-drawer app
                          :mobile-break-point="mobilePoint"
                          :mini-variant.sync="miniNav"
@@ -15,12 +15,12 @@
     </v-navigation-drawer>
     <Header :layout="layout"
             @toggleNav="toggleNav"></Header>
-    <VContent>
+    <v-content>
       <component :is="layout"></component>
       <Footer></Footer>
-    </VContent>
+    </v-content>
     <transition name="scale-transition">
-      <VBtn fab
+      <v-btn fab
              fixed
              right
              bottom
@@ -28,9 +28,9 @@
              @click="$vuetify.goTo(0)"
              v-show="offsetTop > 300">
         <i class="fa fa-lg fa-chevron-up"></i>
-      </VBtn>
+      </v-btn>
     </transition>
-  </VApp>
+  </v-app>
 </template>
 <script>
 import Vue from 'vue'

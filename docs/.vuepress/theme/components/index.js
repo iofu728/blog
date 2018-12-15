@@ -43,6 +43,8 @@ const install = (Vue, theme) => {
     },
     directives,
     theme: theme.colors
+    // options: {
+    // }
   })
 }
 

@@ -17,15 +17,15 @@
     </p>
 
     <DropdownTransition>
-      <a
+      <ul
         ref="items"
         class="sidebar-group-items"
         v-if="open || !collapsable"
       >
-        <a v-for="child in item.children">
+        <li v-for="child in item.children">
           <SidebarLink :item="child"/>
-        </a>
-      </a>
+        </li>
+      </ul>
     </DropdownTransition>
   </div>
 </template>
