@@ -12,9 +12,6 @@
     </v-btn>
     <v-toolbar-title>{{$page.title === 'Home' ? $siteTitle : $page.title || $siteTitle}}</v-toolbar-title>
     <v-spacer></v-spacer>
-    <!--<v-btn icon @click="clickSearch">-->
-      <!--<i class="fa fa-search"></i>-->
-    <!--</v-btn>-->
     <span class="links">
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
     </span>
