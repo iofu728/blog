@@ -19,11 +19,6 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
     - [试谈RNN中门的变迁](/other/rnn.md)
     - [关于VSM性能优化的思考🤔](/other/vsm.md)
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
-* SQL
-  + In-Memory
-    - [In-Memory DBMS 『Peloton』技术简述](/other/peloton.md)
-  + Innodb
-    - [Innodb MySQL中如何优雅的删除大表跑路🏃](/other/truncate.md)
 * Data Mining
   + [大图中如何快速计算PPR](/other/ppr.md)
   + [如何一口气理解PageRank](/other/pageranks.md)
@@ -36,6 +31,11 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
     - [Netease Music Spider](/other/netease.md)
   + Proxy & DB
     - [从高可用IP代理池到千万级网易云音乐数据爬取的实现](/other/neteasedb.md)
+* MySQL
+  + In-Memory
+    - [In-Memory DBMS 『Peloton』技术简述](/other/peloton.md)
+  + Innodb
+    - [Innodb MySQL中如何优雅的删除大表跑路🏃](/other/truncate.md)
 * Hadoop
   + MapReduce
     - [MapReduce 处理 日志log](/other/mapreduce.md)
