@@ -32,82 +32,16 @@
         <v-list-tile-content>{{item.text}}</v-list-tile-content>
       </v-list-tile>
     </v-list>
-    <div class="bottom-sidebar" v-if="sidebarGroup.length && !miniNav"/>
-    <ul class="sidebar-links" v-if="sidebarGroup.length && !miniNav">
-      <li v-for="(item, i) in sidebarGroup" :key="i">
-        <SidebarGroup
-                v-if="item.type === 'group'"
-                :item="item"
-                :first="i === 0"
-                :open="i === openGroupIndex"
-                :collapsable="item.collapsable || item.collapsible"
-                @toggle="toggleGroup(i)"
-        />
-        <SidebarLink v-else :item="item"/>
-      </li>
-    </ul>
   </div>
 </template>
 <script>
-import { resolveSidebarItems, isActive } from './util'
-import SidebarGroup from './SidebarGroup.vue'
-import SidebarLink from './SidebarLink.vue'
-
 export default {
-  name: 'SideNav',
-  components: { SidebarGroup, SidebarLink },
-  props: ['miniNav'],
-  data () {
-    return {
-      openGroupIndex: 0
-    }
-  },
-  created () {
-    this.refreshIndex()
-  },
-
-  watch: {
-    '$route' () {
-      this.refreshIndex()
-    }
-  },
+  name: '',
   computed: {
     content() {
       return this.$site.themeConfig
-    },
-    sidebarGroup() {
-      return resolveSidebarItems(
-        this.$page,
-        this.$route,
-        this.$site,
-        this.$localePath
-      )
-    }
-  },
-  methods: {
-    refreshIndex () {
-      const index = resolveOpenGroupIndex(
-        this.$route,
-        this.sidebarGroup
-      )
-      if (index > -1) {
-        this.openGroupIndex = index
-      }
-    },
-    toggleGroup (index) {
-      this.openGroupIndex = index === this.openGroupIndex ? -1 : index
-    },
-  }
-}
-
-function resolveOpenGroupIndex (route, items) {
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i]
-    if (item.type === 'group' && item.children.some(c => isActive(route, c.path))) {
-      return i
     }
   }
-  return -1
 }
 </script>
 <style lang="stylus">
@@ -179,9 +113,4 @@ function resolveOpenGroupIndex (route, items) {
     }
   }
 }
-
-.bottom-sidebar
-  border-bottom  2px solid lighten($gray-color, 20%)
-.sidebar-links
-  padding 1.5rem 0
 </style>
