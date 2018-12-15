@@ -11,7 +11,7 @@
                          :mini-variant.sync="miniNav"
                          :width="240"
                          v-model="navVisible">
-      <SideNav :miniNav="miniNav"></SideNav>
+      <SideNav></SideNav>
     </v-navigation-drawer>
     <Header :layout="layout"
             @toggleNav="toggleNav"></Header>

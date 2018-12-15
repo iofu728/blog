@@ -73,7 +73,7 @@ module.exports = {
         external: true
       },
       {
-        text: '知乎专栏',
+        text: 'Zhihu',
         icon: 'fas fa-adjust',
         url: 'https://zhuanlan.zhihu.com/wyydsb',
         external: true
@@ -99,12 +99,7 @@ module.exports = {
         {
           title: 'NLP',
           collapsable: false,
-          children: ['ecmo', 'chatbot', 'rnn', 'vsm', 'pagerank'],
-        },
-        {
-          title: 'SQL',
-          collapsable: false,
-          children: ['peloton', 'truncate'],
+          children: ['chatbot', 'rnn', 'vsm', 'pagerank'],
         },
         {
           title: 'Data Mining',
@@ -123,6 +118,11 @@ module.exports = {
           children: ['pseudo', 'mapreduce'],
         },
         {
+          title: 'MySQL',
+          collapsable: false,
+          children: ['truncate'],
+        },
+        {
           title: 'Bash',
           collapsable: false,
           children: ['brew', 'spider', 'pv', 'redirect', 'nohup'],
@@ -130,7 +130,7 @@ module.exports = {
         {
           title: 'Sundry',
           collapsable: false,
-          children: ['chip', 'gitSkill', 'nginx'],
+          children: ['gitSkill', 'nginx'],
         },
         {
           title: 'Summary',
@@ -139,7 +139,7 @@ module.exports = {
         },
       ],
       '/pat/': [
-        'catalog',
+        '',
         {
           title: 'Summary',
           collapsable: false,
@@ -154,22 +154,12 @@ module.exports = {
           title: 'PAT',
           collapsable: false,
           children: [
-            '1014', '1017', '1018', '1021', '1022', '1026', '1033', '1034',
-            '1040', '1044', '1049', '1056', '1057', '1066', '1068', '1072',
-            '1075', '1076', '1079', '1080', '1082', '1086', '1087', '1107',
+            '1014', '1015', '1017', '1018', '1021', '1022', '1026', '1033',
+            '1034', '1038', '1040', '1044', '1049', '1056', '1057', '1063',
+            '1066', '1068', '1072', '1073', '1074', '1075', '1076', '1077',
+            '1078', '1079', '1080', '1081', '1082', '1083', '1084', '1085',
+            '1086', '1087', '1106', '1107',
           ],
-        },
-      ],
-      '/javaScript/': [
-        {
-          title: 'Vuepress',
-          collapsable: false,
-          children: ['comment'],
-        },
-        {
-          title: 'React',
-          collapsable: false,
-          children: ['immutable', 'redux', 'reduxs', 'component'],
         },
       ],
     }
