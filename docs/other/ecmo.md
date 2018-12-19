@@ -200,3 +200,4 @@ Embedding从最开始的One-hot 到从NN中间参数获取的word2Vec 再到双�
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+
