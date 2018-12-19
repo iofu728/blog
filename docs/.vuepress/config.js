@@ -130,7 +130,7 @@ module.exports = {
         {
           title: 'Sundry',
           collapsable: false,
-          children: ['chip', 'gitSkill', 'nginx'],
+          children: ['numpy', 'chip', 'gitSkill', 'nginx'],
         },
         {
           title: 'Summary',
