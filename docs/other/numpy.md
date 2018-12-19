@@ -1,9 +1,19 @@
 ---
 title: numpy 📒笔记
-date: 2018-12-19 05:36:45
+date: 2018-12-19 16:40:50
 tags: [Python]
 description: numpy
 ---
+
+> 作为ML任务的一个 很重要 的任务, `数据处理`是十分重要的一环
+而numpy向量运算方面 做了 很多优化
+so 我们需要熟练掌握numpy的使用
+需要提的是 numpy开数组 内存开销很大
+numpy存一个`int32`需要`96byte` **96byte** **96byte**
+int32只要4byte 这24倍
+我在处理一个1G的数据的时候，用list开只要1G左右 用np内存飙到110G+ 直接打停了
+所以在大数据量的处理中 numpy还是值得商榷的一个工具
+但熟练掌握np是必不可少的 故参考nump-100做了一个整理
 
 This is a note for [numpy-100](https://github.com/rougier/numpy-100/blob/master/100_Numpy_exercises.md)
 
@@ -80,10 +90,11 @@ Z = np.fromiter(generate(),dtype=float,count=-1)
      = np.hsplit(arr3, [1,3])
      * np.split(arr3, [1,3],axis=2)
      = np.dsplit(arr3, [1,3])
+     * np.setdiff1d(A, B, assume_unique=True)# 差集
 21. np.take(arr,indexs)
 22. arr_3d = arr[:, np.newaxis, :] # 拓展维数
 23. sort
-         * np.sort(Z)
+     * np.sort(Z)
      * np.argsort(Z)
      * np.lexsort(Z)
      * np.argsort(Z, kind='mergesort',order='index')
