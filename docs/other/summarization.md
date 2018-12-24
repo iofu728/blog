@@ -5,6 +5,8 @@ tags: [NLP, Machine Learn]
 description: Summarization NLP
 ---
 
+> 这其实 应该在上周 就解决的事 拖到现在 🤦‍♀️
+
 `文本摘要` 算是NLP领域一个还实用的细分领域吧
 
 其实按我的理解 `文本摘要` 是一个`披着NLP外衣的CV领域内容`(至于为什么 请dalao往下面看)
