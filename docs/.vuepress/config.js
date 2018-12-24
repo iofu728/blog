@@ -58,7 +58,11 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/ecmo.html'},
+      {
+        text: 'Skr',
+        icon: 'fab fa-earlybirds',
+        url: '/other/summarization.html'
+      },
       {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
       {
         text: 'JavaScript',
@@ -99,7 +103,8 @@ module.exports = {
         {
           title: 'NLP',
           collapsable: false,
-          children: ['ecmo', 'chatbot', 'rnn', 'vsm', 'pagerank'],
+          children:
+              ['summarization', 'ecmo', 'chatbot', 'rnn', 'vsm', 'pagerank'],
         },
         {
           title: 'SQL',
