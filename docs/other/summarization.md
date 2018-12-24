@@ -5,7 +5,8 @@ tags: [NLP, Machine Learn]
 description: Summarization NLP
 ---
 
-> 这其实 应该在上周 就解决的事 拖到现在 🤦‍♀️
+> 拖延症 拖了一个星期 🤦‍♀️
+> 然后在查文献的时候 发现中文的资料比较少 于是
 
 `文本摘要` 算是NLP领域一个还实用的细分领域吧
 
@@ -144,7 +145,7 @@ Graph方法 比较有名的 比如说LexRank, TextRank
 
 比如说受到NMT(Neural Machine Translation)中Attention和NN的应用的启发，有学者提出NNLM(Neural Network Language Model)结构
 
-之后 有人用RNN代替NNLM
+之后 有人用RNN代替NNLM 比如说ABS什么的
 
 在这样的模型中会出现几个问题
 
@@ -176,7 +177,7 @@ RNN因为要前后迭代 复杂度 较大 会出现梯度消失 梯度爆炸💥
 
 #### ConvS2S
 
-<p align="right">[Jonas Gehring et.al., ICML 17]</p>
+<p align="right">[Jonas Gehring et.al. ICML 17]</p>
 
 > ConvS2S = Convolutional Sequence to Sequence Learning
 
@@ -210,7 +211,7 @@ ConvS2S使用GLU做gate mechanism
 
 #### Topic-ConvS2S
 
-<p align="right">[Shashi Narayan et.al., EMNLP 18]</p>
+<p align="right">[Shashi Narayan et.al. EMNLP 18]</p>
 
 这篇文章是爱丁堡大学的dalao在今年EMNLP上发表的成果
 
@@ -237,7 +238,7 @@ $e_i=[(x_i+p_i);(t_i'$⊗$t_D)]\in R^{f+f'}$
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1545621752061-3112c470-8406-40fc-a215-2c912a25ed10.png "")
 
 #### RLSeq2seq
-<p align="right">[Yaser Keneshloo et.al., sCCL 18]</p>
+<p align="right">[Yaser Keneshloo et.al. sCCL 18]</p>
 
 前面我们seq2seq的使用时 会出现 `Exposure Bias`和`训练与预测评价不一致`的问题
 
@@ -251,8 +252,8 @@ $e_i=[(x_i+p_i);(t_i'$⊗$t_D)]\in R^{f+f'}$
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1545614892194-3d023a02-8a9f-4ac7-997e-080cecb10cb0.png "")
 
-#### Reinforced  Topic-ConvS2S
-<p align="right">[Li Wang et.al., IJCAL 18]</p>
+#### Reinforced Topic-ConvS2S
+<p align="right">[Li Wang et.al. IJCAL 18]</p>
 
 这篇是腾讯联合哥伦比亚、苏黎世联邦理工发布的基于Topic-ConvS2S的 `Text Summarization`论文
 
@@ -312,6 +313,15 @@ Rough是一个模型评价集合，其中
 * Rough-L 基于最长公共子序列LCS 公共子序列越长 evaluation越高
 * Rough-SU 可不连续的bi-gram 和 uni-gram 相较于Rough-n 不要求gram连续
 
+# Reference
+
+1. [Text Summarization Techniques: A Brief Survey [`Mehdi Allahyari et al. Eccv 2017`]](https://arxiv.org/pdf/1707.02268)
+2. [Neural Abstractive Text Summarization with Sequence-to-Sequence Models [`Tian Shi et al. 2018`]](https://arxiv.org/pdf/1812.02303)
+3. [Convolutional Sequence to Sequence Learning [`Jonas Gehring et.al. ICML 17`]](https://arxiv.org/pdf/1705.03122.pdf)
+4. [Don’t Give Me the Details, Just the Summary! Topic-Aware Convolutional Neural Networks for Extreme Summarization [`Shashi Narayan et.al. EMNLP 18`]](https://arxiv.org/pdf/1808.08745.pdf)
+5. [Deep Reinforcement Learning for Sequence-to-Sequence Models [`Yaser Keneshloo et.al. sCCL 18`]](https://arxiv.org/pdf/1805.09461)
+6. [A Reinforced Topic-Aware Convolutional Sequence-to-Sequence Model for Abstractive Text Summarization [`Li Wang et.al. IJCAL 18`]](https://arxiv.org/pdf/1805.03616)
+7. [Controllable Abstractive Summarization [`Angela Fan et.al., ACL 18`]](https://arxiv.org/pdf/1711.05217)
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 
