@@ -180,7 +180,7 @@ RNN因为要前后迭代 复杂度 较大 会出现梯度消失 梯度爆炸💥
 
 > ConvS2S = Convolutional Sequence to Sequence Learning
 
-这篇论文是Facebook工作很久的产物 当时发出来 和 现在Bert差不多的效果
+这篇论文是Facebook工作很久的产物 去年发出来 和 现在Bert差不多的效果
 
 CNN相较于RNN而言 可以并行 而且不会出现`梯度消失` 可以更好的选取长距离的信息(这 太像`Transform`了吧)
 
@@ -226,7 +226,7 @@ Topic-ConvS2S主要的工作 一个是建立XSum DataSet 然后就是把Topic �
 
 模型利用LDA获取一层`Topic Sensitive Embedding`
 
-$e_i=[(x_i+p_i);(t_i'⊗t_D)]\in R^{f+f'}$
+$e_i=[(x_i+p_i);(t_i'$⊗$t_D)]\in R^{f+f'}$
 
 其中$x_i$为word Embedding, $p_i$为Position Embedding, $t_i$为文档中单词的分布, $t_D$为文档中主题的分布
 
