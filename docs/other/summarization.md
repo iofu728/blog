@@ -1,5 +1,5 @@
 ---
-title: 如何才能用NLP技术告别标题党
+title: 如何用NLP技术和标题党说拜拜👋-文本摘要
 date: 2018-12-24 08:16:16
 tags: [NLP, Machine Learn]
 description: Summarization NLP
