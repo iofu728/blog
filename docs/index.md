@@ -14,7 +14,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 
 * ML
   + NLP
-    - [如何才能用NLP技术告别标题党](/other/summarization.md)
+    - [如何用NLP技术和标题党说拜拜👋-文本摘要](/other/summarization.md)
     - [从ECMo、Bert看Word Embedding](/other/ecmo.md)
     - [检索式人工智障识记](/other/chatbot.md)
     - [试谈RNN中门的变迁](/other/rnn.md)
