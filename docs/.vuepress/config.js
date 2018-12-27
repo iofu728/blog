@@ -130,7 +130,7 @@ module.exports = {
         {
           title: 'Bash',
           collapsable: false,
-          children: ['brew', 'spider', 'pv', 'redirect', 'nohup'],
+          children: ['terminal', 'brew', 'spider', 'pv', 'redirect', 'nohup'],
         },
         {
           title: 'Sundry',
