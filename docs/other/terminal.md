@@ -6,7 +6,7 @@ description: some configuration skills for mac
 ---
 
 > `惊闻`全球第一例UI攻击 于今日🎄 爆发
-> 无数政府网站 的按钮 上套上了 奇奇怪怪的 白色物体[如何看待 antd 圣诞节彩蛋事件？](https://www.zhihu.com/question/306858501)
+> 无数网站 的按钮 被套上了 奇奇怪怪的 缺口[如何看待 antd 圣诞节彩蛋事件？](https://www.zhihu.com/question/306858501)
 > So `GUI`是靠不住的 `TUI` 才是王道
 > 那么 有一台程序员👨‍💻‍必备的Mac的我们 应该如何配置Terminal 舞装💃我们的Mac呢
 
