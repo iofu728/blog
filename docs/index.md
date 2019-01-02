@@ -3,17 +3,18 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/terminal.md
+actionLink: /other/xiaoice.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/terminal.html)
+[Last 👉](/other/xiaoice.html)
 
 * ML
   + NLP
+    - [直男届的杀手-『小冰』架构解析](/other/xiaoice.md)
     - [如何用NLP技术和标题党说拜拜👋-文本摘要](/other/summarization.md)
     - [从ECMo、Bert看Word Embedding](/other/ecmo.md)
     - [检索式人工智障识记](/other/chatbot.md)
