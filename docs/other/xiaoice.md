@@ -12,6 +12,8 @@ description: XiaoIce Architecture
 
 这篇论文 算是 很好的 解读了 XiaoIce的`体系架构` 包括同步一下 最近几年的  `MSRA 小冰组` 的研究成果
 
+值得一提的是 大名鼎鼎的 `沈向阳` 博士 是 这篇文章的四作
+
 之前 是 从[机器之心](https://zhuanlan.zhihu.com/p/53667904) 中 了解 到 这篇 文章的
 
 但 相对于 长达 26页的 paper 那篇文章 似乎 没有 focus on `key`
@@ -241,11 +243,11 @@ Image的回复 是 通过 Image-Comment 数据集 训练出来的
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1546407225209-9ca516f9-7c81-42e5-a215-ce567585d0c2.png "")
 
-还能 识别 事物的卡路里 我还 特意试验了 一次 惊了
+还能 识别 食物的卡路里 我还 特意试验了 一次 惊了
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1546407279884-eef6a2c1-6e82-47c9-b0cb-1d8954286d64.png "")
 
-除了这些之外 小冰 还会 创作
+除了这些之外 小冰 还会 创作 基本套路 和 前面的基本一致
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1546407310848-e5ee0211-62dd-4f9d-a447-8538a68c8410.png "")
 
