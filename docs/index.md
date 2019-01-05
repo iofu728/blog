@@ -50,7 +50,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 * Accident
   + [Linux内核故障导致服务不可用](/other/accident.md)
 * Bash
-  + [如何给码农👨‍💻‍的Mac开光](/other/terminal/md)
+  + [如何给码农👨‍💻‍的Mac开光](/other/terminal.md)
   + [brew | brew cask | yum | apt-get](/other/brew.md)
   + [identify spider](/other/spider.md)
   + [nohup](/other/nohup.md)
