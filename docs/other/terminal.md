@@ -13,6 +13,8 @@ description: some configuration skills for mac
 Ps: `Ubuntu|Centos` 配置`Terminal`思路与Mac相同 只是`brew` -> `apt-get|yum` or 源码安装
 PPS: 在这里特别感谢带我入门的`山川dalao` 🙇
 
+**友情提醒: 按照教程配置下来 即使熟练起码也要`1h`以上 maybe可以先`收藏`**
+
 考虑到文章 有点长了 还是 在这 放个`导航`吧
 
 [[toc]]
