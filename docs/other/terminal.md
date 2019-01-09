@@ -340,7 +340,7 @@ copy以下 保存为c++.sublime-build
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547034513313-b879fca9-eee1-4d61-9cf3-62c810118244.png "")
 * `Pdf Expert`: pdf 阅读器 可以直接按原有样式修改文本
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547036482232-6fe8ef65-f2c1-4c41-9b3f-12e4acda4745.png "")
-* `Vanilla`|[`dozer`](https://github.com/Mortennn/Dozer): 菜单栏折叠 `感谢@dalao推荐dozer` 感觉dozer更好用(可以直接拖点)
+* `Vanilla`|[`dozer`](https://github.com/Mortennn/Dozer): 菜单栏折叠 `感谢@iveevil su dalao推荐dozer`
 * `Tings`: 一个Todo list 工具 可以考虑结合[Alfred的workflow使用](https://github.com/xilopaint/alfred-things)
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547036998132-f818ba53-88fb-4d20-93ae-a8efd3dd6444.png "")
 * `ShadowsocksX-NG`: [load from GitHub](https://github.com/shadowsocks/ShadowsocksX-NG/releases), [node from portal.shadowsocks.nu](https://portal.shadowsocks.nu/aff.php?aff=15601) 这个 不需要多说(~~逼乎、CSDN、简书都发不了~~)
