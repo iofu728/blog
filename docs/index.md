@@ -21,8 +21,6 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
     - [试谈RNN中门的变迁](/other/rnn.md)
     - [关于VSM性能优化的思考🤔](/other/vsm.md)
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
-* Python
-  + [numpy📒](/other/numpy.md)
 * SQL
   + In-Memory
     - [In-Memory DBMS 『Peloton』技术简述](/other/peloton.md)
@@ -39,6 +37,8 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   + [nohup](/other/nohup.md)
   + [2>&1](/other/redirect.md)
   + [网站访问量](/other/pv.md)
+* Python
+  + [numpy📒](/other/numpy.md)
 * Spider
   + Easy modal
     - [Netease Music Spider](/other/netease.md)
