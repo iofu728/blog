@@ -3,25 +3,24 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/terminal.md
+actionLink: /other/xiaoice.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/terminal.html)
+[Last 👉](/other/xiaoice.html)
 
 * ML
   + NLP
+    - [直男届的杀手-『小冰』架构解析](/other/xiaoice.md)
     - [如何用NLP技术和标题党说拜拜👋-文本摘要](/other/summarization.md)
     - [从ECMo、Bert看Word Embedding](/other/ecmo.md)
     - [检索式人工智障识记](/other/chatbot.md)
     - [试谈RNN中门的变迁](/other/rnn.md)
     - [关于VSM性能优化的思考🤔](/other/vsm.md)
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
-* Python
-  + [numpy📒](/other/numpy.md)
 * SQL
   + In-Memory
     - [In-Memory DBMS 『Peloton』技术简述](/other/peloton.md)
@@ -31,9 +30,15 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   + [大图中如何快速计算PPR](/other/ppr.md)
   + [如何一口气理解PageRank](/other/pageranks.md)
   + [Frequnent Pattern](/other/frequent.md)
-* Hardware
-  + chip
-    - [底层码农眼中的芯片](/other/chip.md)
+* Bash
+  + [如何给码农👨‍💻‍的Mac开光](/other/terminal.md)
+  + [brew | brew cask | yum | apt-get](/other/brew.md)
+  + [identify spider](/other/spider.md)
+  + [nohup](/other/nohup.md)
+  + [2>&1](/other/redirect.md)
+  + [网站访问量](/other/pv.md)
+* Python
+  + [numpy📒](/other/numpy.md)
 * Spider
   + Easy modal
     - [Netease Music Spider](/other/netease.md)
@@ -48,13 +53,6 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   + [Nginx调优](/other/nginx.md)
 * Accident
   + [Linux内核故障导致服务不可用](/other/accident.md)
-* Bash
-  + [如何给码农👨‍💻‍的Mac开光](/other/terminal/md)
-  + [brew | brew cask | yum | apt-get](/other/brew.md)
-  + [identify spider](/other/spider.md)
-  + [nohup](/other/nohup.md)
-  + [2>&1](/other/redirect.md)
-  + [网站访问量](/other/pv.md)
 * Git
   + rebase相关
     - [git rebase 的另解](/other/gitSkill.md)
@@ -74,6 +72,9 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
     - [Take about Redux X](/javaScript/reduxs.md)
     - [Take about Redux I](/javaScript/redux.md)
     - [React component](/javaScript/component.md)
+* Hardware
+  + chip
+    - [底层码农眼中的芯片](/other/chip.md)
 * Summary
   + [考研](/other/cs.md)
 
