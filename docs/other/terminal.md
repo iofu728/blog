@@ -5,15 +5,15 @@ tags: [Bash]
 description: some configuration skills for mac
 ---
 
-> `惊闻`全球第一例UI攻击 于今日🎄 爆发
-> 无数网站 的按钮 被套上了 奇奇怪怪的 缺口[如何看待 antd 圣诞节彩蛋事件？](https://www.zhihu.com/question/306858501)
-> So `GUI`是靠不住的 `TUI` 才是王道
+> 人人都说Mac好
 > 那么 有一台程序员👨‍💻‍必备的Mac的我们 应该如何配置Terminal 舞装💃我们的Mac呢
 
 Ps: `Ubuntu|Centos` 配置`Terminal`思路与Mac相同 只是`brew` -> `apt-get|yum` or 源码安装
 PPS: 在这里特别感谢带我入门的`山川dalao` 🙇
 
 **友情提醒: 按照教程配置下来 即使熟练起码也要`1h`以上 maybe可以先`收藏`🤗**
+
+> 有dalao留言Sublime not free, 那我就把这个放在这 有需要的自取[Sublime License](http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/)
 
 考虑到文章 有点长了 还是 在这 放个`导航`吧
 
@@ -276,6 +276,8 @@ $ tree -I '__pycache__|venv|data'  # product file tree without 'venv' 'data' '__
 
 ## Sublime
 
+[`Sublime License` 需要的自取](http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/)
+
 除了 `Java`是在IntelliJ `IDEA` 里写的 毕竟打jar那个参数 有点多
 
 `sublime`又轻又好用 为啥不用呢
@@ -340,7 +342,7 @@ copy以下 保存为c++.sublime-build
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547034513313-b879fca9-eee1-4d61-9cf3-62c810118244.png "")
 * `Pdf Expert`: pdf 阅读器 可以直接按原有样式修改文本
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547036482232-6fe8ef65-f2c1-4c41-9b3f-12e4acda4745.png "")
-* `Vanilla`|[`dozer`](https://github.com/Mortennn/Dozer): 菜单栏折叠 `感谢@dalao推荐dozer` 感觉dozer更好用(可以直接拖点)
+* `Vanilla`|[`dozer`](https://github.com/Mortennn/Dozer): 菜单栏折叠 `感谢@iveevil su dalao推荐dozer`
 * `Tings`: 一个Todo list 工具 可以考虑结合[Alfred的workflow使用](https://github.com/xilopaint/alfred-things)
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547036998132-f818ba53-88fb-4d20-93ae-a8efd3dd6444.png "")
 * `ShadowsocksX-NG`: [load from GitHub](https://github.com/shadowsocks/ShadowsocksX-NG/releases), [node from portal.shadowsocks.nu](https://portal.shadowsocks.nu/aff.php?aff=15601) 这个 不需要多说(~~逼乎、CSDN、简书都发不了~~)
