@@ -43,7 +43,7 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(routes, { router, theme })
   Vue.use(components, theme)
   try {
-    document && router !== '/404.html' && getGitalk()
+    document && getGitalk()
   } catch (e) {
     console.error(e.message)
   }
