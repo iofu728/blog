@@ -13,6 +13,8 @@ PPS: 在这里特别感谢带我入门的`山川dalao` 🙇
 
 **友情提醒: 按照教程配置下来 即使熟练起码也要`1h`以上 maybe可以先`收藏`🤗**
 
+> 有dalao留言Sublime not free, 那我就把这个放在这 有需要的自取[Sublime License](http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/)
+
 考虑到文章 有点长了 还是 在这 放个`导航`吧
 
 [[toc]]
@@ -273,6 +275,8 @@ $ tree -I '__pycache__|venv|data'  # product file tree without 'venv' 'data' '__
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547031044390-c22a00ef-3742-4cc2-a3a6-7034a4978cf1.png "")
 
 ## Sublime
+
+[`Sublime License` 需要的自取](http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/)
 
 除了 `Java`是在IntelliJ `IDEA` 里写的 毕竟打jar那个参数 有点多
 
