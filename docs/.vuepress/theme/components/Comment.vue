@@ -9,14 +9,16 @@
 
   export default {
     mounted(){
-      if (typeof Gitalk !== 'undefined' && Gitalk instanceof Function) {
-        this.renderGitalk()
-      } else {
-        setTimeout(() => {this.renderGitalk()}, 1000)
-      }
-
+      this.haveGitalk();
     },
     methods: {
+      haveGitalk(){
+        if (typeof Gitalk !== 'undefined' && Gitalk instanceof Function) {
+          this.renderGitalk();
+        } else {
+          setTimeout(() => {this.haveGitalk()}, 1000)
+        }
+      },
       renderGitalk(){
         if (typeof Gitalk !== 'undefined' && Gitalk instanceof Function) {
           const gitalk = new Gitalk({
