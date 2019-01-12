@@ -2,8 +2,6 @@ import i18n from './libs/i18n'
 import blog from './libs/blog'
 import routes from './libs/routes'
 import components from './components'
-import './styles/theme.styl'
-
 
 function getGitalk() {
   const linkGitalk = document.createElement('link');
