@@ -347,6 +347,26 @@ copy以下 保存为c++.sublime-build
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547036998132-f818ba53-88fb-4d20-93ae-a8efd3dd6444.png "")
 * `ShadowsocksX-NG`: [load from GitHub](https://github.com/shadowsocks/ShadowsocksX-NG/releases), [node from portal.shadowsocks.nu](https://portal.shadowsocks.nu/aff.php?aff=15601) 这个 不需要多说(~~逼乎、CSDN、简书都发不了~~)
 
+## QA
+
+1. what is the benefit of `PDF Expert` with `Preview`?
+
+> Q@Carlos Ouyang:
+我觉得pdf expert比不上原生的preview啊？
+pdf我一直都只是看，做做标记，根本不需要改原文，原生的就能完成我的需求
+而且preview占用的系统资源极低，我打开一个1000多页的pdf，expert占用内存1.13g，preview40多m
+快速滑动的时候，preview能看到闪动的文字，expert变成了马赛克样式的背景图，等到速度放慢下来了 才会恢复成文字
+主要是想了解一下，expert还有我不知道的优点吗?
+
+> A@gunjianpan:
+> 1. **高清晰度的截图** 尤其是你需要copy 一些 paper上的 画的比较复杂的图 它能保证足够高的还原度 这个在做paper整理的时候 用的比较多 注意这个copy过来是png 做PPT 特别给力
+> 2. **内部跳转** 回跳按钮 当paper内部有章节引用 或者 你想查一下注脚引用的paper 可以方便的来回切换 不用怕找不到原来看到哪里了
+> 3. **更方便的标注** 菜单切换更简洁 尤其是和touch bar 一起用
+> 4. pdf expert 更出名的可能还是它的**编辑功能** 包括图片编辑 保持原文样式编辑
+> 5. 至于**占用资源**这件事情 开多确实 占内存 但你要相信MacOs的内存管理呀 我跑程序的时候 内存飙到120GB都正常使用 如果你长久不用它会帮你放到swap区的 我开pdf expert 差不多 占1G 如果内存是8G的可能会有点难受
+> 6. 然后那个快速 滑动 的情况 我刚才试了一下 只要足够快 两个都会显示不出来 只不过pdf expert显示的是背景马赛克 preview显示的是灰底 毕竟都要渲染的 另外 如果你那么快拉pdf 还不如 用go to; PDF Expert 的goto就在右下角 特别方便
+这是 我 使用下来的感受 不知道 能不能 回答你的问题
+
 🙇<u>**欢迎 大神 补充**</u>
 
 
