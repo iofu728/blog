@@ -18,7 +18,7 @@ module.exports = {
     ['meta', {name: 'msapplication-TileImage', content: '/icons/192.png'}],
     ['meta', {name: 'msapplication-TileColor', content: '#07527a'}]
   ],
-  serviceWorker: false,
+  serviceWorker: true,
   theme: '',
   locales: {'/': {lang: 'zh-CN', title: '乌云压顶是吧', description: '🍥'}},
   configureWebpack: (config, isServer) => {
