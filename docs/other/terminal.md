@@ -13,7 +13,11 @@ PPS: 在这里特别感谢带我入门的`山川dalao` 🙇
 
 **友情提醒: 按照教程配置下来 即使熟练起码也要`1h`以上 maybe可以先`收藏`🤗**
 
-> 有dalao留言Sublime not free, 那我就把这个放在这 有需要的自取[Sublime License](http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/)
+> 有dalao留言Sublime not free, 那我就把这个放在这 有需要的自取[Sublime License](http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/) `2019.01.11`
+
+> Update fzf usage from @PegasusWang
+必须提一下 以前一直都以为`fzf`只能在Mac上用 原来连Win都支持 那 必须强推这个神器了 `2019.01.13`
+详见[Fzf大法好](#fzf)
 
 考虑到文章 有点长了 还是 在这 放个`导航`吧
 
@@ -131,45 +135,102 @@ source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 $ source ~/.zshrc
 ```
 
-### `fzf-zsh`
+### `fzf`
 
-`fzf` 是一个`查找文件` `历史命令查询` `快速进入目录` 插件
-`fzf-zsh` 是fzf 在zsh中的一个应用
+> fzf = fuzzy finder
 
-我用fzf 相当于 一个 `代码粘贴本` + `快速cd` 工具
+是一个用Go写的功能爆炸强的插件 ~~(每次我一用fzf 别人都会投来异样的目光 👹)~~
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/gif/104214/1547035962104-01037840-ff30-44e5-aa04-ba9ba87a8fb5.gif "")
+`fzf` 的主要功能有 `查找文件` `历史命令查询` `快速进入目录`
 
-左侧是`Ctrl+R`历史命令查询👏(支持间断匹配) 右侧是`^\`(默认`Alt+C`)快速进入目录 回车之后 直接进入
+我用fzf 相当于 一个 `代码粘贴本` + `快速cd` + `预览文件`工具
 
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/gif/104214/1547365747760-fb597163-0c1b-4551-bc19-4411b74c6328.gif "")
+
+左侧是`Ctrl+R`历史命令查询👏(支持模糊匹配) 右侧是`^\`(默认`Alt+C` 可DIY)快速进入目录 回车之后 直接进入
+PS: 官方文档给的基本操作是 `cd **`+`Tab`生成列表+`Enter`生成命令+`Enter`执行 快捷键可以把4步变成两步 还是很Nice的👻
+
+下面给出Mac和Ubuntu的配置Code
 ```bash
-# install fd
-$ brew install fd
+# for Mac
+# install fd & fzf
+$ brew install fd fzf
 
-# install fzf
-$ git clone https://github.com/junegunn/fzf.git $ZSH_CUSTOM/plugins/fzf
-$ ${ZSH}/custom/plugins/fzf/install --bin
+# bind default key-binding
+$ /usr/local/opt/fzf/install
+$ source ~/.zshrc
 
-# install fzf-zsh
-$ git clone https://github.com/Wyntau/fzf-zsh.git $ZSH_CUSTOM/plugins/fzf-zsh
-
+# alter filefind to fd
 $ vim ~/.zshrc
-plugins=(
-    fzf-zsh        # add that
-)
-
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_C_COMMAND="fd -t d . "
 
-# end of edit ~/.zshrc
 $ source ~/.zshrc
 
 # Ctrl+R History command; Ctrl+R file catalog
 # if you want to DIY key of like 'Atl + C'
-$ vim ~/.oh-my-zsh/custom/plugins/fzf/shell/key-bindings.zsh
-66 bindkey '^\' fzf-cd-widget
+# maybe line-num is not 66, but must nearby
+$ vim ~/.fzf/shell/key-bindings.zsh
+- 66 bindkey '\ec' fzf-cd-widget
++ 66 bindkey '^\' fzf-cd-widget
+
+$ source ~/.fzf/shell/key-bindings.zsh
 ```
+
+```bash
+# for Ubuntu
+# install fzf & bind default key-binding
+$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+$ ~/.fzf/install
+$ source ~/.zshrc
+
+# install fd, url from https://github.com/sharkdp/fd/releases
+$ wget https://github.com/sharkdp/fd/releases/download/v7.2.0/fd_7.2.0_amd64.deb
+$ sudo dpkg -i fd_7.2.0_amd64.deb
+
+# alter filefind to fd
+$ vim ~/.zshrc
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_ALT_C_COMMAND="fd -t d . "
+
+$ source ~/.zshrc
+
+# Ctrl+R History command; Ctrl+R file catalog
+# if you want to DIY key of like 'Atl + C'
+# maybe line-num is not 64, but must nearby
+$ vim ~/.fzf/shell/key-bindings.zsh
+- 64 bindkey '\ec' fzf-cd-widget
++ 64 bindkey '^\' fzf-cd-widget
+
+$ source ~/.fzf/shell/key-bindings.zsh
+```
+
+#### `Preview`
+
+特别介绍一下Preview 功能
+
+我们知道在Unix环境下 我们要看文件的时候 必须一个个打开 当文件数量较大的场景
+
+比如说 我们调了10个参数 做了20组实验 每组实验拿到30轮结果 这时候 一个个vim开 怕不是要吐了 这时候你是不是开始怀念有GUI的世界
+
+当然 你可以写个bash脚本 把所有的文件合到一个文件 然后 只看一个file就行了
+
+fzf给出了另外一个`炫酷`的解决方案
+
+利用`fzf --preview` 完成对文件的预览 详见上节右侧视频
+
+```bash
+# set alias
+$ vim ~/.zshrc
+alias pp='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"'"
+$ source ~/.zshrc
+```
+
+设置完别名之后 利用 `pp` 即可完成文件的预览
+
+还有dalao利用fzf做git branch更改比较的预览 更多的酷炫的功能详见 [fzf Document](https://github.com/junegunn/fzf)
 
 ### `vim`
 
@@ -366,6 +427,18 @@ pdf我一直都只是看，做做标记，根本不需要改原文，原生的�
 > 5. 至于**占用资源**这件事情 开多确实 占内存 但你要相信MacOs的内存管理呀 我跑程序的时候 内存飙到120GB都正常使用 如果你长久不用它会帮你放到swap区的 我开pdf expert 差不多 占1G 如果内存是8G的可能会有点难受
 > 6. 然后那个快速 滑动 的情况 我刚才试了一下 只要足够快 两个都会显示不出来 只不过pdf expert显示的是背景马赛克 preview显示的是灰底 毕竟都要渲染的 另外 如果你那么快拉pdf 还不如 用go to; PDF Expert 的goto就在右下角 特别方便
 这是 我 使用下来的感受 不知道 能不能 回答你的问题
+
+2. How do you makre video
+
+> Q@gunjianpan:
+哇 要吐槽一下Mac的Pr
+本来想学校土豪买了Adobe全家桶
+没想到 会用的这么累
+> 1. 用`Gifox`录屏 这个产生的Gif大小比较小
+> 2. 用Pr 做字幕
+> 3. 然后就发现保存的Gif大小 爆炸了 即使用`imageOptim`(使用`gifsicle`引擎的software 实证表明效果比命令行敲`gifsicle`要好) 也要18MB
+> 4. 就想能不能先转mp4再转gif用了好多软件 后来发现`ffmpeg`最好用 (`brew install; ffmpeg -i xxx.mp4 xxx.gif`)
+> 5. 生成的gif 再过一遍`imageOptim`就能用了 心累
 
 🙇<u>**欢迎 大神 补充**</u>
 
