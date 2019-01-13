@@ -145,7 +145,7 @@ $ source ~/.zshrc
 
 我用fzf 相当于 一个 `代码粘贴本` + `快速cd` + `预览文件`工具
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/gif/104214/1547365747760-fb597163-0c1b-4551-bc19-4411b74c6328.gif "")
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/gif/104214/1547377408923-14fca5e3-8b23-4c9c-8821-c07a0df90212.gif "")
 
 左侧是`Ctrl+R`历史命令查询👏(支持模糊匹配) 右侧是`^\`(默认`Alt+C` 可DIY)快速进入目录 回车之后 直接进入
 PS: 官方文档给的基本操作是 `cd **`+`Tab`生成列表+`Enter`生成命令+`Enter`执行 快捷键可以把4步变成两步 还是很Nice的👻
