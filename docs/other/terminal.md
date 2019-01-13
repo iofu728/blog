@@ -225,10 +225,11 @@ fzf给出了另外一个`炫酷`的解决方案
 # set alias
 $ vim ~/.zshrc
 alias pp='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"'"
+alias oo='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || tac {}) 2> /dev/null | head -500'"'"  # flashback
 $ source ~/.zshrc
 ```
 
-设置完别名之后 利用 `pp` 即可完成文件的预览
+设置完别名之后 利用 `pp` 即可完成文件的预览 `oo` 用于倒叙预览文件 在一些流数据文件中比较方便
 
 还有dalao利用fzf做git branch更改比较的预览 更多的酷炫的功能详见 [fzf Document](https://github.com/junegunn/fzf)
 
