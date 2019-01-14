@@ -30,6 +30,10 @@ expr $num + $originspider >> log/basicpre
 cp log/basicpre log/basic
 echo $(cat log/yesterday) >> log/day
 
+# Block_ip
+awk '{if($9==403)print $1}' log/today| sort | uniq -c | sort -nr | awk '{if($1>66) print "deny "$2";"}' >> $blockpath
+nginx -s reload >> log/crontab.log
+
 ## reload data
 
 # first=20180820
