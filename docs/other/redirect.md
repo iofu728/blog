@@ -14,14 +14,14 @@ description: 重定向符解析
 
 后来自己在ECS上打印日志的时候也用到过这个命令，想还是深究一下这个问题
 
-懒癌晚期的我就cope了一个例子`nohup command>/dev/null 2>&1 &`
+懒癌晚期的我就cope了一个例子`nohup command >> /dev/null 2>&1 &`
 
 其中
 * `nohup`代表 持久化 命令，使得在退出ssh之后，还能持续运行命令 = `no hang up`
 * 最后一个`&` 代表以job的方式不挂起运行
 * `/dev/null` 代表空设备地址
 
-所以等价于分析`command>/dev/null 2>&1`
+所以等价于分析`command >> /dev/null 2>&1`
 
 ## 重定向符`>`
 
@@ -59,7 +59,7 @@ cat a >> b
 所以这里`2>&1`的意识便是，把标准错误，重定向到文件描述符`&1`中，即把标准错误重定向到标准输出中
 
 那看我们最初的那个例子
-`command>/dev/null 2>&1` = `command 1>/dev/null 2>&1`
+`command >> /dev/null 2>&1` = `command 1>> /dev/null 2>&1`
 
 1. 把`command`的`标准输出`，重定向 至 `/dev/null`中
 2. 把`标准错误`重定向到标准输出，即 把 `标准错误` 也 重定向 写入 `/dev/null`中
@@ -69,7 +69,7 @@ cat a >> b
 
 其实多想一会就会发现这个看起来很骚的写法确实有它的好处
 
-我们为啥不写成`command>/dev/null 2>/dev/null`
+我们为啥不写成`command >> /dev/null 2> /dev/null`
 
 很明显，把重定向分成两个单独的操作之后，也意味着两次文件打开
 这样的操作代价更大
