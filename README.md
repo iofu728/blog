@@ -15,7 +15,8 @@
 
 
 ## 二次开发
-* 4.0版本基于[vuepress-theme-indigo](https://github.com/yscoder/vuepress-theme-indigo) 
+* 4.0版本基于[vuepress-theme-indigo](https://github.com/yscoder/vuepress-theme-indigo)
+* img zoom(v4.2) 
 * 资瓷Tags(4.0 开发中)
 * 实时显示访问量
 * 自定义主题 `Gothic` Style + Card Style
