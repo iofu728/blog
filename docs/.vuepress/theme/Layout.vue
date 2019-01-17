@@ -88,17 +88,12 @@ export default {
       this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
     },
     updateZoom () {
-      console.log('Test')
       try {
-        console.log('Try')
-        console.log(window)
         window && import('medium-zoom')
           .then(mediumZoom => {
-            console.log('Zoom')
             mediumZoom.default(document.querySelectorAll('.content img'));
           })
       } catch (e) {
-        console.log('Catch')
         console.error(e.message)
       }
     },
