@@ -49,11 +49,9 @@ const install = (Vue, { theme, pages }) => {
         setTimeout(() => {if(tempTime === time) this.updateZoom()}, 500)
       },
       updateZoom () {
-        console.log('Try')
         try {
           window && import('medium-zoom')
             .then(mediumZoom => {
-              console.log('Zoom')
               mediumZoom.default(document.querySelectorAll('.content img'));
             })
         } catch (e) {
