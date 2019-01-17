@@ -1,11 +1,13 @@
 import sortBy from 'lodash/sortBy'
 import dayjs from 'dayjs'
+import '../styles/global.styl'
 
 const slugReg = /\/([^\/]+).html$/
 function matchSlug(path) {
   const arr = path.match(slugReg)
   return arr ? arr[1] : null
 }
+let time = 0
 
 const install = (Vue, { theme, pages }) => {
   // 不依赖已有的内置数据，在这里对 siteData 解析，组装博客需要的数据混入Vue
@@ -33,6 +35,32 @@ const install = (Vue, { theme, pages }) => {
   })
 
   Vue.mixin({
+    data() {
+      return {
+        time: 0,
+      }
+    },
+    created () {
+      time += 1
+      this.waitTime(time)
+    },
+    methods: {
+      waitTime(tempTime) {
+        setTimeout(() => {if(tempTime === time) this.updateZoom()}, 500)
+      },
+      updateZoom () {
+        console.log('Try')
+        try {
+          window && import('medium-zoom')
+            .then(mediumZoom => {
+              console.log('Zoom')
+              mediumZoom.default(document.querySelectorAll('.content img'));
+            })
+        } catch (e) {
+          console.error(e.message)
+        }
+      },
+    },
     computed: {
       $blog() {
         return { postList, posts, tags, tagList }
