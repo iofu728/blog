@@ -91,6 +91,7 @@ export default {
       console.log('Test')
       try {
         console.log('Try')
+        console.log(window)
         window && import('medium-zoom')
           .then(mediumZoom => {
             console.log('Zoom')
