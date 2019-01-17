@@ -41,6 +41,8 @@ import Home from './Home'
 import Tags from './Tags'
 import Post from './Post'
 import { pathToComponentName, updateMetaTags } from './libs/utils'
+import mediumZoom from 'medium-zoom'
+import './styles/global.styl'
 
 export default {
   name: 'layout',
@@ -84,7 +86,10 @@ export default {
     },
     onScroll(e) {
       this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
-    }
+    },
+    updateZoom () {
+      mediumZoom(document.querySelectorAll('.content img'))
+    },
   },
   created() {
     if (this.$ssrContext) {
@@ -96,6 +101,7 @@ export default {
     }
   },
   mounted() {
+    this.updateZoom()
     // update title / meta tags
     this.currentMetaTags = new Set()
     const updateMeta = () => {
