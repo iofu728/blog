@@ -41,7 +41,7 @@ import Home from './Home'
 import Tags from './Tags'
 import Post from './Post'
 import { pathToComponentName, updateMetaTags } from './libs/utils'
-import mediumZoom from 'medium-zoom'
+
 import './styles/global.styl'
 
 export default {
@@ -88,7 +88,14 @@ export default {
       this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
     },
     updateZoom () {
-      mediumZoom(document.querySelectorAll('.content img'))
+      try {
+        window && import('medium-zoom')
+          .then(mediumZoom => {
+            mediumZoom.default(document.querySelectorAll('.content img'));
+          })
+      } catch (e) {
+        console.error(e.message)
+      }
     },
   },
   created() {
@@ -140,3 +147,4 @@ export default {
 <style src="@fortawesome/fontawesome-free-webfonts/css/fa-brands.css"></style>
 <style src="@fortawesome/fontawesome-free-webfonts/css/fontawesome.css"></style>
 <style src="prismjs/themes/prism-tomorrow.css"></style>
+
