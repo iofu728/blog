@@ -62,7 +62,7 @@ Terminal 是 进入 Unix的 入口
 
 来看下效果图
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547031113857-c3502a03-c931-4a43-b864-6002d1b130e1.png "")
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547708084027-378e0f4c-480d-4a5b-ae2e-f90edb3171bf.png "")
 
 ### `zsh`
 
