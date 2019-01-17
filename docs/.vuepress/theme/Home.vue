@@ -15,6 +15,7 @@
 <script>
 import Pagination from './components/Pagination'
 import PostCard from './components/PostCard'
+import './styles/theme.styl'
 
 export default {
   components: {

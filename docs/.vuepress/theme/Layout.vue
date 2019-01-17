@@ -42,6 +42,8 @@ import Tags from './Tags'
 import Post from './Post'
 import { pathToComponentName, updateMetaTags } from './libs/utils'
 
+import './styles/global.styl'
+
 export default {
   name: 'layout',
   components: {
@@ -84,7 +86,17 @@ export default {
     },
     onScroll(e) {
       this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
-    }
+    },
+    updateZoom () {
+      try {
+        window && import('medium-zoom')
+          .then(mediumZoom => {
+            mediumZoom.default(document.querySelectorAll('.content img'));
+          })
+      } catch (e) {
+        console.error(e.message)
+      }
+    },
   },
   created() {
     if (this.$ssrContext) {
@@ -96,6 +108,7 @@ export default {
     }
   },
   mounted() {
+    this.updateZoom()
     // update title / meta tags
     this.currentMetaTags = new Set()
     const updateMeta = () => {
@@ -134,3 +147,4 @@ export default {
 <style src="@fortawesome/fontawesome-free-webfonts/css/fa-brands.css"></style>
 <style src="@fortawesome/fontawesome-free-webfonts/css/fontawesome.css"></style>
 <style src="prismjs/themes/prism-tomorrow.css"></style>
+
