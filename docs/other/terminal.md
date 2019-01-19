@@ -171,11 +171,11 @@ $ source ~/.zshrc
 # Ctrl+R History command; Ctrl+R file catalog
 # if you want to DIY key of like 'Atl + C'
 # maybe line-num is not 66, but must nearby
-$ vim ~/.fzf/shell/key-bindings.zsh
+$ vim /usr/local/opt/fzf/shell/key-bindings.zsh
 - 66 bindkey '\ec' fzf-cd-widget
 + 66 bindkey '^\' fzf-cd-widget
 
-$ source ~/.fzf/shell/key-bindings.zsh
+$ source /usr/local/opt/fzf/shell/key-bindings.zsh
 ```
 
 ```bash
