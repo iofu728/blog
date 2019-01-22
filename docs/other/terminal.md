@@ -72,7 +72,7 @@ zsh 的配置 主要 的 功能 是 `命令高亮`（识别 命令 正确性）`
 
 这里的 `高亮` 是克制的 是为了 高效 不是 为了 `酷炫`
 
-在这里 我配置了 `brew` `zsh` `on-my-zsh` `zsh-autosuggestion` `zsh-syntax-highlighting`
+在这里 我配置了 `brew` `zsh` `oh-my-zsh` `zsh-autosuggestion` `zsh-syntax-highlighting`
 
 具体步骤的 参考链接 见下面👇的注释
 
@@ -93,7 +93,7 @@ $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/ho
 $ brew install zsh git autojump
 $ chsh -s /bin/zsh
 
-# install on-my-zsh
+# install oh-my-zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # syntax highlighting
