@@ -13,8 +13,6 @@ PPS: 在这里特别感谢带我入门的`山川dalao` 🙇
 
 **友情提醒: 按照教程配置下来 即使熟练起码也要`1h`以上 maybe可以先`收藏`🤗**
 
-> 有dalao留言Sublime not free, 那我就把这个放在这 有需要的自取[Sublime License](http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/) `2019.01.11`
-
 > Update fzf usage from @PegasusWang
 必须提一下 以前一直都以为`fzf`只能在Mac上用 原来连Win都支持 那 必须强推这个神器了 `2019.01.13`
 详见[Fzf大法好](#fzf)
@@ -407,6 +405,11 @@ copy以下 保存为c++.sublime-build
 * `Vanilla`|[`dozer`](https://github.com/Mortennn/Dozer): 菜单栏折叠 `感谢@iveevil su dalao推荐dozer`
 * `Things`: 一个Todo list 工具 可以考虑结合[Alfred的workflow使用](https://github.com/xilopaint/alfred-things)
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547036998132-f818ba53-88fb-4d20-93ae-a8efd3dd6444.png "")
+* `Contexts`: 窗口切换管理
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1548228993728-6d4d93b9-1f09-4db7-a43e-063c9575ecd7.png "")
+* `Typora`: 显式Mardown编辑器
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1548229136266-b4aa62e5-8f6b-49cf-992c-6bb23b578adf.png "")
+* `Magnet|Moom`: 分屏工具
 * `ShadowsocksX-NG`: [load from GitHub](https://github.com/shadowsocks/ShadowsocksX-NG/releases), [node from portal.shadowsocks.nu](https://portal.shadowsocks.nu/aff.php?aff=15601) 这个 不需要多说(~~逼乎、CSDN、简书都发不了~~)
 
 ## QA
