@@ -320,7 +320,7 @@ $ tree -I '__pycache__|venv|data'  # product file tree without 'venv' 'data' '__
 
 * [有道翻译](https://github.com/wensonsmith/YoudaoTranslate)
 
-因为用了有道智云的API 相对于单机版的yd 精度提升很高 (支持句粒度的Transaction)
+因为用了有道智云的API 相对于单机版的yd 精度提升很高 (支持句粒度的Translation)
 
 当然 需要去智云注册 然后配置一下
 
