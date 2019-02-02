@@ -1,6 +1,6 @@
 {
   "name": "iofu728-blog",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "blog for wyydsb",
   "scripts": {
     "doc:dev": "./node_modules/.bin/vuepress dev ./docs",
