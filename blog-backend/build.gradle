@@ -1,0 +1,59 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.5.RELEASE'
+    }
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+group = 'com.github.iofu728.blog'
+version = '1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    group = 'com.github.iofu728.blog'
+    version = '1.0-SNAPSHOT'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE'
+        compile 'org.springframework.boot:spring-boot-starter-thymeleaf:2.0.5.RELEASE'
+        compile 'org.springframework.boot:spring-boot-configuration-processor:2.0.5.RELEASE'
+        compile "org.mybatis:mybatis:3.5.0"
+        compile "org.mybatis:mybatis-spring:2.0.0"
+        compile 'redis.clients:jedis:2.9.0'
+        compile "com.zaxxer:HikariCP:3.3.0"
+        compileOnly 'org.projectlombok:lombok:1.18.4'
+        annotationProcessor 'org.projectlombok:lombok:1.18.4'
+        testCompile 'org.springframework.boot:spring-boot-starter-test:2.0.5.RELEASE'
+        testCompile 'junit:junit:4.12'
+    }
+}
+
+project(":blog-collector") {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+        compile project(":blog-repository")
+    }
+}
