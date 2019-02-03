@@ -37,8 +37,10 @@ subprojects {
         compile 'org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE'
         compile 'org.springframework.boot:spring-boot-starter-thymeleaf:2.0.5.RELEASE'
         compile 'org.springframework.boot:spring-boot-configuration-processor:2.0.5.RELEASE'
-        compile "org.mybatis:mybatis:3.5.0"
+        compile "org.springframework:spring-jdbc:5.1.4.RELEASE"
+        compile 'mysql:mysql-connector-java:8.0.15'
         compile "org.mybatis:mybatis-spring:2.0.0"
+        compile "org.mybatis:mybatis:3.5.0"
         compile 'redis.clients:jedis:2.9.0'
         compile "com.zaxxer:HikariCP:3.3.0"
         compileOnly 'org.projectlombok:lombok:1.18.4'
