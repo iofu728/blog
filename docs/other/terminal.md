@@ -314,7 +314,7 @@ $ tree -I '__pycache__|venv|data'  # product file tree without 'venv' 'data' '__
 
 ### `workflow`
 
-`workflow` 相当于iOS的的`shortcut捷达`
+`workflow` 相当于iOS的的`Shortcuts捷达`
 
 通过 提前 设置好 程序流程 然后 主要 相应的命令就能启动
 
