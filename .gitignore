@@ -17,3 +17,44 @@ crontab.log
 
 # access.log
 access.log
+
+# gradle
+.gradle
+
+*/build/
+*/code/
+*/out/
+*/*/out/
+*/logs/
+*/classes/
+*/*/classes/
+
+# some . file
+.DS_Store
+.factorypath
+.classpath
+.project
+.settings
+.metadata
+.factorypath
+.recommenders
+.factorypath
+.springBeans
+*.class
+*.iml
+*.ipr
+*.iws
+*.jar
+
+manifest.yml
+MANIFEST.MF
+settings.xml
+activemq-data
+overridedb.*
+interpolated*.xml
+dependency-reduced-pom.xml
+build.log
+_site/
+
+lib/
+target
