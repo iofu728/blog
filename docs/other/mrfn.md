@@ -104,7 +104,7 @@ $\alpha_{j,k}^i=\frac{exp(\omega_{j,k}^i)}{\sum(exp(\omega_{j,k}^i))}$
 
 $\bar{e_{i,j}}=\sum{\alpha_{j,k}^i}\hat{e_{r,k}}$
 
-$\odot$ 就是Hadamard dot (或者叫element-wise multiplication)
+$\odot$ 就是`Hadamard dot` (或者叫`element-wise multiplication`)
 
 之后就跟上`GRU`和`MLR`得到相应的score值
 
