@@ -58,7 +58,7 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/xiaoice.html'},
+      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/mrfn.html'},
       {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
       {
         text: 'JavaScript',
@@ -100,7 +100,7 @@ module.exports = {
           title: 'NLP',
           collapsable: false,
           children: [
-            'xiaoice', 'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm',
+            'mrfn', 'xiaoice', 'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm',
             'pagerank'
           ],
         },
