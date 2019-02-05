@@ -90,14 +90,19 @@ PS: 以上两篇paper 都承诺开源code ~~(虽然repository里面都没有code
 
 `U`->`U*`的过程是简单的把多个矩阵拼接成一个矩阵
 
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1549373796233-5b05f298-8a42-4509-ba86-bc893df5d1af.png)
+$U^*_i \in R^{d^* \times n_i}(d^*=\sum d_k)$
 
 而`fusion`则是利用类似`CNN`的公式
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1549376159048-855c02ea-aab8-4782-b0ef-9eafd1831dbc.png)
+
+$t_{i,j}=f(\hat{e_{i,j}},\bar{e_{i,j}})=ReLU(W_p[(\hat{e_{i,j}}-\bar{e_{i,j}}) \odot \hat{e_{i,j}}-\bar{e_{i,j}});\hat{e_{i,j}} \odot \bar{e_{i,j}}]+b_p)$
 
 其中
 
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1549373796947-18c5062b-d0da-4e67-ae93-a3f6cd478d8d.png)
+$w_{j,k}^i=V_a^T tanh(W_a[\hat{e_{i,j}\oplus \hat{e_{r,k}}]+b_a})$
+
+$\alpha_{j,k}^i=\frac{exp(\omega_{j,k}^i)}{\sum(exp(\omega_{j,k}^i))}$
+
+$\bar{e_{i,j}}=\sum{\alpha_{j,k}^i}\hat{e_{r,k}}$
 
 之后就跟上`GRU`和`MLR`得到相应的score值
 
@@ -152,3 +157,7 @@ PS: 以上两篇paper 都承诺开源code ~~(虽然repository里面都没有code
 ## `References`
 1. [Multi-Representation Fusion Network for Multi-turn Response Selection in Retrieval-based Chatbots. Chongyang Tao et al. WSDM2019.](https://dl.acm.org/ft_gateway.cfm?id=3290985&ftid=2038017&dwn=1&CFID=48199586&CFTOKEN=fd4f6dfb8820cbf2-214D0EB6-AEAD-530A-88B454E3E573F7AF)
 2. [Interactive Matching Network for Multi-Turn Response Selection in Retrieval-Based Chatbots. Jia-Chen Gu et al. 2019](https://arxiv.org/pdf/1901.01824)
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
