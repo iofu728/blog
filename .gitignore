@@ -49,6 +49,7 @@ access.log
 manifest.yml
 MANIFEST.MF
 settings.xml
+application.yml
 activemq-data
 overridedb.*
 interpolated*.xml

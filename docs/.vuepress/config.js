@@ -8,6 +8,8 @@ module.exports = {
   title: '乌云压顶是吧',
   description: '🍥',
   ga: 'UA-113936890-1',
+  host: '192.168.31.147',
+  port: '8080',
   head: [
     ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
     ['link', {rel: 'manifest', href: '/manifest.json'}],

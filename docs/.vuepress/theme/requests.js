@@ -28,12 +28,14 @@ const checkStatus = response => {
  */
 export default async function request(url, options) {
   const frontendDomainTem = window.location.href.split('/')[2];
-  const nowUrl = 'https://' + frontendDomainTem + url
+  const nowUrl = frontendDomainTem.includes(':') ?
+    'http://'+frontendDomainTem.split(':')[0] + ':8848'+ url :
+    'https://' + frontendDomainTem + ':8858' + url;
   try {
     const response =
         await fetch(nowUrl, {...options, mode: 'cors', credentials: 'include'});
 
-    const data = await response.text();
+    const data = await response.json();
 
     return data;
   } catch (error) {
