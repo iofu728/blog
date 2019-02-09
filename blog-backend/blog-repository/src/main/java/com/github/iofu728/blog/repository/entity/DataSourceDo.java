@@ -1,6 +1,5 @@
 package com.github.iofu728.blog.repository.entity;
 
-import com.github.iofu728.blog.repository.utils.JsonUtils;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -20,8 +19,4 @@ public class DataSourceDo {
 
     private String mysqlPassage;
 
-    @Override
-    public String toString() {
-        return JsonUtils.transfer2JsonString(this);
-    }
 }

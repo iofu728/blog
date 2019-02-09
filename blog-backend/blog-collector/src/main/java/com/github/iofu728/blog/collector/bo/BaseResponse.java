@@ -1,10 +1,6 @@
 package com.github.iofu728.blog.collector.bo;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -17,13 +13,9 @@ import com.github.iofu728.blog.collector.consts.ErrorCodeConsts;
  * @author gunjianpan
  * @date 19-02-02
  */
-@Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class BaseResponse<T> implements Serializable {
 
-    @NonNull
     private  boolean success;
 
     private T result;
