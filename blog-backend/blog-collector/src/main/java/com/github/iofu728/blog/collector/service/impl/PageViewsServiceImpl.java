@@ -5,7 +5,6 @@ import com.github.iofu728.blog.collector.service.PageViewsService;
 import com.github.iofu728.blog.repository.entity.PageViewsDO;
 import com.github.iofu728.blog.repository.repository.PageViewsRepository;
 import com.github.iofu728.blog.repository.repository.TitleViewsRepository;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

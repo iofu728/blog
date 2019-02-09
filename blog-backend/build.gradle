@@ -46,9 +46,6 @@ subprojects {
     }
 
     dependencies {
-        compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-        compile "org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
-        compile "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
         compile "org.springframework.data:spring-data-commons:$springDataCommonsVersion"
         compile "org.springframework:spring-jdbc:$springVersion"
         compile "org.apache.commons:commons-lang3:$commonsLangVersion"
@@ -56,7 +53,7 @@ subprojects {
         compile "com.zaxxer:HikariCP:$hikariCPVersion"
         compileOnly "org.projectlombok:lombok:$lombokVersion"
         annotationProcessor "org.projectlombok:lombok:$lombokVersion"
-        testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+
         testCompile "junit:junit:$junitVersion"
     }
 }
@@ -68,17 +65,21 @@ project(":blog-collector") {
 
     dependencies {
         compile project(":blog-repository")
+        compile "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
+        compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+        testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
     }
 }
 
 project(":blog-repository") {
     apply plugin: 'java'
-    apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
     dependencies {
         compile "org.mybatis:mybatis-spring:$mybatisSpringVersion"
         compile "org.mybatis:mybatis:$mybatisVersion"
         compile "redis.clients:jedis:$jedisVersion"
+        compile "org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
+
     }
 }
