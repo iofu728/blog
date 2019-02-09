@@ -13,7 +13,17 @@ public interface PageViewsService {
     /**
      * get PageViewsLists
      *
+     * @param timestamp time
      * @return PageViewBO
      */
-    PageViewsBo getPageViewsLists();
+    PageViewsBo getPageViewsLists(Long timestamp);
+
+    /**
+     * update pageViews
+     *
+     * @param timestamp time
+     * @param titleName title name
+     * @return true or false
+     */
+    Boolean updatePageViews(Long timestamp, String titleName);
 }

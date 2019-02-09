@@ -19,7 +19,7 @@ import java.util.Properties;
  */
 @Configuration
 @ComponentScan(value = "com.github.iofu728.blog.repository")
-//@MapperScan(value = "com.github.iofu728.blog.repository.mapper")
+@MapperScan(value = "com.github.iofu728.blog.repository.mapper")
 public class BlogRepositoryApplicationContext {
     @Autowired
     @Qualifier("dataSource")

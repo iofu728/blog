@@ -1,6 +1,18 @@
 buildscript {
     ext {
         springBootVersion = '2.0.5.RELEASE'
+        springSessionVersion = '1.3.5.RELEASE'
+        springDataCommonsVersion = '2.1.4.RELEASE'
+        springfoxSwagger2Version = '2.4.0'
+        springVersion = '5.1.4.RELEASE'
+        lombokVersion = '1.18.4'
+        junitVersion = '4.12'
+        mysqlConnectorVersion = '8.0.15'
+        mybatisSpringVersion = '2.0.0'
+        mybatisVersion = '3.5.0'
+        hikariCPVersion = '3.3.0'
+        jedisVersion = '2.9.0'
+        commonsLangVersion = '3.8.1'
     }
     repositories {
         maven { url 'https://maven.aliyun.com/repository/central' }
@@ -34,19 +46,18 @@ subprojects {
     }
 
     dependencies {
-        compile 'org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE'
-        compile 'org.springframework.boot:spring-boot-starter-thymeleaf:2.0.5.RELEASE'
-        compile 'org.springframework.boot:spring-boot-configuration-processor:2.0.5.RELEASE'
-        compile "org.springframework:spring-jdbc:5.1.4.RELEASE"
-        compile 'mysql:mysql-connector-java:8.0.15'
-        compile "org.mybatis:mybatis-spring:2.0.0"
-        compile "org.mybatis:mybatis:3.5.0"
-        compile 'redis.clients:jedis:2.9.0'
-        compile "com.zaxxer:HikariCP:3.3.0"
-        compileOnly 'org.projectlombok:lombok:1.18.4'
-        annotationProcessor 'org.projectlombok:lombok:1.18.4'
-        testCompile 'org.springframework.boot:spring-boot-starter-test:2.0.5.RELEASE'
-        testCompile 'junit:junit:4.12'
+        compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+        compile "org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
+        compile "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
+        compile "org.springframework.data:spring-data-commons:$springDataCommonsVersion"
+        compile "org.springframework:spring-jdbc:$springVersion"
+        compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+        compile "mysql:mysql-connector-java:$mysqlConnectorVersion"
+        compile "com.zaxxer:HikariCP:$hikariCPVersion"
+        compileOnly "org.projectlombok:lombok:$lombokVersion"
+        annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+        testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+        testCompile "junit:junit:$junitVersion"
     }
 }
 
@@ -57,5 +68,17 @@ project(":blog-collector") {
 
     dependencies {
         compile project(":blog-repository")
+    }
+}
+
+project(":blog-repository") {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+        compile "org.mybatis:mybatis-spring:$mybatisSpringVersion"
+        compile "org.mybatis:mybatis:$mybatisVersion"
+        compile "redis.clients:jedis:$jedisVersion"
     }
 }

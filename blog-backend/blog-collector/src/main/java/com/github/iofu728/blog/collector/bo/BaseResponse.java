@@ -23,8 +23,6 @@ import com.github.iofu728.blog.collector.consts.ErrorCodeConsts;
 @AllArgsConstructor
 public class BaseResponse<T> implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     @NonNull
     private  boolean success;
 

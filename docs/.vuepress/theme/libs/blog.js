@@ -1,5 +1,6 @@
 import sortBy from 'lodash/sortBy'
 import dayjs from 'dayjs'
+import request from '../requests'
 import '../styles/global.styl'
 
 const slugReg = /\/([^\/]+).html$/
@@ -14,11 +15,20 @@ const install = (Vue, { theme, pages }) => {
   // Example： { postList: [], posts: {}, tagList: [], tags: { }  }
   const postList = []
   const posts = {}
+  const pageViews = {}
+  const titleList = []
+
+  request('/api/pv/list?timestamp=' + new Date().getTime())
+    .then(res => res.result)
+    .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
+    .catch(reason => console.log(reason.message));
+
 
   sortBy(pages, page => -new Date(page.frontmatter.date)).forEach(page => {
     const slug = matchSlug(page.path)
     postList.push(slug)
     posts[slug] = { ...page, slug }
+    titleList.push(page.title)
   })
 
   const tags = {}
@@ -35,18 +45,13 @@ const install = (Vue, { theme, pages }) => {
   })
 
   Vue.mixin({
-    data() {
-      return {
-        time: 0,
-      }
-    },
     created () {
       time += 1
       this.waitTime(time)
     },
     methods: {
       waitTime(tempTime) {
-        setTimeout(() => {if(tempTime === time) this.updateZoom()}, 500)
+        setTimeout(() => {if(tempTime === time) {this.updateZoom(); this.getPageViews();}}, 500)
       },
       updateZoom () {
         try {
@@ -58,10 +63,17 @@ const install = (Vue, { theme, pages }) => {
           console.error(e.message)
         }
       },
+      getPageViews () {
+        console.log(pageViews)
+        console.log(this.$page.path)
+        request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path))
+          .catch(reason => console.log(reason.message));
+
+      },
     },
     computed: {
       $blog() {
-        return { postList, posts, tags, tagList }
+        return { postList, posts, tags, tagList, pageViews, titleList}
       },
       $postNav() {
         const slug = matchSlug(this.$route.path)
@@ -79,8 +91,13 @@ const install = (Vue, { theme, pages }) => {
         const { path, meta } = this.$route
         for (let i = 0; i < pages.length; i++) {
           const page = pages[i]
+          const titleName = matchSlug(page.path)
+
           const layout = page.frontmatter ? page.frontmatter.layout || 'post' : 'post'
           if (page.path === path || layout === meta.layout) {
+            if (Object.keys(pageViews).length && pageViews.titleViewsMap && titleName in pageViews.titleViewsMap){
+              return { ...page, path, titleViews: pageViews.titleViewsMap[titleName]}
+            }
             return { ...page, path } // rewrite path
           }
         }
