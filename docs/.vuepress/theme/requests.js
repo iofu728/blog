@@ -30,7 +30,7 @@ export default async function request(url, options) {
   const frontendDomainTem = window.location.href.split('/')[2];
   const nowUrl = frontendDomainTem.includes(':') ?
     'http://'+frontendDomainTem.split(':')[0] + ':8848'+ url :
-    'http://wyydsb.com' + url;
+    'https://wyydsb.com' + url;
   try {
     const response =
         await fetch(nowUrl, {...options, mode: 'cors', credentials: 'include'});
