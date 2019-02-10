@@ -2,12 +2,9 @@ import sortBy from 'lodash/sortBy'
 import dayjs from 'dayjs'
 import request from '../requests'
 import '../styles/global.styl'
+import { matchSlug } from './utils'
 
-const slugReg = /\/([^\/]+).html$/
-function matchSlug(path) {
-  const arr = path.match(slugReg)
-  return arr ? arr[1] : null
-}
+
 let time = 0
 
 const install = (Vue, { theme, pages }) => {
