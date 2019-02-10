@@ -21,6 +21,7 @@ const install = (Vue, { theme, pages }) => {
   if (version) {
     return true;
   }
+  console.log("init");
     request('/api/pv/list?timestamp=' + new Date().getTime())
       .then(res => res.result)
       .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
@@ -66,8 +67,9 @@ const install = (Vue, { theme, pages }) => {
         }
       },
       getPageViews () {
-        console.log(pageViews)
-        console.log(this.$page.path)
+        console.log(pageViews);
+        console.log(this.$page.path);
+        console.log(version);
         request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path))
           .catch(reason => console.log(reason.message));
 
