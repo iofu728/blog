@@ -18,11 +18,13 @@ const install = (Vue, { theme, pages }) => {
   const pageViews = {}
   const titleList = []
 
-  if (window) {
-    request('/api/pv/list?timestamp=' + new Date().getTime())
+  try {
+    window && request('/api/pv/list?timestamp=' + new Date().getTime())
       .then(res => res.result)
       .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
       .catch(reason => console.log(reason.message));
+  } catch (e) {
+    console.error(e.message)
   }
 
   sortBy(pages, page => -new Date(page.frontmatter.date)).forEach(page => {
@@ -52,22 +54,22 @@ const install = (Vue, { theme, pages }) => {
     },
     methods: {
       waitTime(tempTime) {
-        setTimeout(() => {if(tempTime === time) {this.updateZoom(); this.getPageViews();}}, 500)
+        setTimeout(() => {if(tempTime === time) {
+          try {
+            window && this.updateZoom();
+            this.getPageViews();
+          } catch (e) {
+            console.error(e.message)
+          }
+        }}, 500)
       },
       updateZoom () {
-        try {
-          window && import('medium-zoom')
-            .then(mediumZoom => {
-              mediumZoom.default(document.querySelectorAll('.content img'));
-            })
-        } catch (e) {
-          console.error(e.message)
-        }
+        import('medium-zoom')
+          .then(mediumZoom => {
+            mediumZoom.default(document.querySelectorAll('.content img'));
+          })
       },
       getPageViews () {
-        if (!window) {
-          return true;
-        }
         console.log(pageViews);
         console.log(this.$page.path);
         request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path))
