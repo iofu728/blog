@@ -18,10 +18,12 @@ const install = (Vue, { theme, pages }) => {
   const pageViews = {}
   const titleList = []
 
-  request('/api/pv/list?timestamp=' + new Date().getTime())
-    .then(res => res.result)
-    .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
-    .catch(reason => console.log(reason.message));
+  if (window) {
+    request('/api/pv/list?timestamp=' + new Date().getTime())
+      .then(res => res.result)
+      .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
+      .catch(reason => console.log(reason.message));
+  }
 
   sortBy(pages, page => -new Date(page.frontmatter.date)).forEach(page => {
     const slug = matchSlug(page.path)
@@ -63,6 +65,9 @@ const install = (Vue, { theme, pages }) => {
         }
       },
       getPageViews () {
+        if (!window) {
+          return true;
+        }
         console.log(pageViews);
         console.log(this.$page.path);
         request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path))
