@@ -1,0 +1,120 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.5.RELEASE'
+        springSessionVersion = '1.3.5.RELEASE'
+        springDataCommonsVersion = '2.1.4.RELEASE'
+        springfoxSwagger2Version = '2.4.0'
+        springVersion = '5.1.4.RELEASE'
+        lombokVersion = '1.18.4'
+        junitVersion = '4.12'
+        mysqlConnectorVersion = '8.0.15'
+        mybatisSpringVersion = '2.0.0'
+        mybatisVersion = '3.5.0'
+        hikariCPVersion = '3.3.0'
+        jedisVersion = '2.9.0'
+        commonsLangVersion = '3.8.1'
+    }
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+    group 'com.github.iofu728.blog'
+    version '4.3.0-SNAPSHOT'
+    configurations.all {
+        // check for updates every build
+        resolutionStrategy {
+            cacheDynamicVersionsFor 0, 'seconds'
+            cacheChangingModulesFor 0, 'seconds'
+        }
+    }
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+    tasks.matching { it instanceof Test }.all {
+        testLogging.events = ["failed", "passed", "skipped"]
+    }
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                artifact(sourcesJar) {
+                    classifier = 'sources'
+                }
+                pom.withXml {
+                    asNode().dependencies.dependency.each {
+                        dep ->
+                            if (dep.version.text() == "unspecified") {
+                                dep.getAt('groupId').get(0).setValue(project.group)
+                                dep.getAt('version').get(0).setValue(project.version)
+                            }
+                    }
+                }
+            }
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    version = rootProject.version
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        compile "org.springframework.data:spring-data-commons:$springDataCommonsVersion"
+        compile "org.springframework:spring-jdbc:$springVersion"
+        compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+        compile "mysql:mysql-connector-java:$mysqlConnectorVersion"
+        compile "com.zaxxer:HikariCP:$hikariCPVersion"
+        compileOnly "org.projectlombok:lombok:$lombokVersion"
+        annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+        testCompile "junit:junit:$junitVersion"
+    }
+}
+
+project(":blog-collector") {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+        compile project(":blog-repository")
+        compile "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
+        compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+        testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    }
+}
+
+project(":blog-repository") {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+        compile "org.mybatis:mybatis-spring:$mybatisSpringVersion"
+        compile "org.mybatis:mybatis:$mybatisVersion"
+        compile "redis.clients:jedis:$jedisVersion"
+        compile "org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
+
+    }
+}
