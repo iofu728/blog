@@ -5,13 +5,12 @@ source script/constant.sh
 # Pv
 originpv=`cat log/basic | tail -n +1 | head -n 1`
 echo "累计访问量:" > log/pv
-num=`awk '{if($9==200&&$7~/pv.txt/&&($0!~/bot/||$0~/other\/chatbot.html/)&&($0!~/spider/||$0~/other\/spider.html/)&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/&&$0!~/localhost/&&$0!~/Baiduspider/){print $0}}' $logpath|sort | uniq -c | wc -l`
+num=`awk '{if($9==200&&$7~/api/&&($0!~/bot/||$0~/other\/chatbot.html/)&&($0!~/spider/||$0~/other\/spider.html/)&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/&&$0!~/localhost/&&$0!~/Baiduspider/){print $0}}' $logpath|sort | uniq -c | wc -l`
 expr $num + $originpv >> log/pv
 echo "| 昨日访问量:" >> log/pv
 cat log/yesterday | tail -n +2 | head -n 1 >> log/pv
 echo "| 昨日爬虫数:" >> log/pv
 cat log/yesterday | tail -n +3 | head -n 1 >> log/pv
-echo $(cat log/pv) > ${nginxpath}/pv.txt
 
 # Time Total Pv
 hour=`date +%T`
