@@ -9,6 +9,7 @@ function matchSlug(path) {
   return arr ? arr[1] : null
 }
 let time = 0
+let version = 0
 
 const install = (Vue, { theme, pages }) => {
   // 不依赖已有的内置数据，在这里对 siteData 解析，组装博客需要的数据混入Vue
@@ -17,13 +18,14 @@ const install = (Vue, { theme, pages }) => {
   const posts = {}
   const pageViews = {}
   const titleList = []
-
-  request('/api/pv/list?timestamp=' + new Date().getTime())
-    .then(res => res.result)
-    .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
-    .catch(reason => console.log(reason.message));
-
-
+  if (version) {
+    return true;
+  }
+    request('/api/pv/list?timestamp=' + new Date().getTime())
+      .then(res => res.result)
+      .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
+      .catch(reason => console.log(reason.message));
+  version += 1;
   sortBy(pages, page => -new Date(page.frontmatter.date)).forEach(page => {
     const slug = matchSlug(page.path)
     postList.push(slug)
@@ -51,7 +53,7 @@ const install = (Vue, { theme, pages }) => {
     },
     methods: {
       waitTime(tempTime) {
-        setTimeout(() => {if(tempTime === time) {this.updateZoom(); this.getPageViews();}}, 1000)
+        setTimeout(() => {if(tempTime === time) {this.updateZoom(); this.getPageViews();}}, 500)
       },
       updateZoom () {
         try {
