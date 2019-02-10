@@ -49,7 +49,7 @@ public class CorsFilter implements Filter {
             chain.doFilter(req, res);
         } else {
             request.setAttribute("gunjianpan", "Error");
-            response.sendError(ErrorCodeConsts.STATUS_FORBIDDEN);
+//            response.sendError(ErrorCodeConsts.STATUS_FORBIDDEN);
             chain.doFilter(req, res);
         }
     }
