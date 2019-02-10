@@ -24,15 +24,50 @@ buildscript {
     }
 }
 
-group = 'com.github.iofu728.blog'
-version = '1.0-SNAPSHOT'
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+    group 'com.github.iofu728.blog'
+    version '4.3.0-SNAPSHOT'
+    configurations.all {
+        // check for updates every build
+        resolutionStrategy {
+            cacheDynamicVersionsFor 0, 'seconds'
+            cacheChangingModulesFor 0, 'seconds'
+        }
+    }
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+    tasks.matching { it instanceof Test }.all {
+        testLogging.events = ["failed", "passed", "skipped"]
+    }
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                artifact(sourcesJar) {
+                    classifier = 'sources'
+                }
+                pom.withXml {
+                    asNode().dependencies.dependency.each {
+                        dep ->
+                            if (dep.version.text() == "unspecified") {
+                                dep.getAt('groupId').get(0).setValue(project.group)
+                                dep.getAt('version').get(0).setValue(project.version)
+                            }
+                    }
+                }
+            }
+        }
+    }
+}
 
 subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
-
-    group = 'com.github.iofu728.blog'
-    version = '1.0-SNAPSHOT'
+    version = rootProject.version
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
