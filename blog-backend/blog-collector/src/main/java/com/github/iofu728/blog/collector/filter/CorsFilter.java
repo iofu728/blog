@@ -46,11 +46,12 @@ public class CorsFilter implements Filter {
             response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
             response.setHeader("Access-Control-Max-Age", "3600");
             response.setHeader("Access-Control-Allow-Headers", " X-Requested-With, Content-Type,X-Requested-With, Content-Type, X-File-Name,token,Access-Control-Allow-Origin,Access-Control-Allow-Methods,Access-Control-Max-Age,authorization");
+            chain.doFilter(req, res);
         } else {
             request.setAttribute("gunjianpan", "Error");
             response.sendError(ErrorCodeConsts.STATUS_FORBIDDEN);
+            chain.doFilter(req, res);
         }
-        chain.doFilter(req, res);
     }
 
     @Override

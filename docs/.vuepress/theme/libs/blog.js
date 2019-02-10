@@ -51,7 +51,7 @@ const install = (Vue, { theme, pages }) => {
     },
     methods: {
       waitTime(tempTime) {
-        setTimeout(() => {if(tempTime === time) {this.updateZoom(); this.getPageViews();}}, 500)
+        setTimeout(() => {if(tempTime === time) {this.updateZoom(); this.getPageViews();}}, 1000)
       },
       updateZoom () {
         try {
