@@ -57,7 +57,7 @@ do
     sed -i '/<body>/a\<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>' ${htmlFile}
     lineNum=`cat ${htmlFile} | wc -l`
     lineNumLast3=`expr ${lineNum} - 2`
-    sed -n ''"${lineNumLast3}"'d' ${htmlFile}
+    sed -i ''"${lineNumLast3}"'d' ${htmlFile}
 done
 
 mv docs/.vuepress/dist/* ${nginxpath}/
