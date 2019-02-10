@@ -18,7 +18,7 @@
 * 4.0版本基于[vuepress-theme-indigo](https://github.com/yscoder/vuepress-theme-indigo)
 * img zoom(v4.2) 
 * 资瓷Tags(4.0 开发中)
-* 实时显示访问量
+* 实时显示访问量 + 文章阅读量(配合backend, v4.3)
 * 自定义主题 `Gothic` Style + Card Style
 * 天粒度增量Load数据 数据处理由全量改为增量 减小内存CPU占用率
 * 支持Gitalk评论
@@ -36,18 +36,63 @@
 [Latest release 👉 ](https://github.com/iofu728/blog/releases)
 
 ```bash
+# Dev
 $ git clone https://github.com/iofu728/blog.git
 $ cd blog
 $ yarn
 $ yarn doc:dev
 
-# Before Deploy
+# Deploy
 $ vim script/constant.sh  #Change Service Path
+$ bash script/
+```
+
+### Backend
+```bash
+# mysql config
+$ cp blog-backend/blog-repository/src/main/resources/application.yml.temple blog-backend/blog-repository/src/main/resources/application.yml
+
+# gradle build
+$ cd blog-backend
+$ ./gradlew clean build -x test
+$ nohup java -jar blog-collector/build/libs/blog-collector-4.3.0-SNAPSHOT.jar >> test.txt 2>&1 & 
 ```
 
 ## 部署指南
 ```bash
 .
+├── README.md
+├── blog-backend
+│   ├── blog-collector
+│   │   └── src
+│   │       ├── main
+│   │       │   ├── java
+│   │       │   │   └── com.github.iofu728.blog.collector
+│   │       │   │       ├── BlogCollectorApplicationContext.java
+│   │       │   │       ├── bo
+│   │       │   │       ├── collector
+│   │       │   │       ├── consts
+│   │       │   │       ├── filter
+│   │       │   │       └── service
+│   │       │   └── resources
+│   │       └── test
+│   ├── blog-repository
+│   │   └── src
+│   │       ├── main
+│   │       │   ├── java
+│   │       │   │   └── com.github.iofu728.blog.repository
+│   │       │   │       ├── BlogRepositoryApplicationContext.java
+│   │       │   │       ├── dataSource
+│   │       │   │       ├── entity
+│   │       │   │       ├── enums
+│   │       │   │       ├── mapper
+│   │       │   │       └── repository
+│   │       │   └── resources
+│   ├── build.gradle
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   └── settings.gradle
 ├── script
 │   ├── KPI.java                   // MapReduce prepare.java
 │   ├── PersonVersion.java         // MapReduce Map&Reduce.java
@@ -59,5 +104,4 @@ $ vim script/constant.sh  #Change Service Path
 └── └── pv.sh                      // pv计算及更新脚本 5s粒度
 ```
 
-
-
+PS: 有一部分更新脚本放在[iofu728/spider-press](https://github.com/iofu728/spider-press)

@@ -12,6 +12,7 @@
             v-else>{{page.title}}</h2>
         <div class="post-meta">
           <PostTime v-if="page.frontmatter" :date="page.frontmatter.date"></PostTime>
+          <span class="title_views">文章访问量:{{page.titleViews}}</span>
         </div>
       </v-flex>
     </v-card-title>
@@ -32,8 +33,18 @@
 <script>
 import Tag from './Tag'
 import PostTime from './PostTime'
+import { matchSlug } from '../libs/utils'
 
 export default {
+  data() {
+    return {
+      page: {},
+    }
+  },
+  created() {
+    this.getTitleViews();
+    this.haveTitleViews();
+  },
   components: {
     Tag,
     PostTime
@@ -56,14 +67,23 @@ export default {
     notHome() {
       return this.page.frontmatter && this.page.frontmatter.layout !== 'home'
     },
-    page() {
-      return typeof this.post === 'string' ? this.$blog.posts[this.post] : this.post
-    },
     cardClass() {
       return [
         this.shadowZ ? `elevation-${this.shadowZ}` : '',
         `${this.layout}-card`
       ]
+    }
+  },
+  methods: {
+    haveTitleViews() {
+      setTimeout(() => {if(this.page.titleViews === undefined) {this.getTitleViews(); this.haveTitleViews();}}, 500)
+    },
+    getTitleViews() {
+      this.page = Object.assign({}, typeof this.post === 'string' ? this.$blog.posts[this.post] : this.post);
+      if(this.page.titleViews === undefined && Object.keys(this.$blog.pageViews).length) {
+        const slug = matchSlug(this.$route.path)
+        this.page = Object.assign(this.page, {titleViews: this.$blog.pageViews.titleViewsMap[slug]})
+      }
     }
   }
 }
@@ -106,4 +126,8 @@ export default {
     }
   }
 }
+
+.title_views
+  margin 0 0 0 10px
+  color #6d6d6d
 </style>

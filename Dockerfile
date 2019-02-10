@@ -1,16 +1,13 @@
-FROM node:10
-
-WORKDIR /usr/local/www/
+FROM node:11
 
 COPY . .
 
-#RUN npm install yarn@latest
-
-# yarn 1.9.4 have bug for yarn install
 RUN yarn
 
-EXPOSE 8848
+RUN yarn docs:build
 
-# RUN yarn doc:dev
+FROM nginx
 
-CMD [ "yarn", "doc:dev" ]
+EXPOSE 8080
+
+COPY docs/.vuepress/dist /usr/share/nginx/html

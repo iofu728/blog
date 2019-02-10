@@ -1,0 +1,5 @@
+rootProject.name = 'blog'
+include 'blog-collector'
+include 'blog-repository'
+include 'blog-repository'
+

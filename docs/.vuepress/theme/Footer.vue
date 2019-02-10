@@ -6,7 +6,7 @@
             tile
             color="primary"
             class="primary--text text--lighten-4 text-xs-center py-3">
-      <v-card-text class="pb-0 mt-1">{{pv}}</v-card-text>
+      <v-card-text class="pb-0 mt-1">累计访问量: {{pageViews.totalPageViews}} | 昨日访问量: {{pageViews.yesterdayPageViews}} | 昨日爬虫数: {{pageViews.yesterdayPageSpider}}</v-card-text>
       <v-card-text class="pt-0 mt-1">
         <span>{{$site.themeConfig.author}} &copy; {{since}}</span>
         <span>
@@ -30,31 +30,30 @@
   </v-footer>
 </template>
 <script>
-import request from './requests'
 
 export default {
   data() {
     return {
-      pv: '',
+      pageViews: {},
     }
+  },
+  created() {
+    this.havePageViews();
   },
   computed: {
     since() {
       const since = this.$site.themeConfig.since
       const now = new Date().getFullYear()
       return since < now ? `${since} - ${now}` : since
-    }
-  },
-  created: function () {
-    this.getPv()
+    },
   },
   methods: {
-    getPv: function () {
-      const vm = this;
-      request('/pv.txt')
-        .then(res => {vm.pv = res;})
-        .catch(reason => console.log(reason.message));
+    havePageViews() {
+      setTimeout(() => {if(!Object.keys(this.pageViews).length) {this.getPageViews(); this.havePageViews();}}, 500)
     },
+    getPageViews() {
+      this.pageViews = Object.assign({}, this.$blog.pageViews);
+    }
   }
 }
 </script>
