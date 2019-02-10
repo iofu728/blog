@@ -8,5 +8,5 @@
 logpath=/usr/local/nginx/logs/access.log
 backuppath=/usr/local/www/wyydsb/access.log
 gitpath=/usr/local/www/wyydsb/blog
-nginxpath=/usr/local/www
+nginxpath=/usr/local/wyydsb
 blockpath=/usr/local/nginx/conf/block_ip.conf
