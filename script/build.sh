@@ -56,7 +56,7 @@ do
     sed -i '/<body>/a\<script type="text/javascript"> docsearch({ apiKey: 'c42b71d494ca78750c7094eb2c55eda6', indexName: 'wyydsb', inputSelector: '', debug: false }); </script> ' ${htmlFile}
     sed -i '/<body>/a\<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>' ${htmlFile}
     lineNum=`cat ${htmlFile} | wc -l`
-    lineNumLast3=`expr ${lineNum} - 3`
+    lineNumLast3=`expr ${lineNum} - 2`
     sed -n ''"${lineNumLast3}"'d' ${htmlFile}
 done
 
