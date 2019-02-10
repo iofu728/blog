@@ -17,6 +17,7 @@ const install = (Vue, { theme, pages }) => {
   const posts = {}
   const pageViews = {}
   const titleList = []
+  
   request('/api/pv/list?timestamp=' + new Date().getTime())
     .then(res => res.result)
     .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
