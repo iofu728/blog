@@ -12,6 +12,7 @@
             v-else>{{page.title}}</h2>
         <div class="post-meta">
           <PostTime v-if="page.frontmatter" :date="page.frontmatter.date"></PostTime>
+          <span class="title_views">文章访问量:{{page.titleViews}}</span>
         </div>
       </v-flex>
     </v-card-title>
@@ -106,4 +107,8 @@ export default {
     }
   }
 }
+
+.title_views
+  margin 0 0 0 10px
+  color #6d6d6d
 </style>

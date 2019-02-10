@@ -13,8 +13,6 @@ PPS: 在这里特别感谢带我入门的`山川dalao` 🙇
 
 **友情提醒: 按照教程配置下来 即使熟练起码也要`1h`以上 maybe可以先`收藏`🤗**
 
-> 有dalao留言Sublime not free, 那我就把这个放在这 有需要的自取[Sublime License](http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/) `2019.01.11`
-
 > Update fzf usage from @PegasusWang
 必须提一下 以前一直都以为`fzf`只能在Mac上用 原来连Win都支持 那 必须强推这个神器了 `2019.01.13`
 详见[Fzf大法好](#fzf)
@@ -72,7 +70,7 @@ zsh 的配置 主要 的 功能 是 `命令高亮`（识别 命令 正确性）`
 
 这里的 `高亮` 是克制的 是为了 高效 不是 为了 `酷炫`
 
-在这里 我配置了 `brew` `zsh` `on-my-zsh` `zsh-autosuggestion` `zsh-syntax-highlighting`
+在这里 我配置了 `brew` `zsh` `oh-my-zsh` `zsh-autosuggestion` `zsh-syntax-highlighting`
 
 具体步骤的 参考链接 见下面👇的注释
 
@@ -93,7 +91,7 @@ $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/ho
 $ brew install zsh git autojump
 $ chsh -s /bin/zsh
 
-# install on-my-zsh
+# install oh-my-zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # syntax highlighting
@@ -171,11 +169,11 @@ $ source ~/.zshrc
 # Ctrl+R History command; Ctrl+R file catalog
 # if you want to DIY key of like 'Atl + C'
 # maybe line-num is not 66, but must nearby
-$ vim ~/.fzf/shell/key-bindings.zsh
+$ vim /usr/local/opt/fzf/shell/key-bindings.zsh
 - 66 bindkey '\ec' fzf-cd-widget
 + 66 bindkey '^\' fzf-cd-widget
 
-$ source ~/.fzf/shell/key-bindings.zsh
+$ source /usr/local/opt/fzf/shell/key-bindings.zsh
 ```
 
 ```bash
@@ -316,13 +314,13 @@ $ tree -I '__pycache__|venv|data'  # product file tree without 'venv' 'data' '__
 
 ### `workflow`
 
-`workflow` 相当于iOS的的`shortcut捷达`
+`workflow` 相当于iOS的的`Shortcuts捷达`
 
 通过 提前 设置好 程序流程 然后 主要 相应的命令就能启动
 
 * [有道翻译](https://github.com/wensonsmith/YoudaoTranslate)
 
-因为用了有道智云的API 相对于单机版的yd 精度提升很高 (支持句粒度的Transaction)
+因为用了有道智云的API 相对于单机版的yd 精度提升很高 (支持句粒度的Translation)
 
 当然 需要去智云注册 然后配置一下
 
@@ -405,8 +403,13 @@ copy以下 保存为c++.sublime-build
 * `Pdf Expert`: pdf 阅读器 可以直接按原有样式修改文本
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547036482232-6fe8ef65-f2c1-4c41-9b3f-12e4acda4745.png "")
 * `Vanilla`|[`dozer`](https://github.com/Mortennn/Dozer): 菜单栏折叠 `感谢@iveevil su dalao推荐dozer`
-* `Tings`: 一个Todo list 工具 可以考虑结合[Alfred的workflow使用](https://github.com/xilopaint/alfred-things)
+* `Things`: 一个Todo list 工具 可以考虑结合[Alfred的workflow使用](https://github.com/xilopaint/alfred-things)
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547036998132-f818ba53-88fb-4d20-93ae-a8efd3dd6444.png "")
+* `Contexts`: 窗口切换管理
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1548228993728-6d4d93b9-1f09-4db7-a43e-063c9575ecd7.png "")
+* `Typora`: 显式Mardown编辑器
+![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1548229136266-b4aa62e5-8f6b-49cf-992c-6bb23b578adf.png "")
+* `Magnet|Moom`: 分屏工具
 * `ShadowsocksX-NG`: [load from GitHub](https://github.com/shadowsocks/ShadowsocksX-NG/releases), [node from portal.shadowsocks.nu](https://portal.shadowsocks.nu/aff.php?aff=15601) 这个 不需要多说(~~逼乎、CSDN、简书都发不了~~)
 
 ## QA

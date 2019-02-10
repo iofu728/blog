@@ -8,6 +8,8 @@ module.exports = {
   title: '乌云压顶是吧',
   description: '🍥',
   ga: 'UA-113936890-1',
+  host: '192.168.31.147',
+  port: '8080',
   head: [
     ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
     ['link', {rel: 'manifest', href: '/manifest.json'}],
@@ -58,7 +60,7 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/xiaoice.html'},
+      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/mrfn.html'},
       {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
       {
         text: 'JavaScript',
@@ -100,7 +102,7 @@ module.exports = {
           title: 'NLP',
           collapsable: false,
           children: [
-            'xiaoice', 'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm',
+            'mrfn', 'xiaoice', 'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm',
             'pagerank'
           ],
         },
