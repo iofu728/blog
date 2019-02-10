@@ -18,14 +18,10 @@ const install = (Vue, { theme, pages }) => {
   const pageViews = {}
   const titleList = []
 
-  try {
-    window && request('/api/pv/list?timestamp=' + new Date().getTime())
-      .then(res => res.result)
-      .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
-      .catch(reason => console.log(reason.message));
-  } catch (e) {
-    console.error(e.message)
-  }
+  request('/api/pv/list?timestamp=' + new Date().getTime())
+    .then(res => res.result)
+    .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
+    .catch(reason => console.log(reason.message));
 
   sortBy(pages, page => -new Date(page.frontmatter.date)).forEach(page => {
     const slug = matchSlug(page.path)
