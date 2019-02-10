@@ -46,6 +46,7 @@ access.log
 *.iws
 *.jar
 test.html
+*/test.txt
 
 manifest.yml
 MANIFEST.MF
