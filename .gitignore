@@ -47,6 +47,7 @@ access.log
 *.jar
 test.html
 */test.txt
+*/today
 
 manifest.yml
 MANIFEST.MF
