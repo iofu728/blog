@@ -67,34 +67,26 @@ $ nohup java -jar blog-collector/build/libs/blog-collector-4.3.0-SNAPSHOT.jar >>
 │   │   └── src
 │   │       ├── main
 │   │       │   ├── java
-│   │       │   │   └── com
-│   │       │   │       └── github
-│   │       │   │           └── iofu728
-│   │       │   │               └── blog
-│   │       │   │                   └── collector
-│   │       │   │                       ├── BlogCollectorApplicationContext.java
-│   │       │   │                       ├── bo
-│   │       │   │                       ├── collector
-│   │       │   │                       ├── consts
-│   │       │   │                       ├── filter
-│   │       │   │                       └── service
+│   │       │   │   └── com.github.iofu728.blog.collector
+│   │       │   │       ├── BlogCollectorApplicationContext.java
+│   │       │   │       ├── bo
+│   │       │   │       ├── collector
+│   │       │   │       ├── consts
+│   │       │   │       ├── filter
+│   │       │   │       └── service
 │   │       │   └── resources
 │   │       └── test
 │   ├── blog-repository
 │   │   └── src
 │   │       ├── main
 │   │       │   ├── java
-│   │       │   │   └── com
-│   │       │   │       └── github
-│   │       │   │           └── iofu728
-│   │       │   │               └── blog
-│   │       │   │                   └── repository
-│   │       │   │                       ├── BlogRepositoryApplicationContext.java
-│   │       │   │                       ├── dataSource
-│   │       │   │                       ├── entity
-│   │       │   │                       ├── enums
-│   │       │   │                       ├── mapper
-│   │       │   │                       └── repository
+│   │       │   │   └── com.github.iofu728.blog.repository
+│   │       │   │       ├── BlogRepositoryApplicationContext.java
+│   │       │   │       ├── dataSource
+│   │       │   │       ├── entity
+│   │       │   │       ├── enums
+│   │       │   │       ├── mapper
+│   │       │   │       └── repository
 │   │       │   └── resources
 │   ├── build.gradle
 │   ├── gradle.properties
