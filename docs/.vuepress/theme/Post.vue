@@ -58,6 +58,7 @@ export default {
 
 .post-nav {
   &.btn {
+    width 100%
     height: auto;
   }
 

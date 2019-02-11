@@ -56,3 +56,11 @@ a
 .medium-zoom-overlay ~ img
   z-index: 101;
 
+@media (min-width: ($MQMobile + 1px))
+  .theme-container.no-sidebar
+    .sidebar
+      display none
+    .page
+      padding-left 0
+
+@require './mobile.styl'
