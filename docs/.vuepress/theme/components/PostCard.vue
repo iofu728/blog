@@ -76,11 +76,11 @@ export default {
   },
   methods: {
     haveTitleViews() {
-      setTimeout(() => {if(this.page.titleViews === undefined) {this.getTitleViews(); this.haveTitleViews();}}, 500)
+      setTimeout(() => {if(typeof this.page.titleViews === 'undefined') {this.getTitleViews(); this.haveTitleViews();}}, 500)
     },
     getTitleViews() {
       this.page = Object.assign({}, typeof this.post === 'string' ? this.$blog.posts[this.post] : this.post);
-      if(this.page.titleViews === undefined && Object.keys(this.$blog.pageViews).length) {
+      if(typeof this.page.titleViews === 'undefined' && Object.keys(this.$blog.pageViews).length) {
         const slug = matchSlug(this.$route.path)
         this.page = Object.assign(this.page, {titleViews: this.$blog.pageViews.titleViewsMap[slug]})
       }
