@@ -46,5 +46,6 @@
   .comment
     padding 1rem
     margin 0 auto
+    width 100%
 
 </style>
