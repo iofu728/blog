@@ -56,3 +56,61 @@ nohup: ignoring input
 2019-02-10 15:12:14.069  INFO 27317 --- [nio-8848-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2019-02-10 15:12:14.069  INFO 27317 --- [nio-8848-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2019-02-10 15:12:14.108  INFO 27317 --- [nio-8848-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 39 ms
+nohup: ignoring input
+////////////////////////////////////////////////////////////////////
+//                          _ooOoo_                               //
+//                         o8888888o                              //
+//                         88" . "88                              //
+//                         (| ^_^ |)                              //
+//                         O\  =  /O                              //
+//                      ____/`---'\____                           //
+//                    .'  \\|     |//  `.                         //
+//                   /  \\|||  :  |||//  \                        //
+//                  /  _||||| -:- |||||-  \                       //
+//                  |   | \\\  -  /// |   |                       //
+//                  | \_|  ''\---/''  |   |                       //
+//                  \  .-\__  `-`  ___/-. /                       //
+//                ___`. .'  /--.--\  `. . ___                     //
+//              ."" '<  `.___\_<|>_/___.'  >'"".                  //
+//            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+//            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+//      ========`-.____`-.___\_____/___.-`____.-'========         //
+//                           `=---='                              //
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+//            佛祖保佑       永不宕机     永无BUG                  //
+////////////////////////////////////////////////////////////////////
+2019-02-12 12:20:41.036  INFO 31177 --- [           main] .g.i.b.c.BlogCollectorApplicationContext : Starting BlogCollectorApplicationContext on iZuf6hw1svmpuxijhd6bp1Z with PID 31177 (/usr/local/www/wyydsb/blog/blog-backend/blog-collector/build/libs/blog-collector-4.3.0-SNAPSHOT.jar started by root in /usr/local/www/wyydsb/blog/blog-backend)
+2019-02-12 12:20:41.057  INFO 31177 --- [           main] .g.i.b.c.BlogCollectorApplicationContext : No active profile set, falling back to default profiles: default
+2019-02-12 12:20:41.212  INFO 31177 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7d4793a8: startup date [Tue Feb 12 12:20:41 CST 2019]; root of context hierarchy
+2019-02-12 12:20:44.069  INFO 31177 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6147be27] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-12 12:20:45.454  INFO 31177 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8848 (http)
+2019-02-12 12:20:45.540  INFO 31177 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-12 12:20:45.541  INFO 31177 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2019-02-12 12:20:45.570  INFO 31177 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-02-12 12:20:45.796  INFO 31177 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-12 12:20:45.801  INFO 31177 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4592 ms
+2019-02-12 12:20:46.029  INFO 31177 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-12 12:20:46.037  INFO 31177 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-12 12:20:46.038  INFO 31177 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-12 12:20:46.038  INFO 31177 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-02-12 12:20:46.038  INFO 31177 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-12 12:20:46.038  INFO 31177 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'corsFilter' to: [/*]
+2019-02-12 12:20:46.246  INFO 31177 --- [           main] com.zaxxer.hikari.HikariDataSource       : db_pool_blog - Starting...
+2019-02-12 12:20:47.566  INFO 31177 --- [           main] com.zaxxer.hikari.HikariDataSource       : db_pool_blog - Start completed.
+2019-02-12 12:20:48.366  INFO 31177 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-12 12:20:49.050  INFO 31177 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7d4793a8: startup date [Tue Feb 12 12:20:41 CST 2019]; root of context hierarchy
+2019-02-12 12:20:49.227  INFO 31177 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/pv/list],methods=[GET]}" onto public com.github.iofu728.blog.collector.bo.BaseResponse com.github.iofu728.blog.collector.collector.PageViewsCollector.getPageViewLists(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2019-02-12 12:20:49.227  INFO 31177 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/pv/update],methods=[GET]}" onto public com.github.iofu728.blog.collector.bo.BaseResponse com.github.iofu728.blog.collector.collector.PageViewsCollector.updatePageView(javax.servlet.http.HttpServletRequest,java.lang.Long,java.lang.String)
+2019-02-12 12:20:49.237  INFO 31177 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-02-12 12:20:49.237  INFO 31177 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-02-12 12:20:49.334  INFO 31177 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-12 12:20:49.335  INFO 31177 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-12 12:20:49.499  WARN 31177 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-02-12 12:20:50.281  INFO 31177 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-02-12 12:20:50.283  INFO 31177 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-12 12:20:50.307  INFO 31177 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-02-12 12:20:50.395  INFO 31177 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8848 (http) with context path ''
+2019-02-12 12:20:50.405  INFO 31177 --- [           main] .g.i.b.c.BlogCollectorApplicationContext : Started BlogCollectorApplicationContext in 10.719 seconds (JVM running for 11.776)
+2019-02-12 12:21:38.451  INFO 31177 --- [nio-8848-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-02-12 12:21:38.451  INFO 31177 --- [nio-8848-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-02-12 12:21:38.490  INFO 31177 --- [nio-8848-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 39 ms
