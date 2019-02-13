@@ -158,7 +158,7 @@ VSM分三步
 
 之前写过一篇关于时序分析相关内容[RNN家族的blog](/other/rnn.md)
 
-```py
+```python
 # -*- coding: utf-8 -*-
 # @Author: gunjianpan
 # @Date:   2018-11-11 20:27:41
