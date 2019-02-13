@@ -1,4 +1,8 @@
-FROM node:11
+FROM node:11 as node
+
+MAINTAINER gunjianpan '<iofu728@163.com>'
+
+WORKDIR /usr/local/www/wyydsb/blog
 
 COPY . .
 
@@ -8,6 +12,6 @@ RUN yarn docs:build
 
 FROM nginx
 
-EXPOSE 8080
+EXPOSE 80
 
-COPY docs/.vuepress/dist /usr/share/nginx/html
+COPY --from=node /usr/local/www/wyydsb/blog/docs/.vuepress/dist /usr/share/nginx/html

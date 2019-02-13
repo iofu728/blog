@@ -38,7 +38,11 @@ export default {
     }
   },
   created() {
-    this.havePageViews();
+    try {
+      window && this.havePageViews()
+    } catch (e) {
+      console.error(e.message)
+    }
   },
   computed: {
     since() {
@@ -52,7 +56,7 @@ export default {
       setTimeout(() => {if(!Object.keys(this.pageViews).length) {this.getPageViews(); this.havePageViews();}}, 500)
     },
     getPageViews() {
-      this.pageViews = Object.assign({}, this.$blog.pageViews);
+      this.pageViews = Object.assign({}, this.$blog.pageViews)
     }
   }
 }

@@ -42,8 +42,12 @@ export default {
     }
   },
   created() {
-    this.getTitleViews();
-    this.haveTitleViews();
+    this.getTitleViews()
+    try {
+      window && this.haveTitleViews()
+    } catch (e) {
+      console.error(e.message)
+    }
   },
   components: {
     Tag,
@@ -79,7 +83,7 @@ export default {
       setTimeout(() => {if(typeof this.page.titleViews === 'undefined') {this.getTitleViews(); this.haveTitleViews();}}, 500)
     },
     getTitleViews() {
-      this.page = Object.assign({}, typeof this.post === 'string' ? this.$blog.posts[this.post] : this.post);
+      this.page = Object.assign({}, typeof this.post === 'string' ? this.$blog.posts[this.post] : this.post)
       if(typeof this.page.titleViews === 'undefined' && Object.keys(this.$blog.pageViews).length) {
         const slug = matchSlug(this.$route.path)
         this.page = Object.assign(this.page, {titleViews: this.$blog.pageViews.titleViewsMap[slug]})
