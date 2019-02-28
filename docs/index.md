@@ -3,14 +3,14 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/mrfn.md
+actionLink: /javaScript/functional.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/mrfn.html)
+[Last 👉](/javaScript/functional.md)
 
 * ML
   + NLP
@@ -69,6 +69,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   + Vuepress
     - [comment](/javaScript/comment.md)
   + React
+    - [浅谈JavaScript中的Functional programming](/javaScript/functional.md)
     - [immutable.js](/javaScript/immutable.md)
     - [Take about Redux X](/javaScript/reduxs.md)
     - [Take about Redux I](/javaScript/redux.md)

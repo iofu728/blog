@@ -39,7 +39,7 @@ public class PermissionFilterServiceImpl implements PermissionFilterService {
 
         // User Agent
         String userAgent = request.getHeader("User-Agent");
-        String re = "ython|Hakai|Gemini|Shinka|LMAO|Ronin|WinHttp|WebZIP|Postman|FetchURL|node-superagent|java|FeedDemon|Jullo|JikeSpider|Indy Library|Alexa Toolbar|AskTbFXTV|AhrefsBot|CrawlDaddy|Java|Feedly|Apache-HttpAsyncClient|UniversalFeedParser|ApacheBench|Microsoft URL Control|Swiftbot|ZmEu|oBot|jaunty|Python-urllib|lightDeckReports Bot|YYSpider|DigExt|HttpClient|MJ12bot|heritrix|EasouSpider|Ezooms|BOT/0.1|FlightDeckReports|Linguee Bot|pider|bot|Yahoo!  Slurp|^$";
+        String re = "ython|Hakai|Gemini|Shinka|LMAO|Ronin|WinHttp|WebZIP|Postman|FetchURL|node-superagent|java|FeedDemon|Jullo|JikeSpider|Indy Library|Alexa Toolbar|AskTbFXTV|AhrefsBot|CrawlDaddy|Java|Feedly|Apache-HttpAsyncClient|UniversalFeedParser|ApacheBench|Microsoft URL Control|Swiftbot|ZmEu|oBot|jaunty|Python-urllib|lightDeckReports Bot|YYSpider|DigExt|HttpClient|MJ12bot|heritrix|EasouSpider|Ezooms|BOT/0.1|FlightDeckReports|Bot|pider|bot|Yahoo!  Slurp|^$";
         Pattern p=Pattern.compile(re);
 
         return allowedDomain.contains(domain) && userAgent.length() != 0 && !p.matcher(userAgent).find();
