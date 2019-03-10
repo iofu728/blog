@@ -2,7 +2,7 @@
 * @Author: gunjianpan
 * @Date:   2019-02-06 22:20:16
 * @Last Modified by:   gunjianpan
-* @Last Modified time: 2019-02-07 20:21:59
+* @Last Modified time: 2019-03-07 20:34:07
 */
 use blog;
 CREATE TABLE if not exists `page_views` (
