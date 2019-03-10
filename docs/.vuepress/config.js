@@ -106,6 +106,11 @@ module.exports = {
           ],
         },
         {
+          title: 'Linux',
+          collapsable: false,
+          children: ['schedule'],
+        },
+        {
           title: 'SQL',
           collapsable: false,
           children: ['peloton', 'truncate'],
