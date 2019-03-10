@@ -38,9 +38,9 @@
 
 ```bash
 # Dev
-$ wget https://github.com/iofu728/blog/archive/v4.3.1.tar.gz
-$ tar -zxvf v4.3.1.tar.gz
-$ cd blog-4.3.1
+$ wget https://github.com/iofu728/blog/archive/v4.3.2.tar.gz
+$ tar -zxvf v4.3.2.tar.gz
+$ cd blog-4.3.2
 $ yarn
 $ yarn doc:dev
 
@@ -52,8 +52,8 @@ $ bash script/
 ### Docker
 
 ```bash
-$ docker pull iofu728/blog:v4.3.1
-$ docker pull iofu728/blog:backend-v4.3.1
+$ docker pull iofu728/blog:v4.3.2
+$ docker pull iofu728/blog:backend-v4.3.2
 ```
 
 ### Backend
