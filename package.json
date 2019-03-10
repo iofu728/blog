@@ -4,7 +4,8 @@
   "description": "blog for wyydsb",
   "scripts": {
     "doc:dev": "./node_modules/.bin/vuepress dev ./docs",
-    "docs:build": "./node_modules/.bin/vuepress build ./docs"
+    "docs:build": "./node_modules/.bin/vuepress build ./docs",
+    "now-build": "yarn docs:build"
   },
   "repository": {
     "type": "git",
