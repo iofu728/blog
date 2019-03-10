@@ -8,7 +8,6 @@ module.exports = {
   title: '乌云压顶是吧',
   description: '🍥',
   ga: 'UA-113936890-1',
-  host: '192.168.31.147',
   port: '8080',
   head: [
     ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
@@ -65,7 +64,7 @@ module.exports = {
       {
         text: 'JavaScript',
         icon: 'fas fa-plane',
-        url: '/javaScript/comment.html'
+        url: '/javaScript/functional.html'
       },
       {text: 'Tags', icon: 'fa fa-tag', url: '/tags/'},
       {
@@ -174,7 +173,7 @@ module.exports = {
         {
           title: 'React',
           collapsable: false,
-          children: ['immutable', 'redux', 'reduxs', 'component'],
+          children: ['functional', 'immutable', 'redux', 'reduxs', 'component'],
         },
       ],
     }
