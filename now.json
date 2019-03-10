@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "blog",
+   "alias":["wyydsb.now.sh"],
   "builds": [
     {
       "src": "package.json",
