@@ -16,9 +16,10 @@
 
 ## 二次开发
 * 4.0版本基于[vuepress-theme-indigo](https://github.com/yscoder/vuepress-theme-indigo)
+* 支持[Now 2.0](https://zeit.co)部署(v4.3.2)
 * 支持生产环境Docker部署(v4.3.1)
 * 实时显示访问量 + 文章阅读量(配合backend, v4.3)
-* img zoom(v4.2) 
+* img zoom(v4.2)
 * 资瓷Tags(v4.0)
 * 天粒度增量Load数据 数据处理由全量改为增量 减小内存CPU占用率(v3.0)
 * 自定义主题 `Gothic` Style + Card Style(v2.7)
@@ -37,9 +38,9 @@
 
 ```bash
 # Dev
-$ wget https://github.com/iofu728/blog/archive/v4.3.1.tar.gz
-$ tar -zxvf v4.3.1.tar.gz
-$ cd blog-4.3.1
+$ wget https://github.com/iofu728/blog/archive/v4.3.2.tar.gz
+$ tar -zxvf v4.3.2.tar.gz
+$ cd blog-4.3.2
 $ yarn
 $ yarn doc:dev
 
@@ -51,8 +52,8 @@ $ bash script/
 ### Docker
 
 ```bash
-$ docker pull iofu728/blog:v4.3.1
-$ docker pull iofu728/blog:backend-v4.3.1
+$ docker pull iofu728/blog:v4.3.2
+$ docker pull iofu728/blog:backend-v4.3.2
 ```
 
 ### Backend
@@ -63,7 +64,7 @@ $ cp blog-backend/blog-repository/src/main/resources/application.yml.temple blog
 # gradle build
 $ cd blog-backend
 $ ./gradlew clean build -x test
-$ nohup java -jar blog-collector/build/libs/blog-collector-4.3.0-SNAPSHOT.jar >> test.txt 2>&1 & 
+$ nohup java -jar blog-collector/build/libs/blog-collector-4.3.0-SNAPSHOT.jar >> test.txt 2>&1 &
 ```
 
 ## 部署指南
