@@ -36,7 +36,7 @@ public class PermissionFilterServiceImpl implements PermissionFilterService {
         allowedDomain.add("https://wyydsb.xin");
         allowedDomain.add("https://wyydsb.com");
         allowedDomain.add("https://wyydsb.cn");
-        allowedDomain.add("https://wyydsb.now.sh.");
+        allowedDomain.add("https://wyydsb.now.sh");
 
         // User Agent
         String userAgent = request.getHeader("User-Agent");
