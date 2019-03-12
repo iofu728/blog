@@ -79,6 +79,12 @@ module.exports = {
         url: 'https://zhuanlan.zhihu.com/wyydsb',
         external: true
       },
+      {
+        text: 'CV',
+        icon: 'fas fa-user-secret',
+        url: 'https://cv.wyydsb.com',
+        external: true
+      },
     ],
     socials: ['Weibo', 'QQ', 'Facebook', 'Twitter', 'GooglePlus'],
     colors: {
