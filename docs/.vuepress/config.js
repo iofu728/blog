@@ -79,6 +79,12 @@ module.exports = {
         url: 'https://zhuanlan.zhihu.com/wyydsb',
         external: true
       },
+      {
+        text: 'CV',
+        icon: 'fas fa-user-secret',
+        url: 'https://cv.wyydsb.com',
+        external: true
+      },
     ],
     socials: ['Weibo', 'QQ', 'Facebook', 'Twitter', 'GooglePlus'],
     colors: {
@@ -104,6 +110,11 @@ module.exports = {
             'mrfn', 'xiaoice', 'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm',
             'pagerank'
           ],
+        },
+        {
+          title: 'Linux',
+          collapsable: false,
+          children: ['schedule'],
         },
         {
           title: 'SQL',
