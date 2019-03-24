@@ -3,14 +3,14 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/schedule.md
+actionLink: /other/synch.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/schedule.md)
+[Last 👉](/other/synch.md)
 
 * ML
   + NLP
@@ -24,6 +24,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
     - [NLP,Knowledge Graph, PageRank](/other/pagerank.md)
 * Linux
   + [试谈Linux下的线程调度-『Linux 源码解析（一）』](/other/schedule.md)
+  + [数一数Linux中有多少总线程同步策略-『Linux 源码解析（二）』](/other/synch.md)
 * SQL
   + In-Memory
     - [In-Memory DBMS 『Peloton』技术简述](/other/peloton.md)
