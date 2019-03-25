@@ -40,7 +40,8 @@ PS: 以下解析的Linux kernel版本号为`4.19.25`
 ## Souce code
 
 > 这一部分代码比较多，有些还比较晦涩，Linux kernel4以后的代码相较于2.×版本还有比较大的改动
-> 然后在实际工作中，这一部分用处还有一点，比如说写个redis锁 etc. 掌握这部分对多线程的理解应该会更进一步
+> 然后在工程中，这一部分还是很有用的，比如所有线程安全都是基于互斥量这个概念实现的，再比如说写个redis锁 etc.
+> 掌握这部分会对你维护多线程问题有所帮助！！！
 
 Linux的线程同步机制和Nachos中使用的机制(信号量，锁，条件变量)基本一致。采用了互斥量mutex，条件变量，信号量，读写锁。
 
@@ -94,7 +95,11 @@ __mutex_init(struct mutex *lock, const char *name, struct lock_class_key *key)
 #endif
         debug_mutex_init(lock, name, key);
 }
+```
+
 以加锁为例，调用的的是mutex_lock函数。
+
+```c
 void __sched mutex_lock(struct mutex *lock)
 {
         might_sleep();                       // 打印堆栈 debug sleep
