@@ -5,17 +5,17 @@ tags: [Linux]
 description: Linux 线程同步
 ---
 
-本来这篇应该是上周发的，拖延症又犯了🙈
+本来这篇应该是上周发的，拖延症又犯了 🙈
 
-上一篇主要讨论了[Linux线程的调度算法](https://wyydsb.xin/other/schedule.html)
+上一篇主要讨论了[Linux 线程的调度算法](https://wyydsb.xin/other/schedule.html)
 
-这篇来谈谈线程间的同步问题，暂时不包括`IPC(InterProcess Communication)`问题，IPC还是很有趣的。
+这篇来谈谈线程间的同步问题，暂时不包括`IPC(InterProcess Communication)`问题，IPC 还是很有趣的。
 
-有趣的事情就要慢慢品对吧，留到下次再来谈🌚（主要准备不过来 hhh 太真实了）
+有趣的事情就要慢慢品对吧，留到下次再来谈 🌚（主要准备不过来 hhh 太真实了）
 
 <center><img width="150" src="https://cdn.nlark.com/yuque/0/2019/png/104214/1553443429332-c9e3790c-cc68-446b-87a2-a9c2645f679a.png"></center>
 
-PS: 以下解析的Linux kernel版本号为`4.19.25`
+PS: 以下解析的 Linux kernel 版本号为`4.19.25`
 
 > Thread synchronization
 
@@ -23,7 +23,7 @@ PS: 以下解析的Linux kernel版本号为`4.19.25`
 
 为什么线程之间需要同步？
 
-一个原因，同一个父进程下的所有子线程共享同一个PC，同一个寄存器，同一个堆栈(同一片天空)
+一个原因，同一个父进程下的所有子线程共享同一个 PC，同一个寄存器，同一个共享库(同一片天空)
 
 所以当多个子线程同时对同一个变量进行操作的时候，就很有可能出现热点，甚至错误情况，这就是同步问题。
 
@@ -39,17 +39,17 @@ PS: 以下解析的Linux kernel版本号为`4.19.25`
 
 ## Souce code
 
-> 这一部分代码比较多，有些还比较晦涩，Linux kernel4以后的代码相较于2.×版本还有比较大的改动
-> 然后在工程中，这一部分还是很有用的，比如所有线程安全都是基于互斥量这个概念实现的，再比如说写个redis锁 etc.
+> 这一部分代码比较多，有些还比较晦涩，Linux kernel4 以后的代码相较于 2.× 版本还有比较大的改动
+> 然后在工程中，这一部分还是很有用的，比如所有线程安全都是基于互斥量这个概念实现的，再比如说写个 redis 锁 etc.
 > 掌握这部分会对你维护多线程问题有所帮助！！！
 
-Linux的线程同步机制和Nachos中使用的机制(信号量，锁，条件变量)基本一致。采用了互斥量mutex，条件变量，信号量，读写锁。
+Linux 的线程同步机制和 Nachos 中使用的机制(信号量，锁，条件变量)基本一致。采用了互斥量 mutex，条件变量，信号量，读写锁。
 
 ### `Mutex`
 
-Linux 下通过声明一个Mutex的类来实现互斥量的实现。另外还声明了一个`ww_mutex`(wound/wait)来避免死锁
+Linux 下通过声明一个 Mutex 的类来实现互斥量的实现。另外还声明了一个`ww_mutex`(wound/wait)来避免死锁
 
-Linux kerenal 中关于Mutex struct的代码在`<include/linux/mutex.h>`中
+Linux kerenal 中关于 Mutex struct 的代码在`<include/linux/mutex.h>`中
 
 ```c
 struct mutex {
@@ -71,15 +71,15 @@ struct mutex {
 };
 ```
 
-上面的struct用一个原子变量`owner`来实现mutex的互斥效果, 这里已经和kernel 2.×版本不一样了。
+上面的 struct 用一个原子变量`owner`来实现 mutex 的互斥效果, 这里已经和 kernel 2.× 版本不一样了。
 
-当owner为0时，表示这个mutex还未被占用。当mutex不为零的时候，只能由id == owner的线程解除占用
+当 owner 为 0 时，表示这个 mutex 还未被占用。当 mutex 不为零的时候，只能由 id == owner 的线程解除占用
 
-另外定义了一个`wait_list`用于存储被sleep的thread
+另外定义了一个`wait_list`用于存储被 sleep 的 thread
 
-这部分代码和nachos中Semaphore的设计基本一致
+这部分代码和 nachos 中 Semaphore 的设计基本一致
 
-而具体实现mutex的代码位于`<kernel/locking/mutex.c>`中
+而具体实现 mutex 的代码位于`<kernel/locking/mutex.c>`中
 
 `__mutex_init`函数主要做一些变量声明和初始化的工作。
 
@@ -97,7 +97,7 @@ __mutex_init(struct mutex *lock, const char *name, struct lock_class_key *key)
 }
 ```
 
-以加锁为例，调用的的是mutex_lock函数。
+以加锁为例，调用的的是 mutex_lock 函数。
 
 ```c
 void __sched mutex_lock(struct mutex *lock)
@@ -111,9 +111,9 @@ EXPORT_SYMBOL(mutex_lock);
 #endif
 ```
 
-其中，might_sleep()是一个全局Linux API，主要用于在中断时候，debug打印context堆栈，这个API在后面被广泛使用。
+其中，might_sleep()是一个全局 Linux API，主要用于在中断时候，debug 打印 context 堆栈，这个 API 在后面被广泛使用。
 
-`__mutex_trylock_fast(lock)` 是一个去获取lock的owner的函数，如果能获取则返回true
+`__mutex_trylock_fast(lock)` 是一个去获取 lock 的 owner 的函数，如果能获取则返回 true
 
 ```c
 static __always_inline bool __mutex_trylock_fast(struct mutex *lock)
@@ -126,7 +126,7 @@ static __always_inline bool __mutex_trylock_fast(struct mutex *lock)
 }
 ```
 
-如果有权限获取owner则
+如果有权限获取 owner 则
 
 ```c
 static noinline void __sched
@@ -148,7 +148,7 @@ __mutex_lock(struct mutex *lock, long state, unsigned int subclass,
 }
 ```
 
-然后就到了Linux真正处理mock_lock的地方
+然后就到了 Linux 真正处理 mock_lock 的地方
 
 ```c
 static __always_inline int __schedw
@@ -325,18 +325,17 @@ err_early_kill:
 
 `use_ww_ctx` && `ww_ctx`这两个变量就是用来判断到底是被哪个函数复用了
 
-然后函数很多逻辑都是为了减少等待时间，用了多次自旋锁进行等待，直到多次尝试之后还不能上锁的时候才真正去sleep等待
+然后函数很多逻辑都是为了减少等待时间，用了多次自旋锁进行等待，直到多次尝试之后还不能上锁的时候才真正去 sleep 等待
 
-这样的操作虽然可能会增大单次上锁时间，但相比交换上下文Context的代价肯定是很省了
-
+这样的操作虽然可能会增大单次上锁时间，但相比交换上下文 Context 的代价肯定是很省了
 
 #### `自旋锁 spinlock`
 
 自旋锁，就是一种反复重试的锁，因为实际生产过程中，经常会有稍微等一等这个互斥量就解除的情况
 
-所以自旋锁在工程中用处还是很大的，很多java程序都要写spinlock
+所以自旋锁在工程中用处还是很大的，很多 java 程序都要写 spinlock
 
-Spinlock相关代码在`<include/linux/spinlock_api_smp.h>`中
+Spinlock 相关代码在`<include/linux/spinlock_api_smp.h>`中
 
 ```c
 static inline int __raw_spin_trylock(raw_spinlock_t *lock)
@@ -351,14 +350,14 @@ static inline int __raw_spin_trylock(raw_spinlock_t *lock)
 }
 ```
 
-其中spin_acquire定义在`<include/linux/lockdep.h>`
+其中 spin_acquire 定义在`<include/linux/lockdep.h>`
 
 ```c
 #define spin_acquire(l, s, t, i)                lock_acquire_exclusive(l, s, t, NULL, i)
 #define lock_acquire_exclusive(l, s, t, n, i)           lock_acquire(l, s, t, 0, 1, n, i)
 ```
 
-而lock_acquire()实现的代码在`<kernel/locking/lockdep.c>`
+而 lock_acquire()实现的代码在`<kernel/locking/lockdep.c>`
 
 ```c
 void lock_acquire(struct lockdep_map *lock, unsigned int subclass,
@@ -495,27 +494,26 @@ static int __lock_acquire(struct lockdep_map *lock, unsigned int subclass,
 }
 ```
 
-`__lock_acquire()`被`spin_lock` 和 `mutex_lock`两个class调用
+`__lock_acquire()`被`spin_lock` 和 `mutex_lock`两个 class 调用
 
-实际上它的操作对象不是对单一class加锁，是对一个锁类的加锁
+实际上它的操作对象不是对单一 class 加锁，是对一个锁类的加锁
 
-这里为了降低lockdep的搜索消耗，用了一个cache
+这里为了降低 lockdep 的搜索消耗，用了一个 cache
 
 对于那些反复加放锁的部分有不小的性能上的提升
 
-+ `读写锁rwlock`
+- `读写锁rwlock`
 
 读写锁的主要目的就是实现某一种状态的并发性
 
-+ `条件变量 Condition`
+- `条件变量 Condition`
 
-条件变量则是为了实现线程的批处理，一个个batch执行，定义了单个唤醒 & 广播唤醒两种方式
+条件变量则是为了实现线程的批处理，一个个 batch 执行，定义了单个唤醒 & 广播唤醒两种方式
 
-+ `屏障 barrier`
+- `屏障 barrier`
 
 屏障的作用就很像两阶段锁协议，第一阶段只能等待，第二阶段只能运行
 
-当未达到屏障约定的上限时，通过条件变量实现进入wait_queue
+当未达到屏障约定的上限时，通过条件变量实现进入 wait_queue
 
 当达到屏障上限的时候，通过广播一次性唤醒
-
