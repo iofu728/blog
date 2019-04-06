@@ -59,7 +59,7 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/mrfn.html'},
+      {text: 'Skr', icon: 'fab fa-earlybirds', url: '/other/synch.html'},
       {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
       {
         text: 'JavaScript',
@@ -114,7 +114,7 @@ module.exports = {
         {
           title: 'Linux',
           collapsable: false,
-          children: ['schedule'],
+          children: ['schedule', 'synch'],
         },
         {
           title: 'SQL',
@@ -130,7 +130,7 @@ module.exports = {
         {
           title: 'Spider',
           collapsable: false,
-          children: ['neteasedb', 'netease'],
+          children: ['spiderskill', 'neteasedb', 'netease'],
         },
         {
           title: 'Hadoop',
