@@ -378,4 +378,6 @@ def _getroom_id(self, next_to=True, proxy=True):
 
 另外开发了一套根据排行榜爬取 up 时序累计数据，附带监控评论内容的系统，可用于分析 b 站视频评分原理的分析，支持开箱即用，[欢迎 star](https://github.com/iofu728/spider/blob/master/bilibili/bilibili.py)
 
+如果有做b站直播数据的爬取可以参考[另外一位dalao的博客](https://blog.csdn.net/xfgryujk/article/details/80306776)，直播的字节码规则略有不同
+
 好了，大概的爬虫进阶技巧就说到这，欢迎各位 dalao 批评指正，`转载请联系博主`
