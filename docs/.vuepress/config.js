@@ -130,7 +130,7 @@ module.exports = {
         {
           title: 'Spider',
           collapsable: false,
-          children: ['neteasedb', 'netease'],
+          children: ['spiderskill', 'neteasedb', 'netease'],
         },
         {
           title: 'Hadoop',
