@@ -198,7 +198,7 @@ module.exports = {
         {
           title: 'Spider',
           collapsable: false,
-          children: ['jscoder', 'spiderskill', 'neteasedb', 'netease'],
+          children: ['jsdecoder', 'spiderskill', 'neteasedb', 'netease'],
         },
         {
           title: 'Hadoop',
