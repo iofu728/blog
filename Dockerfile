@@ -1,6 +1,6 @@
 FROM node:11 as node
 
-MAINTAINER gunjianpan '<iofu728@163.com>'
+LABEL maintaine gunjianpan '<iofu728@163.com>'
 
 WORKDIR /usr/local/www/wyydsb/blog
 
