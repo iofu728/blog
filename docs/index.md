@@ -3,14 +3,14 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/jsdecoder.md
+actionLink: /other/deecamp.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/jsdecoder.md)
+[Last 👉](/other/deecamp.md)
 
 - ML
   - NLP
@@ -49,6 +49,8 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   - [nohup](/other/nohup.md)
   - [2>&1](/other/redirect.md)
   - [网站访问量](/other/pv.md)
+- Exam
+  - [DeeCamp 2019 A](/other/deecamp.md)
 - Python
   - [numpy📒](/other/numpy.md)
 - Hadoop
