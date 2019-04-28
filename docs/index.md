@@ -3,14 +3,14 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/spiderskill.md
+actionLink: /other/deecamp.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/spiderskill.md)
+[Last 👉](/other/deecamp.md)
 
 - ML
   - NLP
@@ -27,6 +27,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   - [数一数 Linux 中有多少种线程同步策略-『Linux 源码解析（二）』](/other/synch.md)
 - Spider
   - The advanced
+    - [究竟是道德的沦丧，还是现实的骨感，让携程反爬工程师在代码里写下这句话-『爬虫进阶第二弹』](/other/jsdecoder.md)
     - [你已经是一个成熟的爬虫了，应该学会自己去对抗反爬码农了 🙊-『爬虫进阶指南』](/other/spiderskill.md)
   - Proxy & DB
     - [从高可用 IP 代理池到千万级网易云音乐数据爬取的实现](/other/neteasedb.md)
@@ -48,6 +49,8 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   - [nohup](/other/nohup.md)
   - [2>&1](/other/redirect.md)
   - [网站访问量](/other/pv.md)
+- Exam
+  - [DeeCamp 2019 A](/other/deecamp.md)
 - Python
   - [numpy📒](/other/numpy.md)
 - Hadoop

@@ -28,6 +28,7 @@ access.log
 */logs/
 */classes/
 */*/classes/
+bin
 
 # some . file
 .DS_Store

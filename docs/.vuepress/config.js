@@ -130,7 +130,7 @@ module.exports = {
         {
           title: 'Spider',
           collapsable: false,
-          children: ['spiderskill', 'neteasedb', 'netease'],
+          children: ['jsdecoder', 'spiderskill', 'neteasedb', 'netease'],
         },
         {
           title: 'Hadoop',
@@ -150,7 +150,7 @@ module.exports = {
         {
           title: 'Summary',
           collapsable: false,
-          children: ['accident', 'cs'],
+          children: ['deecamp', 'accident', 'cs'],
         },
       ],
       '/pat/': [
