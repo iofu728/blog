@@ -199,6 +199,8 @@ $m[1,2,3]+n[-1, 1, 4] = k[0.6, 1.8, 3.2]$
 > MNIST 6w × 28 × 28 的手写字母数据集
 > 把 4 张按 14 × 14 剪开，打乱，让你找出这 4 张具体是啥
 
+DataSet: 链接:https://pan.baidu.com/s/1RK1Yz1hVSnFaogRsZHZ0Eg 密码:o6ui
+
 暴力遍历，（比较奇怪的是为啥用 jit 之后还更慢了，摊手
 
 ```python
