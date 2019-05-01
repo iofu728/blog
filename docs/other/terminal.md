@@ -95,7 +95,7 @@ $ cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
 
 # install zsh & change bash -> zsh
-$ brew install zsh git autojump
+$ brew install zsh git
 $ chsh -s /bin/zsh
 
 # install oh-my-zsh
