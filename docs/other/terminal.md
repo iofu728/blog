@@ -5,10 +5,8 @@ tags: [Bash]
 description: some configuration skills for mac
 ---
 
---
-更新预告
-Update 19.5.1 脚本 和 相对应的 docker 版 预计今晚可以搞定, 还会补一下 VSCode 相关配置(真香哈哈哈、)
---
+> 更新预告
+> **Update 19.5.1** 脚本 和 相对应的 docker 版 预计今晚可以搞定, 还会补一下 VSCode 相关配置(真香哈哈哈、)
 
 > 人人都说 Mac 好
 > 那么 有一台程序员 👨‍💻‍ 必备的 Mac 的我们 应该如何配置 Terminal 舞装 💃 我们的 Mac 呢
