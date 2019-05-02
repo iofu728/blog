@@ -5,7 +5,7 @@ tags: [Bash]
 description: some configuration skills for mac
 ---
 
-> **Update 19.5.1** 脚本 和 相对应的 docker 版 [`zsh.sh`](https://github.com/iofu728/zsh.sh), 还补了一下 VSCode 相关配置(真香哈哈哈、)
+> **Update 19.5.1** 教程对应的脚本 和 docker 版 [`zsh.sh`](https://github.com/iofu728/zsh.sh)已经上线了, 还补了一下 VSCode 相关配置(真香哈哈哈、)
 
 > 人人都说 Mac 好
 > 那么 有一台程序员 👨‍💻‍ 必备的 Mac 的我们 应该如何配置 Terminal 舞装 💃 我们的 Mac 呢
@@ -27,7 +27,10 @@ PPS: 在这里特别感谢带我入门的`山川dalao` 🙇
 
 插个队介绍下 [`zsh.sh`](https://github.com/iofu728/zsh.sh), 大致来说就是这篇文章配置的脚本工具及其 docker 版本 🤺
 
-主要是遇到一个很现实的问题，
+> 每次当我们看到 dalaos 写的教程时候，虽然一条条都列的很详细了，但实际操作起来还是困难重重。
+> 有没有一种更舒适的方式让我们更容易的获得教程中所搭建的环境。
+
+对于博主来说，除了上述原因之外，主要是遇到一个很现实的问题，
 
 > 一开始你可能只是一个实验室的小砖工
 > 你手上的机子可能还是要去排队才能轮的上的
