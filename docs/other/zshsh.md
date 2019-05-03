@@ -108,7 +108,7 @@ hhh 之前我一直是 Sublime 布道者，VSCode 黑
 
 ### Save Format
 
-这里用到的是`Formatting Toggle` + `Prettier`这个插件，支持的文件类型还是比较多的，比如给 markdown 表格自动格式化，这还是挺酷炫的
+这里用到的是[`Formatting Toggle`](https://marketplace.visualstudio.com/items?itemName=tombonnike.vscode-status-bar-format-toggle) + [`Prettier`](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)这个插件，支持的文件类型还是比较多的，比如给 markdown 表格自动格式化，这还是挺酷炫的
 
 ![image](https://cdn.nlark.com/yuque/0/2019/gif/104214/1556736489258-0dd9ae24-bda1-4e4d-b2aa-f5af581f763e.gif)
 
@@ -122,7 +122,7 @@ hhh 之前我一直是 Sublime 布道者，VSCode 黑
 
 ### File Header
 
-这个用了`psioniq File Header`, 文档还是比较详细的，但配置十分繁琐，弄了好长时间，还给作者发邮件，hhh
+这个用了[`psioniq File Header`](https://marketplace.visualstudio.com/items?itemName=psioniq.psi-header), 文档还是比较详细的，但配置十分繁琐，弄了好长时间，还给作者发邮件，hhh
 
 ```json
 {
@@ -187,7 +187,7 @@ hhh 之前我一直是 Sublime 布道者，VSCode 黑
 
 ### 代码编译运行
 
-虽然提供了在 Output 中输出运行结果的插件`Code Runner`
+虽然提供了在 Output 中输出运行结果的插件[`Code Runner`](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 
 但很多场景是需要交互式的，(比如说刷 leetcode 🌹🐔
 
@@ -209,7 +209,7 @@ hhh 之前我一直是 Sublime 布道者，VSCode 黑
 
 ### 能像 Intellij IDEA 一样能查 local History
 
-`Local History`
+[`Local History`](https://marketplace.visualstudio.com/items?itemName=xyz.local-history)
 
 ```json
 {
@@ -234,7 +234,7 @@ hhh 之前我一直是 Sublime 布道者，VSCode 黑
 
 ### Live Share
 
-然后比较推荐的时候 Vscode 的 Live Share, 这是我队友给我推荐的
+然后比较推荐的时候 Vscode 的 [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare), 这是我队友给我推荐的
 
 你可以用 Live share 多人写代码，也可以用来作为远程 Terminal 帮忙调试的媒介
 
