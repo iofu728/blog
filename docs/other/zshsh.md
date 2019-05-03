@@ -1,5 +1,5 @@
 ---
-title: Linux批量配置神器zsh.sh && VSCode真香攻略
+title: Linux批量配置神器zsh.sh 👻 VSCode真香攻略
 date: 2019-05-01 20:52:49
 tags: [Bash]
 description: zsh.sh
