@@ -43,7 +43,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   - [如何一口气理解 PageRank](/other/pageranks.md)
   - [Frequnent Pattern](/other/frequent.md)
 - Bash
-  - [Linux 流水式开光神器 zsh.sh](/other/zshsh.md)
+  - [Linux 批量配置神器 zsh.sh && VSCode 真香攻略](/other/zshsh.md)
   - [如何给码农 👨‍💻‍ 的 Mac 开光](/other/terminal.md)
   - [brew | brew cask | yum | apt-get](/other/brew.md)
   - [identify spider](/other/spider.md)
