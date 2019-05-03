@@ -63,3 +63,6 @@ _site/
 
 lib/
 target
+
+# history
+.history
