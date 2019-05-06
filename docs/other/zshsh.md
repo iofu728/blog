@@ -5,6 +5,8 @@ tags: [Bash]
 description: zsh.sh
 ---
 
+[反向引流·知乎](https://zhuanlan.zhihu.com/p/64444982)
+
 > 19.05.03 Update Vscode 配置攻略（都是血和泪换来的）
 
 上一篇讲了很多 Mac 中配置的小技巧[如何给码农 👨‍💻‍ 的 Mac 开光](https://wyydsb.xin/other/terminal.html)
