@@ -5,6 +5,43 @@ tags: [Spider]
 description: 爬虫进阶技巧
 ---
 
+> update 19.5.7 QA 一下http://www.66ip.cn/ 首次进入的 js 逆向思路
+> update 19.4.21 更新了一篇关于 js 逆向的文章 [究竟是道德的沦丧，还是现实的骨感，让携程反爬工程师在代码里写下这句话-『爬虫进阶第二弹』](https://wyydsb.xin/other/jsdecoder.html)
+
+**QA 环节**
+
+> Q: @liu wong 一段 js 代码在浏览器上执行的结果和在 python 上用 execjs 执行的结果不一样，有啥原因呢？ http://www.66ip.cn/
+
+> A: 一般 eval 差异 主要是有编译环境，DOM，py 与 js 的字符规则，context 等有关
+> 像 66ip 这个网站，主要是从 py 与 js 的字符规则不同 + DOM 入手的，当然它也有可能是无意的(毕竟爬虫工程师用的不只是 py)
+> 首次访问 66ip 这个网站，会返回一个 521 的 response，header 里面塞了一个 HTTP-only 的 cookie，body 里面塞了一个 script
+
+```js
+var x = "@...".replace(/@*$/, "").split("@"),
+y = "...",
+f = function(x, y) { return num;},
+z = f(y.match(/\w/g).sort(function(x, y) {return f(x) - f(y);}).pop());
+while (z++)
+try {
+    eval(y.replace(/\b\w+\b/g, function(y) {
+    return x[f(y, z) - 1] || "_" + y;
+    }));
+    break;
+} catch (_) {}
+```
+
+> 可以看到 eval 的是 y 字符串用 x 数组做了一个字符替换之后的结果，所以按道理应该和编译环境没有关系，但把 eval 改成 aa 之后放在 py 和放在 node，chrome 中编译结果却不一样
+> 这是因为在 p 正则\b 会被转义为\x80，这就会导致正则匹配不到，就更不可能替换了，导致我们拿到的 eval_script 实际上是一串乱码
+> 这里用 r'{}'.format(eval_script) 来防止特殊符号被转义
+> 剩下的就是 对拿到的 eval_script 进行 dom 替换操作
+> 总的来说是一个挺不错的 js 逆向入门练手项目, 代码量不大，逻辑清晰
+> 具体代码参见[iofu728/spider](https://github.com/iofu728/spider/blob/master/proxy/ip66.py)
+
+![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1557240022438-bc891ec5-7bbc-412a-b4d4-f330608d21f0.png)
+
+> -------- 原文从这里开始 --------
+
+
 因为各种原因，这段时间又写了好多爬虫 ~~（不务正业 划掉 😶）~~，也顺带接着这个机会来总结一下，自己认为的爬虫`进阶`技巧
 
 > ps: 爬虫千万条，克制第一条。我们也要照顾一下反爬工程师的感受，克制开多线程，降低并发数
@@ -378,6 +415,6 @@ def _getroom_id(self, next_to=True, proxy=True):
 
 另外开发了一套根据排行榜爬取 up 时序累计数据，附带监控评论内容的系统，可用于分析 b 站视频评分原理的分析，支持开箱即用，[欢迎 star](https://github.com/iofu728/spider/blob/master/bilibili/bilibili.py)
 
-如果有做b站直播数据的爬取可以参考[另外一位dalao的博客](https://blog.csdn.net/xfgryujk/article/details/80306776)，直播的字节码规则略有不同
+如果有做 b 站直播数据的爬取可以参考[另外一位 dalao 的博客](https://blog.csdn.net/xfgryujk/article/details/80306776)，直播的字节码规则略有不同
 
 好了，大概的爬虫进阶技巧就说到这，欢迎各位 dalao 批评指正，`转载请联系博主`
