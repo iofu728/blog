@@ -162,7 +162,7 @@ Linux kerenal 中 总共有15个实现，（不知道有没有数错）然后以
 
 以<arch/arc/include/asm/spinlock.h>为例
 
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1559537728059-80d94110-ff5c-4e11-a92b-be113f897cc4.png)
+![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1559564210840-488ed4df-fa71-4158-8e6d-56c2b3fbc190.png)
 
 这个版本的arch_spin_trylock先去声明一个__sync_synchronize()，这个操作和XV6中read-modify-write中一致。
 
@@ -172,4 +172,8 @@ Linux kerenal 中 总共有15个实现，（不知道有没有数错）然后以
 
 实际上这个操作流程和XV6几乎一样，同样的__sync_synchronize() 同样的判断加锁情况，附带循环比较。
 
-其他版本的arch_spin_trylock大概思路也是相同的。
+其他版本的arch_spin_trylock大概思路也是相同的, 贴一下部分版本解析。
+
+![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1559564135828-27154cda-264c-42d1-8266-a512c8b90ea7.png)
+
+![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1559564225863-099fd756-9c64-4758-9eed-8efa87c2efb3.png)
