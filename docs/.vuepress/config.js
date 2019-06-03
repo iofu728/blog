@@ -61,7 +61,7 @@ module.exports = {
       {text: 'Home', icon: 'fa fa-home', url: '/'},
       {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/other/mrfn.html'},
       {text: 'Spider', icon: 'fas fa-crosshairs', url: '/other/jsdecoder.html'},
-      {text: 'Linux', icon: 'fab fa-linux', url: '/other/zshsh.html'},
+      {text: 'Linux', icon: 'fab fa-linux', url: '/other/spinlock.html'},
       {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
       {text: 'Tags', icon: 'fa fa-tag', url: '/tags/'},
       {
