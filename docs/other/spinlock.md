@@ -58,7 +58,7 @@ pushcli函数是用来实现关中断过程的一个函数，先会去调用read
 
 readeflags, 就是先去把efalgs寄存器当前内容保存到EFLAGS堆栈中，然后把EFLAGS堆栈中的值给到eflags变量。
 
-![image](hhttps://cdn.nlark.com/yuque/0/2019/png/104214/1559537728054-30002576-a3c5-4336-bd0d-64ff85108d94.png)
+![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1559537728054-30002576-a3c5-4336-bd0d-64ff85108d94.png)
 
 而cli()就很简单粗暴的调用cli汇编指令。
 
