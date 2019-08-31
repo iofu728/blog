@@ -5,17 +5,17 @@ tags: [Linux]
 description: 包管理器概述
 ---
 
-用过Mac的肯定 或多或少的 用过 brew这个命令
+用过 Mac 的肯定 或多或少的 用过 brew 这个命令
 
 在我之前的印象里 这个命令就好像
-Ubuntu里的apt-get
-Centos里的yum
+Ubuntu 里的 apt-get
+Centos 里的 yum
 
-都是属于那种Linux下包管理器
+都是属于那种 Linux 下包管理器
 
 那他们之间有什么区别呢？
 
-<font color=#DC143C>先下结论:</font>
+**先下结论:**
 源码包安装: brew
 二进制包安装: yun | apt-get
 
@@ -24,6 +24,7 @@ Centos里的yum
 首先回顾一下什么是源码安装
 
 从命令上来看源码安装一般形式如下:
+
 ```bash
 wget https://xxx.com/latest.tar.gz
 tar -zxvf latest.tar.gz -C /usr/src
@@ -31,10 +32,12 @@ cd /usr/src/xxxx
 ./configure
 make && make install
 ```
-wget tar应该是显而易见的，分别代表下载和解压命令
+
+wget tar 应该是显而易见的，分别代表下载和解压命令
 
 ### ./configure
-那么configure是一个怎样的命令
+
+那么 configure 是一个怎样的命令
 
 ```vim
 #!/bin/sh
@@ -69,13 +72,13 @@ esac
 ...
 ```
 
-可以看出实际上configure是一个shell脚本，一般这个脚本都很长，目前看到最小的也有1k行
+可以看出实际上 configure 是一个 shell 脚本，一般这个脚本都很长，目前看到最小的也有 1k 行
 
 其主要作用就是检查编译环境，是否满足编译条件，是否有需要的预装软件
 
-如果条件一切正常 则会生成MakeFile文件 供下一步make使用
+如果条件一切正常 则会生成 MakeFile 文件 供下一步 make 使用
 
-当然有些包的configure文件可能只是一个重定向文件，真正的sh藏在bootstrap文件中
+当然有些包的 configure 文件可能只是一个重定向文件，真正的 sh 藏在 bootstrap 文件中
 
 ```vim
 #!/bin/sh
@@ -93,37 +96,38 @@ checking for path separator... :
 checking for sed... /bin/sed
 checking for gcc... gcc
 ```
-configure运行结束之后会
-* 由MakeFile.in 生成 MakeFile文件
-* 由config.h.in 生成 config.h文件
-* config.log 日志文件
-* config.cache 提高下一次configure的速度 需要-C才生成
-* config.status 实际调用编译工具构建软件的shell脚本
 
-![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1538880946361-2fb09cb3-c74d-4dad-ad69-72e197c63272.png "")
+configure 运行结束之后会
 
+- 由 MakeFile.in 生成 MakeFile 文件
+- 由 config.h.in 生成 config.h 文件
+- config.log 日志文件
+- config.cache 提高下一次 configure 的速度 需要-C 才生成
+- config.status 实际调用编译工具构建软件的 shell 脚本
 
-make - 即利用gcc对.h文件进行编译 输出可执行文件
+![图片.png | center | 556x200](https://cdn.nlark.com/yuque/0/2018/png/104214/1538880946361-2fb09cb3-c74d-4dad-ad69-72e197c63272.png)
 
-然后利用make install 则是进行软链接之类的操作，把安装得到的可执行文件，放到合适的位置
+make - 即利用 gcc 对.h 文件进行编译 输出可执行文件
+
+然后利用 make install 则是进行软链接之类的操作，把安装得到的可执行文件，放到合适的位置
 
 ### autoconf
 
-实际上这一套体系叫做GNU build system
+实际上这一套体系叫做 GNU build system
 
 是为了跨平台安装 而提出的 以提高代码的可移植性
 
 作为一个底层码农肯定体会过配置环境的艰辛
 
-对于软件开发者 为了适配所有环境写出的编译sh那肯定更加困难
+对于软件开发者 为了适配所有环境写出的编译 sh 那肯定更加困难
 
-> Unix系统的分支复杂度很高，不同的商用版或开源版或多或少都有差异。这些差异主要体现在：系统组件、系统调用。我们主要将Unix分为如下几个大类：IBM-AIX HP-UX Apple-DARWIN Solaris Linux FreeBSD
+> Unix 系统的分支复杂度很高，不同的商用版或开源版或多或少都有差异。这些差异主要体现在：系统组件、系统调用。我们主要将 Unix 分为如下几个大类：IBM-AIX HP-UX Apple-DARWIN Solaris Linux FreeBSD
 
-为了规避写繁琐的shell脚本，有人开发了autoconf和automake这样的工具
+为了规避写繁琐的 shell 脚本，有人开发了 autoconf 和 automake 这样的工具
 
-autoconf通过编写configure.ac来configure脚本
+autoconf 通过编写 configure.ac 来 configure 脚本
 
-这个时候configure.ac就好写很多
+这个时候 configure.ac 就好写很多
 
 ```vim
 AC_PREREQ([2.63])
@@ -153,22 +157,23 @@ AC_CONFIG_FILES([Makefile
 AC_OUTPUT
 ```
 
-AC_开头的类似函数调用一样的代码，实际是一些被称为“宏”的调用
+AC\_开头的类似函数调用一样的代码，实际是一些被称为“宏”的调用
 
-这里的宏与C中的宏概念类似，会被替换展开
+这里的宏与 C 中的宏概念类似，会被替换展开
 
-m4是一个经典的宏工具，autoconf正是构建在m4之上，可以理解为autoconf预先实现了大量的，用于检测系统可移植性的宏，这些宏在展开后就是大量的shell脚本
+m4 是一个经典的宏工具，autoconf 正是构建在 m4 之上，可以理解为 autoconf 预先实现了大量的，用于检测系统可移植性的宏，这些宏在展开后就是大量的 shell 脚本
 
-所以编写configure.ac只要对这些宏熟练掌握就可以了，成本较手写shell省事很多
+所以编写 configure.ac 只要对这些宏熟练掌握就可以了，成本较手写 shell 省事很多
 
-GNU还有很多生硬的内容，本文就点到为止，有需要的可以继续查阅相关资料
+GNU 还有很多生硬的内容，本文就点到为止，有需要的可以继续查阅相关资料
 
 ### brew
-brew 是开发者为了在没有GNU build system下的情况下为了更好的跨平台安装 开发的一个包管理工具
+
+brew 是开发者为了在没有 GNU build system 下的情况下为了更好的跨平台安装 开发的一个包管理工具
 
 和其他使用二进制包的依赖包管理工具不同的是
 
-brew是基于源码包管理
+brew 是基于源码包管理
 
 也是先遍历一遍依赖列表
 
@@ -180,33 +185,34 @@ brew是基于源码包管理
 
 ### brew cask
 
-brew cask 则是brew的一个扩展包
+brew cask 则是 brew 的一个扩展包
 
-brew主要面向命令行程序
+brew 主要面向命令行程序
 
-brew cask主要面向图形化程序
+brew cask 主要面向图形化程序
 
-把这些程序用brew cask管理
+把这些程序用 brew cask 管理
 
 使之也能用命令行进行方便的安装和卸载
 
 ## 二进制包安装
 
-二进制包指的是已经经过编译好的，一般只需建立软链接，或者rebuild的代码包
+二进制包指的是已经经过编译好的，一般只需建立软链接，或者 rebuild 的代码包
 
 一般二进制包的包名会较源码包长 会包含运行环境等相关信息
 
-根据不同规范可以分为.rpm包和.deb包
+根据不同规范可以分为.rpm 包和.deb 包
 
 ### RPM
 
 `RPM = RedHat Package Manager`
 
-一开始是由Red Hat开发，之后被广泛采用的一种包管理策略
+一开始是由 Red Hat 开发，之后被广泛采用的一种包管理策略
 
 其主要思想就是把编译之后的文件及所需要的软件名称打包，安装时只需要去检查是否满足安装条件，无需编译，即可安装
 
 其包名满足
+
 ```vim
 %{NAME}-%{VERSION}-%{RELEASE}.%{ARCH}.rpm
 
@@ -220,37 +226,38 @@ ARCH: cpu架构(比如i386和x86_64，i386兼容x86_64，noarch的代表一些�
 
 ### YUM
 
-YUM是基于rpm的包管理容器, 是一种CS架构的软件, <font color=#DC143C>解决了包之间依赖的问题</font>
+YUM 是基于 rpm 的包管理容器, 是一种 CS 架构的软件, **解决了包之间依赖的问题**
 
-Server端先对程序包进行分类后存储到不同repository容器中
+Server 端先对程序包进行分类后存储到不同 repository 容器中
 
-再通过收集到大量的rpm的数据库文件中程序包之间的依赖关系数据, 把对应的依赖关系和所需文件存在说明文件(.xml格式)里, 放在本地的repodata目录下供Client端取用
+再通过收集到大量的 rpm 的数据库文件中程序包之间的依赖关系数据, 把对应的依赖关系和所需文件存在说明文件(.xml 格式)里, 放在本地的 repodata 目录下供 Client 端取用
 
-而Cilent端通过yum命令安装软件时发现缺少某些依赖性程序包, Client会根据本地的配置文件(`etc/yum.repos.d/*.repo`)找到指定的Server端,
+而 Cilent 端通过 yum 命令安装软件时发现缺少某些依赖性程序包, Client 会根据本地的配置文件(`etc/yum.repos.d/*.repo`)找到指定的 Server 端,
 
-从Server端repo目录下获取说明文件xxx.xml后存储在本地`/var/cache/yum`中方便以后读取
+从 Server 端 repo 目录下获取说明文件 xxx.xml 后存储在本地`/var/cache/yum`中方便以后读取
 
-通过`xxx.xml`文件查找到需要安装的依赖性程序包在Server端的存放位置
+通过`xxx.xml`文件查找到需要安装的依赖性程序包在 Server 端的存放位置
 
-再进入Server端yum库中的指定repository容器中获取所需程序包, 下载完成后在本地实现安装
+再进入 Server 端 yum 库中的指定 repository 容器中获取所需程序包, 下载完成后在本地实现安装
 
 ### apt-get
 
-在介绍agt-get 之前 先介绍下dpkg
+在介绍 agt-get 之前 先介绍下 dpkg
 
 `dpkg = Debian package manager`
 
-其余rpm原理几乎相同，使用文本文件作为数据库来维护系统中软件信息，包括文件清单, 依赖关系, 软件状态等,通常在`/var/lib/dpkg`目录下
+其余 rpm 原理几乎相同，使用文本文件作为数据库来维护系统中软件信息，包括文件清单, 依赖关系, 软件状态等,通常在`/var/lib/dpkg`目录下
 
-在status文件中存储软件状态和控制信息
+在 status 文件中存储软件状态和控制信息
 
-在info目录下备份控制文件， 并在`info/.list`文件中记录安装文件清单, 在`info/.mdasums`中保存文件的MD5码
+在 info 目录下备份控制文件， 并在`info/.list`文件中记录安装文件清单, 在`info/.mdasums`中保存文件的 MD5 码
 
-那么apt-get 就相当于中的rpm的yum
+那么 apt-get 就相当于中的 rpm 的 yum
 
 做的是自动化获取安装包依赖的工作
 
 `apt-get update` 过程
+
 ```vim
 1. 执行apt-get update
 2. 程序分析/etc/apt/sources.list
@@ -259,6 +266,7 @@ Server端先对程序包进行分类后存储到不同repository容器中
 ```
 
 `apt-get install` 过程
+
 ```vim
 1. 扫描本地存放的软件包更新列表，找到最新版本包
 2. 进行包依赖检查，找到所有需要的依赖包
@@ -266,9 +274,10 @@ Server端先对程序包进行分类后存储到不同repository容器中
 ```
 
 ## 参考
-1. [brew和brew cask有什么区别？](https://www.zhihu.com/question/22624898)
-2. [apt-get原理解析](jianshu.com/p/b2eed75b9855)
-3. [深入理解yum工作原理](http://www.firefoxbug.com/index.php/archives/2777/)
-4. [rpm包制作](http://www.firefoxbug.com/index.php/archives/2776/)
-5. [Linux软件安装管理之——RPM与YUM详解](https://www.jianshu.com/p/d021380f6d02)
-6. [概念：GNU构建系统和Autotool](http://www.pchou.info/linux/2016/09/16/gnu-build-system-1.html)
+
+1. [brew 和 brew cask 有什么区别？](https://www.zhihu.com/question/22624898)
+2. [apt-get 原理解析](jianshu.com/p/b2eed75b9855)
+3. [深入理解 yum 工作原理](http://www.firefoxbug.com/index.php/archives/2777/)
+4. [rpm 包制作](http://www.firefoxbug.com/index.php/archives/2776/)
+5. [Linux 软件安装管理之——RPM 与 YUM 详解](https://www.jianshu.com/p/d021380f6d02)
+6. [概念：GNU 构建系统和 Autotool](http://www.pchou.info/linux/2016/09/16/gnu-build-system-1.html)
