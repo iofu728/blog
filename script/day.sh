@@ -4,35 +4,35 @@ source script/constant.sh
 
 # Load yestday Data
 truncate -s 0 log/today
-awk '{if($12!="\"Chrome/57\"")print $0}' $logpath >> log/today
-cat log/today >> $backuppath
+awk '{if($12!="\"Chrome/57\"")print $0}' $logpath >>log/today
+cat log/today >>$backuppath
 truncate -s 0 $logpath
 
 # Build User File
 truncate -s 0 log/user
-awk '{if($9==200&&($0!~/bot/||$0~/other\/chatbot.html/)&&($0!~/spider/||$0~/other\/spider.html/)&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/&&$0!~/Baiduspider/){if($7~/\/assets\/js\/app/&&last&&$1==last)print $1;last=$1;}}' log/today >> log/userpre
-awk '{print $0}' log/userpre|sort | uniq -c | sort -nr >> log/user
+awk '{if($9==200&&($0!~/bot/||$0~/other\/chatbot.html/)&&($0!~/spider/||$0~/other\/spider.html/)&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/&&$0!~/Baiduspider/){if($7~/\/assets\/js\/app/&&last&&$1==last)print $1;last=$1;}}' log/today >>log/userpre
+awk '{print $0}' log/userpre | sort | uniq -c | sort -nr >>log/user
 
 # Basic pv & Yesterday pv
-date -d yesterday +%Y%m%d > log/yesterday
-yMonth=`date -d yesterday +%B`
+date -d yesterday +%Y%m%d >log/yesterday
+yMonth=$(date -d yesterday +%B)
 yestday="$(date -d yesterday +%d)/${yMonth:0:3}/$(date -d yesterday +%Y)"
 am="$yestday:00:00:00"
 pm="$yestday:23:59:59"
-originpv=`cat log/basic | tail -n +1 | head -n 1`
-originspider=`cat log/basic | tail -n +2 | head -n 1`
-num=`awk '{if($9==200&&$7~/api/&&($0!~/bot/||$0~/other\/chatbot.html/)&&($0!~/spider/||$0~/other\/spider.html/)&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/&&$0!~/localhost/&&$0!~/Baiduspider/){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/today|sort | uniq -c | wc -l`
-echo $num >> log/yesterday
-expr $num + $originpv > log/basicpre
-num=`awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$6!~/GET/||$0~/Verification/||$0~/"-" "-"/||$0~/[gG]o/||$0~/[pP]ython/||$0~/curl/||$0~/Baiduspider/)){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/user log/today|sort | uniq -c | wc -l`
-echo $num >> log/yesterday
-expr $num + $originspider >> log/basicpre
+originpv=$(cat log/basic | tail -n +1 | head -n 1)
+originspider=$(cat log/basic | tail -n +2 | head -n 1)
+num=$(awk '{if($9==200&&$7~/api/&&($0!~/bot/||$0~/other\/chatbot.html/)&&($0!~/spider/||$0~/other\/spider.html/)&&$0!~/php/&&$0!~/taishan/&&$6~/GET/&&$0!~/Verification/&&$0!~/"-" "-"/&&$0!~/[gG]o/&&$0!~/[pP]ython/&&$0!~/curl/&&$0!~/localhost/&&$0!~/Baiduspider/){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/today | sort | uniq -c | wc -l)
+echo $num >>log/yesterday
+expr $num + $originpv >log/basicpre
+num=$(awk 'NR==FNR {a[$2]=$0} NR!=FNR {if(FNR>1&&!($1 in a)&&($9!=200||$0~/bot/||$0~/spider/||$0~/php/||$0~/taishan/||$6!~/GET/||$0~/Verification/||$0~/"-" "-"/||$0~/[gG]o/||$0~/[pP]ython/||$0~/curl/||$0~/Baiduspider/)){split($4,array,"[");if(array[2]>=am && array[2]<=pm){print $0}}}' am="$am" pm="$pm" log/user log/today | sort | uniq -c | wc -l)
+echo $num >>log/yesterday
+expr $num + $originspider >>log/basicpre
 cp log/basicpre log/basic
-echo $(cat log/yesterday) >> log/day
+echo $(cat log/yesterday) >>log/day
 
 # Block_ip
-awk '{if($9==403)print $1}' log/today| sort | uniq -c | sort -nr | awk '{if($1>66) print "deny "$2";"}' >> $blockpath
-/usr/local/bin/nginx -s reload >> log/crontab.log 2>&1
+awk '{if($9==403)print $1}' log/today | sort | uniq -c | sort -nr | awk '{if($1>66) print "deny "$2";"}' >>$blockpath
+/usr/local/bin/tengine -s reload >>log/crontab.log 2>&1
 
 ## reload data
 
