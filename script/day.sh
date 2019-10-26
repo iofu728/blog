@@ -32,7 +32,9 @@ echo $(cat log/yesterday) >>log/day
 
 # Block_ip
 awk '{if($9==403)print $1}' log/today | sort | uniq -c | sort -nr | awk '{if($1>66) print "deny "$2";"}' >>$blockpath
-/usr/local/bin/tengine -s reload >>log/crontab.log 2>&1
+$NGINX -s stop >>log/crontab.log 2>&1
+$HTTPSSET renew >>log/crontab.log 2>&1
+$NGINX >>log/crontab.log 2>&1
 
 ## reload data
 
