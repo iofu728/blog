@@ -121,7 +121,7 @@ zsh 的配置 主要 的 功能 是 `命令高亮`（识别 命令 正确性）`
 
 这里的 `高亮` 是克制的 是为了 高效 不是 为了 `酷炫`
 
-在这里 我配置了 `brew` `zsh` `oh-my-zsh` `zsh-autosuggestion` `zsh-syntax-highlighting`
+在这里 我配置了 `brew` `zsh` `oh-my-zsh` `zsh-autosuggestions` `zsh-syntax-highlighting`
 
 具体步骤的 参考链接 见下面 👇 的注释
 
@@ -161,7 +161,7 @@ ZSH_THEME="avit"  # zsh theme like 'ys' refer web👆
 plugins=(
     git
     docker
-    zsh-autosuggestion  # autosuggestion
+    zsh-autosuggestions  # autosuggestions
 )
 
 # alias
