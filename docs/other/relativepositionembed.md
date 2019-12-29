@@ -81,11 +81,7 @@ Transformer-XL 的工作现在可以称之上开创性的了。
 
 但实际上 relative 的改动对于模型获得句内细粒度层次的信息也是很有帮助的。
 
-$$
-\begin{aligned}
-\mathbf{A}_{i, j}^{\mathrm{rel}} &=\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k, E} \mathbf{E}_{x_{j}}}_{(a)}+\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k, R} \mathbb{R}_{i-j}}_{(b)} \\ &+\underbrace{u^{\top} \mathbf{W}_{k, E} \mathbf{E}_{x_{j}}}_{(c)}+\underbrace{v^{\top} \mathbf{W}_{k, R} \mathbf{R}_{i-j}}_{(d)}
-\end{aligned}
-$$
+![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577650361230-3fe5fa1f-953a-4428-a4c5-bff76c128554.png)
 
 与 NAACL18 那篇不同的地方，Transformer-XL 舍弃了在 SoftMax 之后再叠加 Rij。
 
