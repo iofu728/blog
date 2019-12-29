@@ -3,17 +3,18 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/spinlock.md
+actionLink: /other/relativepositionembed.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/spinlock.md)
+[Last 👉](/other/relativepositionembed.md)
 
 - ML
   - NLP
+    - [Transformer 结构中获得相对位置信息的探究](/other/relativepositionembed.md)
     - [浅谈多轮检索式对话最近的两篇 SOTA-『MRFN』&『IMN』](/other/mrfn.md)
     - [直男届的杀手-『小冰』架构解析](/other/xiaoice.md)
     - [如何用 NLP 技术和标题党说拜拜 👋-文本摘要](/other/summarization.md)
@@ -25,7 +26,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 - Linux
   - [试谈 Linux 下的线程调度-『Linux 源码解析（一）』](/other/schedule.md)
   - [数一数 Linux 中有多少种线程同步策略-『Linux 源码解析（二）』](/other/synch.md)
-  - [多核操作系统中的自旋锁-『以XV6 & Linux 为例』](/other/spinlock.md)
+  - [多核操作系统中的自旋锁-『以 XV6 & Linux 为例』](/other/spinlock.md)
 - Spider
   - The advanced
     - [究竟是道德的沦丧，还是现实的骨感，让携程反爬工程师在代码里写下这句话-『爬虫进阶第二弹』](/other/jsdecoder.md)
