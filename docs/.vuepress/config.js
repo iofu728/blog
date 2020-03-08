@@ -59,7 +59,11 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/other/relativepositionembed.html'},
+      {
+        text: 'NLP',
+        icon: 'fab fa-nintendo-switch',
+        url: '/other/kadapter.html'
+      },
       {text: 'Spider', icon: 'fas fa-crosshairs', url: '/other/jsdecoder.html'},
       {text: 'Linux', icon: 'fab fa-linux', url: '/other/spinlock.html'},
       {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
@@ -104,8 +108,8 @@ module.exports = {
           title: 'NLP',
           collapsable: false,
           children: [
-            'relativepositionembed', 'mrfn', 'xiaoice', 'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm',
-            'pagerank'
+            'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
+            'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm', 'pagerank'
           ],
         },
         {
