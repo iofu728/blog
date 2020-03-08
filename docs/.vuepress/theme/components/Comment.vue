@@ -23,7 +23,7 @@
         if (typeof Gitalk !== 'undefined' && Gitalk instanceof Function) {
           const gitalk = new Gitalk({
             clientID: '6ac606b7bad30bff534c',
-            clientSecret: 'cf218bccc6b17b1feaee02b406d0c1f021aaa5e7',
+            clientSecret: '88846074834e9cf5bbb1f586eac98a0aef7150d8',
             repo: 'blog',
             owner: 'iofu728',
             admin: ['iofu728'],
