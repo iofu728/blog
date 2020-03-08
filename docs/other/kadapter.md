@@ -64,7 +64,6 @@ description: Injecting Knowledge into Language Models using Adapter
 2. 只更新 LN 的参数(Ablation)
 
 ![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687918228-d6bfedd6-11e4-44b4-b223-f828f0b8026d.png)
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577650361833-a3e1a95c-5383-49af-96ce-b0ae6d4e458c.png)
 
 1. 当我们减少 Fine-tune 层数的时候, 模型的准确率急剧下降;
 2. 而 Adapter 则具有很好的鲁棒性.
@@ -191,13 +190,13 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 9. [Pretrained Encyclopedia: Weakly Supervised Knowledge-Pretrained Language Model.][9] ICLR 2020.
 10. [Integrating Graph Contextualized Knowledge into Pre-trained Language Models.][10]
 
-[1][https://arxiv.org/abs/2002.01808]
-[2][https://arxiv.org/abs/1902.00751]
-[3][https://arxiv.org/abs/1902.02671]
-[4][http://web.stanford.edu/class/cs224n/reports/default/15848417.pdf]
-[5][https://arxiv.org/abs/1905.07129]
-[6][https://arxiv.org/abs/1909.02339]
-[7][https://arxiv.org/abs/1908.05646]
-[8][https://arxiv.org/abs/1909.04164]
-[9][https://arxiv.org/abs/1912.09637]
-[10][https://arxiv.org/abs/1912.00147]
+[1]: https://arxiv.org/abs/2002.01808
+[2]: https://arxiv.org/abs/1902.00751
+[3]: https://arxiv.org/abs/1902.02671
+[4]: http://web.stanford.edu/class/cs224n/reports/default/15848417.pdf
+[5]: https://arxiv.org/abs/1905.07129
+[6]: https://arxiv.org/abs/1909.02339
+[7]: https://arxiv.org/abs/1908.05646
+[8]: https://arxiv.org/abs/1909.04164
+[9]: https://arxiv.org/abs/1912.09637
+[10]: https://arxiv.org/abs/1912.00147
