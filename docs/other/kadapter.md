@@ -143,12 +143,13 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 
 ![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687929342-0b913e67-bcfc-4a9b-9869-9f9718a3aa71.png)
 
-1. ERNIE: 对齐 WikiData 中的三元组到 Wikipedia 的句子中, 将用 TransE 预训练的 entity 信息加入到对应的 token 中.
-2. LIBERT: 增加 Lexical Relation Classification(LRC)任务，判断上下谓词.
-3. SenseBERT: Mask token 使其预测相应的词及其对应的 supersense(类似一个 POS 再加上细粒度的 entity)
-4. KnowBERT: 交替训练 BERT 和 Entity Link 任务(freeze)
-5. WKLM: 将实体替换为 WikiData 中相同类型的其他实体.
-6. BERT-MK: 结构与 ERNIE 相同, 将 TransE 替换为 GATs.
+1. [ERNIE][5]: 【Multi-task】对齐 WikiData 中的三元组到 Wikipedia 的句子中, 将用 TransE 预训练的 entity 信息加入到对应的 token 中.
+2. [LIBERT][6]: 【Multi-task】增加 Lexical Relation Classification(LRC)任务，判断上下谓词.
+3. [SenseBERT][7]: 【Multi-task】Mask token 使其预测相应的词及其对应的 supersense(类似一个 POS 再加上细粒度的 entity)
+4. [KnowBERT][8]: 【Multi-task】交替训练 BERT 和 Entity Link 任务(freeze)
+5. [WKLM][9]: 【Multi-task】将实体替换为 WikiData 中相同类型的其他实体.
+6. [BERT-MK][10]: 【Multi-task】结构与 ERNIE 相同, 将 TransE 替换为 GATs.
+7. [KEPLER][11]: 【Multi-task】L_MLM + L_KE (same encoder)
 
 ### Experiment
 
@@ -156,7 +157,8 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 
 1. 细粒度实体类型预测
 
-细粒度对于学习到词的表征要求提高了不少，需要模型能分辨出上下文结构对词义造成的差异.
+细粒度对于学习到词的表征要求提高了不少，需要模型能分辨出上下文结构对词义造成的差异.  
+在 Entity 周围加上@来表示边界.
 
 ![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687927935-a0195a98-d678-4cd8-aaf8-9c5091bd2ead.png)
 
@@ -166,7 +168,9 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 
 ![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687930982-e33e5549-331e-4d70-bb60-0785d37bae7a.png)
 
-1. 关系分类
+3. 关系分类
+
+在 head entity 周围加上@来表示边界, tail entity 周围加上#.
 
 ![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687932523-e0575150-672e-4633-b1c9-1096d8585135.png)
 
@@ -189,6 +193,7 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 8. [Knowledge Enhanced Contextual Word Representations.][8] EMNLP 2019.
 9. [Pretrained Encyclopedia: Weakly Supervised Knowledge-Pretrained Language Model.][9] ICLR 2020.
 10. [Integrating Graph Contextualized Knowledge into Pre-trained Language Models.][10]
+11. [KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation][11]
 
 [1]: https://arxiv.org/abs/2002.01808
 [2]: https://arxiv.org/abs/1902.00751
@@ -200,3 +205,4 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 [8]: https://arxiv.org/abs/1909.04164
 [9]: https://arxiv.org/abs/1912.09637
 [10]: https://arxiv.org/abs/1912.00147
+[11]: https://arxiv.org/abs/1911.06136
