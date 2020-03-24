@@ -13,6 +13,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "db.mysql")
 public class DataSourceDo {
 
+    private String hostName;
+
+    private String port;
+
     private String databaseName;
 
     private String mysqlUserName;
