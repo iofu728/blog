@@ -33,7 +33,11 @@ public class DefaultDataSourceConfig {
     @Primary
     @Bean(destroyMethod = "close", name = "dataSource")
     public DataSource dataSource() throws Exception {
-        String jdbcUrl = new StringBuilder("jdbc:mysql://localhost:3306/")
+        String jdbcUrl = new StringBuilder("jdbc:mysql://")
+                .append(dataSourceDo.getHostName())
+                .append(":")
+                .append(dataSourceDo.getPort())
+                .append("/")
                 .append(dataSourceDo.getDatabaseName()).toString();
 
         HikariConfig config = new HikariConfig();
