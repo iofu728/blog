@@ -117,12 +117,13 @@ kNN 的想法显著的提升 ppl 就可以理解为在语义相近的情况下, 
 - 文档的 embed 则是将 document 的 title 和 body 拼接起来用 sep 分割, 同样取 CLS 的输出再乘上一个线性矩阵
 - 这边考虑两个 Embed 相乘, 感觉更多的预先处理的角度.
 
-$$
-\begin{array}{l}p(z | x)=\frac{\exp f(x, z)}{\sum_{z^{\prime}} \exp f\left(x, z^{\prime}\right)} \\
-f(x, z)=\text { Embed }_{\text {input }}(x)^{\top} \text { Embed }_{\text {doc }}(z)  \\
-\text { Embed }_{input}(x)=\mathbf{W}_{\text {input }} \operatorname{BERT}_{\text {CLS }}\left(\text { join }_{\text {BERT }}(x)\right) \\
-\text { Embed }_{\text {doc }}(z)=\mathbf{W}_{\text {doc }} \operatorname{BERT}_{\text {CLS }}\left(\text { join }_{\text {BERT }}\left(z_{\text {title }}, z_{\text {body }}\right)\right)\end{array}
-$$
+$p(z | x)=\frac{\exp f(x, z)}{\sum_{z^{\prime}} \exp f\left(x, z^{\prime}\right)}$
+
+$f(x, z)=\text { Embed }_{\text {input }}(x)^{\top} \text { Embed }_{\text {doc }}(z)$
+
+$\text { Embed }_{input}(x)=\mathbf{W}_{\text {input }} \operatorname{BERT}_{\text {CLS }}\left(\text { join }_{\text {BERT }}(x)\right)$
+
+$\text { Embed }_{\text {doc }}(z)=\mathbf{W}_{\text {doc }} \operatorname{BERT}_{\text {CLS }}\left(\text { join }_{\text {BERT }}\left(z_{\text {title }}, z_{\text {body }}\right)\right)$
 
 知识增强编码器的计算分为预训练和微调两个模式
 
@@ -132,6 +133,10 @@ $$
 - Fine-tune
   - n 个 span 的表征之和
   - span 的表征则为将 x 与 z 的正文部分拼接在一起在 span start end 两个位置的 representations 输出 concat 在一起, 然后过一个 MLP 之和再取指数次.
+
+$$
+\begin{aligned} p(y | z, x) &=\prod_{j=1}^{J_{x}} p\left(y_{j} | z, x\right) \\ p\left(y_{j} | z, x\right) & \propto \exp \left(w_{j}^{\top} \operatorname{BERT}_{\operatorname{MASK}(j)}\left(\text { join }_{\mathrm{BERT}}\left(x, z_{\mathrm{body}}\right)\right)\right) \end{aligned}
+$$
 
 当然 z 对于 x 的分布是一个长尾分布, 大部分 z 对于 x 都是没用的, top-K 是一个很显然的思路.
 再利用 LSH 这种 MIPS 方法对搜索空间进行优化.
@@ -159,7 +164,7 @@ $$
 \begin{aligned} \nabla \log p(y | x) &=\sum_{z \in \mathcal{Z}} r(z) \nabla f(x, z) \\ r(z) &=\left[\frac{p(y | z, x)}{p(y | x)}-1\right] p(z | x) \end{aligned}
 $$
 
-logp(y|x)对 Retriever 参数求偏导可以得到(这一部分推到可以参考我在 pdf 中手推的过程)
+logp(y|x)对 Retriever 参数求偏导可以得到[(这一部分推到可以参考我在 pdf 中手推的过程)](https://www.yuque.com/preview/yuque/0/2020/pdf/104214/1586187444506-2c27d9ef-d29a-4b2f-9581-479901113e1e.pdf)
 
 相当于模型的梯度是向那些加上 z 条件概率变大的样本.
 这也很符合直观感受, Retriever 学到的更多的是筛选能提升 performance 的文档的能力.
