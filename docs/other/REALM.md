@@ -121,9 +121,9 @@ $p(z | x)=\frac{\exp f(x, z)}{\sum_{z^{\prime}} \exp f\left(x, z^{\prime}\right)
 
 $f(x, z)=\text { Embed }_{\text {input }}(x)^{\top} \text { Embed }_{\text {doc }}(z)$
 
-$\text { Embed }_{input}(x)=\mathbf{W}_{\text {input }} \operatorname{BERT}_{\text {CLS }}\left(\text { join }_{\text {BERT }}(x)\right)$
+$\text { Embed }_{input}(x)=\mathbf{W}_{\text {input }} BERT_{\text {CLS }}\left(\text { join }_{\text {BERT }}(x)\right)$
 
-$\text { Embed }_{\text {doc }}(z)=\mathbf{W}_{\text {doc }} \operatorname{BERT}_{\text {CLS }}\left(\text { join }_{\text {BERT }}\left(z_{\text {title }}, z_{\text {body }}\right)\right)$
+$\text { Embed }_{\text {doc }}(z)=\mathbf{W}_{\text {doc }} BERT_{\text {CLS }}\left(\text { join }_{\text {BERT }}\left(z_{\text {title }}, z_{\text {body }}\right)\right)$
 
 知识增强编码器的计算分为预训练和微调两个模式
 
@@ -135,7 +135,7 @@ $\text { Embed }_{\text {doc }}(z)=\mathbf{W}_{\text {doc }} \operatorname{BERT}
   - span 的表征则为将 x 与 z 的正文部分拼接在一起在 span start end 两个位置的 representations 输出 concat 在一起, 然后过一个 MLP 之和再取指数次.
 
 $$
-\begin{aligned} p(y | z, x) &=\prod_{j=1}^{J_{x}} p\left(y_{j} | z, x\right) \\ p\left(y_{j} | z, x\right) & \propto \exp \left(w_{j}^{\top} \operatorname{BERT}_{\operatorname{MASK}(j)}\left(\text { join }_{\mathrm{BERT}}\left(x, z_{\mathrm{body}}\right)\right)\right) \end{aligned}
+\begin{aligned} p(y | z, x) &=\prod_{j=1}^{J_{x}} p\left(y_{j} | z, x\right) \\ p\left(y_{j} | z, x\right) & \propto \exp \left(w_{j}^{\top} BERT_{MASK(j)}\left(\text { join }_{\mathrm{BERT}}\left(x, z_{\mathrm{body}}\right)\right)\right) \end{aligned}
 $$
 
 当然 z 对于 x 的分布是一个长尾分布, 大部分 z 对于 x 都是没用的, top-K 是一个很显然的思路.
