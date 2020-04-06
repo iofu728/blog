@@ -208,3 +208,7 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 [9]: https://arxiv.org/abs/1912.09637
 [10]: https://arxiv.org/abs/1912.00147
 [11]: https://arxiv.org/abs/1911.06136
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
