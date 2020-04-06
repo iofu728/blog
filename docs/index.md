@@ -3,17 +3,18 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/kadapter.md
+actionLink: /other/REALM.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/other/relativepositionembed.md)
+[Last 👉](/other/REALM.md)
 
 - ML
   - NLP
+    - [试谈语言模型中无监督非结构化知识融入](/other/REALM.md)
     - [预训练模型中的可插拔式知识融入-利用 Adapter 结构](/other/kadapter.md)
     - [Transformer 结构中获得相对位置信息的探究](/other/relativepositionembed.md)
     - [浅谈多轮检索式对话最近的两篇 SOTA-『MRFN』&『IMN』](/other/mrfn.md)

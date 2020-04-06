@@ -10,21 +10,55 @@ module.exports = {
   ga: 'UA-113936890-1',
   port: '8080',
   head: [
-    ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
-    ['link', {rel: 'manifest', href: '/manifest.json'}],
-    ['meta', {name: 'theme-color', content: '#07527a'}],
-    ['meta', {name: 'apple-mobile-web-app-capable', content: 'yes'}],
-    ['meta', {name: 'apple-mobile-web-app-status-bar-style', content: 'black'}],
-    ['link', {rel: 'apple-touch-icon', href: '/icons/192.png'}],
-    ['meta', {name: 'msapplication-TileImage', content: '/icons/192.png'}],
-    ['meta', {name: 'msapplication-TileColor', content: '#07527a'}]
+    ['link', {
+      rel: 'shortcut icon',
+      href: '/favicon.ico'
+    }],
+    ['link', {
+      rel: 'manifest',
+      href: '/manifest.json'
+    }],
+    ['meta', {
+      name: 'theme-color',
+      content: '#07527a'
+    }],
+    ['meta', {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes'
+    }],
+    ['meta', {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: 'black'
+    }],
+    ['link', {
+      rel: 'apple-touch-icon',
+      href: '/icons/192.png'
+    }],
+    ['meta', {
+      name: 'msapplication-TileImage',
+      content: '/icons/192.png'
+    }],
+    ['meta', {
+      name: 'msapplication-TileColor',
+      content: '#07527a'
+    }]
   ],
   serviceWorker: true,
   theme: '',
-  locales: {'/': {lang: 'zh-CN', title: '乌云压顶是吧', description: '🍥'}},
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: '乌云压顶是吧',
+      description: '🍥'
+    }
+  },
   configureWebpack: (config, isServer) => {
     const myConfig = {
-      resolve: {alias: {'@pub': resolve('./public')}},
+      resolve: {
+        alias: {
+          '@pub': resolve('./public')
+        }
+      },
       module: {
         rules: [{
           test: /vuetify.+\.js$/,
@@ -34,13 +68,17 @@ module.exports = {
     };
     if (isServer) {
       myConfig.externals =
-          nodeExternals({whitelist: [/vuetify/, /fortawesome/, /prismjs/]})
+        nodeExternals({
+          whitelist: [/vuetify/, /fortawesome/, /prismjs/]
+        })
     }
     return myConfig
   },
   markdown: {
     config: md => {
-      md.set({breaks: true})
+      md.set({
+        breaks: true
+      })
       md.use(require('markdown-it-katex'), require('markdown-it-emoji'));
     }
   },
@@ -52,22 +90,48 @@ module.exports = {
     since: 2017,
     avatar: '/face.jpg',
     avatarLink: '/',
-    algolia: {apiKey: 'c42b71d494ca78750c7094eb2c55eda6', indexName: 'wyydsb'},
+    algolia: {
+      apiKey: 'c42b71d494ca78750c7094eb2c55eda6',
+      indexName: 'wyydsb'
+    },
     serviceWorker: {
-      updatePopup: {message: 'New content is available.', buttonText: 'Refresh'}
+      updatePopup: {
+        message: 'New content is available.',
+        buttonText: 'Refresh'
+      }
     },
     menus: [
       // icons by https://fontawesome.com/icons
-      {text: 'Home', icon: 'fa fa-home', url: '/'},
+      {
+        text: 'Home',
+        icon: 'fa fa-home',
+        url: '/'
+      },
       {
         text: 'NLP',
         icon: 'fab fa-nintendo-switch',
-        url: '/other/kadapter.html'
+        url: '/other/REALM.html'
       },
-      {text: 'Spider', icon: 'fas fa-crosshairs', url: '/other/jsdecoder.html'},
-      {text: 'Linux', icon: 'fab fa-linux', url: '/other/spinlock.html'},
-      {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
-      {text: 'Tags', icon: 'fa fa-tag', url: '/tags/'},
+      {
+        text: 'Spider',
+        icon: 'fas fa-crosshairs',
+        url: '/other/jsdecoder.html'
+      },
+      {
+        text: 'Linux',
+        icon: 'fab fa-linux',
+        url: '/other/spinlock.html'
+      },
+      {
+        text: 'Pat',
+        icon: 'fas fa-chess-bishop',
+        url: '/pat/catalog.html'
+      },
+      {
+        text: 'Tags',
+        icon: 'fa fa-tag',
+        url: '/tags/'
+      },
       {
         text: 'Github',
         icon: 'fab fa-github',
@@ -97,18 +161,26 @@ module.exports = {
       info: '#00B8D4',
       success: '#1DA57A'
     },
-    format:
-        {date: 'YYYY年MM月DD日 HH:mm:ss', dateTime: 'YYYY年MM月DD日 HH:mm:ss'},
-    pagination: {path: '/page/:pageNum', pageSize: 5},
-    tags: {path: '/tags/:tagName'},
-    categories: {path: '/categories/:category'},
+    format: {
+      date: 'YYYY年MM月DD日 HH:mm:ss',
+      dateTime: 'YYYY年MM月DD日 HH:mm:ss'
+    },
+    pagination: {
+      path: '/page/:pageNum',
+      pageSize: 5
+    },
+    tags: {
+      path: '/tags/:tagName'
+    },
+    categories: {
+      path: '/categories/:category'
+    },
     sidebar: {
-      '/other/': [
-        {
+      '/other/': [{
           title: 'NLP',
           collapsable: false,
           children: [
-            'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
+            'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
             'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm', 'pagerank'
           ],
         },
@@ -118,7 +190,7 @@ module.exports = {
           children: ['schedule', 'synch'],
         },
         {
-          title: 'SQL',
+          title: 'DB',
           collapsable: false,
           children: ['peloton', 'truncate'],
         },
@@ -178,8 +250,7 @@ module.exports = {
           ],
         },
       ],
-      '/javaScript/': [
-        {
+      '/javaScript/': [{
           title: 'Vuepress',
           collapsable: false,
           children: ['comment'],
