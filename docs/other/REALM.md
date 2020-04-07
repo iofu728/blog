@@ -102,7 +102,7 @@ kNN 的想法显著的提升 ppl 就可以理解为在语义相近的情况下, 
 
 这篇的工作是在几位 dalao ACL2019 那篇 [ORQA](https://arxiv.org/abs/1906.00300) 的基础上做的工作. 共一和通讯作者是 BERT 四分之二作者.
 
-这篇文章主要是在 Open domain task 上做的工作(毕竟是谷果的核心业务 👍)
+这篇文章主要是在 Open domain QA task 上做的工作(毕竟是谷果的核心业务 👍)
 
 大概思路是利用一个隐式的 Retriever 来扩展语料增强语义. $p(y | x)=\sum_{z \in \mathcal{Z}} p(y | z, x) p(z | x)$
 
