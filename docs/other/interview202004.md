@@ -7,6 +7,7 @@ description: Interview Todo List
 
 > ⛵️ Interview Todo List
 
+- [Slides or Books](#slides-or-books)
 - [The detail of ML](#the-detail-of-ml)
   - [概率图模型](#%e6%a6%82%e7%8e%87%e5%9b%be%e6%a8%a1%e5%9e%8b)
 - [信息检索](#%e4%bf%a1%e6%81%af%e6%a3%80%e7%b4%a2)
@@ -16,11 +17,18 @@ description: Interview Todo List
   - [Nested NER](#nested-ner)
 - [Coding](#coding)
 
+## Slides or Books
+
+- [x] [CS224n](https://github.com/iofu728/Task/tree/develop/CS224n)
+- [x] NNDL => 《神经网络与深度学习》
+- [x] 王厚峰老师课件
+- [x] 西瓜书
+
 ## The detail of ML
 
 > [手推笔记](https://www.yuque.com/preview/yuque/0/2020/pdf/104214/1586845709769-b3a7cd85-703b-443a-80b8-26af3a44b35c.pdf)
 
-- [ ] SVM
+- [x] SVM
   - Laplace
   - SMO: sequence minimal optimization
     - 违背 KKT 程度最大的
@@ -31,7 +39,7 @@ description: Interview Todo List
   - 软间隔
   - Hinge
   - 结构风险最小化算法 (L2)
-- [ ] Decision Tree
+- [x] Decision Tree
   - 划分选择: 信息增益 ID3, 增益率 C4.5, 基尼 CART
   - 剪枝: 预剪枝, 后剪枝
   - 连续值: 二分划分
@@ -58,20 +66,20 @@ description: Interview Todo List
     - leaf-wise / level-wise
     - 支持类别特征，不需要进行独热编码处理
     - 直方图遍历
-- [ ] LDA：
+- [x] LDA：
   - doc-topic, topic-word
   - 吉布斯采样, Dirichlet 分布
-- [ ] LSI: 潜语义索引
+- [x] LSI: 潜语义索引
   - SVD 前 k
-- [ ] LSH: 局部敏感哈希
+- [x] LSH: 局部敏感哈希
   - 分桶 MinHash(映射到低维 仍保持相似性)
   - REFORMER: Attention should focus on too much.
-- [ ] Jaccard 相似度(雅卡尔): 交并集
-- [ ] TF-IDF
-- [ ] 朴素贝叶斯
+- [x] Jaccard 相似度(雅卡尔): 交并集
+- [x] TF-IDF
+- [x] 朴素贝叶斯
   - 属性条件独立假设
   - 概率分布估计
-- [ ] EM
+- [x] EM
   - 参数推隐变量的期望
   - 由隐变量的期望, 观测值极大似然估计参数
 - Sigmoid Vs Softmax
@@ -113,11 +121,11 @@ description: Interview Todo List
 
 > [手推](https://www.yuque.com/preview/yuque/0/2020/pdf/104214/1586845719539-9b32d025-28d8-4519-89e3-627b0d2b1221.pdf)
 
-- [ ] HMM
+- [x] HMM
   - 分词 SBME
   - 新词发现
   - P(y|x) = P(x|y)P(y)\*C
-- MEMM
+- [x] MEMM
   - 最大熵马尔科夫模型
   - 二元
   - 归一化为局部概率和的乘积 - CRF 全局概率和
@@ -125,7 +133,7 @@ description: Interview Todo List
   - 简化 Seq2Seq decoder
   - 存在 label bias
   - 双向 MEMM
-- [ ] CRF
+- [x] CRF
   - 无向概率图模型.
   - 隐变量与观测值之间的特征关系 + 当前隐变量与前后的隐变量
   - 二元展开
@@ -182,7 +190,7 @@ description: Interview Todo List
 
 ### Nested NER
 
-- [ ] Relation Work
+- [x] Relation Work
   - Translation-based
   - layer
   - MRC
