@@ -3,7 +3,7 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /other/REALM.md
+actionLink: /other/CGExpan.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
@@ -14,6 +14,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 
 - ML
   - NLP
+    - [利用预训练语言模型拓展实体集合](/other/CGExpan.md)
     - [试谈语言模型中无监督非结构化知识融入](/other/REALM.md)
     - [预训练模型中的可插拔式知识融入-利用 Adapter 结构](/other/kadapter.md)
     - [Transformer 结构中获得相对位置信息的探究](/other/relativepositionembed.md)
