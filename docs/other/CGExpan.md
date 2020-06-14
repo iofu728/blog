@@ -82,9 +82,6 @@ _Yunyi Zhang, Jiaming Shen, Jingbo Shang, Jiawei Han_
 
 一个简单的想法，统计前面一个阶段每个 class name 出现的次数，作为排序的指标，但是容易更偏向短 token。
 
-$$
-M^{k}(e, c)=\frac{1}{k} \max _{X \subseteq X_{e},|X|=k} \sum_{{x} \in X} \max _{{x}^{\prime} \in X_{c}} \cos \left({x}, {x}^{\prime}\right)
-$$
 
 这边定义一个实体-类别相似度 M，其通过两个 Max 获取到最相关的共现关系。
 $X_e$ 表示语料集中所有 entity 的 representation，$X_c$ 表示 Hearst pattern 用 MASK 遮掉实体词的 representation.
@@ -133,7 +130,7 @@ $X_e$ 表示语料集中所有 entity 的 representation，$X_c$ 表示 Hearst p
 这边用两种模式，汇集这 T 次的结果。
 
 1. 排名的倒数. $s^{t}\left(e_{i}\right)=\frac{1}{r_{i}^{t}}$
-2. 相对 score. $s^{t}\left(e_{i}\right)=\frac{{score}_{i}^{t}-\min _{e_{j} \in R^{t}} {score}_{j}^{t}}{\max _{e_{j} \in R^{t}} {score}_{j}^{t}-\min _{e_{j} \in R^{t}} {score}_{j}^{t}}$
+2. 相对 score. 
 
 实验解决显示，方案 1 效果会更好点。
 
