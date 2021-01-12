@@ -9,7 +9,7 @@
         <span>
           <template v-if="$site.themeConfig.icpLicense">
             <a
-              href="https://beian.miit.gov.cn/#/Integrated/index"
+              href="https://beian.miit.gov.cn/"
               target="_blank"
               rel="noopener noreferrer"
             >{{$site.themeConfig.icpLicense}}</a>
