@@ -6,40 +6,40 @@ yarn
 
 sudo yarn run docs:build
 
-if [ ! -d "${nginxpath}/assets" ]; then
+if [ ! -d "${NGINX_DIR}/assets" ]; then
     echo "文件不存在"
 else
-    rm -rf ${nginxpath}/assets
+    rm -rf ${NGINX_DIR}/assets
 fi
 
-if [ ! -d "${nginxpath}/javaScript" ]; then
+if [ ! -d "${NGINX_DIR}/javaScript" ]; then
     echo "文件不存在"
 else
-    rm -rf ${nginxpath}/javaScript
+    rm -rf ${NGINX_DIR}/javaScript
 fi
 
-if [ ! -d "${nginxpath}/other" ]; then
+if [ ! -d "${NGINX_DIR}/other" ]; then
     echo "文件不存在"
 else
-    rm -rf ${nginxpath}/other
+    rm -rf ${NGINX_DIR}/other
 fi
 
-if [ ! -d "${nginxpath}/pat" ]; then
+if [ ! -d "${NGINX_DIR}/pat" ]; then
     echo "文件不存在"
 else
-    rm -rf ${nginxpath}/pat
+    rm -rf ${NGINX_DIR}/pat
 fi
 
-if [ ! -d "${nginxpath}/tags" ]; then
+if [ ! -d "${NGINX_DIR}/tags" ]; then
     echo "文件不存在"
 else
-    rm -rf ${nginxpath}/tags
+    rm -rf ${NGINX_DIR}/tags
 fi
 
-if [ ! -d "${nginxpath}/icons" ]; then
+if [ ! -d "${NGINX_DIR}/icons" ]; then
     echo "文件不存在"
 else
-    rm -rf ${nginxpath}/icons
+    rm -rf ${NGINX_DIR}/icons
 fi
 
 sed -i '/<head>/a\<script type="application/ld+json">{"@context": "https://schema.org","@type": "NewsArticle","mainEntityOfPage": {"@type": "WebPage","@id": "https://wyydsb.xin"},"headline": "乌云压顶是吧","image": "https://wyydsb.xin/face.jpg","datePublished": "2017-10-10T08:00:00+08:00","dateModified": "2019-01-01T19:24:025+08:00","author": {"@type": "Person","name": "Gun Jianpan"},"publisher": {"@type": "Organization","name": "Gun Jianpan","logo": {"@type": "ImageObject","url": "https://wyydsb.xin/favicon.ico"}},"description": "Some coder skills"}</script>' docs/.vuepress/dist/index.html
@@ -60,4 +60,4 @@ for htmlFile in docs/.vuepress/dist/*/*.html docs/.vuepress/dist/*.html; do
     sed -i ''"${lineNumLast3}"'d' ${htmlFile}
 done
 
-mv docs/.vuepress/dist/* ${nginxpath}/
+mv docs/.vuepress/dist/* ${NGINX_DIR}/
