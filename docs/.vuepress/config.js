@@ -48,6 +48,7 @@ module.exports = {
     lang: 'zh-CN',
     subTitle: ' ',
     author: 'Gunjianpan',
+    icpLicense: "浙ICP备19005445号-1",
     email: 'iofu728@163.com',
     since: 2017,
     avatar: '/face.jpg',
