@@ -31,7 +31,7 @@ cp ${BASIC_DIR}basicpre ${BASIC_DIR}basic
 echo $(cat ${BASIC_DIR}yesterday) >>${BASIC_DIR}day
 
 # Block_ip
-awk '{print $1}' ${LOG_PATH} | sort | uniq -c | sort -nr | awk '{if($1>1000) print "deny "$2";"}' >>${BLACK_PATH}
+awk '{print $1}' ${LOG_PATH} | sort | uniq -c | sort -nr | awk '{if($1>5000) print "deny "$2";"}' >>${BLACK_PATH}
 awk '{if($9==403)print $1}' ${BASIC_DIR}today | sort | uniq -c | sort -nr | awk '{if($1>66) print "deny "$2";"}' >>${BLACK_PATH}
 cp ${BLACK_PATH} ${BLACK_PATH}.1
 awk '{print $2}' ${BLACK_PATH} | sort | uniq -c | sort -nr | awk '{print "deny "$2""}' >${BLACK_PATH}
