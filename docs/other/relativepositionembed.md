@@ -51,7 +51,7 @@ MultiHeadAtt 获取多种 token 与 token 之间的关联度，FFN 通过一个�
 
 ![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577650362630-e3e5d2f3-de2a-446b-a3d8-c7a6b488e00d.png)
 
-但实际上在`$PE^T_{t+k}$与$PE_t$`之间还有两个线性 W 系数的乘积(可等效于一个线性系数)。
+但实际上在`$PE^T_{t+k}$`与`$PE_t$`之间还有两个线性 W 系数的乘积(可等效于一个线性系数)。
 
 由随机初始化 W 之后的 d 项与相对距离 k 之间的关系图可知，W 项的扰动使得原有的 Attention 失去了相对位置之间的信息。
 

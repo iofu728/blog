@@ -50,13 +50,13 @@ module.exports = {
     ['script', {}, `
       (function() {
         var script = document.createElement("script");
-        script.text = "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-113936890-1");";
+        script.text = 'window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-113936890-1");';
         setTimeout(() => document.body.appendChild(script), 2100)})(); `],
     ['script', {}, `
       (function() {
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.text = "docsearch({ apiKey: "c42b71d494ca78750c7094eb2c55eda6", indexName: "wyydsb", inputSelector: "", debug: false });";
+        script.text = 'docsearch({ apiKey: "c42b71d494ca78750c7094eb2c55eda6", indexName: "wyydsb", inputSelector: "", debug: false });';
         setTimeout(() => document.body.appendChild(script), 2000)})(); `],
     ['script', {}, `
       (function() {

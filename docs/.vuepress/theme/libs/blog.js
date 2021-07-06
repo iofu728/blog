@@ -50,17 +50,13 @@ const install = (Vue, { theme, pages }) => {
         setTimeout(() => {if(tempTime === time) {
           try {
             this.replaceLatexCode();
+            this.getMathJax();
+            window && this.updateZoom();
+            this.getPageViews();
+            this.bindUtteranc();
           } catch (e) {
             console.error(e.message);
           }
-          this.getMathJax();
-          try {
-            window && this.updateZoom();
-            this.getPageViews();
-          } catch (e) {
-            console.error(e.message)
-          }
-          this.bindUtteranc();
         }}, 500)
       },
       updateZoom () {
@@ -98,13 +94,13 @@ const install = (Vue, { theme, pages }) => {
       },
       getMathJax() {
         const script1 = document.createElement('script');
-        script1.src = 'https://kexue.fm/sci/MathJax-2.7.4/AMS-setcounter.js';
+        script1.src = 'https://wyydsb.xin/files/MathJax-2.7.4/AMS-setcounter.js';
         script1.type = 'text/javascript';
         script1.id = "ams-counter";
         setTimeout(() => document.body.appendChild(script1), 500);
         const script2 = document.createElement('script');
         script2.type = 'text/javascript';
-        script2.src = 'https://kexue.fm/sci/MathJax-2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
         script2.id = "tex-ams";
         setTimeout(() => document.body.appendChild(script2), 700);
         setTimeout(() => document.getElementById("ams-counter").remove(), 2000);
