@@ -39,6 +39,7 @@ export default {
   &.chip {
     .chip__content {
       cursor: inherit;
+      font-family: $font-code;
     }
   }
 }

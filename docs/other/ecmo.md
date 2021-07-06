@@ -43,7 +43,7 @@ word2Vec 思路其实和我们之前用到的大部分模型一致
 
 就是在当前word 和 下一个word 之间 找一个映射关系f
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1544270825146-cbb220d4-4aed-4d84-9b55-707fc1b8e9db.png "")
+<center><img width="400" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1544270825146-cbb220d4-4aed-4d84-9b55-707fc1b8e9db.png"></center>
 
 而这个f代表了当前word的属性 把映射关系f的参数拿来 作为当前word的词向量
 
@@ -66,7 +66,7 @@ word2Vec 思路其实和我们之前用到的大部分模型一致
 
 然后word2Vec跑的是`Hierarchical log bilinear language model` 只不过把回归函数进行简化
 
-把$P(w_n=w|w_1,\cdots,w_{n-1})=\sigma(v_w \cdot \sum\limits_{i=1}^{n-1} C_i v_{w_i} + b_w)$简化为$P(w_n=w|w_1,\cdots,w_{n-1})=\sigma(\frac{1}{n-1} v_w \cdot \sum\limits_{i=1}^{n-1} \tilde{v}_{w_i})$
+把`$P(w_n=w|w_1,\cdots,w_{n-1})=\sigma(v_w \cdot \sum\limits_{i=1}^{n-1} C_i v_{w_i} + b_w)$`简化为`$P(w_n=w|w_1,\cdots,w_{n-1})=\sigma(\frac{1}{n-1} v_w \cdot \sum\limits_{i=1}^{n-1} \tilde{v}_{w_i})$`
 
 这样改进 可以大幅度提升运行效率
 
@@ -74,9 +74,9 @@ word2Vec 思路其实和我们之前用到的大部分模型一致
 
 `负采样`是解决SoftMax维数太大 计算效率低的问题 在计算SoftMax的时候除了一个正例之外 随机采样几个负样本 只要模型能中这几个样本中训练出正例就行了
 
-$\log\sigma(v^{T}_{w_0}v_{w_I})+\sum\limits_{i=1}^KE_{w_i}[\log\sigma(-v^{T}_{w_i}v_{w_I})]$
+`\begin{equation}\log\sigma(v^{T}_{w_0}v_{w_I})+\sum\limits_{i=1}^KE_{w_i}[\log\sigma(-v^{T}_{w_i}v_{w_I})]\end{equation}`
 
-其中$v'_{w_0}$为正例, $v'_{w_i}$为负例 k个 $\sigma$为sigmoid函数 即极大正例似然 极小负例似然
+其中`$v'_{w_0}$`为正例, `$v'_{w_i}$`为负例 k个 `$\sigma$`为sigmoid函数 即极大正例似然 极小负例似然
 
 这样word2Vec在运算效率就比之前的一些Embedding效果好很多
 
@@ -94,7 +94,7 @@ word2vec的过程 对于每一个不同的word 生成一个相对应的reply 就
 
 明白了word2Vec的原理 那么 对于利用模型进行Word Embedding的合理性应该就清楚了
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1544276162297-c3d47166-b3ea-4c10-a570-ac3f764d3dbe.png "")
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1544276162297-c3d47166-b3ea-4c10-a570-ac3f764d3dbe.png"></center>
 
 在ECMo中利用了一个叫分层编码-解码hierarchical encoder-decoder (HED)的模型进行训练
 
@@ -102,19 +102,20 @@ word2vec的过程 对于每一个不同的word 生成一个相对应的reply 就
 
 第二层是一个上下文级别的处理 经过另外一个GRU 然后最后一层输出到解码阶段
 
-解码阶段利用一个RNN进行反向推测 由前一个词$u_{n+1}$ 推测下一个词$u_{n}$
+解码阶段利用一个RNN进行反向推测 由前一个词`$u_{n+1}$` 推测下一个词`$u_{n}$`
 
-$p(u_{n+1}|u_1,...,u_n)=p(w_{n+1,1}|h^s_n)\prod\limits_{t=2}^{T_{n+1}}p(w_{n+1,t}|h^s_n,w_{n+1,1},...,w_{n+1,t-1})$
+`\begin{equation}p(u_{n+1}|u_1,...,u_n)=p(w_{n+1,1}|h^s_n)\prod\limits_{t=2}^{T_{n+1}}p(w_{n+1,t}|h^s_n,w_{n+1,1},...,w_{n+1,t-1})\end{equation}`
 
-其中$p(w_{n+1,t}|h^s_n,w_{n+1,1},...,w_{n+1,t-1})=II_{w_{n+1,t}}.softmax(h^d_t,e_{n+1,t-1})$
+其中,
+`\begin{equation}p(w_{n+1,t}|h^s_n,w_{n+1,1},...,w_{n+1,t-1})=II_{w_{n+1,t}}.\text{softmax}(h^d_t,e_{n+1,t-1})\end{equation}`
 
-而$h^d_t=GRU_d(h^d_{t-1},e_{n+1,t-1})$, $II_{w_{n+1,t}}$为one-hot
+而`$h^d_t=GRU_d(h^d_{t-1},e_{n+1,t-1})$`, `$II_{w_{n+1,t}}$`为one-hot
 
-而word Embedding值 即ECMo就是HED中的$h_i^s$值
+而word Embedding值 即ECMo就是HED中的`$h_i^s$`值
 
 文章中在Ubuntu和Douban两个dataset上面做了测试
 
-其中优化函数选择Adam 学习率$1e^{-3}$ 所有GRU及RNN的隐层数为300 取最大session为10 最大utterance为50
+其中优化函数选择Adam 学习率`$1e^{-3}$` 所有GRU及RNN的隐层数为300 取最大session为10 最大utterance为50
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1544277587937-ad3451fe-cef6-4147-806e-09bb5defc9d7.png "")
 
@@ -197,7 +198,3 @@ Embedding从最开始的One-hot 到从NN中间参数获取的word2Vec 再到双�
 4. [word2vec 相比之前的 Word Embedding 方法好在什么地方？](https://www.zhihu.com/question/53011711)
 5. [词向量，LDA，word2vec三者的关系是什么?](https://www.zhihu.com/question/40309730/answer/86453469)
 6. [NLP的游戏规则从此改写？从word2vec, ELMo到BERT](https://zhuanlan.zhihu.com/p/47488095)
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
-

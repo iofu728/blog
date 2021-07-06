@@ -34,17 +34,17 @@ description: Injecting Knowledge into Language Models using Adapter
 
 ### Detail
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687915650-b21f5a3f-9316-4208-924f-b19d2d42b800.png)
+<center><img width="700" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1583687915650-b21f5a3f-9316-4208-924f-b19d2d42b800.png"></center>
 
 于是一个很直观的想法, 能不能把最后的 task-special layer 放到模型中间，然后冻住预训练模型参数.
 
-1. 每一个 Transformer 结构都有两个 Adapter 模块, 嵌在 LN 之前. 12 × 2
+1. 每一个 Transformer 结构都有两个 Adapter 模块, 嵌在 LN 之前. `$12 × 2$`
 2. 预训练的 Bert 参数固定(Attention, FFN, 除了 Layer Normalization 参数不固定)
 3. 每个 Adapter 由两个 FFN, 一个非线性函数组成, 和一个残差连接组成.
 4. 残差连接用于保证参数随机初始化时，模型输出与预训练模型输出一致.
-5. 这样一个 Adapter 模型需要 (dm+m) + (dm+d)参数
-6. 而因为 LN 输入发生了较大的变化，在这里对 LN 的参数也进行 fine-tune, 实际上这部分参数量很小($y=\frac{x - \mathrm{E}[x]}{ \sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta$)
-7. 故总共一层 Transformer 需要增加(2dm+3d+m), 这部分与 m 有关, 但总的参数量大概是预训练模型总参数量的 3%左右。
+5. 这样一个 Adapter 模型需要 `$(dm+m) + (dm+d)$`参数
+6. 而因为 LN 输入发生了较大的变化，在这里对 LN 的参数也进行 fine-tune, 实际上这部分参数量很小(`$y=\frac{x - \mathrm{E}[x]}{ \sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta$`)
+7. 故总共一层 Transformer 需要增加(`$2dm+3d+m$`), 这部分与 m 有关, 但总的参数量大概是预训练模型总参数量的 `$3%$`左右。
 
 ### Experiments
 
@@ -63,7 +63,7 @@ CLS 接一个线性层, 在分类任务 GLUE 和一些额外的分类任务上�
 1. 只 Fine-tune Top N 层 Transformer 的参数.
 2. 只更新 LN 的参数(Ablation)
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687918228-d6bfedd6-11e4-44b4-b223-f828f0b8026d.png)
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1583687918228-d6bfedd6-11e4-44b4-b223-f828f0b8026d.png"></center>
 
 1. 当我们减少 Fine-tune 层数的时候, 模型的准确率急剧下降;
 2. 而 Adapter 则具有很好的鲁棒性.
@@ -96,13 +96,13 @@ CLS 接一个线性层, 在分类任务 GLUE 和一些额外的分类任务上�
 
 同期还有一篇工作也是想尽可能减少 Fine-tune 时参数的更新量, 其将 Task-special Layer 移至 Transformer 两个 LN 之间。
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687921365-9b3a2dc1-0dab-4101-9ee3-f7f13f2e747a.png)
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1583687921365-9b3a2dc1-0dab-4101-9ee3-f7f13f2e747a.png"></center>
 
 通过先投影到到一个小维度，再连接 Attention 或者其他结构来完成 Fine-tune 的任务.
 
 CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 上做了相应的测试, 结果显示 PALs 结果掉的有点多, 而 Adapter-BERT 结果很接近 Fine-tune 结果.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687923678-ccb105a0-e6b6-4aaf-ac31-ad7673a24c35.png)
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1583687923678-ccb105a0-e6b6-4aaf-ac31-ad7673a24c35.png"></center>
 
 ## K-Adapter
 
@@ -124,15 +124,15 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 所以针对上述问题，本文提出了一个 Adapter-based 的模型来解决上述问题.  
 通过并行的 Adapter 层来获得不同类型的知识信息，最后通过 concatenate 来输出，互不影响.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687926871-16a50202-1515-4910-a63e-cdb6ec4b9535.png)
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1583687926871-16a50202-1515-4910-a63e-cdb6ec4b9535.png"></center>
 
 1. 相对于前面的 Adapter 结构, K-Adapter 将 Transformer 结构直接嵌入到 Adapter Layer 中。
 2. 位置结构发生了变化, Adapter-BERT 是直接改造 Transformer 结构，每个 Transformer Layer 都有两个 Adapter Layer; 而 K-Adapter 则将 Adapter 独立出来与 Pre-trained model 平行操作，通过 Concatenate 传递信息, 也不是每层都配有 Adapter Layer, 本文中是在 RoBERTa Large 的第 0, 11, 23 层之后增加有 Adapter 层。
-3. 需要的参数量 3(FFN + Transformer) = 3(2dm + d +m) + (3m^2 + m^2 + 8m^2 + 2m)) = 47M 远小于 RoBERTa Large 模型中 16355M 的参数量.
+3. 需要的参数量 `$3(\text{FFN} + \text{Transformer}) = 3(2dm + d +m) + (3m^2 + m^2 + 8m^2 + 2m)) = 47M$` 远小于 RoBERTa Large 模型中 `$16355M$` 的参数量.
 4. 相同的 skip-connect 为了初始化时的一致性(Concatenate 传递了 Transformer 的输出)
 5. Concatenate 前一 Adapter 的输出和当前层 Transformer 的输出作为当前 Adapter 的输入. (Concatenate 在这里会造成维度不一致，既然之后都是线性层，用加也是等效的，还能降低参数量)
-6. 单个 knowledge task 的输出是最后一个 Adapter 的输出和最后一个 Transformer 输出 Concatenate 在一起, 记为 O_k.
-7. 当有多个 Knowledge 一起融入时, Concatenate 每个 Knowledge 输出的结果 Concate(O_1, O_2, ...).
+6. 单个 knowledge task 的输出是最后一个 Adapter 的输出和最后一个 Transformer 输出 Concatenate 在一起, 记为 `$O_k$`.
+7. 当有多个 Knowledge 一起融入时, Concatenate 每个 Knowledge 输出的结果 `$\text{Concate}(O_1, O_2, ...)$`.
 8. 这篇文章使用了两种 Adapter: 事实 Adapter, 语言 Adapter
 9. 事实 Adapter 训练一个关系分类任务。通过判断三元组中 entity 是否存在相应关系来学习关系的知识。数据集是过滤 entity 出现小于 50 次的 T-RE-rc. 因为 Entity 长度不一，利用 Pooling 来对齐. 该任务训练 5epochs, Batch size 为 128.
 10. 语言 Adapter 则是完成预测依存关系中父节点 index 这个任务。数据集是利用 Stanford Parser 标注的 Book Corpus。因为是 token-level 的任务，最后过一个线性层输出到相应的分类。该任务训练 10epochs, Batch size 为 256
@@ -162,19 +162,19 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 细粒度对于学习到词的表征要求提高了不少，需要模型能分辨出上下文结构对词义造成的差异.  
 在 Entity 周围加上@来表示边界.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687927935-a0195a98-d678-4cd8-aaf8-9c5091bd2ead.png)
+<center><img width="700" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1583687927935-a0195a98-d678-4cd8-aaf8-9c5091bd2ead.png"></center>
 
 2. 常识 QA 和开放域 QA
 
 印象里,RoREATa 在常识问答中比 BERT Large 能高 10 多个点，对比 Multi-task 的结果虽然提升不是很大,但还是有明显的提升.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687930982-e33e5549-331e-4d70-bb60-0785d37bae7a.png)
+<center><img width="700" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1583687930982-e33e5549-331e-4d70-bb60-0785d37bae7a.png"></center>
 
 3. 关系分类
 
 在 head entity 周围加上@来表示边界, tail entity 周围加上#.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1583687932523-e0575150-672e-4633-b1c9-1096d8585135.png)
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1583687932523-e0575150-672e-4633-b1c9-1096d8585135.png"></center>
 
 4. 刺探实验: LAMA(常识性填空问答)
 
@@ -208,7 +208,3 @@ CS224n 2019 Final Project 中有两位同学对上述两种方法在 SQuAD 2.0 �
 [9]: https://arxiv.org/abs/1912.09637
 [10]: https://arxiv.org/abs/1912.00147
 [11]: https://arxiv.org/abs/1911.06136
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>

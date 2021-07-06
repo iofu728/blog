@@ -258,7 +258,3 @@ Image的回复 是 通过 Image-Comment 数据集 训练出来的
 ## Reference
 
 . [The Design and Implementation of XiaoIce, an Empathetic Social Chatbot. [`Li Zhou et al. 18.12`]](https://arxiv.org/pdf/1812.08989.pdf)
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>

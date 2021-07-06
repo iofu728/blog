@@ -77,7 +77,7 @@ PPS: 在这里特别感谢带我入门的`山川dalao` 🙇
 > ”为啥 我们 都是 Mac 怎么感觉你的 高端一点“
 > 我总是 笑着 回答 我这个 是 `真Mac`
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2019/png/104214/1547038574539-8b19fc46-2c47-4b80-89ed-c664fe2def42.png)
+<center><img width="250" src="https://cdn.nlark.com/yuque/0/2019/png/104214/1547038574539-8b19fc46-2c47-4b80-89ed-c664fe2def42.png"></center>
 
 实际上 这些 只是 `配置`的问题 配置好的 Mac 比 Win 好的 不是 一点点
 
@@ -357,7 +357,7 @@ $ tree -I '__pycache__|venv|data'  # product file tree without 'venv' 'data' '__
 >
 > **VSCode 真香**
 
-![image](https://cdn.nlark.com/yuque/0/2019/gif/104214/1556892046025-2a0af4ce-a131-4164-91de-8bdd607e18e0.gif)
+<center><img width="300" src="https://cdn.nlark.com/yuque/0/2019/gif/104214/1556892046025-2a0af4ce-a131-4164-91de-8bdd607e18e0.gif"></center>
 
 hhh 之前我一直是 Sublime 布道者，VSCode 黑
 

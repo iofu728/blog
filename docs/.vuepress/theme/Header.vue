@@ -60,6 +60,7 @@ export default {
 .blog-toolbar {
   .toolbar__title {
     font-size: 18px;
+    margin: 0;
   }
 }
 

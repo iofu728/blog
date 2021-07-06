@@ -82,11 +82,11 @@ description: 检索式 QA
 
 就有学者提出由构造对齐矩阵 然后再做池化的方式 计算句粒度之间相似度 的[`MV-LSTM`模型[`Shengxian Wan et al. 2015`]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11897/12030)
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542351846290-e23d67f2-5c47-4284-9e01-612b9a03ac7d.png "")
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1542351846290-e23d67f2-5c47-4284-9e01-612b9a03ac7d.png"></center>
 
 1. 计算句子间的两两匹配度存入对齐矩阵 从细粒度描述句子间关系
 2. 利用`双向LSTM`模型 减少因为RNN时序遍历的特性 导致模型结果更偏向于最后几个单词的现象
-3. Similarity不只直接做cosine计算 根据模型特性动态调整参数$s(u,v)=f(u^TM^{[1:c]}v+W_{uv}[u;v])+b)$
+3. Similarity不只直接做cosine计算 根据模型特性动态调整参数`$s(u,v)=f(u^TM^{[1:c]}v+W_{uv}[u;v])+b)$`
 4. 处理最后一步使用多层感知机`MLP`对得到的结果进行压缩和分类 因为效果较好 这个做法在之后的论文中被广泛采用
 
 ### `MM`
@@ -95,15 +95,15 @@ description: 检索式 QA
 
 这个[模型[`Liang Pang et al. 2016`]](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11895/12024)主要是从多个角度 构造对齐矩阵 然后讲多个对齐矩阵 类比图像处理 一起喂入CNN中进行 卷积池化操作 算是`交互式QA`的开山之作
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542353262588-eed0a08d-2a37-41d6-8cbb-b03054846889.png "")
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1542353262588-eed0a08d-2a37-41d6-8cbb-b03054846889.png"></center>
 
 文章给出了三种对齐函数的计算方式 1. 存在判断: 该单词是否存在于另一个句子中 2. 点积 3. 余弦相似度
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542353290710-66dc00ee-c423-4a23-8c0e-3804b688e66a.png "")
+<center><img width="700" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1542353290710-66dc00ee-c423-4a23-8c0e-3804b688e66a.png"></center>
 
 将多粒度分析出的对齐矩阵 通过多重卷积 进行训练
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542353318367-9f27cfa9-d6ae-4f94-b502-bb857b3742bf.png "")
+<center><img width="400" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1542353318367-9f27cfa9-d6ae-4f94-b502-bb857b3742bf.png"></center>
 
 然后这种多粒度计算词、句之间关系的做法 之后发展成`交互式QA` 现广泛应用于检索式QA模型中
 
@@ -113,7 +113,7 @@ description: 检索式 QA
 
 在前面学者的基础上 进一步针对多角度句词匹配进行研究 提出[BiMPM模型[`Zhiguo Wang et al. 2017`]](https://arxiv.org/pdf/1702.03814)
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542354627538-9500438e-7e1b-4f92-872e-5275e76b9df0.png "")
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1542354627538-9500438e-7e1b-4f92-872e-5275e76b9df0.png"></center>
 
 文章提出四种匹配方式
 1. `Full Matching`: 每个单词 与 需要匹配的句子的最后一个`隐藏层`输出向量进行Cosine计算
@@ -121,7 +121,7 @@ description: 检索式 QA
 3. `Attentive Matching`: 每个单词 与 需要匹配的句子的每一个单词行Cosine计算 然后用Softmax归一化 `作为attention权重` 然后再`加权求和` 得到的结果再做一次Cosine
 4. `Max Attentive Matching`: 每个单词 与 需要匹配的句子的每一个单词行Cosine计算 然后用Softmax归一化 作为attention权重 然后再`取最大值` 得到的结果再做一次Cosine
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1542355478297-e5ad297c-bd25-4528-a833-be0ab27284cd.png "")
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1542355478297-e5ad297c-bd25-4528-a833-be0ab27284cd.png"></center>
 
 然后BiMPM还加上了双向处理 不仅考虑从Query 推出Answer 还考虑到Answer 推出 Query
 
@@ -178,7 +178,11 @@ description: 检索式 QA
 
 > 这种多粒度的做法 保证了即使CNN很浅，也能抽取出比较high-level的特征，得到高质量的utterance embedding[9]
 
-这篇文章 还对最后一个GRU进行优化 给出了分别利用1. 最后一个隐藏层结果$SMN_{last}$ 2. 中间每层的带权和$SMN_{static}$ 3. 结合attention的一种表示$SMN_{dynamic}$进行匹配的结果
+这篇文章 还对最后一个GRU进行优化 给出了分别利用
+
+1. 最后一个隐藏层结果`$\text{SMN}_{last}$`;
+2. 中间每层的带权和`$\text{SMN}_{static}$`;
+3. 结合attention的一种表示`$\text{SMN}_{dynamic}$`进行匹配的结果
 
 得出dynamic 效果最优的结论
 
@@ -239,10 +243,3 @@ DAM最核心的地方 在于2H层Attention的构造 Paper中给出了具体的�
 8. [Multi-Turn Response Selection for Chatbots with Deep Attention Matching Network [`Xiangyang Zhou et al. 2018`]](http://www.aclweb.org/anthology/P18-1103)
 9. [小哥哥，检索式chatbot了解一下？](https://zhuanlan.zhihu.com/p/44539292)
 10. [深度文本匹配发展总结](https://blog.csdn.net/xiayto/article/details/81247461)
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
-
-
-

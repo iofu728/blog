@@ -26,7 +26,7 @@ update 一下 评论 已经有 dalao 给出**第八题** 思路 感谢 @熊怡 d
 
 **思路二：**
 
-**从手机状态角度来看，每个手机只有(有人看过)(没人看过)两种状态，通过手机间状态的组合，能表示出 $2^n$ 种状态。**
+**从手机状态角度来看，每个手机只有(有人看过)(没人看过)两种状态，通过手机间状态的组合，能表示出 `$2^n$` 种状态。**
 
 ## 1
 
@@ -42,44 +42,53 @@ update 一下 评论 已经有 dalao 给出**第八题** 思路 感谢 @熊怡 d
 
 二分类中 Precision, recall 均指正类的 P R
 
-| 真实-预测 | 1   | 0   |
-| --------- | --- | --- |
-| 1         | TP  | FN  |
-| 0         | FP  | TN  |
+`
+\begin{array}{l|c|c}
+\hline \textbf{ 真实-预测 } & \textbf{1} & \textbf{0} \\
+\hline
+1 & \text{TP} & \text{FN} \\
+0 & \text{FP} & \text{TN} \\
+\end{array}
+`
 
-$p=\frac{TP}{TP+FP}$
-$r=\frac{TP}{TP+FN}$
+其中，
+`\begin{equation}
+p=\frac{TP}{TP+FP}
+\end{equation}`
+`\begin{equation}
+r=\frac{TP}{TP+FN}
+\end{equation}`
 
 当提高 Threshold 时，预测为 1 的样本数量减少
 
 即 TP + FP 减少, FN + TN 数量增大
 
 1. 若 TP 数量不变，则 P 变大，r 不变或者减少
-2. 若 TP 数量减少,则$p=\frac{TP}{TP+FP}=1-\frac{1}{TP/FP+1}$
-   - 可以看出 p 与$\frac{TP}{FP}$成正相关
-   - 当 $\frac{TP}{FP}$ 增大时，p 增大
+2. 若 TP 数量减少,则`$p=\frac{TP}{TP+FP}=1-\frac{1}{TP/FP+1}$`
+   - 可以看出 p 与`$\frac{TP}{FP}$`成正相关
+   - 当 `$\frac{TP}{FP}$` 增大时，p 增大
    - 反之，p 减小
    - 此情况下 recall 均会减小
 
-初始时，$\frac{TP}{FP}=4$，当 threshold 变大时 1 类中正确的比例应该增大，故 0.9 0.7 更有可能
+初始时，`$\frac{TP}{FP}=4$`，当 threshold 变大时 1 类中正确的比例应该增大，故 0.9 0.7 更有可能
 
 ## 2
 
 > 下列函数不是凸函数的是
-> A $f(z)=\max (0,1-z)$
-> B $f(z)=z^{3}$
-> C $f(z)=\exp (-z)$
-> D $f(z)=\log (1+\exp (-z))$
+> A `$f(z)=\max (0,1-z)$`
+> B `$f(z)=z^{3}$`
+> C `$f(z)=\exp (-z)$`
+> D `$f(z)=\log (1+\exp (-z))$`
 
 凸函数直观的感觉就是图像往下凸的
 
-可以用二阶导大于 0，若不可导，则判断对于任意 x,y 是否满足$f(y) \geqslant f(x)+f^{\prime}(x)(y-x)$
+可以用二阶导大于 0，若不可导，则判断对于任意 x,y 是否满足`$f(y) \geqslant f(x)+f^{\prime}(x)(y-x)$`
 
 [凸函数](https://zh.wikipedia.org/wiki/%E5%87%B8%E5%87%BD%E6%95%B0)
 
 ## 3
 
-> GoogleNet 中 1 × 1 卷积的作用
+> GoogleNet 中 `$1\times 1$` 卷积的作用
 > A 降维
 > B 减少参数
 > C 跨通道通信
@@ -92,7 +101,7 @@ $r=\frac{TP}{TP+FN}$
 ## 4
 
 > 考虑一个 0/1 二分类模型，模型的参数为实数 w,b,输入为一个实数 X，输出 Y 的表达式为
-> $Y=\left\{\begin{array}{ll}{1,} & {\text { if } w * X+b>0} \\ {0,} & {\text { otherwise }}\end{array}\right.$
+> `$Y=\left\{\begin{array}{ll}{1,} & {\text { if } w * X+b>0} \\ {0,} & {\text { otherwise }}\end{array}\right.$`
 > 假设我们的训练集中包含 N 个样本点，(无重复点) 以及样本点对应的标签
 > 请问当 N 最大是多少时，不论训练集 X 和 Y 的取值如何，都能得到一个训练误差为 0 的模型
 > A 2
@@ -171,20 +180,23 @@ def mean():
 
 ## 7
 
-> 假设你训练了一个线性回归模型，$y=w_1 \times x_1+w_2\times x_2+w_3 \times x_3+b$
-> 其中$X=[x1,x2,x3]$为输入，$[w1,w2,w3,b]$为模型的参数
-> 已知，当$X=[1,2,3]$输出 1，$X=[-1,1,4]$时，输出 2
-> 当$X=[0.6,1.8,3.2]$,输出多少
+> 假设你训练了一个线性回归模型，`$y=w_1 \times x_1+w_2\times x_2+w_3 \times x_3+b$`
+> 其中`$X=[x1,x2,x3]$`为输入，`$[w1,w2,w3,b]$`为模型的参数
+> 已知，当`$X=[1,2,3]$`输出 1，`$X=[-1,1,4]$`时，输出 2
+> 当`$X=[0.6,1.8,3.2]$`,输出多少
 
 （感觉回到了高中 hhh
 
-- $W[1,2,3]+ b=1$
-- $W[-1,1,4]+ b=2$
-- $W[0.6, 1.8, 3.2] + b=?$
+- `$W[1,2,3]+ b=1$`
+- `$W[-1,1,4]+ b=2$`
+- `$W[0.6, 1.8, 3.2] + b=?$`
 
-$m[1,2,3]+n[-1, 1, 4] = k[0.6, 1.8, 3.2]$
+故，
+`\begin{equation}
+m[1,2,3]+n[-1, 1, 4] = k[0.6, 1.8, 3.2]
+\end{equation}`
 
-=> $\frac{4 M+ N}{5}=W[0.6, 1.8, 3.2] + b=1.2$
+=>, `\begin{equation}\frac{4 M+ N}{5}=W[0.6, 1.8, 3.2] + b=1.2\end{equation}`
 
 ## 8
 
@@ -218,8 +230,8 @@ $m[1,2,3]+n[-1, 1, 4] = k[0.6, 1.8, 3.2]$
 
 ## 10
 
-> MNIST 6w × 28 × 28 的手写字母数据集
-> 把 4 张按 14 × 14 剪开，打乱，让你找出这 4 张具体是啥
+> MNIST `$6w \times 28 \times 28$` 的手写字母数据集
+> 把 4 张按 `$14 \times 14$` 剪开，打乱，让你找出这 4 张具体是啥
 
 DataSet: 链接:https://pan.baidu.com/s/1RK1Yz1hVSnFaogRsZHZ0Eg 密码:o6ui
 
@@ -269,7 +281,3 @@ def judge():
     print('{:.2f}s'.format(time.time() - start))
 
 ```
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>

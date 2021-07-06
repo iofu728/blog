@@ -18,6 +18,7 @@ function prepare (siteData) {
     if (!page.frontmatter) {
       page.frontmatter = {}
     }
+    page.author = siteData.themeConfig.author;
   })
   siteData.pages.push({
     frontmatter: {},
@@ -41,7 +42,7 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(routes, { router, theme })
   Vue.use(components, theme)
   try {
-    document && getGitalk()
+    document
   } catch (e) {
     console.error(e.message)
   }

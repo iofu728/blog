@@ -185,7 +185,7 @@ RNN因为要前后迭代 复杂度 较大 会出现梯度消失 梯度爆炸💥
 
 CNN相较于RNN而言 可以并行 而且不会出现`梯度消失` 可以更好的选取长距离的信息(这 太像`Transform`了吧)
 
-![图片.png | center | 556x500]( https://cdn.nlark.com/yuque/0/2018/png/104214/1545617656324-d32ba8b1-94b9-4a4c-8cdb-11c793abe0b4.png "")
+<center><img width="400" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1545617656324-d32ba8b1-94b9-4a4c-8cdb-11c793abe0b4.png"></center>
 
 ConvS2S 采用的是带Attention的Encoder-decoder结构 其中encoder和decoder用的是相同的卷积结构
 
@@ -227,15 +227,15 @@ Topic-ConvS2S主要的工作 一个是建立XSum DataSet 然后就是把Topic �
 
 模型利用LDA获取一层`Topic Sensitive Embedding`
 
-$e_i=[(x_i+p_i);(t_i'$⊗$t_D)]\in R^{f+f'}$
+`\begin{equation}e_i=[(x_i+p_i);(t_i'$⊗$t_D)]\in R^{f+f'}\end{equation}`
 
-其中$x_i$为word Embedding, $p_i$为Position Embedding, $t_i$为文档中单词的分布, $t_D$为文档中主题的分布
+其中`$x_i$`为word Embedding, `$p_i$`为Position Embedding, `$t_i$`为文档中单词的分布, `$t_D$`为文档中主题的分布
 
 通过构造$e_i$来获取关于Topic的Embedding信息
 
 其他的和ConvS2S基本一致 同样用到两个相同的`encoder-decoder`卷积结构 同样是`Mult-step Attention` 连图都很像是吧
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1545621752061-3112c470-8406-40fc-a215-2c912a25ed10.png "")
+<center><img width="400" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1545621752061-3112c470-8406-40fc-a215-2c912a25ed10.png"></center>
 
 #### RLSeq2seq
 <p align="right">[Yaser Keneshloo et.al. sCCL 18]</p>
@@ -301,7 +301,6 @@ $e_i=[(x_i+p_i);(t_i'$⊗$t_D)]\in R^{f+f'}$
 * Source-Specific
 * Remainder
 
-
 ## `Evaluation`
 
 实际上 文本摘要 问题在模型效果判断上面 较为难处理
@@ -322,11 +321,3 @@ Rough是一个模型评价集合，其中
 5. [Deep Reinforcement Learning for Sequence-to-Sequence Models [`Yaser Keneshloo et.al. sCCL 18`]](https://arxiv.org/pdf/1805.09461)
 6. [A Reinforced Topic-Aware Convolutional Sequence-to-Sequence Model for Abstractive Text Summarization [`Li Wang et.al. IJCAL 18`]](https://arxiv.org/pdf/1805.03616)
 7. [Controllable Abstractive Summarization [`Angela Fan et.al., ACL 18`]](https://arxiv.org/pdf/1711.05217)
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
-
-
-
-

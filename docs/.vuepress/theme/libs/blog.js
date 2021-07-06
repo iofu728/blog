@@ -49,11 +49,18 @@ const install = (Vue, { theme, pages }) => {
       waitTime(tempTime) {
         setTimeout(() => {if(tempTime === time) {
           try {
+            this.replaceLatexCode();
+          } catch (e) {
+            console.error(e.message);
+          }
+          this.getMathJax();
+          try {
             window && this.updateZoom();
             this.getPageViews();
           } catch (e) {
             console.error(e.message)
           }
+          this.bindUtteranc();
         }}, 500)
       },
       updateZoom () {
@@ -69,6 +76,66 @@ const install = (Vue, { theme, pages }) => {
           .catch(reason => console.log(reason.message));
 
       },
+      replaceLatexCode(){
+        var i, text, code, codes = document.getElementsByTagName('code');
+        for (i = 0; i < codes.length;) {
+          code = codes[i];
+          if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+            text = code.textContent;
+            if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+              text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+              code.textContent = text;
+            }
+            if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+                /^\$(.|\s)+\$$/.test(text) ||
+                /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+              code.outerHTML = code.innerHTML;  // remove <code></code>
+              continue;
+            }
+          }
+          i++;
+        }
+      },
+      getMathJax() {
+        const script1 = document.createElement('script');
+        script1.src = 'https://kexue.fm/sci/MathJax-2.7.4/AMS-setcounter.js';
+        script1.type = 'text/javascript';
+        script1.id = "ams-counter";
+        setTimeout(() => document.body.appendChild(script1), 500);
+        const script2 = document.createElement('script');
+        script2.type = 'text/javascript';
+        script2.src = 'https://kexue.fm/sci/MathJax-2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        script2.id = "tex-ams";
+        setTimeout(() => document.body.appendChild(script2), 700);
+        setTimeout(() => document.getElementById("ams-counter").remove(), 2000);
+        setTimeout(() => document.getElementById("tex-ams").remove(), 2000);
+      },
+      renderUtteranc() {
+        var container = document.getElementById('utteranc-container');
+        var script = document.createElement("script");
+        script.type = 'text/javascript';
+        script.id = "utteranc";
+        script.async = true;
+        script.setAttribute('issue-term', 'title');
+        script.setAttribute('theme', 'preferred-color-scheme')
+        script.setAttribute('repo',`iofu728/blog`)
+        script.setAttribute('crossorigin',`anonymous`)
+        script.src = 'https://utteranc.es/client.js';
+        container.appendChild(script);
+      },
+      onScroll() {
+        var container = document.getElementById('utteranc-container');
+        if (window.scrollY + window.innerHeight >= container.offsetTop) {
+            window.removeEventListener('scroll', this.onScroll);
+            this.renderUtteranc();
+        }
+      },
+      bindUtteranc() {
+        if (document.getElementsByTagName("iframe").length === 1) {
+          document.getElementsByClassName("utterances")[0].remove();
+          window.addEventListener('scroll', this.onScroll, {passive: true});
+        }
+      }
     },
     computed: {
       $blog() {

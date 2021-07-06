@@ -62,13 +62,13 @@ NN起源于多层感知机MLP
 
 CNN 可以在下一个时间点 把输出作用在节点自身
 
-如果按时间展开 就变成那张经典的图 作用在`t+1`时刻输出`o(t+1)`是该时刻输入和`所有历史`共同作用的结果
+如果按时间展开 就变成那张经典的图 作用在`$t+1$`时刻输出`$o(t+1)$`是该时刻输入和`所有历史`共同作用的结果
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/jpeg/104214/1541330721311-62176246-81e8-4ebb-bb4c-e77d33bb20c1.jpeg "")
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/jpeg/104214/1541330721311-62176246-81e8-4ebb-bb4c-e77d33bb20c1.jpeg"></center>
 
-可以看出$s_{t+1}, o_t = f(s_t, x_t, U, V, W)$
+可以看出`$s_{t+1}, o_t = f(s_t, x_t, U, V, W)$`
 
-和别的NN不同的是RNN所有步骤共享`相同`的参数$U, V, W$
+和别的NN不同的是RNN所有步骤共享`相同`的参数`$U, V, W$`
 
 有正向的RNN 很容易想到是不是还有双向的(`Bidirectional RNN`) 深度(`Deep Bidirectional RNN`)
 
@@ -96,59 +96,63 @@ LSTM每个时刻的hidden state包含了多个memory `blocks`
 
 ### Forward Pass
 
-* $Input Gate$
-  $a_l^t=\sum\limits_{i=1}^Iw_{il}x_i^t+\sum\limits_{h=1}^Hw_{hl}b_h^{t-1}+\sum\limits_{c=1}^Cw_{cl}s_c^{t-1}$
+**Input Gate**
 
-  $b_l^t=f(a_l^t)$
+`\begin{equation}a_l^t=\sum\limits_{i=1}^Iw_{il}x_i^t+\sum\limits_{h=1}^Hw_{hl}b_h^{t-1}+\sum\limits_{c=1}^Cw_{cl}s_c^{t-1}\end{equation}`
 
-* $Forget Gate$
-  $a_\phi^t=\sum\limits_{i=1}^Iw_{i\phi}x_i^t+\sum\limits_{h=1}^Hw_{h\phi}b_h^{t-1}+\sum\limits_{c=1}^Cw_{c\phi}s_c^{t-1}$
+`\begin{equation}b_l^t=f(a_l^t)\end{equation}`
 
-  $b_\phi^t=f(a_\phi^t)$
+**Forget Gate**
 
-* $Cell$
-  $a_c^t=\sum\limits_{i=1}^Iw_{ic}x_i^t+\sum\limits_{h=1}^Hw_{hc}b_h^{t-1}$
+`\begin{equation}a_\phi^t=\sum\limits_{i=1}^Iw_{i\phi}x_i^t+\sum\limits_{h=1}^Hw_{h\phi}b_h^{t-1}+\sum\limits_{c=1}^Cw_{c\phi}s_c^{t-1}\end{equation}`
 
-  $s_c^t=b_\phi ^ts_c^{t-1}+b_l^tg(a_c^t)$
+`\begin{equation}b_\phi^t=f(a_\phi^t)\end{equation}`
 
-* $Output Gate$
-  $a_\omega^t=\sum\limits_{i=1}^Iw_{i\omega}x_i^t+\sum\limits_{h=1}^Hw_{h\omega}b_h^{t-1}+\sum\limits_{c=1}^Cw_{c\omega}s_c^t$
+**Cell**
 
-  $b_\omega^t=f(a_\omega^t)$
+`\begin{equation}a_c^t=\sum\limits_{i=1}^Iw_{ic}x_i^t+\sum\limits_{h=1}^Hw_{hc}b_h^{t-1}\end{equation}`
 
-* $Cell Outputs$
+`\begin{equation}s_c^t=b_\phi ^ts_c^{t-1}+b_l^tg(a_c^t)\end{equation}`
 
-  $b_c^t=b_\omega^th(s_c^t)$
+**Output Gate**
 
-注意OutPut Gate中最后一项是$s_c^t$, 而不是$s_c^{t-1}$ 因为此时Cell结果已经产生了
+`\begin{equation}a_\omega^t=\sum\limits_{i=1}^Iw_{i\omega}x_i^t+\sum\limits_{h=1}^Hw_{h\omega}b_h^{t-1}+\sum\limits_{c=1}^Cw_{c\omega}s_c^t\end{equation}`
+
+`\begin{equation}b_\omega^t=f(a_\omega^t)\end{equation}`
+
+**Cell Outputs**
+
+`\begin{equation}b_c^t=b_\omega^th(s_c^t)\end{equation}`
+
+注意OutPut Gate中最后一项是`$s_c^t$`, 而不是`$s_c^{t-1}$` 因为此时Cell结果已经产生了
 
 ### Backward Pass
 
-定义 $\epsilon_c^t=\dfrac{\partial \Gamma}{\partial b_c^t}$ $\epsilon_s^t=\dfrac{\partial \Gamma}{\partial s_c^t}$
+定义 `$\epsilon_c^t=\dfrac{\partial \Gamma}{\partial b_c^t}$`,`$\epsilon_s^t=\dfrac{\partial \Gamma}{\partial s_c^t}$`
 
-* $Cell Outputs$
+**Cell Outputs**
 
-  $\epsilon_c^t=\sum\limits_{k=1}^Kw_{ck}\delta_k^t+\sum\limits_{g=1}^Gw_{cg}\delta_g^{t+1}$
+`\begin{equation}\epsilon_c^t=\sum\limits_{k=1}^Kw_{ck}\delta_k^t+\sum\limits_{g=1}^Gw_{cg}\delta_g^{t+1}\end{equation}`
 
-* $Output Gates$
+**Output Gates**
 
-  $\epsilon_\omega^t=f'(a_\omega^t)\sum\limits_{c=1}^Ch(s_{c}^t)\epsilon_c^t$
+`\begin{equation}\epsilon_\omega^t=f'(a_\omega^t)\sum\limits_{c=1}^Ch(s_{c}^t)\epsilon_c^t\end{equation}`
 
-* $State$
+**State**
 
-  $\epsilon_s^t=b_w^th'(s_c^t)+b_\phi^{t+1}\epsilon_s^{t+1}+w_{c\phi}\delta_\phi^{t+1}+w_{cw}\delta_w^t$
+`\begin{equation}\epsilon_s^t=b_w^th'(s_c^t)+b_\phi^{t+1}\epsilon_s^{t+1}+w_{c\phi}\delta_\phi^{t+1}+w_{cw}\delta_w^t\end{equation}`
 
-* $Cell$
+**Cell**
 
-  $\delta_c^t=b_l^tg'(a_c^t)\epsilon_s^{t}$
+`\begin{equation}\delta_c^t=b_l^tg'(a_c^t)\epsilon_s^{t}\end{equation}`
 
-* $Forget Gates$
+**Forget Gates**
 
-  $\epsilon_\phi^t=f'(a_\phi^t)\sum\limits_{c=1}^Cs_{c}^{t-1}\epsilon_s^t$
+`\begin{equation}\epsilon_\phi^t=f'(a_\phi^t)\sum\limits_{c=1}^Cs_{c}^{t-1}\epsilon_s^t\end{equation}`
 
-* $Input Gates$
+**Input Gates**
 
-  $\epsilon_l^t=f'(a_l^t)\sum\limits_{c=1}^Cg(a_{c}^{t})\epsilon_s^t$
+`\begin{equation}\epsilon_l^t=f'(a_l^t)\sum\limits_{c=1}^Cg(a_{c}^{t})\epsilon_s^t\end{equation}`
 
 可以看出Forget Gates和其他两个Gates在指数上略有差别
 
@@ -168,7 +172,7 @@ Output Gate负责到点把东西从传送带输出（Forget是无用的 Output�
 
 结合下图再理解下
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541336967649-07d979b9-a8c4-45c1-bfdd-8526dbc7cace.png "")
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541336967649-07d979b9-a8c4-45c1-bfdd-8526dbc7cace.png"></center>
 
 ## GRU
 
@@ -180,33 +184,34 @@ Output Gate负责到点把东西从传送带输出（Forget是无用的 Output�
 
 其通过`Update Gates` 替代`Output Gates` + `Forget Gates`
 
-把`Cell State` 和 隐状态$h_i$ 合并
+把`Cell State` 和 隐状态`$h_i$` 合并
 
 * LSTM转态转移方程(这才是需要记得公式)
 
-    $i_t=\sigma(W_is_{t-1}+U_ix_t+b_i)$
 
-    $o_t=\sigma(W_os_{t-1}+U_ox_t+b_o)$
+`\begin{equation}i_t=\sigma(W_is_{t-1}+U_ix_t+b_i)\end{equation}`
 
-    $f_t=\sigma(W_fs_{t-1}+U_fx_t+b_f)$
+`\begin{equation}o_t=\sigma(W_os_{t-1}+U_ox_t+b_o)\end{equation}`
 
-    $\tilde{s_t}=\phi(W(o_t\bigodot s_{t-1}))+Ux_t+b)$
+`\begin{equation}f_t=\sigma(W_fs_{t-1}+U_fx_t+b_f)\end{equation}`
 
-    $s_t=f_t\bigodot s_{t-1}+i_t\bigodot \tilde{s_t}$
+`\begin{equation}\tilde{s_t}=\phi(W(o_t\bigodot s_{t-1}))+Ux_t+b)\end{equation}`
 
-    其中i, o, f分别代表input, output, forget gates
+`\begin{equation}s_t=f_t\bigodot s_{t-1}+i_t\bigodot \tilde{s_t}\end{equation}`
+
+其中i, o, f分别代表input, output, forget gates
 
 * GRU转态转移方程
 
-    $r_t=\sigma(W_rs_{t-1}+U_rx_t+b_r)$
+`\begin{equation}r_t=\sigma(W_rs_{t-1}+U_rx_t+b_r)\end{equation}`
 
-    $z_t=\sigma(W_zs_{t-1}+U_zx_t+b_z)$
+`\begin{equation}z_t=\sigma(W_zs_{t-1}+U_zx_t+b_z)\end{equation}`
 
-    $\tilde{s_t}=\phi(W(r_t\bigodot s_{t-1}))+Ux_t+b)$
+`\begin{equation}\tilde{s_t}=\phi(W(r_t\bigodot s_{t-1}))+Ux_t+b)\end{equation}`
 
-    $s_t=z_t\bigodot s_{t-1}+(1-z_t)\bigodot \tilde{s_t}$
+`\begin{equation}s_t=z_t\bigodot s_{t-1}+(1-z_t)\bigodot \tilde{s_t}\end{equation}`
 
-    其中r, z分别代表reset, update
+其中r, z分别代表reset, update
 
 可以看出转态转移方程少了一个 计算量 势必会下降
 
@@ -230,17 +235,17 @@ GRU的结果实际上已经比较好了
 
 * [SRU的转态转移方程[8]](https://arxiv.org/abs/1709.02755)
 
-    $\tilde{s_t}=Ws_t$
+`\begin{equation}\tilde{s_t}=Ws_t\end{equation}`
 
-    $f_t=\sigma(W_fs_t+b_f)$
+`\begin{equation}f_t=\sigma(W_fs_t+b_f)\end{equation}`
 
-    $r_t=\sigma(W_rs_t+b_r)$
+`\begin{equation}r_t=\sigma(W_rs_t+b_r)\end{equation}`
 
-    $\tilde{s_t}=\phi(W(r_t\bigodot s_{t-1}))+Ux_t+b)$
+`\begin{equation}\tilde{s_t}=\phi(W(r_t\bigodot s_{t-1}))+Ux_t+b)\end{equation}`
 
-    $c_t=f_t\bigodot c_{t-1}+(1-f_t)\bigodot \tilde{s_t}$
+`\begin{equation}c_t=f_t\bigodot c_{t-1}+(1-f_t)\bigodot \tilde{s_t}\end{equation}`
 
-    $h_t=r_t\bigodot g(c_t)+(1-r_t)\bigodot s_t$
+`\begin{equation}h_t=r_t\bigodot g(c_t)+(1-r_t)\bigodot s_t\end{equation}`
 
 **可以看出其相较于之前的模型最大的差别在于`门`转态不再和之前转态有关**
 
@@ -252,7 +257,7 @@ GRU的结果实际上已经比较好了
 
 ！！！而且这些门的计算都是复杂度十分高的``矩阵乘法``
 
-注意这里的是矩阵乘法 而下面隐层$h_t$中的运算都是矩阵的`Hadamard`乘--对应$i,j$直接相乘
+注意这里的是矩阵乘法 而下面隐层`$h_t$`中的运算都是矩阵的`Hadamard`乘--对应`$i,j$`直接相乘
 
 这两者的复杂度差别十分大了
 
@@ -285,15 +290,16 @@ self-attention的另外一个优点就是寻找时序关系更优
 position的方式更容易计算之间的关系 而不用担心`梯度消失`
 
 * 具体公式
-    $Attention(Q,K,V) =softmax(\dfrac{QK^T}{\sqrt{d_k}})V$
 
-    $Q\in R^{n\times d_k},K\in R^{d_k\times m},V\in R^{m\times d_v}$
+`\begin{equation}\text{Attention}(Q,K,V) =\text{softmax}(\dfrac{QK^T}{\sqrt{d_k}})V\end{equation}`
 
-    $Attention(q_t,K,V) =\sum\limits_{s=1}^m\dfrac{1}{z}exp(\dfrac{<q_t,k_s>}{\sqrt{d_k}})v_s$
+`\begin{equation}Q\in R^{n\times d_k},K\in R^{d_k\times m},V\in R^{m\times d_v}\end{equation}`
 
-    $head_i = Attention(QW_i^Q,KW_i^K,VW_i^V)$
+`\begin{equation}\text{Attention}(q_t,K,V) =\sum\limits_{s=1}^m\dfrac{1}{z}exp(\dfrac{<q_t,k_s>}{\sqrt{d_k}})v_s\end{equation}`
 
-    $MultiHead(Q,K,V) = concat(head_1, head_2,...,head_h)$
+`\begin{equation}\text{head}_i = \text{Attention}(QW_i^Q,KW_i^K,VW_i^V)\end{equation}`
+
+`\begin{equation}\text{MultiHead}(Q,K,V) = \text{concat}(\text{head}_1, \text{head}_2,...,\text{head}_h)\end{equation}`
 
 ![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541339405386-0e60a2e6-a369-4aec-b316-aecb72dcf97c.png "")
 
@@ -307,7 +313,7 @@ position的方式更容易计算之间的关系 而不用担心`梯度消失`
 
 通过类似二分的思想对RNN运行顺序进行优化 也得到了较好的结果
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1541339736748-b27dab09-9d06-4289-8385-e2d6fad1f762.png "")
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541339736748-b27dab09-9d06-4289-8385-e2d6fad1f762.png"></center>
 
 然后[[6](https://arxiv.org/pdf/1810.10708.pdf)]中周志华dalao 利用FSA 对RNN 过程进行捕捉 从而进行可解释分析
 
@@ -323,7 +329,3 @@ position的方式更容易计算之间的关系 而不用担心`梯度消失`
 8. [Simple Recurrent Units for Highly Parallelizable Recurrence](https://arxiv.org/abs/1709.02755)
 9. [Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling](http://www.arxiv.org/abs/1412.3555)
 10. [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>

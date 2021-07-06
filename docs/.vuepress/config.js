@@ -17,11 +17,57 @@ module.exports = {
     ['meta', {name: 'apple-mobile-web-app-status-bar-style', content: 'black'}],
     ['link', {rel: 'apple-touch-icon', href: '/icons/192.png'}],
     ['meta', {name: 'msapplication-TileImage', content: '/icons/192.png'}],
-    ['meta', {name: 'msapplication-TileColor', content: '#07527a'}]
+    ['meta', {name: 'msapplication-TileColor', content: '#07527a'}],
+    ['meta', {name: 'referrer', content: 'no-referrer'}],
+    ['script', {type: 'text/x-mathjax-config'},
+    `MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']]},
+          processEnvironments: true,
+          TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}, extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js"]},
+          "HTML-CSS": {linebreaks: {automatic: true, width: "95% container"}, noReflows: false, styles: {".MathJax_Display": {margin: "1em 0em 0.7em;", display: "inline-block!important;"}}},
+          "PreviewHTML": {linebreaks: {automatic: true, width: "95% container"}, noReflows: false, styles: {".MathJax_PHTML_Display": {margin: "1em 0em 0.7em;", display: "inline-block!important;"}}},
+          "CommonHTML": {linebreaks: {automatic: true, width: "95% container"}, noReflows: false, styles: {".MJXc-display": {margin: "1em 0em 0.7em;", display: "inline-block!important;"}}},
+          "SVG": {linebreaks: {automatic: true, width: "95% container"}, noReflows: false, styles: {".MathJax_SVG_Display": {margin: "1em 0em 0.7em;", display: "inline-block!important;"}}}
+      });`],
+    ['script', {}, `
+      (function() {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css";
+        setTimeout(() => document.body.appendChild(link), 1000)})(); `],
+    ['script', {}, `
+      (function() {
+        var meta = document.createElement("meta");
+        meta.name = "google-site-verification";
+        meta.content = "7ULbF13p7e6Z16vpi2tbAPHXHJBVu83TaxPTnvwnA8I";
+        setTimeout(() => document.body.appendChild(meta))})(); `],
+    ['script', {}, `
+      (function() {
+        var script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=UA-113936890-1";
+        setTimeout(() => document.body.appendChild(script), 2000)})(); `],
+    ['script', {}, `
+      (function() {
+        var script = document.createElement("script");
+        script.text = "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-113936890-1");";
+        setTimeout(() => document.body.appendChild(script), 2100)})(); `],
+    ['script', {}, `
+      (function() {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.text = "docsearch({ apiKey: "c42b71d494ca78750c7094eb2c55eda6", indexName: "wyydsb", inputSelector: "", debug: false });";
+        setTimeout(() => document.body.appendChild(script), 2000)})(); `],
+    ['script', {}, `
+      (function() {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js";
+        setTimeout(() => document.body.appendChild(script), 2000)})(); `],
   ],
   serviceWorker: true,
   theme: '',
-  locales: {'/': {lang: 'zh-CN', title: '乌云压顶是吧', description: '🍥'}},
+  locales: {'/': {lang: 'en-US', title: '乌云压顶是吧', description: '🍥'}},
   configureWebpack: (config, isServer) => {
     const myConfig = {
       resolve: {alias: {'@pub': resolve('./public')}},
@@ -39,13 +85,10 @@ module.exports = {
     return myConfig
   },
   markdown: {
-    config: md => {
-      md.set({breaks: true})
-      md.use(require('markdown-it-katex'), require('markdown-it-emoji'));
-    }
+    lineNumbers: true,
   },
   themeConfig: {
-    lang: 'zh-CN',
+    lang: 'en-US',
     subTitle: ' ',
     author: 'Gunjianpan',
     icpLicense: "浙ICP备19005445号-1",
@@ -94,8 +137,7 @@ module.exports = {
       info: '#00B8D4',
       success: '#1DA57A'
     },
-    format:
-        {date: 'YYYY年MM月DD日 HH:mm:ss', dateTime: 'YYYY年MM月DD日 HH:mm:ss'},
+    format: {date: 'YYYY年MM月DD日 HH:mm:ss', dateTime: 'YYYY年MM月DD日 HH:mm:ss'},
     pagination: {path: '/page/:pageNum', pageSize: 5},
     tags: {path: '/tags/:tagName'},
     categories: {path: '/categories/:category'},

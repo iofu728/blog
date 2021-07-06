@@ -25,19 +25,33 @@ MultiHeadAtt 获取多种 token 与 token 之间的关联度，FFN 通过一个�
 
 但事实上这种 Position Encoder 或者叫做 Position Embedding 在 word embedding 上直接叠加能带来的只有位置的绝对信息
 
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577650360636-891f2635-9f6f-4866-8543-cbefca7f8801.png)
+`
+\begin{equation}
+    \begin{aligned}
+        \mathbf{A}_{i, j}^{\mathrm{abs}} &=\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{E}_{x_{j}}}_{(a)}+\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{U}_{j}}_{(b)} \\
+        &+\underbrace{\mathbf{U}_{i}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{E}_{x_{j}}}_{(c)}+\underbrace{\mathbf{U}_{i}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k} \mathbf{U}_{j}}_{(d)} .
+    \end{aligned}
+\end{equation}
+`
 
 (a) 与位置无关，(b),(c) 只有绝对位置信息, 而(d)项实际上也不含有相对位置信息。
 
-回顾 PE 的定义，由一组 sin，cos 组成，为了构造一个 d 维的位置编码(与 word embed 相同维度，分母的次方逐渐增大)
+回顾 PE 的定义，由一组 `$sin$`，`$cos$` 组成，为了构造一个 d 维的位置编码(与 word embed 相同维度，分母的次方逐渐增大)
 
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577650361833-a3e1a95c-5383-49af-96ce-b0ae6d4e458c.png)
+`
+\begin{equation}
+    \begin{aligned}
+        P E_{t, 2 i} &=\sin \left(t / 10000^{2 i / d}\right) \\
+        P E_{t, 2 i+1} &=\cos \left(t / 10000^{2 i / d}\right)
+    \end{aligned}
+\end{equation}
+`
 
 于是可证$PE^T_{t+k}PE_t$只与相对距离 t 有关。
 
 ![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577650362630-e3e5d2f3-de2a-446b-a3d8-c7a6b488e00d.png)
 
-但实际上在$PE^T_{t+k}$与$PE_t$之间还有两个线性 W 系数的乘积(可等效于一个线性系数)。
+但实际上在`$PE^T_{t+k}$与$PE_t$`之间还有两个线性 W 系数的乘积(可等效于一个线性系数)。
 
 由随机初始化 W 之后的 d 项与相对距离 k 之间的关系图可知，W 项的扰动使得原有的 Attention 失去了相对位置之间的信息。
 
@@ -61,7 +75,14 @@ MultiHeadAtt 获取多种 token 与 token 之间的关联度，FFN 通过一个�
 
 他们分别在 QK 乘积计算 Attention bias 的时候和 SoftMax 之后在 Value 后面两处地方加上了一个相对编码(两处参数不共享)。
 
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577650515531-b28795fb-b793-4599-b964-bed869b0e34a.png)
+`
+\begin{equation}
+\begin{aligned}
+z_{i} &=\sum_{j=1}^{n} \alpha_{i j}\left(x_{j} W^{V}+a_{i j}^{V}\right) \\
+e_{i j} &=\frac{x_{i} W^{Q}\left(x_{j} W^{K}+a_{i j}^{K}\right)^{T}}{\sqrt{d_{z}}}
+\end{aligned}
+\end{equation}
+`
 
 为了降低复杂度，在不同 head 之间共享了参数。
 
@@ -81,7 +102,14 @@ Transformer-XL 的工作现在可以称之上开创性的了。
 
 但实际上 relative 的改动对于模型获得句内细粒度层次的信息也是很有帮助的。
 
-![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577650361230-3fe5fa1f-953a-4428-a4c5-bff76c128554.png)
+`
+\begin{equation}
+\begin{aligned}
+\mathbf{A}_{i, j}^{\mathrm{rel}} &=\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k, E} \mathbf{E}_{x_{j}}}_{(a)}+\underbrace{\mathbf{E}_{x_{i}}^{\top} \mathbf{W}_{q}^{\top} \mathbf{W}_{k, R} \color{green}{\underline{\mathbf{R}}_{i-j}}_{(b)}} \\
+&+\underbrace{\color{red}{u^{\top}} \mathbf{W}_{k, E} \mathbf{E}_{x_{j}}}_{(c)}+\underbrace{\color{red}{v^{\top}} \mathbf{W}_{k, R} \color{green}{\mathbf{R}_{i-j}}_{(d)}} \cdot
+\end{aligned}
+\end{equation}
+`
 
 与 NAACL18 那篇不同的地方，Transformer-XL 舍弃了在 SoftMax 之后再叠加 Rij。
 
@@ -126,24 +154,28 @@ RECL 是一个逼近实验，通过测量上下文长度为 c + △，相对长�
 
 这样在之后的 Attention Bias 计算时也不会丢失 Position 相对信息。
 
-为了达成这个目的，就需要找到一种变换，使得对于任意位置 pos，都有$g(pos+n) = \text{Transform}_n(g(pos))$, 为了降低难度把标准降低成找到一种线性变换 Transform。
+为了达成这个目的，就需要找到一种变换，使得对于任意位置 pos，都有`$g(pos+n) = \text{Transform}_n(g(pos))$`, 为了降低难度把标准降低成找到一种线性变换 Transform。
 
 而我们的 Embed 除了上面的性质之外应该还是有界的。
 
-这篇文章证明在满足上述条件下，Transform 的唯一解是复数域中的$g(pos)=z_{2} z_{1}^{pos}$, 且 z1 的幅值小于 1。
+这篇文章证明在满足上述条件下，Transform 的唯一解是复数域中的`$g(pos)=z_{2} z_{1}^{pos}$`, 且 z1 的幅值小于 1。
 
 （这个证明也是有、简单，reviewer 的说法就是有、优美
 
 根据欧拉公式，可以进一步对上述式子进行化简
-$g(\text { pos })=z_{2} z_{1}^{\text {pos }}=r_{2} e^{i \theta_{2}}\left(r_{1} e^{i \theta_{1}}\right)^{\text {pos }}=r_{2} r_{1}^{\text {pos }} e^{i\left(\theta_{2}+\theta_{1} \text { pos }\right)}$
+`
+\begin{equation}
+g(\text { pos })=z_{2} z_{1}^{\text {pos }}=r_{2} e^{i \theta_{2}}\left(r_{1} e^{i \theta_{1}}\right)^{\text {pos }}=r_{2} r_{1}^{\text {pos }} e^{i\left(\theta_{2}+\theta_{1} \text { pos }\right)}
+\end{equation}
+`
 
 为了偷懒，把 r1 设成 1, 而$e^{ix}$的幅值等于 1，就恒满足 r1 的限定。
 
-于是，进一步化简为 $g(\mathrm{pos})=r e^{i(\omega \mathrm{pos}+\theta)}$
+于是，进一步化简为 `$g(\mathrm{pos})=r e^{i(\omega \mathrm{pos}+\theta)}$`
 
 这就是标标准准的虚单位圆的形式，r 为半径，$\theta$为初始幅角，$\frac{\omega}{2\pi}$ 为频率，逆时针旋转。
 
-这个式子又可以化成$f(j, \text { pos })=g_{w e}(j) \odot g_{p e}(j, \text { pos })$ WE 与 PE 的多项式乘积，其中两者所占系数取决于学习到的系数。
+这个式子又可以化成`$f(j, \text { pos })=g_{w e}(j) \odot g_{p e}(j, \text { pos })$` WE 与 PE 的多项式乘积，其中两者所占系数取决于学习到的系数。
 
 于是这相当于一个自适应的调节 WE 和 PE 占比的模式。
 
@@ -159,7 +191,13 @@ $g(\text { pos })=z_{2} z_{1}^{\text {pos }}=r_{2} e^{i \theta_{2}}\left(r_{1} e
 
 Text Classification 选了 4 个 sentiment analysis 数据集，一个主观客观分类，一个问题分类，共六个 benchmark。
 
-Baseline 设置 1. without PE; 2. random PE and train; 3. 三角 PE; 4. r 由 pretrain 初始化，w 随机初始化$(-\pi, \pi)$; 5. r 由 pretrain 初始化，w train;
+Baseline 设置
+
+1. without PE;
+2. random PE and train;
+3. 三角 PE;
+4. r 由 pretrain 初始化，w 随机初始化`$(-\pi, \pi)$`;
+5. r 由 pretrain 初始化，w train;
 
 ![image](https://cdn.nlark.com/yuque/0/2019/png/104214/1577648879630-4b3f1e39-cb94-4946-b140-267207022da5.png)
 
@@ -179,7 +217,3 @@ Complex order 对模型有一定提升，但不是特别多。
 (这篇的作者之前也发了几篇关于复数域上 NLP 的应用，之前模型的名字也很有意思 什么 [CNM](https://www.aclweb.org/anthology/N19-1420/)的 很真实
 
 总的来说 自己的试验结果也显示 RPE 对 Transformer 或者说 Self-Attention 的性能还是很有影响的，还是可以 follow 一些工作的。
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>

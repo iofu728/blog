@@ -44,7 +44,7 @@ MLM 的无监督是否是无监督的极限(当然 ERNIE 2.0 那种偏语法的�
 
 这篇工作是 ICLR2020 的工作, 出发点是利用 _k_ NN 增强长程依赖(这已经不是长程了, 叫跨篇章依赖更合适一点).
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187950211-30431f66-e154-437e-93ef-3ec3c0ba0b0e.png)
+<center><img width="750" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1586187950211-30431f66-e154-437e-93ef-3ec3c0ba0b0e.png"></center>
 
 做法很简单. 拿 BERT-base 对数据中的每一个 token 生成一个(上下文表征 k-(其他 LMs 可能是只有上文), 当前词 v) Pair 对, 合成一个很大的集合 N.
 
@@ -54,7 +54,7 @@ MLM 的无监督是否是无监督的极限(当然 ERNIE 2.0 那种偏语法的�
 
 模型在训练过程中不 fine-tune 预训练模型参数, 利用 FAISS 来优化检索空间(一种优化版的 LSH).
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187952486-4027cb66-7bcd-4cf0-94b5-a5b51b6f56d9.png)
+<center><img width="750" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1586187952486-4027cb66-7bcd-4cf0-94b5-a5b51b6f56d9.png"></center>
 
 主要在 WikiText 103 和 BookCorpus 上做了测试, 其中 WikiText 103 的 baseline 是 Adaptive Input Representations for Neural Language Modeling.
 
@@ -66,19 +66,19 @@ MLM 的无监督是否是无监督的极限(当然 ERNIE 2.0 那种偏语法的�
 
 kNN 的想法显著的提升 ppl 就可以理解为在语义相近的情况下, 增强了显著的共现模式, 从而减小了等概率个数.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187953989-c9b278ed-5fef-4f81-8a0b-0cf2eb4e8ce5.png)
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1586187953989-c9b278ed-5fef-4f81-8a0b-0cf2eb4e8ce5.png"></center>
 
 对比拿数据 Fine-tune 和拿数据做 dataStore, 在用 WikiText 103 Fine-tune 模型的基础上用 WikiText 3B 做 dataStore 的效果显著比拿数据 Fine-tune 效果好.
 
 跨领域/zero-shot 的实验中也能发现即使没有在 BookCorpus 上学习过, 只用 BookCorpus 制作 DataStore 蕴含的信息能提升 ppl 14 个点, 虽然和 fine-tune 的结果还有差距.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187955170-54fd30eb-e9a1-4b0f-b674-3a31e0094dc4.png)
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1586187955170-54fd30eb-e9a1-4b0f-b674-3a31e0094dc4.png"></center>
 
 还测试了 Transformer 结构中不同位置的输出对于最后提升的影响（看起来这个作者有点闲
 
 得到的结果是 FFN 之前 LN 之后这个位置效果最好, 笔者的理解是 MHSA 更关注与当前 sentence 本身, FFN 更关注与上下文的 memory, 不经过 FFN 可以更突出当前句子的信息.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187956980-6b8564db-d9d5-4705-b184-d8f3345b1675.png)
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1586187956980-6b8564db-d9d5-4705-b184-d8f3345b1675.png"></center>
 
 当然有人会怀疑 kNN 这种模式是否和 n-gram 类似, 作者对比了 n-gram 和 kNN 的结果, 使用 n-gram 之后 performance 变化不大.
 
@@ -98,13 +98,13 @@ kNN 的想法显著的提升 ppl 就可以理解为在语义相近的情况下, 
 
 > [REALM: Retrieval-Augmented Language Model Pre-Training.](https://arxiv.org/abs/2002.08909)
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187960615-3df26a0f-3916-4ed7-876d-39534251f1ba.png)
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1586187960615-3df26a0f-3916-4ed7-876d-39534251f1ba.png"></center>
 
 这篇的工作是在几位 dalao ACL2019 那篇 [ORQA](https://arxiv.org/abs/1906.00300) 的基础上做的工作. 共一和通讯作者是 BERT 四分之二作者.
 
 这篇文章主要是在 Open domain QA task 上做的工作(毕竟是谷果的核心业务 👍)
 
-大概思路是利用一个隐式的 Retriever 来扩展语料增强语义. $p(y | x)=\sum_{z \in \mathcal{Z}} p(y | z, x) p(z | x)$
+大概思路是利用一个隐式的 Retriever 来扩展语料增强语义, 即`$p(y | x)=\sum_{z \in \mathcal{Z}} p(y | z, x) p(z | x)$`
 
 将预测词相对于上下文的条件概率展开成相关篇章基于上下文的概率与预测词相对于上下文和篇章的概率乘积之和.
 
@@ -117,26 +117,28 @@ kNN 的想法显著的提升 ppl 就可以理解为在语义相近的情况下, 
 - 文档的 embed 则是将 document 的 title 和 body 拼接起来用 sep 分割, 同样取 CLS 的输出再乘上一个线性矩阵
 - 这边考虑两个 Embed 相乘, 感觉更多的预先处理的角度.
 
-$p(z | x)=\frac{\exp f(x, z)}{\sum_{z^{\prime}} \exp f\left(x, z^{\prime}\right)}$
+`\begin{equation}p(z | x)=\frac{\exp f(x, z)}{\sum_{z^{\prime}} \exp f\left(x, z^{\prime}\right)}\end{equation}`
 
-$f(x, z)=\text { Embed }_{\text {input }}(x)^{\top} \text { Embed }_{\text {doc }}(z)$
+`\begin{equation}f(x, z)=\text { Embed }_{\text {input }}(x)^{\top} \text { Embed }_{\text {doc }}(z)\end{equation}`
 
-$\text { Embed }_{input}(x)=\mathbf{W}_{\text {input }} BERT_{\text {CLS }}\left(\text { join }_{\text {BERT }}(x)\right)$
+`\begin{equation}\text { Embed }_{input}(x)=\mathbf{W}_{\text {input }} BERT_{\text {CLS }}\left(\text { join }_{\text {BERT }}(x)\right)\end{equation}`
 
-$\text { Embed }_{\text {doc }}(z)=\mathbf{W}_{\text {doc }} BERT_{\text {CLS }}\left(\text { join }_{\text {BERT }}\left(z_{\text {title }}, z_{\text {body }}\right)\right)$
+`\begin{equation}\text { Embed }_{\text {doc }}(z)=\mathbf{W}_{\text {doc }} BERT_{\text {CLS }}\left(\text { join }_{\text {BERT }}\left(z_{\text {title }}, z_{\text {body }}\right)\right)\end{equation}`
 
 知识增强编码器的计算分为预训练和微调两个模式
 
 - Pre-trained.
-  - j 位置预测为 y_j 的概率乘积
-  - 而 y_j 在 z, x 下的概率与拼接 x 与 z 的正文部分得到的在 Mask_j 位置的表征的指数次呈正相关.
+  - j 位置预测为 `$y_j$` 的概率乘积
+  - 而 `$y_j$` 在 z, x 下的概率与拼接 x 与 z 的正文部分得到的在 `$Mask_j$` 位置的表征的指数次呈正相关.
 - Fine-tune
   - n 个 span 的表征之和
   - span 的表征则为将 x 与 z 的正文部分拼接在一起在 span start end 两个位置的 representations 输出 concat 在一起, 然后过一个 MLP 之和再取指数次.
 
-$$
-\begin{aligned} p(y | z, x) &=\prod_{j=1}^{J_{x}} p\left(y_{j} | z, x\right) \\ p\left(y_{j} | z, x\right) & \propto \exp \left(w_{j}^{\top} BERT_{MASK(j)}\left(\text { join }_{\mathrm{BERT}}\left(x, z_{\mathrm{body}}\right)\right)\right) \end{aligned}
-$$
+`\begin{equation}
+\begin{aligned}
+p(y | z, x) &=\prod_{j=1}^{J_{x}} p\left(y_{j} | z, x\right) \\ p\left(y_{j} | z, x\right) & \propto \exp \left(w_{j}^{\top} BERT_{MASK(j)}\left(\text { join }_{\mathrm{BERT}}\left(x, z_{\mathrm{body}}\right)\right)\right)
+\end{aligned}
+\end{equation}`
 
 当然 z 对于 x 的分布是一个长尾分布, 大部分 z 对于 x 都是没用的, top-K 是一个很显然的思路.
 再利用 LSH 这种 MIPS 方法对搜索空间进行优化.
@@ -147,7 +149,7 @@ LSH 的思路大概就是高维空间的投影能保留相近的关系, 但投�
 这部分更新的只是 Top-K 的参数.
 作者认为经过预训练 Document 的 Embed 已经很好了, 在 Fine-tune 阶段 Document 的 Embed 就固定了不再进行训练了.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187962425-9a4993f5-0bc0-4d86-8637-87ac68d15077.png)
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1586187962425-9a4993f5-0bc0-4d86-8637-87ac68d15077.png"></center>
 
 然后还加了一些 tricks 上去
 
@@ -160,11 +162,9 @@ LSH 的思路大概就是高维空间的投影能保留相近的关系, 但投�
 
 作者除了提出以上模型, 训练方法之外, 还试图解释 Retriever 学习到的内容.
 
-$$
-\begin{aligned} \nabla \log p(y | x) &=\sum_{z \in \mathcal{Z}} r(z) \nabla f(x, z) \\ r(z) &=\left[\frac{p(y | z, x)}{p(y | x)}-1\right] p(z | x) \end{aligned}
-$$
+`\begin{equation}\begin{aligned} \nabla \log p(y | x) &=\sum_{z \in \mathcal{Z}} r(z) \nabla f(x, z) \\ r(z) &=\left[\frac{p(y | z, x)}{p(y | x)}-1\right] p(z | x) \end{aligned}\end{equation}`
 
-logp(y|x)对 Retriever 参数求偏导可以得到[(这一部分推到可以参考我在 pdf 中手推的过程)](https://www.yuque.com/preview/yuque/0/2020/pdf/104214/1586187444506-2c27d9ef-d29a-4b2f-9581-479901113e1e.pdf)
+`$\log p(y|x)$`对 Retriever 参数求偏导可以得到[(这一部分推到可以参考我在 pdf 中手推的过程)](https://www.yuque.com/preview/yuque/0/2020/pdf/104214/1586187444506-2c27d9ef-d29a-4b2f-9581-479901113e1e.pdf)
 
 相当于模型的梯度是向那些加上 z 条件概率变大的样本.
 这也很符合直观感受, Retriever 学到的更多的是筛选能提升 performance 的文档的能力.
@@ -179,11 +179,11 @@ logp(y|x)对 Retriever 参数求偏导可以得到[(这一部分推到可以参�
 Ablation 实验可以看出参数 Fine-tune 影响不是特别大, mask 机制影响特别大, 基本上包括了所有的提升点.
 我的理解是 random Mask 容易使得 sentence 失去原本的语义, 从而对 Retriever 产生巨大的影响.
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187966387-559dd44f-c2d7-4357-870d-10b0c0307fbe.png)
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1586187966387-559dd44f-c2d7-4357-870d-10b0c0307fbe.png"></center>
 
 同样的, 设计了一个 RU 指标, 来 probing Retriever 对模型的影响.
 
-$\mathrm{RU}(z | x)=\log p(y | z, x)-\log p(y | \varnothing, x)$
+`\begin{equation}\mathrm{RU}(z | x)=\log p(y | z, x)-\log p(y | \varnothing, x)\end{equation}`
 
 ![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1586187967534-c1b4dc2b-0740-4ca4-8e45-316be2a95080.png)
 
@@ -203,6 +203,6 @@ $\mathrm{RU}(z | x)=\log p(y | z, x)-\log p(y | \varnothing, x)$
 
 水平有限, 欢迎讨论.
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"> -->
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/> -->

@@ -61,7 +61,7 @@ TPC-H中有22个子问题 每一个都是较为复杂的语句
 
 本文以TPC-H Q19为例子
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543900801565-c37e0475-d3bb-4004-9cb1-489da44bbe6b.png "")
+<center><img width="400" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1543900801565-c37e0475-d3bb-4004-9cb1-489da44bbe6b.png"></center>
 
 这是一个两表Join操作
 
@@ -103,7 +103,7 @@ DBMS首先识别查询计划中的pipeline breakers(可以理解为CPU刷到内�
 
 两个breaker中的任何operation就都可以在CPU寄存器中完成，从而提高数据局部性
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543902560411-b9c23986-6754-45ba-9d86-c4dc032241e7.png "")
+<center><img width="400" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1543902560411-b9c23986-6754-45ba-9d86-c4dc032241e7.png"></center>
 
 如图(a)所示, 用P1, P2, P3三个Pipeline表示TPC-H Q19，用Ω表示中间输出表
 
@@ -125,7 +125,7 @@ Hash-Table在建立时 需要四步 每一步都是依赖上一步的
 * `Hash Cell address` -> `Hash buck header`
 * `Build tuple` -> `Hash Cell address`
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543903594860-4e8ef933-048d-481b-bbd0-26d90a47af17.png  "")
+<center><img width="400" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1543903594860-4e8ef933-048d-481b-bbd0-26d90a47af17.png"></center>
 
 ### Vectorized Processing
 
@@ -166,11 +166,18 @@ GP-组预取 顾名思义就是分组的形式来预先获取信息
 在完成code 1的时候预取code 2的数据
 一次类推
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543904768006-921e9519-69dc-44d4-b49f-fe90f6b0aa6a.png "")
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1543904768006-921e9519-69dc-44d4-b49f-fe90f6b0aa6a.png"></center>
 
 这样只要G足够大 就能把从内存load到缓存中的时间抵消掉，即
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543904987910-dbfbd9d1-fd7c-4adb-b228-d66744e76aa0.png "")
+`
+\begin{equation}
+\left\{\begin{array}{l}
+(G-1) \cdot C_{0} \geq T_{1} \\
+(G-1) \cdot \max \left\{C_{l}, T_{\text {next }}\right\} \geq T_{1}, l=1,2, \cdots, k
+\end{array}\right.
+\end{equation}
+`
 
 当然在Hash-Table建立的时候 可能会出现冲突 为解决冲突 在访问前加flag锁
 
@@ -200,7 +207,11 @@ SPP就是这样的一种方案
 
 同样 只要我们不断增加D值 就一定可以找到一个情况 使得并行时间把load到缓存的时间抵消掉 从而达到预取的效果
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543905675652-ea7edd00-c21a-479e-a9d6-40bc89d61a5a.png "")
+`
+\begin{equation}
+D \cdot\left(\max \left\{C_{0}+C_{k}, T_{n e x t}\right\}+\sum_{l=1}^{k-1} \max \left\{C_{l}, T_{n e x t}\right\}\right) \geq T
+\end{equation}
+`
 
 SPP处理冲突就稍微复杂一点 对于每个冲突的Hash-Buck 建立相应的消息队列 使得其自动的消费冲突请求
 
@@ -271,7 +282,7 @@ ROF与SIMD最大的区别：
 
 然后ROF利用掩码谓词进行优化
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543928673323-6bfa986a-7401-49bd-955c-032c0c926e33.png "")
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1543928673323-6bfa986a-7401-49bd-955c-032c0c926e33.png"></center>
 
 ### Prefetching
 
@@ -320,7 +331,7 @@ Hash表设计为，由一个8字节的状态字段开始，其描述了（1）�
 
 其中Q13最能反映优化效果 具体过程就是在一些步骤间增加Stage 以聚集SIMD向量 然后在聚集的过程中 做一些预取操作
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1543929324254-d3407743-4347-4d89-b68b-8aa6063a9c0b.png "")
+<center><img width="400" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1543929324254-d3407743-4347-4d89-b68b-8aa6063a9c0b.png"></center>
 
 ## Reference
 1. [Relaxed Operator Fusion for In-Memory Databases: Making Compilation, Vectorization, and Prefetching Work Together At Last[`Menon, P. et al. 2017`]](https://15721.courses.cs.cmu.edu/spring2018/papers/22-vectorization2/menon-vldb2017.pdf)

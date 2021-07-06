@@ -11,6 +11,7 @@
         <h2 class="display-1 mb-3"
             v-else>{{page.title}}</h2>
         <div class="post-meta">
+          <span class="author">{{page.author}}</span>
           <PostTime v-if="page.frontmatter" :date="page.frontmatter.date"></PostTime>
           <span class="title_views">文章访问量:{{page.titleViews}}</span>
         </div>
@@ -136,7 +137,13 @@ export default {
   }
 }
 
+.author
+  font-family: $font-code;
+  margin 0 10px 0 0
+  color #6d6d6d
+
 .title_views
+  font-family: $font-code;
   margin 0 0 0 10px
   color #6d6d6d
 </style>

@@ -90,21 +90,18 @@ PS: 以上两篇paper 都承诺开源code ~~(虽然repository里面都没有code
 
 `U`->`U*`的过程是简单的把多个矩阵拼接成一个矩阵
 
-$U^*_i \in R^{d^* \times n_i}(d^*=\sum d_k)$
+`\begin{equation}U^*_i \in R^{d^* \times n_i}(d^*=\sum d_k)\end{equation}`
 
 而`fusion`则是利用类似`CNN`的公式
 
-$t_{i,j}=f(\hat{e_{i,j}},\bar{e_{i,j}})=ReLU(W_p[(\hat{e_{i,j}}-\bar{e_{i,j}}) \odot \hat{e_{i,j}}-\bar{e_{i,j}});\hat{e_{i,j}} \odot \bar{e_{i,j}}]+b_p)$
+`\begin{equation}t_{i,j}=f(\hat{e_{i,j}},\bar{e_{i,j}})=ReLU(W_p[(\hat{e_{i,j}}-\bar{e_{i,j}}) \odot \hat{e_{i,j}}-\bar{e_{i,j}});\hat{e_{i,j}} \odot \bar{e_{i,j}}]+b_p)\end{equation}`
 
 其中
 
-$w_{j,k}^i=V_a^T tanh(W_a[\hat{e_{i,j}\oplus \hat{e_{r,k}}]+b_a})$
-
-$\alpha_{j,k}^i=\frac{exp(\omega_{j,k}^i)}{\sum(exp(\omega_{j,k}^i))}$
-
-$\bar{e_{i,j}}=\sum{\alpha_{j,k}^i}\hat{e_{r,k}}$
-
-$\odot$ 就是`Hadamard dot` (或者叫`element-wise multiplication`)
+`\begin{equation}w_{j,k}^i=V_a^T tanh(W_a[\hat{e_{i,j}\oplus \hat{e_{r,k}}]+b_a})\end{equation}`
+`\begin{equation}\alpha_{j,k}^i=\frac{exp(\omega_{j,k}^i)}{\sum(exp(\omega_{j,k}^i))}\end{equation}`
+`\begin{equation}\bar{e_{i,j}}=\sum{\alpha_{j,k}^i}\hat{e_{r,k}}\end{equation}`
+`$\odot$` 就是`Hadamard dot` (或者叫`element-wise multiplication`)
 
 之后就跟上`GRU`和`MLR`得到相应的score值
 
@@ -159,7 +156,3 @@ $\odot$ 就是`Hadamard dot` (或者叫`element-wise multiplication`)
 ## `References`
 1. [Multi-Representation Fusion Network for Multi-turn Response Selection in Retrieval-based Chatbots. Chongyang Tao et al. WSDM2019.](https://dl.acm.org/ft_gateway.cfm?id=3290985&ftid=2038017&dwn=1&CFID=48199586&CFTOKEN=fd4f6dfb8820cbf2-214D0EB6-AEAD-530A-88B454E3E573F7AF)
 2. [Interactive Matching Network for Multi-Turn Response Selection in Retrieval-Based Chatbots. Jia-Chen Gu et al. 2019](https://arxiv.org/pdf/1901.01824)
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>

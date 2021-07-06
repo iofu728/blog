@@ -9,7 +9,7 @@ description: Empower Entity Set Expansion via LM Probing
 
 今天介绍一个小众的 Task, 实体集合拓展(Entity set expansion).
 
-Empower Entity Set Expansion via Language Model Probing. ACL 2020.  
+[Empower Entity Set Expansion via Language Model Probing](https://www.aclweb.org/anthology/2020.acl-main.725). ACL 2020.  
 _Yunyi Zhang, Jiaming Shen, Jingbo Shang, Jiawei Han_
 
 任务的目标是拓展原有的实体集合，向其中添加相同类别的实体，注意这里的实体类别一般不是传统的 7 大 NER 类别，更偏向 Fine-grained 的。
@@ -26,7 +26,7 @@ _Yunyi Zhang, Jiaming Shen, Jingbo Shang, Jiawei Han_
 
 本文从这个角度出发，通过两个 query 分别预测实体类别和实体, 试图更好的利用预训练模型中的语言知识。
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1592151138136-28c0c5fd-dc82-41ce-aeca-fc5206b6aa1f.png)
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1592151138136-28c0c5fd-dc82-41ce-aeca-fc5206b6aa1f.png"></center>
 
 初看可能思路比较简单，只是做一个 MLM 的预测。
 但如果只是这样，最多只是让生成的实体更符合生成的 class name，但很容易产生误差传递的问题, 并没解决语义偏移的问题。
@@ -53,14 +53,12 @@ _Yunyi Zhang, Jiaming Shen, Jingbo Shang, Jiawei Han_
 每次随机抽取三个实体组成一个 query。
 这些 query 简短，主要起到的构建层次化语义，强化归纳类别信息的作用，例如`Country such as China, Japan, South Korea.`
 
-```
 - NPy such as NPa
 - such NPy as NPa
 - NPa or other NPy
 - NPa and other NPy
 - NPy, including NPa
 - NPy, especially NPa
-```
 
 通过 Mask pattern 中 class name 部分，预测出最符合当前三个实体的 class name。
 
@@ -78,23 +76,23 @@ _Yunyi Zhang, Jiaming Shen, Jingbo Shang, Jiawei Han_
 
 单纯的做上面的 MLM 任务，使用的只是 LM 学到的分布，不一定符合当前 Corpus.
 
-在这个阶段，目标是筛选出来最佳 class name($c_p$) 和一些负样本($C_N$, 用于后面辅助选择 entity).
+在这个阶段，目标是筛选出来最佳 class name(`$c_p$`) 和一些负样本(`$C_N$`, 用于后面辅助选择 entity).
 
 一个简单的想法，统计前面一个阶段每个 class name 出现的次数，作为排序的指标，但是容易更偏向短 token。
 
 
 这边定义一个实体-类别相似度 M，其通过两个 Max 获取到最相关的共现关系。
-$X_e$ 表示语料集中所有 entity 的 representation，$X_c$ 表示 Hearst pattern 用 MASK 遮掉实体词的 representation.
+`$X_e$` 表示语料集中所有 entity 的 representation，`$X_c$` 表示 Hearst pattern 用 MASK 遮掉实体词的 representation.
 
 内层 Max 是寻找每一个 entity representation 最吻合的 query pattern，外层本质上是一个筛选 Top-k 的 contextual.
 
-对于原始实体集合 E 中的每一个实体 $e_i$ 都获得一个 class ranking list $L_i$.
+对于原始实体集合 E 中的每一个实体 `$e_i$` 都获得一个 class ranking list `$L_i$`.
 
-最后的 class score 用各个 ranking list 的排名倒数和，$s(c)=\sum_{i=1}^{|E|} \frac{1}{r_{c}^{i}}$.
+最后的 class score 用各个 ranking list 的排名倒数和，`$s(c)=\sum_{i=1}^{|E|} \frac{1}{r_{c}^{i}}$`.
 
 通过这样操作放大不同排名 class name 之间的差距。
 
-取 S(c)最大的作为正例$c_p$, 选取各个 ranking list 中排名都比$c_p$低的作为负样本$C_N$.
+取 S(c)最大的作为正例`$c_p$`, 选取各个 ranking list 中排名都比`$c_p$`低的作为负样本`$C_N$`.
 
 ### Class-guided Entity Selection
 
@@ -102,15 +100,15 @@ $X_e$ 表示语料集中所有 entity 的 representation，$X_c$ 表示 Hearst p
 
 然后定义 class-entity 匹配程度，从两个角度出发。
 
-- Local score,${score}_{i}^{l o c}=M^{k}\left(e_{i}, c_{p}\right)$
-- Global score, ${score}_{i}^{g l b}=\frac{1}{\left|E_{s}\right|} \sum_{e \in E_{s}} \cos \left({v}_{e_{i}}, {v}_{e}\right)$
+- Local score, `${score}_{i}^{l o c}=M^{k}\left(e_{i}, c_{p}\right)$`
+- Global score, `${score}_{i}^{g l b}=\frac{1}{\left|E_{s}\right|} \sum_{e \in E_{s}} \cos \left({v}_{e_{i}}, {v}_{e}\right)$`
 
 第一个式子，使用 Class Name Ranking 中定义的 M，来获取 Corpus 中和 class name 中最吻合的 k 个位置作为其表示。
 这边称之为 local，感觉想表达这种 score 只蕴含相似度头部部分，是一种局部的评价。
 
 第二个式子，先 mean pooling Corpus 中所有该实体的 contextual representation，然后与 origin 实体集合中的实体做 cos 相似度。
 
-注意，我们计算时用的是从 E 中随机抽取出来的子集$E_S\in E$，以期降低 noise 的作用，有一点 boosting 的感觉。
+注意，我们计算时用的是从 E 中随机抽取出来的子集`$E_S\in E$`，以期降低 noise 的作用，有一点 boosting 的感觉。
 
 这种算是追求 contextual-free 的操作。
 
@@ -120,16 +118,16 @@ $X_e$ 表示语料集中所有 entity 的 representation，$X_c$ 表示 Hearst p
 
 回想一下，我们前面分析的会出现的问题，第一个是 ambiguous 这个试图用 class name，还有后面的一些 score 计算方式来解决；第二个语义偏移，我们好像还没办法解决。
 
-这边就用一个回溯的思想，把 entity $e_i$ 加到 E 中再做一次 Class Name Ranking.
-讲道理如果没有发生语义偏移的话，那应该$c_p$还是第一，$c_p$ 应该还是要比所有 negative sample 排名要高。
+这边就用一个回溯的思想，把 entity `$e_i$` 加到 E 中再做一次 Class Name Ranking.
+讲道理如果没有发生语义偏移的话，那应该$c_p$还是第一，`$c_p$` 应该还是要比所有 negative sample 排名要高。
 
 在这边就用一个指示函数来做这件事，当然用指示函数就相对于去截断，是一个 filter 兜底的过程。
 
-然后，重复抽取子集$E_S$T 次，构建出 T 个 Entity Ranking List.
+然后，重复抽取子集`$E_S$`T 次，构建出 T 个 Entity Ranking List.
 
 这边用两种模式，汇集这 T 次的结果。
 
-1. 排名的倒数. $s^{t}\left(e_{i}\right)=\frac{1}{r_{i}^{t}}$
+1. 排名的倒数. `$s^{t}\left(e_{i}\right)=\frac{1}{r_{i}^{t}}$`
 2. 相对 score. 
 
 实验解决显示，方案 1 效果会更好点。
@@ -153,7 +151,7 @@ Ablation experiments 中，NoCN 是去掉 Class name 模块直接计算 score，
 
 NoFilter 在 Wiki 上差异不大，在 APR 上就比较大了，可能是 BERT 已经能很好控制 Wikipedia 语料中语义的情况。
 
-![image](https://cdn.nlark.com/yuque/0/2020/png/104214/1592151142824-26d4c6e0-fd47-4be8-98a7-db54f6799be2.png)
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1592151142824-26d4c6e0-fd47-4be8-98a7-db54f6799be2.png"></center>
 
 这张表可能要结合 case study 才能分析，对 55 个 entity set 进行分析，MAP@10 比较稳定，到还好解释，对于 SetExpan 应该属于全面优于的佐证，对于其他 ablation 模式，更偏向于对于 Top 靠前差异不大。
 但对于 MAP@20 比较稳定就有些迷惑，大概率是微笑的偏差造成百分比的放大。
@@ -181,7 +179,3 @@ Case study 中可以看见 negative class name 很高质量，能够分离特别
 6. 如果有 pair-wise 的对比实验就更好了
 
 水平有限, 欢迎讨论.
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
