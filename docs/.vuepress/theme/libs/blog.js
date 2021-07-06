@@ -113,7 +113,7 @@ const install = (Vue, { theme, pages }) => {
         script.id = "utteranc";
         script.async = true;
         script.setAttribute('issue-term', 'title');
-        script.setAttribute('theme', 'preferred-color-scheme')
+        script.setAttribute('theme', 'github-light')
         script.setAttribute('repo',`iofu728/blog`)
         script.setAttribute('crossorigin',`anonymous`)
         script.src = 'https://utteranc.es/client.js';
