@@ -87,14 +87,13 @@ public class CorsFilter implements Filter {
     }
 
     private Cookie cookieGenerator(HttpServletRequest request) throws IOException, GeneralSecurityException {
-        String ip = request.getRemoteAddr();
+        String ip = getRemoteAddr(request);
         String userAgent = request.getHeader("User-Agent");
         String message = new StringBuilder()
                 .append(ip).append("\t")
                 .append(userAgent).append("\t")
                 .append(System.currentTimeMillis())
                 .toString();
-        System.out.println(ip);
         Cookie c = new Cookie(webConfigurationDO.getCookieKey(), rsaProvider.encrypt(message));
         c.setMaxAge(86400);
         c.setHttpOnly(true);
@@ -108,9 +107,19 @@ public class CorsFilter implements Filter {
         String[] mList = message.split("\t");
 
         return mList.length != 3
-                || !request.getRemoteAddr().equals(mList[0])
+                || !getRemoteAddr(request).equals(mList[0])
                 || !request.getHeader("User-Agent").equals(mList[1])
                 || !NumericRelated.isNumeric(mList[2])
                 || System.currentTimeMillis() - Long.parseLong(mList[2]) > TimestampEnums.ADAY.getTimestamp();
+    }
+
+    private String getRemoteAddr(HttpServletRequest request) {
+        String ip = request.getRemoteAddr();
+        if (ip.equals("127.0.0.1")) {
+            ip = request.getHeader("X-Forwarded-For");
+        }
+
+        System.out.println(ip);
+        return ip;
     }
 }
