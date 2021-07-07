@@ -1,6 +1,6 @@
 package com.github.iofu728.blog.repository.mapper;
 
-import com.github.iofu728.blog.repository.entity.TitleDo;
+import com.github.iofu728.blog.repository.entity.TitleDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -24,7 +24,7 @@ public interface TitleViewsMapper {
      */
     @Select({"SELECT `id`, `title_name` AS `titleName`, `local_views` AS `localViews`, `zhihu_views` AS `zhihuViews`," +
             "`csdn_views` AS `csdnViews`, `csdn_views` AS `csdnViews` from title_views WHERE `is_deleted` = 0"})
-    List<TitleDo> selectTitleViewsForAll();
+    List<TitleDO> selectTitleViewsForAll();
 
     /**
      * get title views

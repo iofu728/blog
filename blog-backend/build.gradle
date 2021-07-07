@@ -114,6 +114,7 @@ project(":blog-repository") {
         compile "org.mybatis:mybatis-spring:$mybatisSpringVersion"
         compile "org.mybatis:mybatis:$mybatisVersion"
         compile "redis.clients:jedis:$jedisVersion"
+        compile "commons-codec:commons-codec:1.6"
         compile "org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
 
     }

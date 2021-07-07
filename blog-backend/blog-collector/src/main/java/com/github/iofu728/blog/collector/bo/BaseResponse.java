@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-import com.github.iofu728.blog.collector.consts.ErrorCodeConsts;
+import com.github.iofu728.blog.collector.consts.ErrorCodeConst;
 
 /**
  * BaseResponse class
@@ -39,7 +39,7 @@ public class BaseResponse<T> implements Serializable {
      * @return BaseResponse
      */
     public static Builder newSuccResponse() {
-        return new Builder().success(true).errorCode(ErrorCodeConsts.STATUS_SUCCESS);
+        return new Builder().success(true).errorCode(ErrorCodeConst.STATUS_SUCCESS);
     }
 
     /**

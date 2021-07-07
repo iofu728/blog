@@ -6,7 +6,7 @@ package com.github.iofu728.blog.collector.consts;
  * @author gunjianpan
  * @date 19-02-02
  */
-public class ErrorCodeConsts {
+public class ErrorCodeConst {
     /** success. */
     public static final int STATUS_SUCCESS = 10200;
     /** error. */

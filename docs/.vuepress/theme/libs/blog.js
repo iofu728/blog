@@ -15,7 +15,7 @@ const install = (Vue, { theme, pages }) => {
   const pageViews = {}
   const titleList = []
 
-  request('/api/pv/list?timestamp=' + new Date().getTime())
+  request('/api/pv/list?timestamp=' + new Date().getTime(), {headers: {'Content-Type': 'application/json'}})
     .then(res => res.result)
     .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
     .catch(reason => console.log(reason.message));
@@ -68,7 +68,7 @@ const install = (Vue, { theme, pages }) => {
       getPageViews () {
         console.log(pageViews);
         console.log(this.$page.path);
-        request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path))
+        request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path), {headers: {'Content-Type': 'application/json'}})
           .catch(reason => console.log(reason.message));
 
       },

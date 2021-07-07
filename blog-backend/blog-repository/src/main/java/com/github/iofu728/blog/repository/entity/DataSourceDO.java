@@ -4,14 +4,14 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * DataSourceDo class
+ * DataSourceDO class
  *
  * @author gunjianpan
  * @date 19-02-06
  */
 @Data
 @ConfigurationProperties(prefix = "db.mysql")
-public class DataSourceDo {
+public class DataSourceDO {
 
     private String hostName;
 

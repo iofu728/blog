@@ -41,17 +41,22 @@ public class PageViewsServiceImpl implements PageViewsService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Boolean updatePageViews(Long timestamp, String titleName){
+    public Boolean updatePageViews(Long timestamp, String titleName, boolean isUpdated){
+        if (!isUpdated) {
+            return true;
+        }
 
         Integer nowPageViews = pageViewsRepository.getNowPageViews(timestamp);
         Boolean updatePageViewsResult = pageViewsRepository.updateNowPageViews(timestamp, nowPageViews + 1);
-        if (titleName.equals("null")) {
+        if (titleName.equals("null") || titleName.equals("homePage")) {
             return true;
         }
+
         Integer nowTitleViews = titleViewsRepository.getNowTitleViews(titleName);
         if (nowTitleViews == -1) {
             return false;
         }
+
         Boolean updateTitleViewsResult = titleViewsRepository.updateNowTitleViews(titleName, nowTitleViews + 1);
         return updatePageViewsResult && updateTitleViewsResult;
     }

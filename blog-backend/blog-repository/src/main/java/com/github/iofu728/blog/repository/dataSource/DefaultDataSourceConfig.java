@@ -1,6 +1,6 @@
 package com.github.iofu728.blog.repository.dataSource;
 
-import com.github.iofu728.blog.repository.entity.DataSourceDo;
+import com.github.iofu728.blog.repository.entity.DataSourceDO;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,31 +20,31 @@ import javax.sql.DataSource;
  */
 @Configuration
 @Profile(value = "default")
-@EnableConfigurationProperties(DataSourceDo.class)
+@EnableConfigurationProperties(DataSourceDO.class)
 public class DefaultDataSourceConfig {
 
-    private DataSourceDo dataSourceDo;
+    private DataSourceDO dataSourceDO;
 
     @Autowired
-    public DefaultDataSourceConfig(DataSourceDo dataSourceDo){
-        this.dataSourceDo = dataSourceDo;
+    public DefaultDataSourceConfig(DataSourceDO dataSourceDO){
+        this.dataSourceDO = dataSourceDO;
     }
 
     @Primary
     @Bean(destroyMethod = "close", name = "dataSource")
     public DataSource dataSource() throws Exception {
         String jdbcUrl = new StringBuilder("jdbc:mysql://")
-                .append(dataSourceDo.getHostName())
+                .append(dataSourceDO.getHostName())
                 .append(":")
-                .append(dataSourceDo.getPort())
+                .append(dataSourceDO.getPort())
                 .append("/")
-                .append(dataSourceDo.getDatabaseName()).toString();
+                .append(dataSourceDO.getDatabaseName()).toString();
 
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
         config.setJdbcUrl(jdbcUrl);
-        config.setUsername(dataSourceDo.getMysqlUserName());
-        config.setPassword(dataSourceDo.getMysqlPassage());
+        config.setUsername(dataSourceDO.getMysqlUserName());
+        config.setPassword(dataSourceDO.getMysqlPassage());
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");

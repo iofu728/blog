@@ -5,5 +5,9 @@ db:
     databaseName: blog
     mysqlUserName: root
     mysqlPassage: passage
-
-
+web:
+  hosts: https://xyz.xin
+  apiHost: xyz
+  rsaPublicKeyPath: xyz
+  rsaPrivateKeyPath: xyz
+  cookieKey: xyz

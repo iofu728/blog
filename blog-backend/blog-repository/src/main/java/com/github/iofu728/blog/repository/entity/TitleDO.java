@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 /**
- * TitleDo class
+ * TitleDO class
  *
  * @author gunjianpan
  * @date 19-02-06
@@ -16,7 +16,7 @@ import lombok.NonNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TitleDo {
+public class TitleDO {
 
     @NonNull
     private Integer id;

@@ -28,5 +28,5 @@ const slugReg = /\/([^\/]+).html$/;
 
 export function matchSlug(path) {
   const arr = path.match(slugReg);
-  return arr ? arr[1] : null;
+  return arr ? arr[1] : "homePage";
 }
