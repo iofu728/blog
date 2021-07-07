@@ -68,7 +68,12 @@ public class CorsFilter implements Filter {
                 if (cookies != null) {
                     for (Cookie cookie : cookies) {
                         if (cookie.getName().equals(webConfigurationDO.getCookieKey())) {
-                            have_cookie = !isCookieInvalid(cookie.getValue(), request);
+                            try {
+                                have_cookie = !isCookieInvalid(cookie.getValue(), request);
+                            } catch (Exception e) {
+                                score = ScoreConst.DECRYPTION_ERROR_SCORE;
+                                have_cookie = true;
+                            }
                         }
                     }
                 }

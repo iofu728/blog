@@ -17,4 +17,6 @@ public class ScoreConst {
     public static final int HEADER_ERROR_SCORE = 101;
     /** post etc. method score. */
     public static final int METHOD_ERROR_SCORE = 102;
+    /** decryption error score. */
+    public static final int DECRYPTION_ERROR_SCORE = 103;
 }
