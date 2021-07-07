@@ -39,6 +39,7 @@ public class PermissionFilterServiceImpl implements PermissionFilterService {
         String method = request.getMethod();
         String domain = request.getHeader("Origin");
         List<String> allowedDomain = Arrays.asList(webConfigurationDO.getHosts().split(",").clone());
+        List<String> allowedHost = Arrays.asList(webConfigurationDO.getApiHost().split(",").clone());
 
         String userAgent = request.getHeader("User-Agent");
         String host = request.getHeader("Host");
@@ -48,7 +49,7 @@ public class PermissionFilterServiceImpl implements PermissionFilterService {
                 && userAgent != null
                 && userAgent.length() >= 10
                 && !p.matcher(userAgent).find()
-                && host.equals(webConfigurationDO.getApiHost()))) {
+                && allowedHost.contains(host))) {
             return ScoreConst.HEADER_ERROR_SCORE;
         }
 

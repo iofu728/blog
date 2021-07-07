@@ -27,10 +27,14 @@ const checkStatus = response => {
  * @return {object}           An object containing either "data" or "err"
  */
 export default async function request(url, options) {
-  const frontendDomainTem = window.location.href.split('/')[2];
-  const nowUrl = frontendDomainTem.includes(':') ?
-    'http://'+frontendDomainTem.split(':')[0] + ':8848'+ url :
-    'https://api.wyydsb.com' + url;
+  const frontendDomainTem = window.location.href.split('/')[2].replace("www.", "")
+  var nowUrl = "";
+  if (frontendDomainTem.includes(':')) {
+    nowUrl = 'http://' + frontendDomainTem.split(':')[0] + ':8848' + url;
+  } else {
+    'https://api.' + frontendDomainTem + url;
+  }
+
   try {
     const response =
         await fetch(nowUrl, {...options, mode: 'cors', credentials: 'include'});
