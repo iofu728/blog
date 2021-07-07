@@ -73,7 +73,7 @@ public class CorsFilter implements Filter {
                     }
                 }
                 if (!have_cookie ) {
-                    response.addCookie(cookieGenerator(request));
+                    response.setHeader("Set-Cookie", cookieGenerator(request));
                 }
             }
         }
@@ -86,7 +86,7 @@ public class CorsFilter implements Filter {
     public void destroy() {
     }
 
-    private Cookie cookieGenerator(HttpServletRequest request) throws IOException, GeneralSecurityException {
+    private String cookieGenerator(HttpServletRequest request) throws IOException, GeneralSecurityException {
         String ip = getRemoteAddr(request);
         String userAgent = request.getHeader("User-Agent");
         String message = new StringBuilder()
@@ -94,12 +94,10 @@ public class CorsFilter implements Filter {
                 .append(userAgent).append("\t")
                 .append(System.currentTimeMillis())
                 .toString();
-        Cookie c = new Cookie(webConfigurationDO.getCookieKey(), rsaProvider.encrypt(message));
-        c.setMaxAge(86400);
-        c.setHttpOnly(true);
-        c.setSecure(true);
 
-        return c;
+        return new StringBuilder(webConfigurationDO.getCookieKey())
+                .append("=").append(rsaProvider.encrypt(message))
+                .append("; Max-Age=86400; Secure; HttpOnly; SameSite=None;").toString();
     }
 
     private boolean isCookieInvalid(String cookie, HttpServletRequest request) throws IOException, GeneralSecurityException {
