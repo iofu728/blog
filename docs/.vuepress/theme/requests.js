@@ -32,7 +32,7 @@ export default async function request(url, options) {
   if (frontendDomainTem.includes(':')) {
     nowUrl = 'http://' + frontendDomainTem.split(':')[0] + ':8848' + url;
   } else {
-    'https://api.' + frontendDomainTem + url;
+    nowUrl = 'https://api.' + frontendDomainTem + url;
   }
 
   try {
