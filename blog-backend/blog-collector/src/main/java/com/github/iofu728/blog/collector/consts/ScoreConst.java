@@ -9,8 +9,18 @@ package com.github.iofu728.blog.collector.consts;
 public class ScoreConst {
     /** success score. */
     public static final int NORMAL_SCORE = 0;
+    /** renew boundary score. */
+    public static final int RENEW_BOUNDARY_SCORE = 25;
+    /** waited check score. */
+    public static final int WAITED_CHECK_SCORE = 26;
+    /** cookie timestamp expired score. */
+    public static final int TIMESTAMP_EXPIRED_SCORE = 27;
+    /** header change score. */
+    public static final int HEADER_CHANGE_SCORE = 28;
+    /** update boundary score. */
+    public static final int UPDATE_BOUNDARY_SCORE = 50;
     /** OPTIONS or others no update score. */
-    public static final int NO_UPDATE_SCORE = 1;
+    public static final int NO_UPDATE_SCORE = 51;
     /** score boundary. */
     public static final int BOUNDARY_SCORE = 100;
     /** header error score. */

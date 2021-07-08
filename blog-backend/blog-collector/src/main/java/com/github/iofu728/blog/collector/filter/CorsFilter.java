@@ -46,8 +46,7 @@ public class CorsFilter implements Filter {
 
     @SneakyThrows
     @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
-            throws IOException, ServletException {
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
@@ -62,27 +61,26 @@ public class CorsFilter implements Filter {
             response.setHeader("Access-Control-Max-Age", "3600");
             response.setHeader("Access-Control-Allow-Headers", " X-Requested-With, Content-Type,X-Requested-With, Content-Type, X-File-Name,token,Access-Control-Allow-Origin,Access-Control-Allow-Methods,Access-Control-Max-Age,authorization");
 
-            if (score == ScoreConst.NORMAL_SCORE) {
+            if (score <= ScoreConst.WAITED_CHECK_SCORE) {
                 Cookie[] cookies = request.getCookies();
-                boolean have_cookie = false;
                 if (cookies != null) {
                     for (Cookie cookie : cookies) {
                         if (cookie.getName().equals(webConfigurationDO.getCookieKey())) {
                             try {
-                                have_cookie = !isCookieInvalid(cookie.getValue(), request);
+                                score = checkCookieInvalid(cookie.getValue(), request);
                             } catch (Exception e) {
                                 score = ScoreConst.DECRYPTION_ERROR_SCORE;
-                                have_cookie = true;
                             }
                         }
                     }
                 }
-                if (!have_cookie ) {
+                if (score >= ScoreConst.RENEW_BOUNDARY_SCORE) {
                     response.setHeader("Set-Cookie", cookieGenerator(request));
                 }
             }
         }
 
+        System.out.println(getRemoteAddr(request) + " " + score);
         request.setAttribute("sliceScore", score);
         chain.doFilter(req, res);
     }
@@ -102,18 +100,32 @@ public class CorsFilter implements Filter {
 
         return new StringBuilder(webConfigurationDO.getCookieKey())
                 .append("=").append(rsaProvider.encrypt(message))
-                .append("; Max-Age=86400; Secure; HttpOnly; SameSite=None;").toString();
+                .append("; Secure; HttpOnly; SameSite=None;").toString();
     }
 
-    private boolean isCookieInvalid(String cookie, HttpServletRequest request) throws IOException, GeneralSecurityException {
+    private int checkCookieInvalid(String cookie, HttpServletRequest request) throws IOException, GeneralSecurityException {
         String message = rsaProvider.decrypt(cookie);
         String[] mList = message.split("\t");
+        if (mList.length != 3
+                || !NumericRelated.isNumeric(mList[2])) {
+            return ScoreConst.DECRYPTION_ERROR_SCORE;
+        }
 
-        return mList.length != 3
-                || !getRemoteAddr(request).equals(mList[0])
-                || !request.getHeader("User-Agent").equals(mList[1])
-                || !NumericRelated.isNumeric(mList[2])
-                || System.currentTimeMillis() - Long.parseLong(mList[2]) > TimestampEnums.ADAY.getTimestamp();
+        if (!getRemoteAddr(request).equals(mList[0])
+                && !request.getHeader("User-Agent").equals(mList[1])) {
+            return ScoreConst.NO_UPDATE_SCORE;
+        }
+
+        if (!getRemoteAddr(request).equals(mList[0])
+                || !request.getHeader("User-Agent").equals(mList[1])) {
+            return ScoreConst.HEADER_CHANGE_SCORE;
+        }
+
+        if (System.currentTimeMillis() - Long.parseLong(mList[2]) > TimestampEnums.ADAY.getTimestamp()) {
+            return ScoreConst.TIMESTAMP_EXPIRED_SCORE;
+        }
+
+        return ScoreConst.NORMAL_SCORE;
     }
 
     private String getRemoteAddr(HttpServletRequest request) {
@@ -122,7 +134,6 @@ public class CorsFilter implements Filter {
             ip = request.getHeader("X-Forwarded-For");
         }
 
-        System.out.println(ip);
         return ip;
     }
 }

@@ -61,6 +61,6 @@ public class PermissionFilterServiceImpl implements PermissionFilterService {
             return ScoreConst.NO_UPDATE_SCORE;
         }
 
-        return ScoreConst.NORMAL_SCORE;
+        return ScoreConst.WAITED_CHECK_SCORE;
     }
 }

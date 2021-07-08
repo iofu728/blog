@@ -78,7 +78,7 @@ public class PageViewsCollector {
                     .build();
         }
         return BaseResponse.newSuccResponse()
-                .result(pageViewsService.updatePageViews(timestamp, titleName, score == ScoreConst.NORMAL_SCORE))
+                .result(pageViewsService.updatePageViews(timestamp, titleName, score <= ScoreConst.UPDATE_BOUNDARY_SCORE))
                 .build();
     }
 }
