@@ -4,7 +4,7 @@ import com.github.iofu728.blog.collector.consts.ScoreConst;
 import com.github.iofu728.blog.collector.service.PermissionFilterService;
 import com.github.iofu728.blog.repository.entity.WebConfigurationDO;
 import com.github.iofu728.blog.repository.enums.TimestampEnums;
-import com.github.iofu728.blog.repository.util.NumericRelated;
+import com.github.iofu728.blog.repository.util.UtilsHelper;
 import com.github.iofu728.blog.repository.util.RSAProvider;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,7 +80,8 @@ public class CorsFilter implements Filter {
             }
         }
 
-        System.out.println(getRemoteAddr(request) + " " + score);
+        String currentTimeStamp = UtilsHelper.getCurrentTimeStamp();
+        System.out.println(currentTimeStamp + " " + getRemoteAddr(request) + " " + score);
         request.setAttribute("sliceScore", score);
         chain.doFilter(req, res);
     }
@@ -107,7 +108,7 @@ public class CorsFilter implements Filter {
         String message = rsaProvider.decrypt(cookie);
         String[] mList = message.split("\t");
         if (mList.length != 3
-                || !NumericRelated.isNumeric(mList[2])) {
+                || !UtilsHelper.isNumeric(mList[2])) {
             return ScoreConst.DECRYPTION_ERROR_SCORE;
         }
 
