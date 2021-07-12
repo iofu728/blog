@@ -5,7 +5,7 @@
         class="pb-0 mt-1"
       >累计访问量: {{pageViews.totalPageViews}} | 昨日访问量: {{pageViews.yesterdayPageViews}} | 昨日爬虫数: {{pageViews.yesterdayPageSpider}}</v-card-text>
       <v-card-text class="pt-0 pb-0 mt-1">
-        <span>{{$site.themeConfig.author}} &copy; {{since}}</span>
+        <span>{{$page.author }} &copy; {{since}}</span>
         <span>
           <template v-if="$site.themeConfig.icpLicense">
             <a

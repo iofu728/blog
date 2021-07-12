@@ -31,12 +31,6 @@ module.exports = {
       });`],
     ['script', {}, `
       (function() {
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css";
-        setTimeout(() => document.body.appendChild(link), 1000)})(); `],
-    ['script', {}, `
-      (function() {
         var meta = document.createElement("meta");
         meta.name = "google-site-verification";
         meta.content = "7ULbF13p7e6Z16vpi2tbAPHXHJBVu83TaxPTnvwnA8I";
@@ -52,18 +46,6 @@ module.exports = {
         var script = document.createElement("script");
         script.text = 'window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-113936890-1");';
         setTimeout(() => document.body.appendChild(script), 2100)})(); `],
-    ['script', {}, `
-      (function() {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.text = 'docsearch({ apiKey: "c42b71d494ca78750c7094eb2c55eda6", indexName: "wyydsb", inputSelector: "", debug: false });';
-        setTimeout(() => document.body.appendChild(script), 2000)})(); `],
-    ['script', {}, `
-      (function() {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js";
-        setTimeout(() => document.body.appendChild(script), 2000)})(); `],
   ],
   serviceWorker: true,
   theme: '',
@@ -90,13 +72,13 @@ module.exports = {
   themeConfig: {
     lang: 'en-US',
     subTitle: ' ',
-    author: 'Gunjianpan',
+    authorFirstName: "Jianpan",
+    authorLastName: "Gun",
     icpLicense: "浙ICP备19005445号-1",
     email: 'iofu728@163.com',
     since: 2017,
     avatar: '/face.jpg',
     avatarLink: '/',
-    algolia: {apiKey: 'c42b71d494ca78750c7094eb2c55eda6', indexName: 'wyydsb'},
     serviceWorker: {
       updatePopup: {message: 'New content is available.', buttonText: 'Refresh'}
     },

@@ -18,7 +18,9 @@ function prepare (siteData) {
     if (!page.frontmatter) {
       page.frontmatter = {}
     }
-    page.author = siteData.themeConfig.author;
+    page.authorFirstName = siteData.themeConfig.authorFirstName.replace(/^\S/, s => s.toUpperCase());
+    page.authorLastName = siteData.themeConfig.authorLastName.replace(/^\S/, s => s.toUpperCase());
+    page.author = page.authorFirstName + " " + page.authorLastName;
   })
   siteData.pages.push({
     frontmatter: {},
