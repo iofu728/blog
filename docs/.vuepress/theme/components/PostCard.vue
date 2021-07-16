@@ -98,7 +98,9 @@ export default {
   methods: {
     haveTitleViews() {
       setTimeout(() => {
+        this.getBibTeX();
         this.getTitleViews();
+        this.haveTitleViews();
       }, 1000);
     },
     getTitleViews() {
