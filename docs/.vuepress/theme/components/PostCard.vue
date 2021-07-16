@@ -58,8 +58,8 @@ export default {
   },
   created() {
     this.getTitleViews();
-    this.getBibTeX();
     try {
+      this.getBibTeX();
       window && this.haveTitleViews();
     } catch (e) {
       console.error(e.message);
