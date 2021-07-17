@@ -6,7 +6,8 @@
     <v-chip label
             small
             v-ripple
-            class="capitalize chip-tag">
+            class="capitalize chip-tag"
+            :class="'label-'+ level.toString()">
       <slot>{{slug}}</slot>
     </v-chip>
   </router-link>
@@ -15,7 +16,8 @@
 export default {
   props: {
     slug: String,
-    tag: String
+    tag: String,
+    level: Number,
   },
   computed: {
     to() {
@@ -30,8 +32,8 @@ export default {
 
 .tag-active {
   .chip {
-    color: #fff !important;
-    background: $primary-color !important;
+    
+    
   }
 }
 
@@ -42,6 +44,20 @@ export default {
       font-family: $font-code;
     }
   }
+}
+
+.label-1{
+  background: #e0e0e0 !important;
+}
+
+.label-2{
+  color: #fff !important;
+  background: #6c8b9c !important;
+}
+
+.label-3{
+  color: #fff !important;
+  background: #a28989 !important;
 }
 </style>
 

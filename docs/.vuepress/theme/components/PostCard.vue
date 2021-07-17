@@ -28,17 +28,18 @@
     </v-card-text>
     <v-card-text class="pt-0 pb-0" v-if="notHome">
       <v-flex xs12>
-        <Cite :bibtex="bibtex">{{ bibtex }}</Cite>
+        <Cite :bibtex="bibtex.content">{{ bibtex.content }}</Cite>
       </v-flex>
     </v-card-text>
     <v-card-actions>
       <v-flex xs12>
         <Tag
-          v-if="page.frontmatter"
-          v-for="tag in page.frontmatter.tags"
-          :key="tag"
-          :slug="tag"
-          >{{ tag }}</Tag
+          v-if="tagGList"
+          v-for="tag in tagGList"
+          :key="tag[0]"
+          :slug="tag[0]"
+          :level="tag[1]"
+          >{{ tag[0] }}</Tag
         >
       </v-flex>
     </v-card-actions>
@@ -54,13 +55,14 @@ export default {
   data() {
     return {
       page: {},
+      tagGList: {},
     };
   },
   created() {
     this.getTitleViews();
     try {
       this.getBibTeX();
-      window && this.haveTitleViews();
+      this.haveTitleViews();
     } catch (e) {
       console.error(e.message);
     }
@@ -98,8 +100,8 @@ export default {
   methods: {
     haveTitleViews() {
       setTimeout(() => {
-        this.getBibTeX();
         this.getTitleViews();
+        this.getBibTeX();
         this.haveTitleViews();
       }, 1000);
     },
@@ -107,10 +109,7 @@ export default {
       if (
         typeof this.page.titleViews !== "undefined" &&
         typeof this.page.path !== "undefined" &&
-        this.page.path ===
-          (typeof this.post === "string"
-            ? this.$blog.posts[this.post].path
-            : this.post.path)
+        document.location.href.indexOf(this.page.path) !== -1
       ) {
         return true;
       }
@@ -118,14 +117,23 @@ export default {
         {},
         typeof this.post === "string" ? this.$blog.posts[this.post] : this.post
       );
+      const slug = matchSlug(this.$route.path);
+      this.tagGList = Object.assign({}, this.$blog.tagGList[slug]);
       if (Object.keys(this.$blog.pageViews).length) {
         const slug = matchSlug(this.$route.path);
         this.page = Object.assign(this.page, {
           titleViews: this.$blog.pageViews.titleViewsMap[slug],
         });
+        
       }
     },
     getBibTeX() {
+      if (
+        typeof this.bibtex !== "undefined" &&
+        document.location.href === this.bibtex.href
+      ) {
+        return true;
+      }
       var url = document.location.href;
       const removeTags = ["#", "?"];
       for (var i = 0; i < removeTags.length; ++i) {
@@ -146,7 +154,10 @@ export default {
                   + "},\n\turl={" + url + "},\n\tjournal={" + journal
                   + "},\n\tauthor={" + author + "},\n\tyear={" + date.getFullYear()
                   + "},\n\tmonth={" + date.toLocaleString('default', { month: 'long' }) + "}\n}"
-      this.bibtex = bibtex;
+      this.bibtex = {
+        content: bibtex,
+        href: url,
+      };
     },
   },
 };

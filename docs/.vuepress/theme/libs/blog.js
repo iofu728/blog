@@ -2,7 +2,7 @@ import sortBy from 'lodash/sortBy'
 import dayjs from 'dayjs'
 import request from '../requests'
 import '../styles/global.styl'
-import { matchSlug } from './utils'
+import { decoderTagName, decoderTagGraph, matchSlug } from './utils'
 
 
 let time = 0
@@ -28,17 +28,41 @@ const install = (Vue, { theme, pages }) => {
   })
 
   const tags = {}
-  const tagList = []
+  const tagG = {}
+  const tagGList = {}
   postList.forEach(slug => {
     const list = posts[slug].frontmatter ? posts[slug].frontmatter.tags || [] : []
+    const tmpTagG = {};
     list.forEach(tagName => {
-      if (!tags[tagName]) {
-        tags[tagName] = []
-        tagList.push(tagName)
-      }
-      tags[tagName] = tags[tagName].concat(slug)
+      const t = decoderTagName(tagName);
+      t.forEach(tt => {
+        tt.forEach(k => {
+          if (!tags[k]) {
+            tags[k] = []
+          }
+          tags[k] = tags[k].concat(slug)
+          if (!tagG[k]) {
+            tagG[k] = new Set();
+          }
+          if (!tmpTagG[k]) {
+            tmpTagG[k] = new Set();
+          }
+        })
+        var l0 = tt[0], l1 = tt[1], l2 = tt[2];
+        if (!!l1) {
+          tagG[l0].add(l1);
+          tmpTagG[l0].add(l1);
+        }
+        if (!!l2) {
+          tagG[l1].add(l2);
+          tmpTagG[l1].add(l2);
+        }
+      })
     })
+    tagGList[slug] = decoderTagGraph(tmpTagG);
   })
+  const tagList = decoderTagGraph(tagG);
+  console.log(tagList);
 
   Vue.mixin({
     created () {
@@ -135,7 +159,7 @@ const install = (Vue, { theme, pages }) => {
     },
     computed: {
       $blog() {
-        return { postList, posts, tags, tagList, pageViews, titleList}
+        return { postList, posts, tags, tagList, pageViews, titleList, tagGList}
       },
       $postNav() {
         const slug = matchSlug(this.$route.path)
