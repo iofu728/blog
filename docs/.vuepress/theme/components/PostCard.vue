@@ -56,6 +56,7 @@ export default {
     return {
       page: {},
       tagGList: {},
+      bibtex: {},
     };
   },
   created() {
@@ -129,7 +130,7 @@ export default {
     },
     getBibTeX() {
       if (
-        typeof this.bibtex !== "undefined" &&
+        typeof this.bibtex.href !== "undefined" &&
         document.location.href === this.bibtex.href
       ) {
         return true;

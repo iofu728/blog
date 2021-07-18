@@ -11,9 +11,6 @@
     mounted(){
       window.addEventListener('scroll', this.onScroll, {passive: true});
     },
-    activated() {
-      console.log(1);
-    },
     methods: {
       renderUtteranc() {
         var container = document.getElementById('utteranc-container');

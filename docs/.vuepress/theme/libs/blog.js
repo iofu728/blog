@@ -66,7 +66,6 @@ const install = (Vue, { theme, pages }) => {
     tagGList[slug] = decoderTagGraph(tmpTagG);
   })
   const tagList = decoderTagGraph(tagG);
-  console.log(tagList);
 
   Vue.mixin({
     created () {
@@ -94,7 +93,6 @@ const install = (Vue, { theme, pages }) => {
           })
       },
       getPageViews () {
-        console.log(pageViews);
         console.log(this.$page.path);
         request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path), {headers: {'Content-Type': 'application/json'}})
           .catch(reason => console.log(reason.message));

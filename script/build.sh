@@ -6,41 +6,14 @@ yarn
 
 sudo yarn run docs:build
 
-if [ ! -d "${NGINX_DIR}/assets" ]; then
-    echo "文件不存在"
-else
-    rm -rf ${NGINX_DIR}/assets
-fi
+for name in assets javaScript other pat tags icons NLP Spider Operations DB Coding Linux DataMining; do
+    if [ ! -d "${NGINX_DIR}/${name}" ]; then
+        echo "文件不存在"
+    else
+        rm -rf ${NGINX_DIR}/${name}
+    fi
+done
 
-if [ ! -d "${NGINX_DIR}/javaScript" ]; then
-    echo "文件不存在"
-else
-    rm -rf ${NGINX_DIR}/javaScript
-fi
-
-if [ ! -d "${NGINX_DIR}/other" ]; then
-    echo "文件不存在"
-else
-    rm -rf ${NGINX_DIR}/other
-fi
-
-if [ ! -d "${NGINX_DIR}/pat" ]; then
-    echo "文件不存在"
-else
-    rm -rf ${NGINX_DIR}/pat
-fi
-
-if [ ! -d "${NGINX_DIR}/tags" ]; then
-    echo "文件不存在"
-else
-    rm -rf ${NGINX_DIR}/tags
-fi
-
-if [ ! -d "${NGINX_DIR}/icons" ]; then
-    echo "文件不存在"
-else
-    rm -rf ${NGINX_DIR}/icons
-fi
 
 sed -i '/<head>/a\<script type="application/ld+json">{"@context": "https://schema.org","@type": "NewsArticle","mainEntityOfPage": {"@type": "WebPage","@id": "https://wyydsb.xin"},"headline": "乌云压顶是吧","image": "https://wyydsb.xin/face.jpg","datePublished": "2017-10-10T08:00:00+08:00","dateModified": "2019-01-01T19:24:025+08:00","author": {"@type": "Person","name": "Gun Jianpan"},"publisher": {"@type": "Organization","name": "Gun Jianpan","logo": {"@type": "ImageObject","url": "https://wyydsb.xin/favicon.ico"}},"description": "Some coder skills"}</script>' docs/.vuepress/dist/index.html
 
