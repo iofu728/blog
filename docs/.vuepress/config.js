@@ -166,7 +166,7 @@ module.exports = {
         {
           title: 'Operations',
           collapsable: false,
-          children: ['zshsh', 'terminal', 'brew', 'spider', 'pv', 'redirect', 'nohup', 'accident', 'gitSkill', 'nginx'],
+          children: ['AcademicTrans', 'zshsh', 'terminal', 'brew', 'spider', 'pv', 'redirect', 'nohup', 'accident', 'gitSkill', 'nginx'],
         },
         {
           title: 'Hadoop',

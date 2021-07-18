@@ -3,14 +3,14 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /NLP/CGExpan.md
+actionLink: /Operations/AcademicTrans.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/NLP/REALM.md)
+[Last 👉](/Operations/AcademicTrans.md)
 
 - ML
   - NLP
@@ -48,6 +48,7 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
   - [NLP,Knowledge Graph, PageRank](/DataMining/pagerank.md)
   - [Frequnent Pattern](/DataMining/frequent.md)
 - Operations
+  - [🥷 个人博客学术化及接口权限改造](/Operations/AcademicTrans.md)
   - [Linux 批量配置神器 zsh.sh 👻 VSCode 真香攻略](/Operations/zshsh.md)
   - [如何给码农 👨‍💻‍ 的 Mac 开光](/Operations/terminal.md)
   - [brew | brew cask | yum | apt-get](/Operations/brew.md)
