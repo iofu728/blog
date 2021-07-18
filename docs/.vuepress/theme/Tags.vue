@@ -52,6 +52,6 @@ export default {
 <style lang="stylus">
 .list-inline-time {
   min-width: 120px;
-  width: 200px !important;
+  width: 220px !important;
 }
 </style>

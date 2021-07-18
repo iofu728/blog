@@ -33,6 +33,7 @@ const install = (Vue, { theme, pages }) => {
   postList.forEach(slug => {
     const list = posts[slug].frontmatter ? posts[slug].frontmatter.tags || [] : []
     const tmpTagG = {};
+    const addTag = new Set();
     list.forEach(tagName => {
       const t = decoderTagName(tagName);
       t.forEach(tt => {
@@ -40,7 +41,10 @@ const install = (Vue, { theme, pages }) => {
           if (!tags[k]) {
             tags[k] = []
           }
-          tags[k] = tags[k].concat(slug)
+          if (!addTag.has(k)) {
+            tags[k] = tags[k].concat(slug);
+            addTag.add(k);
+          }
           if (!tagG[k]) {
             tagG[k] = new Set();
           }

@@ -59,7 +59,7 @@ export function dfsTagGraph(root, tagG, done) {
   const res = [];
   queue.push([root, 1]);
   while (queue.length) {
-    var top = queue.shift();
+    var top = queue.pop();
     if (done.has(top[0])) {
       continue;
     }
