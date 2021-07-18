@@ -85,10 +85,10 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/other/CGExpan.html'},
-      {text: 'Spider', icon: 'fas fa-crosshairs', url: '/other/jsdecoder.html'},
-      {text: 'Linux', icon: 'fab fa-linux', url: '/other/spinlock.html'},
-      {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
+      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/NLP/CGExpan.html'},
+      {text: 'Spider', icon: 'fas fa-crosshairs', url: '/Spider/jsdecoder.html'},
+      {text: 'Linux', icon: 'fab fa-linux', url: '/Linux/spinlock.html'},
+      {text: 'Coding', icon: 'fas fa-chess-bishop', url: '/Coding/LeetCode.html'},
       {text: 'Tags', icon: 'fa fa-tag', url: '/tags/'},
       {
         text: 'Github',
@@ -124,60 +124,70 @@ module.exports = {
     tags: {path: '/tags/:tagName'},
     categories: {path: '/categories/:category'},
     sidebar: {
-      '/other/': [
+      '/NLP/': [
         {
           title: 'NLP',
           collapsable: false,
           children: [
             'CGExpan', 'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
-            'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm', 'pagerank'
+            'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm'
           ],
         },
+      ],
+      '/DataMining/': [
+        {
+          title: 'Data Mining',
+          collapsable: false,
+          children: ['ppr', 'pageranks', 'pagerank', 'frequent'],
+        },
+      ],
+      '/Linux/': [
         {
           title: 'Linux',
           collapsable: false,
-          children: ['schedule', 'synch'],
+          children: ['schedule', 'synch', "spinlock"],
         },
+      ],
+      '/Spider/': [
+        {
+          title: 'Spider',
+          collapsable: false,
+          children: ['jsdecoder', 'spiderskill', 'neteasedb', 'netease'],
+        },
+      ],
+      '/DB/': [
         {
           title: 'DB',
           collapsable: false,
           children: ['peloton', 'truncate'],
         },
+      ],
+      '/Operations/': [
         {
-          title: 'Data Mining',
+          title: 'Operations',
           collapsable: false,
-          children: ['ppr', 'pageranks', 'frequent'],
-
-        },
-        {
-          title: 'Spider',
-          collapsable: false,
-          children: ['jsdecoder', 'spiderskill', 'neteasedb', 'netease'],
+          children: ['zshsh', 'terminal', 'brew', 'spider', 'pv', 'redirect', 'nohup', 'accident', 'gitSkill', 'nginx'],
         },
         {
           title: 'Hadoop',
           collapsable: false,
           children: ['pseudo', 'mapreduce'],
         },
+      ],
+      '/other/': [
         {
-          title: 'Bash',
+          title: 'Summary',
           collapsable: false,
-          children: [
-            'zshsh', 'terminal', 'brew', 'spider', 'pv', 'redirect', 'nohup'
-          ],
+          children: ['deecamp', 'cs'],
         },
         {
           title: 'Sundry',
           collapsable: false,
-          children: ['numpy', 'chip', 'gitSkill', 'nginx'],
-        },
-        {
-          title: 'Summary',
-          collapsable: false,
-          children: ['interview202004', 'deecamp', 'accident', 'cs'],
+          children: ['numpy', 'chip', ],
         },
       ],
-      '/pat/': [
+      '/Coding/': [
+        'LeetCode',
         'catalog',
         {
           title: 'Summary',
