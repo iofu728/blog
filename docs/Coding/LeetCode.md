@@ -5,353 +5,43 @@ tags: [Coding/PAT]
 description: LeetCode key points record
 ---
 
-## 快慢指针
-
-> 常用在寻找环结构, 在链表中使用频次较高.
-
-### [LeetCode 19. 删除链表的倒数第 N 个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
-
-1. fast 指针先走 n 步;
-2. fast， slow 指针一起走，直到队尾;
-
-```java
-class Solution {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode fast = head, slow = head;
-        ListNode res;
-        for (int i = 0; i < n; ++i) {
-            fast = fast.next;
-        }
-        while (fast != null && fast.next != null) {
-            fast = fast.next;
-            slow = slow.next;
-        }
-        if (fast == null) {
-            res = head.next;
-        } else {
-            res = head;
-            slow.next = slow.next.next;
-        }
-        return res;
-    }
-}
-```
-
-### [LeetCode 287. 寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/)
-
-对 nums[] 数组建图，每个位置 i 连 -> nums[i]. 因为存在重复的数字，因此 target 存在两条边，一定存在环
-
-```java
-class Solution {
-    public int findDuplicate(int[] nums) {
-        int slow = 0, fast = 0;
-        do {
-            slow = nums[slow];
-            fast = nums[nums[fast]];
-        } while (slow != fast);
-        slow = 0;
-        while (slow != fast) {
-            slow = nums[slow];
-            fast = nums[fast];
-        }
-        return slow;
-    }
-}
-```
-
-## 双指针
-
-> 这边不包括二分的一些 case, 二分查找，第 k 大，快排
-> 验证回文
-
-```java
-int left = 0;
-int right = nums.length - 1;
-```
-
-### 两数之和
-
-[LeetCode 167. Two Sum II - Input array is sorted](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/)
-
-> 因为只有一组情况满足 nums[left] + nums[right] == target
-> 双指针将遍历复杂度从 O(n^2) 降低到 O(n).
-> 左指针->0, 右指针->N-1.
-> sum > target, right--;
-> sum < target, left++;
-
-```java
-public int[] twoSum(int[] nums, int target) {
-    int left = 0, right = nums.length - 1;
-    while (left < right) {
-        int sum = nums[left] + nums[right];
-        if (sum == target) {
-            return new int[]{left + 1, right + 1};
-        } else if (sum < target) {
-            left++;
-        } else if (sum > target) {
-            right--;
-        }
-    }
-    return new int[]{-1, -1};
-}
-```
-
-### 滑动窗口
-
-滑动窗口用的比较多, LeetCode 3, 76
-
-总的思路
-
-1. left = 0, right = 0
-2. 移动右指针, 直到第一次满足条件 >= target
-3. 移动左指针, 直到第一次破坏条件 <= target
-4. 依次反复
-
-#### [LeetCode 3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
-
-> 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
-
-通过 hashSet 去统计该字符有没有存在过。
-left 移动的时候，清理 hashSet 中的 left 所指向的内容。
-
-```java
-public int lengthOfLongestSubstring(String s) {
-    int N = s.length();
-    if (N == 0) {
-        return 0;
-    }
-    int result = 0;
-    int left = 0;     // 左指针初始位置
-    int right = 0;    // 右指针初始位置
-    HashSet<Character> subset = new HashSet<>();
-    subset.add(s.charAt(0)); // 先把第0个字符放入Set
-
-    while (left < N) {
-        // 先判断长度，再判断是否包含字符，避免越界
-        // right初始位置是0，0号字符已被加入集合，从下一个字符开始计算
-        while (right + 1 < N && ! subset.contains(s.charAt(right + 1)) ) {
-            subset.add(s.charAt(right + 1));
-            right++;
-        }
-        result = Math.max(result, right - left + 1);
-        if (right + 1 == N) { // 右指针移动到最后，可以终止计算，不需要再循环
-            break;
-        }
-        subset.remove(s.charAt(left));
-        left++;
-    }
-
-    return result;
-}
-```
-
-> 有序数组, 右指针先走，左指针不动，先找到第一个满足 nums[left] + nums[right] >= target 的 right, 然后移动 left 直到 nums[left] + nums[right] <= target
-> 通过依次、交替移动左右指针，每次移动是在上一次遍历结果之上，来减少一些不必要的遍历。
-
-### [LeetCode 76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/)
-
-> 给你一个字符串 S、一个字符串 T 。请你设计一种算法，可以在 O(n) 的时间复杂度内，从字符串 S 里面找出：包含 T 所有字符的最小子串。
-
-和 3 思路比较类似，
-
-1. left right 从 0 开始;
-2. 用 HashMap 统计 left -> right 之间字符出现情况, 并与 T 出现的字符进行对比，移动 right 直到能够包含所有 T 中出现的字符；
-3. 移动左指针，并更新 HashMap 直到不包含所有 T 中的字符；
-4. 重复直到 right > N
-
-下面是你上次写的代码，用的也是相同的思想. 只不过不用 HashMap 而是使用 ASCII 码来解决，数组里面的数字表示该 ASCII 码对应的字符需要多少个数。
-
-```java
-class Solution {
-    public String minWindow(String s, String t) {
-        //这题超级无敌复杂
-        //又是滑动窗口
-        //核心是有一个参数来控制左右交替，此处是count
-
-        int left=0;
-        int right=0;
-        int count=0;//子串中目标字符的总数，最高等于t长度，多了结果不对
-        int minlen=s.length()+1;//最小长度
-        int minright=0;//最小长度时的位置
-        int[] need = new int[128];//需要哪些字符，按照ascii码，
-        int[] have = new int[128];//已经有了哪些
-        //输入需要的need
-        for(int i=0;i<t.length();i++){
-            need[t.charAt(i)]++;
-        }
-
-        //结构上比较容易错：右边if 左边while
-        while(right<=s.length()){
-            System.out.println(left + " " + right + " " + count);
-            //需要的字符数量不够，右边++
-            if(count<t.length()){
-                if (right >= s.length()){
-                    break;
-                }
-                if(need[s.charAt(right)]==0){
-                right++;
-                    continue;
-                }
-
-                if(have[s.charAt(right)]<need[s.charAt(right)]){
-                    count++;
-                }
-
-                have[s.charAt(right)]++;
-                right++;
-            }
-            //需要的字符刚好了，左边++
-            //为什么是while
-            if (count==t.length()){
-                   if(minlen>right-left){
-                     minlen=right-left;
-                     minright=right;
-                    }
-                if(need[s.charAt(left)]==0){
-                    left++;
-                    continue;
-                }
-
-                if(need[s.charAt(left)]==have[s.charAt(left)]){
-                    count--;
-                }
-                have[s.charAt(left)]--;
-                left++;
-                System.out.println(left + " " + right);
-                // System.out.print(right);
-                // System.out.print(" ");
-            }
-        }
-        if( minlen>s.length()) return "";
-        else
-            return s.substring(minright-minlen,minright);
-    }
-}
-```
-
-### [LeetCode 1234. 替换子串得到平衡字符串](https://leetcode-cn.com/problems/replace-the-substring-for-balanced-string/)
-
-1. 统计超出 N // 4 个数的字符情况;
-2. 再对判断包含改字符分布的最大区间; -> 双指针
-
-```java
-class Solution {
-    public int balancedString(String s) {
-        if(s==null || s.length()<=0) return -1;
-        int N=s.length();
-        //这里用26有的浪费,为了方便写代码,就这样吧
-        int[] need=new int[26];
-        //初始化为-N/4这样最后得到的大于0的值就是多出来的
-        Arrays.fill(need, -N/4);
-        int[] cur=new int[26];
-        for(int i=0;i<N;i++){
-            need[s.charAt(i)-'A']++;
-        }
-        //有几个字符多出来了
-        int needCount=0;
-        for(int i=0;i<need.length;i++){
-            if(need[i]>0) needCount++;
-        }
-        if(needCount==0) return 0;
-        int res=N;
-        int left=0,right=0;
-        int matchCount=0;
-        //无脑套路滑窗
-        while(right<s.length()){
-            char c=s.charAt(right);
-            if(need[c-'A']>0){
-                cur[c-'A']++;
-                if(cur[c-'A']==need[c-'A']){
-                    matchCount++;
-                }
-            }
-            while(left<=right && matchCount==needCount){
-                res=Math.min(right-left+1,res);
-                char cl=s.charAt(left);
-                if(need[cl-'A']>0){
-                    cur[cl-'A']--;
-                    if(cur[cl-'A']<need[cl-'A']){
-                        matchCount--;
-                    }
-                }
-                left++;
-            }
-            right++;
-        }
-        return res;
-    }
-}
-```
-
-#### [LeetCode 5493. 删除最短的子数组使剩余数组有序](https://leetcode-cn.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/)
-
-> 给定一个数组，求删除某个连续的子数组(1 个)之后能让剩下的数组有序递增的最短长度.
-
-这边用双指针+遍历 来做
-
-首先因为只能删除一个子数组，那么存在两种情况:
-
-1. 两端保留，删除中间;
-2. 一端保留，一端删除;
-
-对于 Case1, 直接求得两端最长上升数组(left, right)，然后双指针, 依次寻找 nums[l] <= nums[r]的点，从而计算最小删除长度(r - l - 1);
-对于 Case2， 直接求两端最长上升数组即可(可复用 Case1)
-
-```python
-class Solution:
-    def findLengthOfShortestSubarray(self, arr: List[int]) -> int:
-        N = len(arr)
-        left, right = 0, N - 1
-        while left + 1 < N and arr[left + 1] >= arr[left]:
-            left += 1
-        while right - 1 >= 0 and arr[right - 1] <= arr[right]:
-            right -= 1
-        res = min(N - 1, N - left - 1, right)
-        l, r = left, right
-        if arr[l] <= arr[r]:
-            return max(r - l - 1, 0)
-        while r < N and arr[r] < arr[l]:
-            r += 1
-        while l >= 0 and r >= right:
-            while r - 1 >= right and arr[l] <= arr[r - 1]:
-                r -= 1
-            res = min(res, max(r - l - 1, 0))
-            l -= 1
-        return res
-```
-
-#### [LeetCode 1498. 满足条件的子序列数目](https://leetcode-cn.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/)
-
-> 给定一个无序数组，求满足最小+最大值 <= target 的所有子序列个数
-
-因为是子序列，而且只关心最大最小值，那么和顺序无关 => 可提前排序
-
-v_min <= v_max <= target - v_min => v_min <= target / 2
-
-当固定 v_min 的时候可以找到确定的 v_max 上界 => 双指针
-
-那么 在 v_min - v_max 之间的可能组合数 = 2 \*\* (j - i) 选/不选
-
-```python
-class Solution:
-    MODS = 10 ** 9 + 7
-    def numSubseq(self, nums: List[int], target: int) -> int:
-        N = len(nums)
-        cal_map = [1]
-        for ii in range(1, N):
-            cal_map.append(cal_map[-1] * 2 % self.MODS)
-        left, right, res = 0, N - 1, 0
-        nums.sort()
-        while left < N:
-            if nums[left] * 2 > target:
-                break
-            while right - 1 >= left and nums[left] > target - nums[right]:
-                right -= 1
-            res += cal_map[right - left]
-            # print(left, right, cal_map[right - left], nums[left])
-            left += 1
-        return res % self.MODS
-```
+- [动态规划](#动态规划)
+  - [一维 dp](#一维-dp)
+  - [二维 dp](#二维-dp)
+  - [区间 dp](#区间-dp)
+  - [三维 dp](#三维-dp)
+  - [树形 dp](#树形-dp)
+  - [背包问题](#背包问题)
+  - [公车上下车问题/差分数组](#公车上下车问题-差分数组)
+  - [状态压缩 Dp (可跳过)](#状态压缩-dp-可跳过)
+- [字符串处理](#字符串处理)
+  - [栈](#栈)
+  - [计算器](#计算器)
+  - [字符串匹配](#字符串匹配)
+  - [前缀树 (可跳过)](#前缀树-可跳过)
+- [遍历、DFS、贪心](#遍历、dfs、贪心)
+  - [遍历](#遍历)
+  - [贪心](#贪心)
+  - [DFS, 记忆化 DFS](#dfs-记忆化-dfs)
+- [队列](#队列)
+- [树](#树)
+- [链表](#链表)
+  - [并查集](#并查集)
+- [图](#图)
+  - [拓扑排序](#拓扑排序)
+  - [最小生成树](#最小生成树)
+  - [最短路径](#最短路径)
+- [数学题](#数学题)
+  - [运算(算数，位)](#运算-算数，位)
+  - [线段, 集合](#线段-集合)
+  - [平面几何](#平面几何)
+  - [函数, 递推关系式](#函数-递推关系式)
+  - [组合](#组合)
+  - [三色问题](#三色问题)
+- [指针](#指针)
+- [空间 O(1)](#空间-o-1)
+- [数据结构](#数据结构)
+- [匹配问题](#匹配问题)
 
 ## 动态规划
 
@@ -526,7 +216,7 @@ class Solution:
 
 > 求 1,2,3,...,n 范围内的数组组成的不同二叉搜索树个数
 
-`\begin{equation}G[n] = \sum_i^n(G[i-1] \* G[n-i])\end{equation}`
+`\begin{equation}G[n] = \sum_i^n(G[i-1] * G[n-i])\end{equation}`
 `$G[n]$` 表示长度为 n 的数组有几个不同的二叉搜索树
 
 ```python
@@ -912,7 +602,7 @@ class Solution:
         return dp[target]
 ```
 
-### 公车上下车问题
+### 公车上下车问题/差分数组
 
 #### [LeetCode 1109. 航班预订统计](https://leetcode-cn.com/problems/corporate-flight-bookings/)
 
@@ -931,6 +621,28 @@ class Solution:
         for ii in range(1, n):
             dp[ii] += dp[ii - 1]
         return dp
+```
+
+#### [LeetCode 1893. 检查是否区域内所有整数都被覆盖](https://leetcode-cn.com/problems/check-if-all-the-integers-in-a-range-are-covered/)
+
+> 给定一系列区间，求问特点区间是否完全在给定区间中
+
+利用差分数组，前缀和表示区间覆盖情况
+
+```python
+import bisect
+class Solution:
+    def isCovered(self, ranges: List[List[int]], left: int, right: int) -> bool:
+        diff = [0] * 52
+        for ii, jj in ranges:
+            diff[ii] += 1
+            diff[jj + 1] -= 1
+        tmp = 0
+        for ii in range(1, 51):
+            tmp += diff[ii]
+            if left <= ii <= right and tmp <= 0:
+                return False
+        return True
 ```
 
 ### 状态压缩 dp (可跳过)
@@ -1523,6 +1235,79 @@ class Solution:
         for w in words:
             dfs(w, 0, 0, trie)
         return list(res)
+```
+
+#### [LeetCode 5826. 删除系统中的重复文件夹](https://leetcode-cn.com/problems/delete-duplicate-folders-in-system/)
+
+> 给定一棵树，如果某两个节点的子树完全相同，则删除二者，求该处理之后的输出
+
+建立前缀树，对子树进行序列化，然后 Hash，统计 Hash 数量
+
+```python
+class Solution:
+    def deleteDuplicateFolder(self, paths: List[List[str]]) -> List[List[str]]:
+        t = Trie()
+        for path in paths:
+            t.add(path)
+        t.hash1()
+        t.hash1_delete()
+        return t.output()
+
+class Trie:
+    MOD1 = 10 ** 9 + 7
+    MOD2 = 10 ** 12 + 73
+
+    def __init__(self):
+        self.children = {}
+        self.h_v = 1
+
+    def add(self, arr):
+        p = self
+        for ch in arr:
+            if ch not in p.children:
+                p.children[ch] = Trie()
+            p = p.children[ch]
+
+    def hash1(self):
+        if len(self.children) == 0:
+            self.h1 = 1
+            return 1
+        res = len(self.children)
+        for k, v in self.children.items():
+            res *= v.hash1() * hash(k)
+            res %= self.MOD2
+        self.h1 = res
+        return res
+
+    def hash1_delete(self):
+        d = defaultdict(int)
+        def dfs(p):
+            nonlocal d
+            d[p.h1] += 1
+            for k, v in p.children.items():
+                dfs(v)
+        dfs(self)
+        def dfs2(p):
+            nonlocal d
+            for k, v in p.children.copy().items():
+                if v.h1 != 1 and d[v.h1] > 1:
+                    p.children.pop(k)
+                else:
+                    dfs2(v)
+        dfs2(self)
+
+    def output(self):
+        res, cur = [], []
+        def dfs(p):
+            nonlocal res, cur
+            if len(cur) > 0:
+                res.append(cur.copy())
+            for k, v in p.children.items():
+                cur.append(k)
+                dfs(v)
+                cur.pop()
+        dfs(self)
+        return res
 ```
 
 ## 遍历、DFS、贪心
@@ -2311,11 +2096,19 @@ class Solution:
         return dfs(start, fuel)
 ```
 
-## 优先队列
+## 队列
+
+### [LeetCode 剑指 Offer 59 - II. 队列的最大值](https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/)
+
+> 平均摊销 O(1) 下完成队列的入队，出队，求最大值
+
+1. 维护一个队列来存储最大值，pop 队尾小于当前值的所有值;
+
+### 优先队列
 
 > 大部分是贪心
 
-### [LeetCode 632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)
+#### [LeetCode 632. 最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/)
 
 > 一组单增数组, 求一个最小的区间，使得每行数组都至少有一个值在区间内.
 
@@ -2355,7 +2148,7 @@ class Solution {
 }
 ```
 
-### [LeetCode 407. 接雨水 II](https://leetcode-cn.com/problems/trapping-rain-water-ii/)
+#### [LeetCode 407. 接雨水 II](https://leetcode-cn.com/problems/trapping-rain-water-ii/)
 
 > 接雨水 II 需要四周来接
 
@@ -2424,7 +2217,7 @@ class Solution:
         return []
 ```
 
-### [LeetCode 239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)
+#### [LeetCode 239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)
 
 > 求滑动窗口中的最大值.
 
@@ -2452,7 +2245,7 @@ class Solution:
         return res
 ```
 
-### [LeetCode 480. 滑动窗口中位数](https://leetcode-cn.com/problems/sliding-window-median/)
+#### [LeetCode 480. 滑动窗口中位数](https://leetcode-cn.com/problems/sliding-window-median/)
 
 > 求滑动窗口内的中位数
 
@@ -2498,14 +2291,6 @@ class Solution:
         # print(res)
         return res[n - 1]
 ```
-
-## 队列
-
-### [LeetCode 剑指 Offer 59 - II. 队列的最大值](https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/)
-
-> 平均摊销 O(1) 下完成队列的入队，出队，求最大值
-
-1. 维护一个队列来存储最大值，pop 队尾小于当前值的所有值;
 
 ## 树
 
@@ -3199,7 +2984,9 @@ class Solution:
 
 ### 最短路径
 
-#### [LeetCode 882. 细分图中的可到达结点](https://leetcode-cn.com/problems/reachable-nodes-in-subdivided-graph/)
+#### Dijkstra
+
+##### [LeetCode 882. 细分图中的可到达结点](https://leetcode-cn.com/problems/reachable-nodes-in-subdivided-graph/)
 
 > 给定一张图然后给定每条边内含有的节点数，从原点出发，限定步数内可达的节点数。
 
@@ -3235,7 +3022,7 @@ class Solution:
         return res
 ```
 
-### Floyd
+#### Floyd
 
 O(N^3) 复杂度较高，用来维护全图最短路径，但一般不需要那么高要求的最短路径
 
@@ -3248,13 +3035,13 @@ for kk in range(N):
                 dis[ii][jj] = dis[ii][kk] + dis[kk][kk]
 ```
 
-### A\*
+#### A\*
 
 A\*是 Dijkstra 的一般形式，按距离+期望剩余距离之和作为优先排序指标。
 
 实现的时候还是优先队列
 
-#### [LeetCode 773. 滑动谜题](https://leetcode-cn.com/problems/sliding-puzzle/)
+##### [LeetCode 773. 滑动谜题](https://leetcode-cn.com/problems/sliding-puzzle/)
 
 > 滑块游戏，每次只能移动周围块到 0 位置，求能否将给定序列变成顺序序列，求最小步数。
 
@@ -3305,7 +3092,7 @@ class Solution:
         return -1
 ```
 
-### Tarjan
+#### Tarjan
 
 #### [LeetCode 1192. 查找集群内的「关键连接」](https://leetcode-cn.com/problems/critical-connections-in-a-network/)
 
@@ -3342,38 +3129,6 @@ class Solution:
         connections = set([tuple(sorted((ii, jj))) for ii, jj in connections])
         dfs(0, -1, 0)
         return list(connections)
-```
-
-## 数据结构
-
-### [LeetCode 710. 黑名单中的随机数](https://leetcode-cn.com/problems/random-pick-with-blacklist/)
-
-> 给定一个[0,N)的数组，和一个黑名单，返回不在黑名单中的随机数。
-
-1. 最简单的想法直接记录白名单，空间太大.
-2. 产生随机数 k=N - len(b), 然后二分查找白名单中第 k 个数字.
-3. 建立映射
-
-```python
-class Solution:
-    def __init__(self, N: int, blacklist: List[int]):
-        write_len = N - len(blacklist)
-        self.write_len = write_len
-        w = set([ii for ii in range(write_len, N)])
-        for ii in blacklist:
-            if ii >= write_len:
-                w.remove(ii)
-        w = list(w)
-        idx = 0
-        self.write_map = {}
-        for ii in blacklist:
-            if ii < write_len:
-                self.write_map[ii] = w[idx]
-                idx += 1
-
-    def pick(self) -> int:
-        k = random.randint(0, self.write_len - 1)
-        return self.write_map.get(k, k)
 ```
 
 ## 数学题
@@ -4002,8 +3757,6 @@ class Solution:
         return f[0]
 ```
 
-​
-
 #### 三色问题
 
 "?"组合情况也属于三色问题
@@ -4101,4 +3854,415 @@ class Solution:
                 num -= 1
         num = len([1 for ii in nums if ii == c])
         return c if num > len(nums) / 2 else -1
+```
+
+## 指针
+
+### 快慢指针
+
+> 常用在寻找环结构, 在链表中使用频次较高.
+
+#### [LeetCode 19. 删除链表的倒数第 N 个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
+
+1. fast 指针先走 n 步;
+2. fast， slow 指针一起走，直到队尾;
+
+```java
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode fast = head, slow = head;
+        ListNode res;
+        for (int i = 0; i < n; ++i) {
+            fast = fast.next;
+        }
+        while (fast != null && fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        if (fast == null) {
+            res = head.next;
+        } else {
+            res = head;
+            slow.next = slow.next.next;
+        }
+        return res;
+    }
+}
+```
+
+#### [LeetCode 287. 寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/)
+
+对 nums[] 数组建图，每个位置 i 连 -> nums[i]. 因为存在重复的数字，因此 target 存在两条边，一定存在环
+
+```java
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int slow = 0, fast = 0;
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while (slow != fast);
+        slow = 0;
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
+    }
+}
+```
+
+### 双指针
+
+> 这边不包括二分的一些 case, 二分查找，第 k 大，快排
+> 验证回文
+
+```java
+int left = 0;
+int right = nums.length - 1;
+```
+
+#### 两数之和
+
+##### [LeetCode 167. Two Sum II - Input array is sorted](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/)
+
+> 因为只有一组情况满足 nums[left] + nums[right] == target
+> 双指针将遍历复杂度从 O(n^2) 降低到 O(n).
+> 左指针->0, 右指针->N-1.
+> sum > target, right--;
+> sum < target, left++;
+
+```java
+public int[] twoSum(int[] nums, int target) {
+    int left = 0, right = nums.length - 1;
+    while (left < right) {
+        int sum = nums[left] + nums[right];
+        if (sum == target) {
+            return new int[]{left + 1, right + 1};
+        } else if (sum < target) {
+            left++;
+        } else if (sum > target) {
+            right--;
+        }
+    }
+    return new int[]{-1, -1};
+}
+```
+
+#### 滑动窗口
+
+滑动窗口用的比较多, LeetCode 3, 76
+
+总的思路
+
+1. left = 0, right = 0
+2. 移动右指针, 直到第一次满足条件 >= target
+3. 移动左指针, 直到第一次破坏条件 <= target
+4. 依次反复
+
+##### [LeetCode 3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+
+> 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+
+通过 hashSet 去统计该字符有没有存在过。
+left 移动的时候，清理 hashSet 中的 left 所指向的内容。
+
+```java
+public int lengthOfLongestSubstring(String s) {
+    int N = s.length();
+    if (N == 0) {
+        return 0;
+    }
+    int result = 0;
+    int left = 0;     // 左指针初始位置
+    int right = 0;    // 右指针初始位置
+    HashSet<Character> subset = new HashSet<>();
+    subset.add(s.charAt(0)); // 先把第0个字符放入Set
+
+    while (left < N) {
+        // 先判断长度，再判断是否包含字符，避免越界
+        // right初始位置是0，0号字符已被加入集合，从下一个字符开始计算
+        while (right + 1 < N && ! subset.contains(s.charAt(right + 1)) ) {
+            subset.add(s.charAt(right + 1));
+            right++;
+        }
+        result = Math.max(result, right - left + 1);
+        if (right + 1 == N) { // 右指针移动到最后，可以终止计算，不需要再循环
+            break;
+        }
+        subset.remove(s.charAt(left));
+        left++;
+    }
+
+    return result;
+}
+```
+
+> 有序数组, 右指针先走，左指针不动，先找到第一个满足 nums[left] + nums[right] >= target 的 right, 然后移动 left 直到 nums[left] + nums[right] <= target
+> 通过依次、交替移动左右指针，每次移动是在上一次遍历结果之上，来减少一些不必要的遍历。
+
+##### [LeetCode 76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/)
+
+> 给你一个字符串 S、一个字符串 T 。请你设计一种算法，可以在 O(n) 的时间复杂度内，从字符串 S 里面找出：包含 T 所有字符的最小子串。
+
+和 3 思路比较类似，
+
+1. left right 从 0 开始;
+2. 用 HashMap 统计 left -> right 之间字符出现情况, 并与 T 出现的字符进行对比，移动 right 直到能够包含所有 T 中出现的字符；
+3. 移动左指针，并更新 HashMap 直到不包含所有 T 中的字符；
+4. 重复直到 right > N
+
+下面是你上次写的代码，用的也是相同的思想. 只不过不用 HashMap 而是使用 ASCII 码来解决，数组里面的数字表示该 ASCII 码对应的字符需要多少个数。
+
+```java
+class Solution {
+    public String minWindow(String s, String t) {
+        //这题超级无敌复杂
+        //又是滑动窗口
+        //核心是有一个参数来控制左右交替，此处是count
+
+        int left=0;
+        int right=0;
+        int count=0;//子串中目标字符的总数，最高等于t长度，多了结果不对
+        int minlen=s.length()+1;//最小长度
+        int minright=0;//最小长度时的位置
+        int[] need = new int[128];//需要哪些字符，按照ascii码，
+        int[] have = new int[128];//已经有了哪些
+        //输入需要的need
+        for(int i=0;i<t.length();i++){
+            need[t.charAt(i)]++;
+        }
+
+        //结构上比较容易错：右边if 左边while
+        while(right<=s.length()){
+            System.out.println(left + " " + right + " " + count);
+            //需要的字符数量不够，右边++
+            if(count<t.length()){
+                if (right >= s.length()){
+                    break;
+                }
+                if(need[s.charAt(right)]==0){
+                right++;
+                    continue;
+                }
+
+                if(have[s.charAt(right)]<need[s.charAt(right)]){
+                    count++;
+                }
+
+                have[s.charAt(right)]++;
+                right++;
+            }
+            //需要的字符刚好了，左边++
+            //为什么是while
+            if (count==t.length()){
+                   if(minlen>right-left){
+                     minlen=right-left;
+                     minright=right;
+                    }
+                if(need[s.charAt(left)]==0){
+                    left++;
+                    continue;
+                }
+
+                if(need[s.charAt(left)]==have[s.charAt(left)]){
+                    count--;
+                }
+                have[s.charAt(left)]--;
+                left++;
+                System.out.println(left + " " + right);
+                // System.out.print(right);
+                // System.out.print(" ");
+            }
+        }
+        if( minlen>s.length()) return "";
+        else
+            return s.substring(minright-minlen,minright);
+    }
+}
+```
+
+##### [LeetCode 1234. 替换子串得到平衡字符串](https://leetcode-cn.com/problems/replace-the-substring-for-balanced-string/)
+
+1. 统计超出 N // 4 个数的字符情况;
+2. 再对判断包含改字符分布的最大区间; -> 双指针
+
+```java
+class Solution {
+    public int balancedString(String s) {
+        if(s==null || s.length()<=0) return -1;
+        int N=s.length();
+        //这里用26有的浪费,为了方便写代码,就这样吧
+        int[] need=new int[26];
+        //初始化为-N/4这样最后得到的大于0的值就是多出来的
+        Arrays.fill(need, -N/4);
+        int[] cur=new int[26];
+        for(int i=0;i<N;i++){
+            need[s.charAt(i)-'A']++;
+        }
+        //有几个字符多出来了
+        int needCount=0;
+        for(int i=0;i<need.length;i++){
+            if(need[i]>0) needCount++;
+        }
+        if(needCount==0) return 0;
+        int res=N;
+        int left=0,right=0;
+        int matchCount=0;
+        //无脑套路滑窗
+        while(right<s.length()){
+            char c=s.charAt(right);
+            if(need[c-'A']>0){
+                cur[c-'A']++;
+                if(cur[c-'A']==need[c-'A']){
+                    matchCount++;
+                }
+            }
+            while(left<=right && matchCount==needCount){
+                res=Math.min(right-left+1,res);
+                char cl=s.charAt(left);
+                if(need[cl-'A']>0){
+                    cur[cl-'A']--;
+                    if(cur[cl-'A']<need[cl-'A']){
+                        matchCount--;
+                    }
+                }
+                left++;
+            }
+            right++;
+        }
+        return res;
+    }
+}
+```
+
+##### [LeetCode 5493. 删除最短的子数组使剩余数组有序](https://leetcode-cn.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/)
+
+> 给定一个数组，求删除某个连续的子数组(1 个)之后能让剩下的数组有序递增的最短长度.
+
+这边用双指针+遍历 来做
+
+首先因为只能删除一个子数组，那么存在两种情况:
+
+1. 两端保留，删除中间;
+2. 一端保留，一端删除;
+
+对于 Case1, 直接求得两端最长上升数组(left, right)，然后双指针, 依次寻找 nums[l] <= nums[r]的点，从而计算最小删除长度(r - l - 1);
+对于 Case2， 直接求两端最长上升数组即可(可复用 Case1)
+
+```python
+class Solution:
+    def findLengthOfShortestSubarray(self, arr: List[int]) -> int:
+        N = len(arr)
+        left, right = 0, N - 1
+        while left + 1 < N and arr[left + 1] >= arr[left]:
+            left += 1
+        while right - 1 >= 0 and arr[right - 1] <= arr[right]:
+            right -= 1
+        res = min(N - 1, N - left - 1, right)
+        l, r = left, right
+        if arr[l] <= arr[r]:
+            return max(r - l - 1, 0)
+        while r < N and arr[r] < arr[l]:
+            r += 1
+        while l >= 0 and r >= right:
+            while r - 1 >= right and arr[l] <= arr[r - 1]:
+                r -= 1
+            res = min(res, max(r - l - 1, 0))
+            l -= 1
+        return res
+```
+
+##### [LeetCode 1498. 满足条件的子序列数目](https://leetcode-cn.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/)
+
+> 给定一个无序数组，求满足最小+最大值 <= target 的所有子序列个数
+
+因为是子序列，而且只关心最大最小值，那么和顺序无关 => 可提前排序
+
+v_min <= v_max <= target - v_min => v_min <= target / 2
+
+当固定 v_min 的时候可以找到确定的 v_max 上界 => 双指针
+
+那么 在 v_min - v_max 之间的可能组合数 = 2 \*\* (j - i) 选/不选
+
+```python
+class Solution:
+    MODS = 10 ** 9 + 7
+    def numSubseq(self, nums: List[int], target: int) -> int:
+        N = len(nums)
+        cal_map = [1]
+        for ii in range(1, N):
+            cal_map.append(cal_map[-1] * 2 % self.MODS)
+        left, right, res = 0, N - 1, 0
+        nums.sort()
+        while left < N:
+            if nums[left] * 2 > target:
+                break
+            while right - 1 >= left and nums[left] > target - nums[right]:
+                right -= 1
+            res += cal_map[right - left]
+            # print(left, right, cal_map[right - left], nums[left])
+            left += 1
+        return res % self.MODS
+```
+
+## 数据结构
+
+### [LeetCode 710. 黑名单中的随机数](https://leetcode-cn.com/problems/random-pick-with-blacklist/)
+
+> 给定一个[0,N)的数组，和一个黑名单，返回不在黑名单中的随机数。
+
+1. 最简单的想法直接记录白名单，空间太大.
+2. 产生随机数 k=N - len(b), 然后二分查找白名单中第 k 个数字.
+3. 建立映射
+
+```python
+class Solution:
+    def __init__(self, N: int, blacklist: List[int]):
+        write_len = N - len(blacklist)
+        self.write_len = write_len
+        w = set([ii for ii in range(write_len, N)])
+        for ii in blacklist:
+            if ii >= write_len:
+                w.remove(ii)
+        w = list(w)
+        idx = 0
+        self.write_map = {}
+        for ii in blacklist:
+            if ii < write_len:
+                self.write_map[ii] = w[idx]
+                idx += 1
+
+    def pick(self) -> int:
+        k = random.randint(0, self.write_len - 1)
+        return self.write_map.get(k, k)
+```
+
+## 匹配问题
+
+### 匈牙利算法
+
+#### [LeetCode 5825. 最大兼容性评分和](https://leetcode-cn.com/problems/maximum-compatibility-score-sum/)
+
+> M 个老师，M 个学生分别对 N 门课进行打分，定义打分相兼容性评分，同个数为求老师和学生最大兼容性评分的匹配
+
+先构建 Match 矩阵，然后用 linear_sum_assignment 实现匈牙利算法
+
+（需要注意 linear_sum_assignment 为最小匹配
+
+```python
+from scipy.optimize import linear_sum_assignment
+class Solution:
+    def maxCompatibilitySum(self, students: List[List[int]], mentors: List[List[int]]) -> int:
+        N, M = len(students[0]), len(students)
+        match = [[0] * M for _ in range(M)]
+        for ii, student in enumerate(students):
+            for jj, teahcher in enumerate(mentors):
+                score = 0
+                for k, v in zip(student, teahcher):
+                    if k == v:
+                        score += 1
+                match[ii][jj] = score
+        r, c = linear_sum_assignment([[N - match[ii][jj] for jj in range(M)] for ii in range(M)])
+        return sum([match[ii][jj] for ii, jj in zip(r, c)])
 ```
