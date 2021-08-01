@@ -129,7 +129,7 @@ module.exports = {
           title: 'NLP',
           collapsable: false,
           children: [
-            'CGExpan', 'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
+            'AdvPicker', 'CGExpan', 'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
             'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm'
           ],
         },

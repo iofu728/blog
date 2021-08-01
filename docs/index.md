@@ -3,17 +3,18 @@ layout: home
 home: true
 title: 乌云压顶是吧
 actionText: View Last
-actionLink: /Operations/AcademicTrans.md
+actionLink: /NLP/AdvPicker.md
 descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
 
-[Last 👉](/Operations/AcademicTrans.md)
+[Last 👉](/NLP/AdvPicker.md)
 
 - ML
   - NLP
+    - [未标注目标语料是否均适合用于跨语言学习?『基于对抗判别器高效利用未标注语料的跨语言 NER 算法 AdvPicker』](/NLP/AdvPicker.md)
     - [利用预训练语言模型拓展实体集合](/NLP/CGExpan.md)
     - [试谈语言模型中无监督非结构化知识融入](/NLP/REALM.md)
     - [预训练模型中的可插拔式知识融入-利用 Adapter 结构](/NLP/kadapter.md)

@@ -1,9 +1,0 @@
-db:
-  mysql:
-    hostName: localhost
-    port: 3306
-    databaseName: blog
-    mysqlUserName: root
-    mysqlPassage: passage
-
-
