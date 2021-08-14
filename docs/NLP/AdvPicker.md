@@ -56,6 +56,18 @@ description: Empower Entity Set Expansion via LM Probing
 
 🤦 一开始想的挺美好的，但是 Adversarial Learning 的调参过于玄学，此处省略无数实验 work，也许以后可以用 NNI 这种来完成这种工作。
 
+`\begin{equation} \mathcal L^{\text{E}} = - \frac{1}{N} \sum_{i \in [1, N]} \log{\mathcal{P}_{\theta}(Y^{\text{DIS}}_{i} = {\widetilde{y}}^{\text{DIS}}_{i})} + \log{\mathcal{P}_{\theta}(Y^{\text{DIS}}_{i} = {y}^{\text{DIS}}_{i})} \label{equ:loss-e} \end{equation}`
+
+`\begin{equation} \mathcal L^{\text{DIS}} = - \frac{1}{N} \sum_{i \in [1, N]} \log{\mathcal{P}_{\theta}(Y^{\text{DIS}}_{i} = y^{\text{DIS}}_{i})} + \log{\mathcal{P}_{\theta}(Y^{\text{DIS}}_{i} = {\widetilde{y}}^{\text{DIS}}_{i})} \label{equ:loss-dis} \end{equation}`
+
+`\begin{equation} \mathcal L^{\text{NER}} = - \frac{1}{N} \sum_{i \in [1, N]} \log{\mathcal{P}_{\theta}(Y^{\text{NER}}_{i} = y^{\text{NER}}_{i})} \label{equ:loss-ner} \end{equation}`
+
+整体训练目标如上式所示,分为三个部分：
+
+1. `$\mathcal L^{\text{E}} $` 只更新 mBERT 参数，目标是让判别器无法正确区分语种；
+2. `$\mathcal L^{\text{DIS}} $` 只更新判别器 FFN 参数，目标是让判别器正确区分语种；
+3. `$\mathcal L^{\text{NER}} $` 不更新 embedding 和底下三层 Transformer 参数，目标是让判别器正确识别源语言实体;
+
 完成上述工作之后，我们就可以获得一个在源语言上 Fine-tune 好的 NER 模型和一个语言判别器(共享一个 mBERT)。
 此时拿 mBERT-TLADV 去做上述语料来源任务，这个时候它之中的 Language-specific 的特征就会明显减少。
 
