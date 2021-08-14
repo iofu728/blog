@@ -5,7 +5,7 @@
   "scripts": {
     "doc:dev": "./node_modules/.bin/vuepress dev ./docs",
     "docs:build": "./node_modules/.bin/vuepress build ./docs",
-    "now-build": "yarn docs:build"
+    "now-build": "cp -n docs/.vuepress/theme/config/redirect.json.tmp docs/.vuepress/theme/config/redirect.json && yarn docs:build"
   },
   "repository": {
     "type": "git",
