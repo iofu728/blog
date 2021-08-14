@@ -19,6 +19,7 @@ export default {
 </script>
 <style>
 .post-time {
+    font-family: Georgia,serif;
     font-weight: 500;
 }
 </style>

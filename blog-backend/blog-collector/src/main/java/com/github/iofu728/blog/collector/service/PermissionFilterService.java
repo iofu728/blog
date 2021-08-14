@@ -21,7 +21,7 @@ public interface PermissionFilterService {
      * judge have header permission
      *
      * @param request request
-     * @return true or false
+     * @return ScoreConst
      */
-    Boolean haveHeaderPermission (HttpServletRequest request);
+    int haveHeaderPermission (HttpServletRequest request);
 }

@@ -28,7 +28,7 @@ description: chip
 
 但很明显各个部分的重要程度不一样
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1544026738576-83e962a7-6d8d-41a0-822c-f50a916a3249.png "")
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1544026738576-83e962a7-6d8d-41a0-822c-f50a916a3249.png"></center>
 
 CPU速度很快 I/O速度超慢
 
@@ -126,7 +126,7 @@ MIPS是一个开源指令集 被中科院购买下来 后来成为龙芯公司 �
 > * SIMD 向量
 > * 存储系统分层结构
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/gif/104214/1544030318796-c90772e8-e81e-4c94-9243-ea17ce66cf09.gif "")
+<center><img width="300" src="https://cdn.nlark.com/yuque/0/2018/gif/104214/1544030318796-c90772e8-e81e-4c94-9243-ea17ce66cf09.gif"></center>
 
 流水线 就相当于时间上的并行 每个核心反复做相同的工作 由不同核心共同完成一个任务
 
@@ -200,7 +200,7 @@ TPU就不是通用的计算芯片 是一种AISC特定用途的芯片 由google�
 
 屠杀了各大NLP任务排行榜 比如说这个由Stanford发布的阅读理解领域权威数据集
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1544104977958-c9f04811-f5fc-46db-b945-2c22ea1994b7.png "")
+<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1544104977958-c9f04811-f5fc-46db-b945-2c22ea1994b7.png"></center>
 
 可以看到前7名全是用Bert的 足足把原有的水平提高7.8个百分点 十分接近人类表现了
 
@@ -252,7 +252,7 @@ TPU就不是通用的计算芯片 是一种AISC特定用途的芯片 由google�
 
 cloud 就是租用部署在云端的服务器
 
-![图片.png | center | 556x500](https://cdn.nlark.com/yuque/0/2018/png/104214/1544105360176-f19a1c30-0f09-4ca2-8cb6-85be27a01cff.png "")
+<center><img width="300" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1544105360176-f19a1c30-0f09-4ca2-8cb6-85be27a01cff.png"></center>
 
 为啥要租用而不是购买呢 主要原因就是弹性扩容 以便资源最大利用
 

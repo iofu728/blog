@@ -2,7 +2,8 @@ package com.github.iofu728.blog.collector.collector;
 
 import com.github.iofu728.blog.collector.bo.BaseResponse;
 import com.github.iofu728.blog.collector.bo.PageViewsBo;
-import com.github.iofu728.blog.collector.consts.ErrorCodeConsts;
+import com.github.iofu728.blog.collector.consts.ErrorCodeConst;
+import com.github.iofu728.blog.collector.consts.ScoreConst;
 import com.github.iofu728.blog.collector.service.PageViewsService;
 import com.github.iofu728.blog.collector.service.PermissionFilterService;
 import lombok.NonNull;
@@ -34,11 +35,11 @@ public class PageViewsCollector {
     @GetMapping("list")
     public BaseResponse getPageViewLists(HttpServletRequest request,
                                          @NonNull Long timestamp) {
-        Object headerPermission = request.getAttribute("gunjianpan");
-        if (headerPermission != null && headerPermission.equals("Error")) {
+        int score = (int) request.getAttribute("sliceScore");
+        if (score >= ScoreConst.BOUNDARY_SCORE) {
             return BaseResponse.newFailResponse()
                     .errorMsg("Have no Permission!!!")
-                    .errorCode(ErrorCodeConsts.STATUS_FORBIDDEN)
+                    .errorCode(ErrorCodeConst.STATUS_FORBIDDEN)
                     .build();
         }
         Boolean timePermission = permissionFilterService.haveTimePermission(timestamp);
@@ -63,22 +64,21 @@ public class PageViewsCollector {
     public BaseResponse updatePageView(HttpServletRequest request,
                                        @NonNull Long timestamp,
                                        @NonNull String titleName) {
-        Object headerPermission = request.getAttribute("gunjianpan");
-        if (headerPermission != null && headerPermission.equals("Error")) {
+        int score = (int) request.getAttribute("sliceScore");
+        if (score >= ScoreConst.BOUNDARY_SCORE) {
             return BaseResponse.newFailResponse()
                     .errorMsg("Have empty Permission!!!")
-                    .errorCode(ErrorCodeConsts.STATUS_FORBIDDEN)
+                    .errorCode(ErrorCodeConst.STATUS_FORBIDDEN)
                     .build();
         }
         Boolean timePermission = permissionFilterService.haveTimePermission(timestamp);
         if (!timePermission) {
-            return BaseResponse.newFailResponse()
-                    .errorCode(ErrorCodeConsts.STATUS_FORBIDDEN)
-                    .errorMsg("Time stamp error")
+            return BaseResponse.newSuccResponse()
+                    .result(true)
                     .build();
         }
         return BaseResponse.newSuccResponse()
-                .result(pageViewsService.updatePageViews(timestamp, titleName))
+                .result(pageViewsService.updatePageViews(timestamp, titleName, score <= ScoreConst.UPDATE_BOUNDARY_SCORE))
                 .build();
     }
 }

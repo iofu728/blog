@@ -5,8 +5,9 @@
     <v-layout row
               wrap>
       <Tag v-for="item in $blog.tagList"
-           :key="item"
-           :slug="item">#{{item}} {{$blog.tags[item].length}}</Tag>
+           :key="item[0]"
+           :level="item[1]"
+           :slug="item[0]">#{{item[0]}} {{$blog.tags[item[0]].length}}</Tag>
     </v-layout>
     <v-list row
             wrap
@@ -51,6 +52,6 @@ export default {
 <style lang="stylus">
 .list-inline-time {
   min-width: 120px;
-  width: 200px !important;
+  width: 220px !important;
 }
 </style>

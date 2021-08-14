@@ -25,5 +25,5 @@ public interface PageViewsService {
      * @param titleName title name
      * @return true or false
      */
-    Boolean updatePageViews(Long timestamp, String titleName);
+    Boolean updatePageViews(Long timestamp, String titleName, boolean isUpdated);
 }

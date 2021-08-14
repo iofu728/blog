@@ -1,6 +1,6 @@
 package com.github.iofu728.blog.repository.repository.impl;
 
-import com.github.iofu728.blog.repository.entity.TitleDo;
+import com.github.iofu728.blog.repository.entity.TitleDO;
 import com.github.iofu728.blog.repository.mapper.TitleViewsMapper;
 import com.github.iofu728.blog.repository.repository.TitleViewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +24,10 @@ public class TitleViewsRepositoryImpl implements TitleViewsRepository {
 
     @Override
     public Map<String, Integer> selectTitleViewsForAll(){
-        List<TitleDo> titleViewsList = titleViewsMapper.selectTitleViewsForAll();
+        List<TitleDO> titleViewsList = titleViewsMapper.selectTitleViewsForAll();
         return titleViewsList.stream()
                 .collect(
-                        Collectors.toMap(TitleDo::getTitleName,
+                        Collectors.toMap(TitleDO::getTitleName,
                                 titleDo -> titleDo.getLocalViews() + titleDo.getZhihuViews()
                                         + titleDo.getCsdnViews() + titleDo.getCsdnViews()));
     }

@@ -2,7 +2,7 @@ import sortBy from 'lodash/sortBy'
 import dayjs from 'dayjs'
 import request from '../requests'
 import '../styles/global.styl'
-import { matchSlug } from './utils'
+import { decoderTagName, decoderTagGraph, matchSlug } from './utils'
 
 
 let time = 0
@@ -15,7 +15,7 @@ const install = (Vue, { theme, pages }) => {
   const pageViews = {}
   const titleList = []
 
-  request('/api/pv/list?timestamp=' + new Date().getTime())
+  request('/api/pv/list?timestamp=' + new Date().getTime(), {headers: {'Content-Type': 'application/json'}})
     .then(res => res.result)
     .then(pv => Object.keys(pv).forEach(r => pageViews[r] = pv[r]))
     .catch(reason => console.log(reason.message));
@@ -28,17 +28,44 @@ const install = (Vue, { theme, pages }) => {
   })
 
   const tags = {}
-  const tagList = []
+  const tagG = {}
+  const tagGList = {}
   postList.forEach(slug => {
     const list = posts[slug].frontmatter ? posts[slug].frontmatter.tags || [] : []
+    const tmpTagG = {};
+    const addTag = new Set();
     list.forEach(tagName => {
-      if (!tags[tagName]) {
-        tags[tagName] = []
-        tagList.push(tagName)
-      }
-      tags[tagName] = tags[tagName].concat(slug)
+      const t = decoderTagName(tagName);
+      t.forEach(tt => {
+        tt.forEach(k => {
+          if (!tags[k]) {
+            tags[k] = []
+          }
+          if (!addTag.has(k)) {
+            tags[k] = tags[k].concat(slug);
+            addTag.add(k);
+          }
+          if (!tagG[k]) {
+            tagG[k] = new Set();
+          }
+          if (!tmpTagG[k]) {
+            tmpTagG[k] = new Set();
+          }
+        })
+        var l0 = tt[0], l1 = tt[1], l2 = tt[2];
+        if (!!l1) {
+          tagG[l0].add(l1);
+          tmpTagG[l0].add(l1);
+        }
+        if (!!l2) {
+          tagG[l1].add(l2);
+          tmpTagG[l1].add(l2);
+        }
+      })
     })
+    tagGList[slug] = decoderTagGraph(tmpTagG);
   })
+  const tagList = decoderTagGraph(tagG);
 
   Vue.mixin({
     created () {
@@ -49,10 +76,13 @@ const install = (Vue, { theme, pages }) => {
       waitTime(tempTime) {
         setTimeout(() => {if(tempTime === time) {
           try {
+            this.replaceLatexCode();
+            this.getMathJax();
             window && this.updateZoom();
             this.getPageViews();
+            this.bindUtteranc();
           } catch (e) {
-            console.error(e.message)
+            console.error(e.message);
           }
         }}, 500)
       },
@@ -63,16 +93,75 @@ const install = (Vue, { theme, pages }) => {
           })
       },
       getPageViews () {
-        console.log(pageViews);
         console.log(this.$page.path);
-        request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path))
+        request('/api/pv/update?timestamp=' + new Date().getTime() + '&titleName=' + matchSlug(this.$page.path), {headers: {'Content-Type': 'application/json'}})
           .catch(reason => console.log(reason.message));
 
       },
+      replaceLatexCode(){
+        var i, text, code, codes = document.getElementsByTagName('code');
+        for (i = 0; i < codes.length;) {
+          code = codes[i];
+          if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+            text = code.textContent;
+            if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+              text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+              code.textContent = text;
+            }
+            if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+                /^\$(.|\s)+\$$/.test(text) ||
+                /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+              code.outerHTML = code.innerHTML;  // remove <code></code>
+              continue;
+            }
+          }
+          i++;
+        }
+      },
+      getMathJax() {
+        const script1 = document.createElement('script');
+        script1.src = 'https://wyydsb.xin/files/MathJax-2.7.4/AMS-setcounter.js';
+        script1.type = 'text/javascript';
+        script1.id = "ams-counter";
+        setTimeout(() => document.body.appendChild(script1), 500);
+        const script2 = document.createElement('script');
+        script2.type = 'text/javascript';
+        script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        script2.id = "tex-ams";
+        setTimeout(() => document.body.appendChild(script2), 700);
+        setTimeout(() => document.getElementById("ams-counter").remove(), 2000);
+        setTimeout(() => document.getElementById("tex-ams").remove(), 2000);
+      },
+      renderUtteranc() {
+        var container = document.getElementById('utteranc-container');
+        var script = document.createElement("script");
+        script.type = 'text/javascript';
+        script.id = "utteranc";
+        script.async = true;
+        script.setAttribute('issue-term', 'title');
+        script.setAttribute('theme', 'github-light')
+        script.setAttribute('repo',`iofu728/blog`)
+        script.setAttribute('crossorigin',`anonymous`)
+        script.src = 'https://utteranc.es/client.js';
+        container.appendChild(script);
+      },
+      onScroll() {
+        var container = document.getElementById('utteranc-container');
+        if (window.scrollY + window.innerHeight >= container.offsetTop) {
+            window.removeEventListener('scroll', this.onScroll);
+            this.renderUtteranc();
+        }
+      },
+      bindUtteranc() {
+        if (document.getElementsByTagName("iframe").length === 1) {
+          document.getElementsByClassName("utterances")[0].remove();
+          window.addEventListener('scroll', this.onScroll, {passive: true});
+        }
+      }
     },
     computed: {
       $blog() {
-        return { postList, posts, tags, tagList, pageViews, titleList}
+        return { postList, posts, tags, tagList, pageViews, titleList, tagGList}
       },
       $postNav() {
         const slug = matchSlug(this.$route.path)

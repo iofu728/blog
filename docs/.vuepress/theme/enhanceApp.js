@@ -18,6 +18,9 @@ function prepare (siteData) {
     if (!page.frontmatter) {
       page.frontmatter = {}
     }
+    page.authorFirstName = siteData.themeConfig.authorFirstName.replace(/^\S/, s => s.toUpperCase());
+    page.authorLastName = siteData.themeConfig.authorLastName.replace(/^\S/, s => s.toUpperCase());
+    page.author = page.authorFirstName + " " + page.authorLastName;
   })
   siteData.pages.push({
     frontmatter: {},
@@ -41,7 +44,7 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(routes, { router, theme })
   Vue.use(components, theme)
   try {
-    document && getGitalk()
+    document
   } catch (e) {
     console.error(e.message)
   }

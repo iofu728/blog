@@ -1,7 +1,0 @@
-db:
-  mysql:
-    databaseName: databaseName
-    mysqlUserName: mysqlUserName
-    mysqlPassage: mysqlPassage
-
-

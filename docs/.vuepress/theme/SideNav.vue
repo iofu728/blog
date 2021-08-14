@@ -8,7 +8,7 @@
                alt="avatar">
         </router-link>
         <hgroup class="mt-3 variant-hide">
-          <div class="subheading white--text">{{content.author}}</div>
+          <div class="subheading white--text">{{$page.author}}</div>
           <a :href="`mailto:${content.email}`"
              :title="content.email"
              class="aside-mail primary--text text--lighten-5">{{content.email}}</a>

@@ -28,5 +28,49 @@ const slugReg = /\/([^\/]+).html$/;
 
 export function matchSlug(path) {
   const arr = path.match(slugReg);
-  return arr ? arr[1] : null;
+  return arr ? arr[1] : "homePage";
+}
+
+export function decoderTagName(tagName) {
+  const res = [];
+  const tags = tagName.split("/").slice(0, 3);
+  tags.slice(-1)[0].replace("(", "").replace(")", "").split("#").forEach(tag => {
+    var tmp = [...tags];
+    tmp[tmp.length - 1] = tag;
+    res.push(tmp);
+  })
+  return res
+}
+
+export function decoderTagGraph(tagG) {
+  const res = [];
+  const done = new Set();
+  for (const [key, value] of Object.entries(tagG)) {
+    if (!done.has(key)) {
+      var tmpRes = dfsTagGraph(key, tagG, done);
+      res.push(...tmpRes);
+    }
+  }
+  return res;
+}
+
+export function dfsTagGraph(root, tagG, done) {
+  const queue = [];
+  const res = [];
+  queue.push([root, 1]);
+  while (queue.length) {
+    var top = queue.pop();
+    if (done.has(top[0])) {
+      continue;
+    }
+    done.add(top[0]);
+    res.push(top);
+    const children = tagG[top[0]] || [];
+    children.forEach(c => {
+      if (!done.has(c)) {
+        queue.push([c, top[1] + 1]);
+      }
+    })
+  }
+  return res;
 }

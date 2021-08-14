@@ -7,6 +7,8 @@ $mobileSidebarWidth = 50%
     width $mobileSidebarWidth
   .page
     padding-left $mobileSidebarWidth
+  .a
+    font-weight: normal;
 
 // wide mobile
 @media (max-width: $MQMobile)
@@ -28,14 +30,20 @@ $mobileSidebarWidth = 50%
 // narrow mobile
 @media (max-width: $MQMobileNarrow)
   .content.custom
-    font-size 11px !important !important
+    font-size 11px !important
+    line-height: 1.2em;
     blockquote
        padding 2px 10px !important
        margin 1em 0 1em 0 !important
+    ul
+      padding-left: 1em !important;
+      margin-bottom: 0.5em !important;
+    p
+      margin-bottom: 8px !important;
   h1
     font-size 1.9rem
   h2
-    font-size 16px
+    font-size 16px !important
     padding-top 2em !important
     margin-top -1.4em !important
   h3
@@ -55,14 +63,14 @@ $mobileSidebarWidth = 50%
     padding-inline-start 5px !important
   .mb-3
     margin-bottom 0 !important
+    font-size 19px !important
   .mt-3
     margin-top 0 !important
   .display-1
-    font-size  19px !important
     font-weight: 500;
     line-height: 20px !important;
-    padding 3px
-    margin-left 5px
+    padding 0px
+    margin-left 0
   .hidden-xs-only
     display block !important
     font-weight 300
@@ -78,27 +86,28 @@ $mobileSidebarWidth = 50%
     white-space normal !important
     font-size 12px
   .secondary--text
-    font-size 12px
+    font-size 11px
     padding 3px
-    margin-left 5px
+    margin-left 3px
   .card__title
     padding 1px
   .title_views
-    font-size 12px
+    font-size 11px
+    margin-left 3px
   .blog-footer
     font-size 11px !important
-  .gt-container .gt-meta
-    font-size 11px !important
-  .gt-container .gt-comment-header
-    font-size 12px !important
-  .gt-container .gt-header-textarea
-    font-size 11px !important
-  .gt-container .gt-btn
+  .gt-container *
     font-size 11px !important
   .content.custom pre, .content.custom pre[class*="language-"]
     margin-left -0.46em !important
     margin-right -0.46em !important
   .content
     div[class*="language-"]
-      margin 0.85rem -1.5rem
+      margin 0.85rem -1.7rem
       border-radius 0
+  .author
+    font-size 11px;
+    padding 2px
+  .comment
+    font-size 11px !important;
+    margin: 0 auto !important;

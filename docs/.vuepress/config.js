@@ -17,11 +17,39 @@ module.exports = {
     ['meta', {name: 'apple-mobile-web-app-status-bar-style', content: 'black'}],
     ['link', {rel: 'apple-touch-icon', href: '/icons/192.png'}],
     ['meta', {name: 'msapplication-TileImage', content: '/icons/192.png'}],
-    ['meta', {name: 'msapplication-TileColor', content: '#07527a'}]
+    ['meta', {name: 'msapplication-TileColor', content: '#07527a'}],
+    ['meta', {name: 'referrer', content: 'no-referrer'}],
+    ['script', {type: 'text/x-mathjax-config'},
+    `MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']]},
+          processEnvironments: true,
+          TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}, extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js"]},
+          "HTML-CSS": {linebreaks: {automatic: true, width: "95% container"}, noReflows: false, styles: {".MathJax_Display": {margin: "1em 0em 0.7em;", display: "inline-block!important;"}}},
+          "PreviewHTML": {linebreaks: {automatic: true, width: "95% container"}, noReflows: false, styles: {".MathJax_PHTML_Display": {margin: "1em 0em 0.7em;", display: "inline-block!important;"}}},
+          "CommonHTML": {linebreaks: {automatic: true, width: "95% container"}, noReflows: false, styles: {".MJXc-display": {margin: "1em 0em 0.7em;", display: "inline-block!important;"}}},
+          "SVG": {linebreaks: {automatic: true, width: "95% container"}, noReflows: false, styles: {".MathJax_SVG_Display": {margin: "1em 0em 0.7em;", display: "inline-block!important;"}}}
+      });`],
+    ['script', {}, `
+      (function() {
+        var meta = document.createElement("meta");
+        meta.name = "google-site-verification";
+        meta.content = "7ULbF13p7e6Z16vpi2tbAPHXHJBVu83TaxPTnvwnA8I";
+        setTimeout(() => document.body.appendChild(meta))})(); `],
+    ['script', {}, `
+      (function() {
+        var script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=UA-113936890-1";
+        setTimeout(() => document.body.appendChild(script), 2000)})(); `],
+    ['script', {}, `
+      (function() {
+        var script = document.createElement("script");
+        script.text = 'window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-113936890-1");';
+        setTimeout(() => document.body.appendChild(script), 2100)})(); `],
   ],
   serviceWorker: true,
   theme: '',
-  locales: {'/': {lang: 'zh-CN', title: '乌云压顶是吧', description: '🍥'}},
+  locales: {'/': {lang: 'en-US', title: '乌云压顶是吧', description: '🍥'}},
   configureWebpack: (config, isServer) => {
     const myConfig = {
       resolve: {alias: {'@pub': resolve('./public')}},
@@ -39,30 +67,28 @@ module.exports = {
     return myConfig
   },
   markdown: {
-    config: md => {
-      md.set({breaks: true})
-      md.use(require('markdown-it-katex'), require('markdown-it-emoji'));
-    }
+    lineNumbers: true,
   },
   themeConfig: {
-    lang: 'zh-CN',
+    lang: 'en-US',
     subTitle: ' ',
-    author: 'Gunjianpan',
+    authorFirstName: "Jianpan",
+    authorLastName: "Gun",
+    icpLicense: "浙ICP备19005445号-1",
     email: 'iofu728@163.com',
     since: 2017,
     avatar: '/face.jpg',
     avatarLink: '/',
-    algolia: {apiKey: 'c42b71d494ca78750c7094eb2c55eda6', indexName: 'wyydsb'},
     serviceWorker: {
       updatePopup: {message: 'New content is available.', buttonText: 'Refresh'}
     },
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/other/mrfn.html'},
-      {text: 'Spider', icon: 'fas fa-crosshairs', url: '/other/jsdecoder.html'},
-      {text: 'Linux', icon: 'fab fa-linux', url: '/other/spinlock.html'},
-      {text: 'Pat', icon: 'fas fa-chess-bishop', url: '/pat/catalog.html'},
+      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/NLP/CGExpan.html'},
+      {text: 'Spider', icon: 'fas fa-crosshairs', url: '/Spider/jsdecoder.html'},
+      {text: 'Linux', icon: 'fab fa-linux', url: '/Linux/spinlock.html'},
+      {text: 'Coding', icon: 'fas fa-chess-bishop', url: '/Coding/LeetCode.html'},
       {text: 'Tags', icon: 'fa fa-tag', url: '/tags/'},
       {
         text: 'Github',
@@ -93,66 +119,75 @@ module.exports = {
       info: '#00B8D4',
       success: '#1DA57A'
     },
-    format:
-        {date: 'YYYY年MM月DD日 HH:mm:ss', dateTime: 'YYYY年MM月DD日 HH:mm:ss'},
+    format: {date: 'YYYY年MM月DD日 HH:mm:ss', dateTime: 'YYYY年MM月DD日 HH:mm:ss'},
     pagination: {path: '/page/:pageNum', pageSize: 5},
     tags: {path: '/tags/:tagName'},
     categories: {path: '/categories/:category'},
     sidebar: {
-      '/other/': [
+      '/NLP/': [
         {
           title: 'NLP',
           collapsable: false,
           children: [
-            'mrfn', 'xiaoice', 'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm',
-            'pagerank'
+            'AdvPicker', 'CGExpan', 'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
+            'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm'
           ],
         },
-        {
-          title: 'Linux',
-          collapsable: false,
-          children: ['schedule', 'synch'],
-        },
-        {
-          title: 'SQL',
-          collapsable: false,
-          children: ['peloton', 'truncate'],
-        },
+      ],
+      '/DataMining/': [
         {
           title: 'Data Mining',
           collapsable: false,
-          children: ['ppr', 'pageranks', 'frequent'],
-
+          children: ['ppr', 'pageranks', 'pagerank', 'frequent'],
         },
+      ],
+      '/Linux/': [
+        {
+          title: 'Linux',
+          collapsable: false,
+          children: ['schedule', 'synch', "spinlock"],
+        },
+      ],
+      '/Spider/': [
         {
           title: 'Spider',
           collapsable: false,
           children: ['jsdecoder', 'spiderskill', 'neteasedb', 'netease'],
+        },
+      ],
+      '/DB/': [
+        {
+          title: 'DB',
+          collapsable: false,
+          children: ['peloton', 'truncate'],
+        },
+      ],
+      '/Operations/': [
+        {
+          title: 'Operations',
+          collapsable: false,
+          children: ['AcademicTrans', 'zshsh', 'terminal', 'brew', 'spider', 'pv', 'redirect', 'nohup', 'accident', 'gitSkill', 'nginx'],
         },
         {
           title: 'Hadoop',
           collapsable: false,
           children: ['pseudo', 'mapreduce'],
         },
+      ],
+      '/other/': [
         {
-          title: 'Bash',
+          title: 'Summary',
           collapsable: false,
-          children: [
-            'zshsh', 'terminal', 'brew', 'spider', 'pv', 'redirect', 'nohup'
-          ],
+          children: ['deecamp', 'cs'],
         },
         {
           title: 'Sundry',
           collapsable: false,
-          children: ['numpy', 'chip', 'gitSkill', 'nginx'],
-        },
-        {
-          title: 'Summary',
-          collapsable: false,
-          children: ['deecamp', 'accident', 'cs'],
+          children: ['numpy', 'chip', ],
         },
       ],
-      '/pat/': [
+      '/Coding/': [
+        'LeetCode',
         'catalog',
         {
           title: 'Summary',

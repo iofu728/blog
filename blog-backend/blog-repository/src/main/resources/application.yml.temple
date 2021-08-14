@@ -1,7 +1,13 @@
 db:
   mysql:
-    databaseName: databaseName
-    mysqlUserName: mysqlUserName
-    mysqlPassage: mysqlPassage
-
-
+    hostName: localhost
+    port: 3306
+    databaseName: blog
+    mysqlUserName: root
+    mysqlPassage: passage
+web:
+  hosts: https://xyz.xin
+  apiHost: xyz
+  rsaPublicKeyPath: xyz
+  rsaPrivateKeyPath: xyz
+  cookieKey: xyz

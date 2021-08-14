@@ -13,24 +13,14 @@
   </strong>
 </div>
 
+## New Features 🧸
 
-## 二次开发
-* 4.0版本基于[vuepress-theme-indigo](https://github.com/yscoder/vuepress-theme-indigo)
-* 支持[Now 2.0](https://zeit.co)部署(v4.3.2)
-* 支持生产环境Docker部署(v4.3.1)
-* 实时显示访问量 + 文章阅读量(配合backend, v4.3)
-* img zoom(v4.2)
-* 资瓷Tags(v4.0)
-* 天粒度增量Load数据 数据处理由全量改为增量 减小内存CPU占用率(v3.0)
-* 自定义主题 `Gothic` Style + Card Style(v2.7)
-* 支持Gitalk评论(v2.0)
-* 支持自动处理、并更新访问量(v1.0)
-* 支持MapReduce分布式处理大数据量log
-* 支持log自动备份 :-1:prepare change to HDFS
-* 支持的不是很好的公式显示-Katex语法
-* 支持markdown-it-emoji 8-)
-* 支持Google Analysis，Algolia等<script/>自动部署
-* 参考[`Nginx 调优`](https://wyydsb.xin/other/nginx.html), [`从日志中识别 Spider`](https://wyydsb.xin/other/spider.html) 进行反爬处理
+The vuepress theme base on [vuepress-theme-indigo](https://github.com/yscoder/vuepress-theme-indigo)
+
+- Support MathJax in markdown environments.
+- Generate BibTeX in each blog.
+- Support multi-level tags.
+- Support redirect link in 404 page.
 
 ## 开发指南
 
@@ -57,6 +47,7 @@ $ docker pull iofu728/blog:backend-v4.3.2
 ```
 
 ### Backend
+
 ```bash
 # mysql config
 $ cp blog-backend/blog-repository/src/main/resources/application.yml.temple blog-backend/blog-repository/src/main/resources/application.yml
@@ -68,6 +59,7 @@ $ nohup java -jar blog-collector/build/libs/blog-collector-4.3.0-SNAPSHOT.jar >>
 ```
 
 ## 部署指南
+
 ```bash
 .
 ├── README.md
