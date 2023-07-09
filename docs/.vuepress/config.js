@@ -72,9 +72,9 @@ module.exports = {
   themeConfig: {
     lang: 'en-US',
     subTitle: ' ',
-    authorFirstName: "Jianpan",
-    authorLastName: "Gun",
-    icpLicense: "浙ICP备19005445号-1",
+    authorFirstName: "Huiqiang",
+    authorLastName: "Jiang",
+    icpLicense: "浙ICP备19005445号",
     email: 'iofu728@163.com',
     since: 2017,
     avatar: '/face.jpg',
@@ -85,23 +85,23 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/NLP/CGExpan.html'},
+      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/NLP/MLKD.html'},
       {text: 'Spider', icon: 'fas fa-crosshairs', url: '/Spider/jsdecoder.html'},
       {text: 'Linux', icon: 'fab fa-linux', url: '/Linux/spinlock.html'},
-      {text: 'Coding', icon: 'fas fa-chess-bishop', url: '/Coding/LeetCode.html'},
+      // {text: 'Coding', icon: 'fas fa-chess-bishop', url: '/Coding/LeetCode.html'},
       {text: 'Tags', icon: 'fa fa-tag', url: '/tags/'},
       {
-        text: 'Github',
-        icon: 'fab fa-github',
-        url: 'https://github.com/iofu728/blog',
-        external: true
-      },
-      {
-        text: '知乎专栏',
+        text: 'Scholar',
         icon: 'fas fa-adjust',
-        url: 'https://zhuanlan.zhihu.com/wyydsb',
+        url: 'https://scholar.google.com/citations?user=99KtvpYAAAAJ',
         external: true
       },
+      // {
+      //   text: '知乎专栏',
+      //   icon: 'fas fa-adjust',
+      //   url: 'https://zhuanlan.zhihu.com/wyydsb',
+      //   external: true
+      // },
       {
         text: 'CV',
         icon: 'far fa-calendar-times',
@@ -129,7 +129,7 @@ module.exports = {
           title: 'NLP',
           collapsable: false,
           children: [
-            'AdvPicker', 'CGExpan', 'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
+            'MLKD', 'AdvPicker', 'CGExpan', 'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
             'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm'
           ],
         },

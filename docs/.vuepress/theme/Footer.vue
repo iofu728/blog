@@ -12,7 +12,7 @@
               href="https://beian.miit.gov.cn/"
               target="_blank"
               rel="noopener noreferrer"
-            >{{$site.themeConfig.icpLicense}}</a>
+            >{{$site.themeConfig.icpLicense}}{{getICP()}}</a>
             <br />
           </template>
           Power by
@@ -58,12 +58,26 @@ export default {
       setTimeout(() => {
         if (!Object.keys(this.pageViews).length) {
           this.getPageViews();
-          this.havePageViews();
+          if (!this.existedViews()) {
+            this.havePageViews();
+          }
         }
       }, 500);
     },
+    existedViews() {
+      return typeof this.pageViews.totalPageViews !== "undefined";
+    },
     getPageViews() {
       this.pageViews = Object.assign({}, this.$blog.pageViews);
+    },
+    getICP() {
+      try {
+        let href = window.location.href;
+        return href.includes(".com") ? "-5" : (href.includes(".cn") ? "-6": "-4");
+      } catch(e) {
+        return "";
+      }
+
     }
   }
 };

@@ -8,7 +8,7 @@ sudo yarn run docs:build
 
 for name in assets javaScript other pat tags icons NLP Spider Operations DB Coding Linux DataMining; do
     if [ ! -d "${NGINX_DIR}/${name}" ]; then
-        echo "文件不存在"
+        echo "${NGINX_DIR}/${name}文件不存在"
     else
         rm -rf ${NGINX_DIR}/${name}
     fi
