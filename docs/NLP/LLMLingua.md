@@ -1,5 +1,5 @@
 ---
-title: LLMLingua 及 LongLLMLingua: 从压缩Prompt出发，探究专属于 LLMs 的语言，以及Long Context 下的方案
+title: LLMLingua 及 LongLLMLingua： 从压缩Prompt出发，探究专属于 LLMs 的语言，以及Long Context 下的方案
 date: 2023-10-11 8:24:00
 tags: [NLP/PromptCompression]
 description: Prompt Compression
