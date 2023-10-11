@@ -14,7 +14,7 @@ LLMLingua, 利用经过Alignment的well-trained的小的语言模型，例如GPT
 [LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](https://arxiv.org/abs/2310.05736) (EMNLP 2023).<br>
 _Huiqiang Jiang, Qianhui Wu, Chin-Yew Lin, Yuqing Yang and Lili Qiu_
 
-LongLLMLingua, 利用Prompt 压缩增强LLMs在Long Context Scenarios下感知prompt中关键信息的能力，实现每1k个样本节省最高$28.5(GPT-3.5-Turbo, 4的话这个值还能x10)，并且还能提升LLMs的性能。
+LongLLMLingua, 利用Prompt 压缩增强LLMs在Long Context Scenarios下感知prompt中关键信息的能力，能够有效缓解Lost in the Middle, 十分适合RAG场景中使用。实现每1k个样本节省最高$28.5(GPT-3.5-Turbo, 4的话这个值还能x10)，并且还能提升LLMs的性能。
 
 [LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression](https://arxiv.org/abs/2310.06839) (Under Review).<br>
 _Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang and Lili Qiu_
@@ -137,6 +137,12 @@ API Cost方面，Long Context Scenorias 下能够节省更多的Cost，最多每
 
 3. 为什么LLMs能理解Compressed Prompt？<br>
 我们现在的理解是因为world Knowledge是相同的，不同的LLMs其实都是对于同一个Knowledge Space的逼近，不同LLMs能够逼近的程度不同（可以看成是LLMs的压缩率）。
+
+4. 传统压缩算法能做Prompt Compression吗？<br>
+实际上我们觉得直接做Prompt Compression比较困难，因为压缩完的prompt很有可能token数量不会减少，而且LLMs并不会很好的理解这种格式的信息。但是可以将传统压缩算法看做是某种Retrieval-based Method 来做Coarse-level的prompt compression。
+
+5. 能利用不同语言信息熵不同的特点，将prompt转换为信息熵高的语言再压缩吗？<br>
+理论上是可以的，不同语言中的信息熵差异非常大。但是这取决于translation System能够保留住原有信息，且black-box LLMs对于对应language能够有与源语言相似的performance。
 
 
 在完成LLMLingua之后，由于*CL的匿名政策，让我们有了充足的时间去思考。在这里感谢公司内部的一些同事，对我们的工作提出了很多有意义的问题，这些问题也帮助我们更好的理解我们的工作，以及未来的方向。<br>
