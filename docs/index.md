@@ -8,9 +8,9 @@ descriptionText:
 footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
-> 很高兴不认识你
-> I'm glad I don't know you.
-> I'm sorry, most of the content of this blog is in Chinese."
+> 很高兴不认识你<br>
+> I'm glad I don't know you.<br>
+> I'm sorry, most of the content of this blog is in Chinese.
 
 [Last 👉](/NLP/LLMLingua_en.md)
 
