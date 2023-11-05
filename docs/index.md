@@ -9,11 +9,14 @@ footer: 浙ICP备18001556号 & MIT | Copyright © 2017-present
 ---
 
 > 很高兴不认识你
+> I'm glad I don't know you.
+> I'm sorry, most of the content of this blog is in Chinese."
 
-[Last 👉](/NLP/LLMLingua.md)
+[Last 👉](/NLP/LLMLingua_en.md)
 
 - ML
   - NLP
+    - [LLMLingua | Explore the special language for LLMs via Prompt Compression](/NLP/LLMLingua_en.md)
     - [LLMLingua 及 LongLLMLingua： 从压缩Prompt出发，探究专属于 LLMs 的语言，以及Long Context 下的方案](/NLP/LLMLingua.md)
     - [LLMs 下的文本 OoD 检测](/NLP/MLKD.md)
     - [未标注目标语料是否均适合用于跨语言学习?『基于对抗判别器高效利用未标注语料的跨语言 NER 算法 AdvPicker』](/NLP/AdvPicker.md)

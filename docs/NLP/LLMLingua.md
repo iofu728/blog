@@ -7,7 +7,7 @@ description: Prompt Compression
 
 **Tl;DR:**
 
-我们准备了HF Space Demo 和 Code 欢迎大家体验使用 => [https://aka.ms/LLMLingua](https://aka.ms/LLMLingua)
+各个场景的cases，demo以及code见右 欢迎大家体验使用 => [https://llmlingua.com/](https://llmlingua.com/)
 
 LLMLingua, 利用经过Alignment的well-trained的小的语言模型，例如GPT2-small或者LLaMA-7B，来检测和剔除prompt中的不重要token，将其转化为一种人类很难理解但是LLMs能很好理解的形势。并且这种被压缩的prompt可以直接用在black-box LLMs中，实现最高20倍的压缩，且几乎不影响下游任务性能，尤其是LLMs特有的能力，例如ICL，Reasoning等。
 
