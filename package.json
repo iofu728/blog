@@ -3,8 +3,8 @@
   "version": "4.3.2",
   "description": "blog for wyydsb",
   "scripts": {
-    "doc:dev": "./node_modules/.bin/vuepress dev ./docs",
-    "docs:build": "./node_modules/.bin/vuepress build ./docs",
+    "doc:dev": "NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/vuepress dev ./docs",
+    "docs:build": "NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/vuepress build ./docs",
     "now-build": "cp -n docs/.vuepress/theme/config/redirect.json.tmp docs/.vuepress/theme/config/redirect.json && yarn docs:build"
   },
   "repository": {

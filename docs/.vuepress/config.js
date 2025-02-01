@@ -85,8 +85,8 @@ module.exports = {
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},
-      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/NLP/LLMLingua_en.html'},
-      {text: 'Spider', icon: 'fas fa-crosshairs', url: '/Spider/jsdecoder.html'},
+      {text: 'NLP', icon: 'fab fa-nintendo-switch', url: '/NLP/MInference.html'},
+      {text: 'Spider', icon: 'fa fa-bug', url: '/Spider/jsdecoder.html'},
       {text: 'Linux', icon: 'fab fa-linux', url: '/Linux/spinlock.html'},
       // {text: 'Coding', icon: 'fas fa-chess-bishop', url: '/Coding/LeetCode.html'},
       {text: 'Tags', icon: 'fa fa-tag', url: '/tags/'},
@@ -96,16 +96,16 @@ module.exports = {
         url: 'https://scholar.google.com/citations?user=99KtvpYAAAAJ',
         external: true
       },
-      // {
-      //   text: '知乎专栏',
-      //   icon: 'fas fa-adjust',
-      //   url: 'https://zhuanlan.zhihu.com/wyydsb',
-      //   external: true
-      // },
+      {
+        text: 'Zhihu',
+        icon: 'fa fa-podcast',
+        url: 'https://www.zhihu.com/people/gunjianpan',
+        external: true
+      },
       {
         text: 'CV',
-        icon: 'far fa-calendar-times',
-        url: 'https://cv.wyydsb.com',
+        icon: 'fa fa-user-circle',
+        url: 'https://hqjiang.com',
         external: true
       },
     ],
@@ -129,7 +129,8 @@ module.exports = {
           title: 'NLP',
           collapsable: false,
           children: [
-            'LLMLingua_en', 'LLMLingua', 'MLKD', 'AdvPicker', 'CGExpan', 'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
+            'MInference', 'LLMLingua_en', 'LLMLingua', 'MLKD', 'AdvPicker', 'CGExpan',
+            'REALM', 'kadapter', 'relativepositionembed', 'mrfn', 'xiaoice',
             'summarization', 'ecmo', 'chatbot', 'rnn', 'vsm'
           ],
         },

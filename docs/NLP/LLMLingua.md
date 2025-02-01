@@ -65,7 +65,7 @@ Paper里我们试图去回答以下几个问题，不过可能有些有趣的发
 
 这也就是我们在LLMLingua中设计了Budget Controller，Iterative Token-level Prompt Compression, Alignment 三个module的原因，具体细节可见paper。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846610-c09bf9e2-2715-42be-ad7f-cd0dc21d9b64.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846610-c09bf9e2-2715-42be-ad7f-cd0dc21d9b64.png"></center>
 
 第二个问题也是所有Efficient Method in LLMs都会遇到的问题，不过之前大部分工作也只是在一些传统的Zero-shot QA或者Language Model task上进行测试，为了进一步说明这种被压缩prompt对于下游任务的影响，我们专门从LLMs特有的一些能力出发，评测了ICL，Reasoning，Summarization，和Conversation这些任务。结果显示我们在GSM8K上可以做到20x的压缩比，并且几乎不影响performance。在Summarization和Conversatio的结果也比baseline要优。<br>
 顺带回答第六个问题，其实可以看见Generation-based的方法实际上不能很好的保留精心设计的prompt中的关键信息，它会忽略推理细节，甚至生成一个完全不相关的examples，即使是GPT-4 也很难完成压缩prompt这件事。
@@ -74,19 +74,19 @@ Paper里我们试图去回答以下几个问题，不过可能有些有趣的发
 
 为了证明LLMLingua的泛化性，我们测试了不同small language model 和black-box LLMs，结果显示由于我们的设计GPT2 small size的模型也能取得不错的结果。此外，被压缩的prompt也能在Cluade上取得不错的结果，这也说明了LLMLingua的泛化性。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845708-ab8e2065-a7a0-4d6e-bad5-8ad2f17ef64f.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845708-ab8e2065-a7a0-4d6e-bad5-8ad2f17ef64f.png"></center>
 
 我们还做了一个有趣的实验，让GPT-4 去帮助回复被压缩之后的prompt，惊奇的发现，居然可以从那些人类很难理解的文本中几乎完全的恢复出所有细节，如下图完全恢复出了9-steps CoT。不过不同压缩程度的prompt能恢复的细节也不同，这也说明了我们的设计是合理的。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697037038482-089ab487-8897-46d4-9e40-a5c027eb3456.png"></center>
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697037038482-089ab487-8897-46d4-9e40-a5c027eb3456.png"></center>
 
 我们还发现压缩Prompt不仅能节省Input tokens，还能进一步节省20%-30% output tokens.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845584-5de4aa14-9bd7-4375-81b4-d234e48a7610.png"></center>
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845584-5de4aa14-9bd7-4375-81b4-d234e48a7610.png"></center>
 
 我们也尝试使用了更多的压缩率，结果显示即使是利用了LLMLingua，在特别大的压缩率下仍然会出现特别剧烈的performance drop。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845848-1d621b80-e226-4d97-ba9f-1e30e88d4457.png"></center>
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845848-1d621b80-e226-4d97-ba9f-1e30e88d4457.png"></center>
 
 除此之外，我们还将LLMLingua apply到KV-Cache Compression的场景，也能取得不错的performance。
 
@@ -103,14 +103,14 @@ LongLLMLingua 出发点和LLMLingua就不太一样了，不只是想要压缩pro
 综合以上几点，我们觉得Long Context Scenorias 中信息密度是一个非常关键的问题，Prompt Compression可能是其中的一个解决方案。<br>
 但是LLMLingua或者其他Compression-based 的method 并不是一个合适的解决方案，原因是Long Context 中关键信息的密度很低，很有可能prompt本身的信息熵很高，但是不相关，这样压缩prompt反而会引入更多的噪声，从而影响performance。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846905-74b006fa-93fb-4e4a-b381-c94e729da9d8.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846905-74b006fa-93fb-4e4a-b381-c94e729da9d8.png"></center>
 
 我们的解决方案是，通过设计了Question-Aware Coarse-fine的方法，让压缩算法能够感知到因为question带来的关键信息分布的变化。<br>
 具体细节可以参考我们的paper。其中Coarse-level的方法甚至还能单独拿来作为一个Retrieval method，取得不错的效果。<br>
 除此之外，我们利用Question-aware 的信息，对Document 进行重排，从而缓解lost in the middle带来的performance影响。可以看到如上右图，在4x压缩率，我们的方法能够略微超过ground truth 位于prompt 开头的结果，从而用更少的API Cost取得更好的结果，缓解lost in the middle 带来的问题。<br>
 我们还设计了dynamic compression ratio 来串联两个粒度方法的信息，设计了一个基于子序列的后处理recovery来恢复被压缩的重要信息。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036847621-1878d2f3-6949-49dc-9f70-2a30852bfac5.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036847621-1878d2f3-6949-49dc-9f70-2a30852bfac5.png"></center>
 
 为了证明我们方法的有效性，我们在Multi-Document QA和两个Long Context Benchmark 中进行了细致的测试。<br>
 其中Multi-Document QA中选用的dataset 更贴合RAG实际场景，k个document均为粗排召回与question十分相关的document。<br>
@@ -119,13 +119,13 @@ LongLLMLingua 出发点和LLMLingua就不太一样了，不只是想要压缩pro
 我们还测试了Long Context Benchmark中的不同tasks，包括Single-Document, Multi-Document, Summarization, Few-shot Learning, Synthetic和Code补全。<br>
 结果显示我们的方法在Multi-Document QA， Synthetic等任务上提升明显，能够在6x压缩率下获得更好的performance。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036847287-8cdd322c-2d99-46af-bc5a-b9d03d49f520.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036847287-8cdd322c-2d99-46af-bc5a-b9d03d49f520.png"></center>
 
 除此之外，我们还测试了端到端Latency，和API Cost节省情况。<br>
 结果显示，LongLLMLingua 虽然会比LLMLingua慢，但仍然能拿到实际的端到端加速。<br>
 API Cost方面，Long Context Scenorias 下能够节省更多的Cost，最多每1k个样本节省$28.5。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846937-185c1c3f-91c1-4c93-8df1-e12a712ad0de.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846937-185c1c3f-91c1-4c93-8df1-e12a712ad0de.png"></center>
 
 ## FQA
 
