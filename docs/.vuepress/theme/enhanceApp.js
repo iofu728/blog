@@ -43,9 +43,4 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.use(blog, { theme, pages })
   Vue.use(routes, { router, theme })
   Vue.use(components, theme)
-  try {
-    document
-  } catch (e) {
-    console.error(e.message)
-  }
 }

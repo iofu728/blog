@@ -61,6 +61,8 @@ export default {
   },
   created() {
     this.getTitleViews();
+    // SSR 构建时没有 document,不启动 BibTeX 生成和轮询
+    if (typeof document === "undefined") return;
     try {
       this.getBibTeX();
       this.haveTitleViews();
@@ -101,7 +103,10 @@ export default {
   methods: {
     haveTitleViews() {
       setTimeout(() => {
-        this.getTitleViews();
+        // 访问量数据已加载则停止轮询,不再每秒空转
+        if (this.getTitleViews()) {
+          return;
+        }
         this.getBibTeX();
         this.haveTitleViews();
       }, 1000);
@@ -123,10 +128,12 @@ export default {
       if (Object.keys(this.$blog.pageViews).length) {
         const slug = matchSlug(this.$route.path);
         this.page = Object.assign(this.page, {
-          titleViews: this.$blog.pageViews.titleViewsMap[slug],
+          // 迁移后无历史数据的文章显示 0 而不是空白
+          titleViews: this.$blog.pageViews.titleViewsMap[slug] || 0,
         });
-        
+        return true;
       }
+      return false;
     },
     getBibTeX() {
       if (

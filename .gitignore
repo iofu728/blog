@@ -22,6 +22,7 @@ access.log
 .gradle
 
 */build/
+**/build/
 */code/
 */out/
 */*/out/
@@ -29,6 +30,13 @@ access.log
 */classes/
 */*/classes/
 bin
+
+# 构建产物(服务器上由 script/build.sh 重新生成,无需入库)
+docs/.vuepress/dist/
+
+# 密钥文件不入库
+*.pem
+*.der
 
 # some . file
 .DS_Store
@@ -67,3 +75,5 @@ target
 # history
 .history
 redirect.json
+# vercel
+.vercel

@@ -130,7 +130,6 @@ export default {
 }
 </script>
 <style src="@fortawesome/fontawesome-free-webfonts/css/fa-solid.css"></style>
-<style src="@fortawesome/fontawesome-free-webfonts/css/fa-regular.css"></style>
 <style src="@fortawesome/fontawesome-free-webfonts/css/fa-brands.css"></style>
 <style src="@fortawesome/fontawesome-free-webfonts/css/fontawesome.css"></style>
 <style src="prismjs/themes/prism-tomorrow.css"></style>

@@ -12,6 +12,10 @@ module.exports = {
   head: [
     ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
     ['link', {rel: 'manifest', href: '/manifest.json'}],
+    // 第三方域名提前解析 DNS(评论、数学公式、统计)
+    ['link', {rel: 'dns-prefetch', href: 'https://utteranc.es'}],
+    ['link', {rel: 'dns-prefetch', href: 'https://cdnjs.cloudflare.com'}],
+    ['link', {rel: 'dns-prefetch', href: 'https://www.googletagmanager.com'}],
     ['meta', {name: 'theme-color', content: '#07527a'}],
     ['meta', {name: 'apple-mobile-web-app-capable', content: 'yes'}],
     ['meta', {name: 'apple-mobile-web-app-status-bar-style', content: 'black'}],
@@ -47,7 +51,11 @@ module.exports = {
         script.text = 'window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "UA-113936890-1");';
         setTimeout(() => document.body.appendChild(script), 2100)})(); `],
   ],
-  serviceWorker: true,
+  // 关闭 SW:其 importScripts 指向 storage.googleapis.com(国内不可达)且预缓存全站 13MB;
+  // 静态资源已有 immutable 缓存头,重复访问足够快。public/ 下放了自注销的 service-worker.js 清理老访客
+  serviceWorker: false,
+  // 不为所有页面生成 <link rel="prefetch">(否则首访会把全站 5MB+ chunk 全部下载一遍)
+  shouldPrefetch: () => false,
   theme: '',
   locales: {'/': {lang: 'en-US', title: '乌云压顶是吧', description: '🍥'}},
   configureWebpack: (config, isServer) => {
@@ -79,9 +87,6 @@ module.exports = {
     since: 2017,
     avatar: '/face.jpg',
     avatarLink: '/',
-    serviceWorker: {
-      updatePopup: {message: 'New content is available.', buttonText: 'Refresh'}
-    },
     menus: [
       // icons by https://fontawesome.com/icons
       {text: 'Home', icon: 'fa fa-home', url: '/'},

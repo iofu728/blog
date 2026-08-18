@@ -11,9 +11,15 @@
     mounted(){
       window.addEventListener('scroll', this.onScroll, {passive: true});
     },
+    beforeDestroy(){
+      window.removeEventListener('scroll', this.onScroll);
+    },
     methods: {
       renderUtteranc() {
         var container = document.getElementById('utteranc-container');
+        if (!container || container.querySelector('iframe')) {
+          return;
+        }
         var script = document.createElement("script");
         script.type = 'text/javascript';
         script.id = "utteranc";
@@ -27,7 +33,7 @@
       },
       onScroll(){
         var container = document.getElementById('utteranc-container');
-        if (window.scrollY + window.innerHeight >= container.offsetTop) {
+        if (container && window.scrollY + window.innerHeight >= container.offsetTop) {
             window.removeEventListener('scroll', this.onScroll);
             this.renderUtteranc();
         }
