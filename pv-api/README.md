@@ -13,7 +13,7 @@
 | `pv:total` | 累计访问量(INCR) |
 | `pv:day:YYYY-MM-DD` | 每日访问量(东八区,INCR),用于计算"昨日访问量" |
 | `pv:titles` | Hash,文章 slug → 阅读量(HINCRBY) |
-| `pv:spider:total` / `pv:spider:yesterday` | 爬虫数,迁移时写入的静态值(无实时来源) |
+| `pv:spider:total` / `pv:spider:yesterday` | 爬虫数,由 Web 服务器每日统计 nginx 日志写入(见下节) |
 
 ## 部署步骤
 
@@ -28,6 +28,16 @@
    curl "https://api.wyydsb.xin/api/pv/update?timestamp=$(date +%s000)&titleName=test"
    ```
 6. 确认无误后,停掉服务器上的 Java 进程(8848 端口)和 MySQL(如无其他用途)。
+
+## 爬虫计数(服务器侧)
+
+Serverless 接口看不到 Web 服务器日志,爬虫数由服务器上的
+`scripts/update-pv-spider.sh` 每日统计 nginx access.log 后直写 Upstash
+(替代 tengine 时代的 `script/pv.sh` cron)。部署:脚本放
+`/usr/local/bin/update-pv-spider`,凭证写 `/etc/pv-spider.env`(0600,
+不进 git),同目录的 `pv-spider.service` / `pv-spider.timer` 放
+`/etc/systemd/system/` 后 `systemctl enable --now pv-spider.timer`。
+统计口径:东八区前一天、UA 爬虫特征(仅匹配 UA 字段)、排除回环地址。
 
 ## 历史数据
 
