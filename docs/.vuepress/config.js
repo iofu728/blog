@@ -78,13 +78,17 @@ module.exports = {
     lineNumbers: true,
     config: md => {
       // 语雀导出的图片语法: ![描述 | center | 556x500](url)
-      // markdown-it 不识别竖线指令,这里解析出对齐和宽度转成内联样式,并给正文图片加懒加载
+      // markdown-it 不识别竖线指令;图片统一按自然尺寸显示(max-width:100% 封顶),
+      // 剥掉 width 属性避免把大图压小,并给正文图片加懒加载
       const YUQUE_IMG = /^(.*?)\s*\|\s*(center|left|right)\s*\|\s*(\d+)x(\d+)\s*$/
       md.core.ruler.push('yuque_image', state => {
         state.tokens.forEach(token => {
-          // 正文里的原生 <img> 标签(如 <center><img width="400">)统一加懒加载
+          // 正文里的原生 <img> 标签(如 <center><img width="400">):去掉 width/height 属性、加懒加载
           if ((token.type === 'html_block' || token.type === 'html_inline') && token.content.includes('<img')) {
-            token.content = token.content.replace(/<img (?![^>]*\bloading=)/g, '<img loading="lazy" ')
+            token.content = token.content.replace(/<img\b[^>]*>/g, tag => {
+              const t = tag.replace(/\s(?:width|height)="\d*"/g, '')
+              return /\bloading=/.test(t) ? t : t.replace('<img', '<img loading="lazy"')
+            })
             return
           }
           if (token.type !== 'inline' || !token.children) return
@@ -94,8 +98,8 @@ module.exports = {
             const m = child.content.match(YUQUE_IMG)
             if (!m) return
             const [, alt] = m
-            // 正文图片统一撑满栏宽(原语雀尺寸指令会导致图片显示过小)
-            child.attrSet('style', 'width:100%;max-width:100%;display:block;margin-left:auto;margin-right:auto')
+            // 自然尺寸 + 居中(block + auto margin,窄于栏宽的图也能居中)
+            child.attrSet('style', 'max-width:100%;display:block;margin-left:auto;margin-right:auto')
             // alt 里只保留真实描述,去掉竖线指令
             const text = new state.Token('text', '', 0)
             text.content = alt.trim()

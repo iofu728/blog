@@ -168,9 +168,8 @@ code, kbd, pre, samp
     max-width: 100%;
   }
 
-  // 正文图片统一撑满栏宽(覆盖原生 <img width="N"> 的呈现 hints),等比缩放
+  // 图片按自然尺寸显示、等比缩放,超过栏宽才收缩(不强行拉伸小图)
   img {
-    width: 100%;
     height: auto;
   }
 
