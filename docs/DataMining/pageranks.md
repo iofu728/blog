@@ -24,7 +24,7 @@ PageRank 是 由`佩奇(Larry Page)`等人提出 的 Google 最为有名的技�
 
 假设在一个有向图集合 G(V, E)中研究两个节点 u, v 之间的相关性
 
-<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1540877358180-86cdb3f0-a887-4023-b9eb-28c648623407.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1540877358180-86cdb3f0-a887-4023-b9eb-28c648623407.png"></center>
 
 上图, 我们可以从感性的认识上判断 u, v 之间的相似高要比 u, w 之间的相似度要高
 
@@ -107,7 +107,7 @@ PageRank 是 由`佩奇(Larry Page)`等人提出 的 Google 最为有名的技�
 
 当一个平衡建立之后，如果因为少数几个节点的异常更改，就会造成全部 PR 值的改变，这就很容易导致少数几个节点操控整个系统的 PR 值
 
-<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1540899475705-0298ae69-1631-45f9-8926-ca3d92185026.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1540899475705-0298ae69-1631-45f9-8926-ca3d92185026.png"></center>
 
 ### Flaw 3 Dead Ends and Spider Traps
 
@@ -117,7 +117,7 @@ PageRank 是 由`佩奇(Larry Page)`等人提出 的 Google 最为有名的技�
 
 这样的点 可以看做 强连通子图
 
-<center><img width="700" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1540913723891-0f4143a4-6f46-46a8-8ac4-f8962edb1418.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1540913723891-0f4143a4-6f46-46a8-8ac4-f8962edb1418.png"></center>
 
 ## PageRank
 

@@ -36,7 +36,7 @@ LLMs 具有极强的领域间泛化能力，对于 LLMs 而言，还存在 OoD �
 预训练的 LM 由于见过非常多的 raw text，即使是在 ID 中 finetune 过得模型$M_{\text{finetune}}$，对于特定 ID 数据集之外的 OoD 已经具有和 ID 相近的 distrubution。
 如果此时通过一个 model 只在 ID data 中 from scratch 的训练$M_{\text{fromScrath}}$，能够缓解上述问题。但是由于 from-scratch 训练语料较少，可能会导致 ID 数据的分布空间松散，从而造成 OoD data 有更多机会处于 ID 数据的分布中，见图 1。
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1688885155675-246820b2-e20a-423f-b1ed-554d13008c17.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1688885155675-246820b2-e20a-423f-b1ed-554d13008c17.png"></center>
 
 ## MLKD
 

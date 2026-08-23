@@ -171,7 +171,7 @@ GP-组预取 顾名思义就是分组的形式来预先获取信息
 在完成 code 1 的时候预取 code 2 的数据
 一次类推
 
-<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1543904768006-921e9519-69dc-44d4-b49f-fe90f6b0aa6a.png"></center>
+<center><img width="750" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1543904768006-921e9519-69dc-44d4-b49f-fe90f6b0aa6a.png"></center>
 
 这样只要 G 足够大 就能把从内存 load 到缓存中的时间抵消掉，即
 
