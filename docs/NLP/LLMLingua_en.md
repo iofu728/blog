@@ -68,7 +68,7 @@ But is it enough to just base it on PPL? We found that
 
 This is why we designed the Budget Controller, Iterative Token-level Prompt Compression, and Alignment three modules in LLMLingua, the specific details can be seen in the paper.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846610-c09bf9e2-2715-42be-ad7f-cd0dc21d9b64.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846610-c09bf9e2-2715-42be-ad7f-cd0dc21d9b64.png"></center>
 
 The second question is also a problem that all Efficient Method in LLMs will encounter. However, most previous works only tested on some traditional Zero-shot QA or Language Model tasks. In order to further illustrate the impact of this compressed prompt on downstream tasks, we specifically started from some unique abilities of LLMs and evaluated ICL, Reasoning, Summarization, and Conversation tasks. The results show that we can achieve a 20x compression ratio on GSM8K and almost no impact on performance. The results in Summarization and Conversation are also better than the baseline.<br>  
 By the way, to answer the sixth question, we can actually see that Generation-based methods can't really preserve the key information in carefully designed prompts, it will ignore the reasoning details, and even generate completely unrelated examples, even GPT-4 is also difficult to compress prompts.
@@ -77,19 +77,19 @@ By the way, to answer the sixth question, we can actually see that Generation-ba
 
 To demonstrate the generalization of LLMLingua, we tested different small language models and black-box LLMs. The results showed that due to our design, GPT2 small size models can also achieve good results. In addition, the compressed prompt can also achieve good results on Cluade, which also demonstrates the generalization of LLMLingua.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845708-ab8e2065-a7a0-4d6e-bad5-8ad2f17ef64f.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845708-ab8e2065-a7a0-4d6e-bad5-8ad2f17ef64f.png"></center>
 
 We also conducted an interesting experiment, letting GPT-4 help respond to the compressed prompts. Surprisingly, it can almost completely recover all details from those texts that are difficult for humans to understand, as shown in the figure below, it fully recovered the 9-step CoT. However, the details that can be recovered from prompts with different compression degrees are also different, which also shows that our design is reasonable.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697037038482-089ab487-8897-46d4-9e40-a5c027eb3456.png"></center>
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697037038482-089ab487-8897-46d4-9e40-a5c027eb3456.png"></center>
 
 We also found that compressing prompts not only saves input tokens, but can also further save 20%-30% of output tokens.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845584-5de4aa14-9bd7-4375-81b4-d234e48a7610.png"></center>
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845584-5de4aa14-9bd7-4375-81b4-d234e48a7610.png"></center>
 
 We also tried using higher compression ratios. The results showed that even with the use of LLMLingua, there will still be a severe performance drop at particularly high compression ratios.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845848-1d621b80-e226-4d97-ba9f-1e30e88d4457.png"></center>
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036845848-1d621b80-e226-4d97-ba9f-1e30e88d4457.png"></center>
 
 In addition, we also applied LLMLingua to the scenario of KV-Cache Compression, and also achieved good performance.
 
@@ -105,14 +105,14 @@ LongLLMLingua has a different starting point from LLMLingua. It aims not only to
 Considering the above points, we believe that information density is a critical issue in Long Context Scenorias, and Prompt Compression may be one of the solutions.<br>
 However, LLMLingua or other compression-based methods are not suitable solutions. The reason is that the density of key information in Long Context is very low. It is very likely that the information entropy of the prompt itself is very high, but irrelevant. In this case, compressing the prompt will instead introduce more noise, thereby affecting performance.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846905-74b006fa-93fb-4e4a-b381-c94e729da9d8.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846905-74b006fa-93fb-4e4a-b381-c94e729da9d8.png"></center>
 
 Our solution is to design a Question-Aware Coarse-fine method, which allows the compression algorithm to perceive the changes in the distribution of key information caused by the question.   
 For specific details, please refer to our paper. The Coarse-level method can even be used as a standalone Retrieval method, achieving good results.<br>
 In addition, we use Question-aware information to rearrange the Document, thereby alleviating the performance impact caused by 'lost in the middle'. As can be seen in the figure above, at a 4x compression rate, our method can slightly surpass the result of the ground truth at the beginning of the prompt, thereby achieving better results with less API Cost and alleviating the problem caused by 'lost in the middle'.<br>
 We also designed a dynamic compression ratio to connect the information of two granularity methods, and designed a post-processing recovery based on subsequences to recover the important information that has been compressed.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036847621-1878d2f3-6949-49dc-9f70-2a30852bfac5.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036847621-1878d2f3-6949-49dc-9f70-2a30852bfac5.png"></center>
 
 To validate the effectiveness of our method, we conducted detailed tests in Multi-Document QA and two Long Context Benchmarks.<br>
 The dataset chosen in Multi-Document QA is more in line with the actual scenario of RAG, where k documents are all highly relevant documents recalled by coarse ranking with the question.   <br>  
@@ -121,13 +121,13 @@ Secondly, even if the Coarse-level Question-aware method in LongLLMLingua is use
 We also tested different tasks in Long Context Benchmark, including Single-Document, Multi-Document, Summarization, Few-shot Learning, Synthetic, and Code Completion.<br>
 The results show that our method significantly improves tasks such as Multi-Document QA and Synthetic, and can achieve better performance at a 6x compression rate.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036847287-8cdd322c-2d99-46af-bc5a-b9d03d49f520.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036847287-8cdd322c-2d99-46af-bc5a-b9d03d49f520.png"></center>
 
 In addition, we also tested end-to-end Latency and the savings in API Cost.<br>
 The results show that although LongLLMLingua is slower than LLMLingua, it can still achieve actual end-to-end acceleration.<br>  
 In terms of API Cost, more Cost can be saved under Long Context Scenorias, with a maximum saving of $28.5 per 1k samples.
 
-<center><img width="400" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846937-185c1c3f-91c1-4c93-8df1-e12a712ad0de.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2023/png/104214/1697036846937-185c1c3f-91c1-4c93-8df1-e12a712ad0de.png"></center>
 
 ## FQA
 
