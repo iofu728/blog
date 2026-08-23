@@ -82,6 +82,11 @@ module.exports = {
       const YUQUE_IMG = /^(.*?)\s*\|\s*(center|left|right)\s*\|\s*(\d+)x(\d+)\s*$/
       md.core.ruler.push('yuque_image', state => {
         state.tokens.forEach(token => {
+          // 正文里的原生 <img> 标签(如 <center><img width="400">)统一加懒加载
+          if ((token.type === 'html_block' || token.type === 'html_inline') && token.content.includes('<img')) {
+            token.content = token.content.replace(/<img (?![^>]*\bloading=)/g, '<img loading="lazy" ')
+            return
+          }
           if (token.type !== 'inline' || !token.children) return
           token.children.forEach(child => {
             if (child.type !== 'image') return

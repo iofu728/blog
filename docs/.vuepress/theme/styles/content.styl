@@ -164,8 +164,13 @@ code, kbd, pre, samp
     }
   }
 
-  video, audio {
+  video, audio, img {
     max-width: 100%;
+  }
+
+  // 原生 <img width="N"> 标签在窄屏下不溢出、保持宽高比
+  img {
+    height: auto;
   }
 
   .highlighted-line {
