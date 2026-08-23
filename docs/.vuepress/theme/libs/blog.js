@@ -111,17 +111,12 @@ const install = (Vue, { theme, pages }) => {
   }
 
   function getMathJax() {
-    const script1 = document.createElement('script');
-    script1.src = 'https://wyydsb.xin/files/MathJax-2.7.4/AMS-setcounter.js';
-    script1.type = 'text/javascript';
-    script1.id = "ams-counter";
-    setTimeout(() => document.body.appendChild(script1), 500);
-    const script2 = document.createElement('script');
-    script2.type = 'text/javascript';
-    script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    script2.id = "tex-ams";
-    setTimeout(() => document.body.appendChild(script2), 700);
-    setTimeout(() => document.getElementById("ams-counter").remove(), 2000);
+    // 注:原 AMS-setcounter.js 托管在 wyydsb.xin/files/ 下,已 404,不再加载
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    script.id = "tex-ams";
+    setTimeout(() => document.body.appendChild(script), 500);
     setTimeout(() => document.getElementById("tex-ams").remove(), 2000);
   }
 
