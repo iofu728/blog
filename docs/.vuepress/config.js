@@ -93,14 +93,9 @@ module.exports = {
             child.attrSet('loading', 'lazy')
             const m = child.content.match(YUQUE_IMG)
             if (!m) return
-            const [, alt, align, width] = m
-            const styles = [`width:${width}px`, 'max-width:100%']
-            if (align === 'center') {
-              styles.push('display:block', 'margin-left:auto', 'margin-right:auto')
-            } else if (align === 'right') {
-              styles.push('display:block', 'margin-left:auto')
-            }
-            child.attrSet('style', styles.join(';'))
+            const [, alt] = m
+            // 正文图片统一撑满栏宽(原语雀尺寸指令会导致图片显示过小)
+            child.attrSet('style', 'width:100%;max-width:100%;display:block;margin-left:auto;margin-right:auto')
             // alt 里只保留真实描述,去掉竖线指令
             const text = new state.Token('text', '', 0)
             text.content = alt.trim()

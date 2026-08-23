@@ -168,8 +168,9 @@ code, kbd, pre, samp
     max-width: 100%;
   }
 
-  // 原生 <img width="N"> 标签在窄屏下不溢出、保持宽高比
+  // 正文图片统一撑满栏宽(覆盖原生 <img width="N"> 的呈现 hints),等比缩放
   img {
+    width: 100%;
     height: auto;
   }
 
