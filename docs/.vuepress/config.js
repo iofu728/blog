@@ -76,6 +76,34 @@ module.exports = {
   },
   markdown: {
     lineNumbers: true,
+    config: md => {
+      // 语雀导出的图片语法: ![描述 | center | 556x500](url)
+      // markdown-it 不识别竖线指令,这里解析出对齐和宽度转成内联样式,并给正文图片加懒加载
+      const YUQUE_IMG = /^(.*?)\s*\|\s*(center|left|right)\s*\|\s*(\d+)x(\d+)\s*$/
+      md.core.ruler.push('yuque_image', state => {
+        state.tokens.forEach(token => {
+          if (token.type !== 'inline' || !token.children) return
+          token.children.forEach(child => {
+            if (child.type !== 'image') return
+            child.attrSet('loading', 'lazy')
+            const m = child.content.match(YUQUE_IMG)
+            if (!m) return
+            const [, alt, align, width] = m
+            const styles = [`width:${width}px`, 'max-width:100%']
+            if (align === 'center') {
+              styles.push('display:block', 'margin-left:auto', 'margin-right:auto')
+            } else if (align === 'right') {
+              styles.push('display:block', 'margin-left:auto')
+            }
+            child.attrSet('style', styles.join(';'))
+            // alt 里只保留真实描述,去掉竖线指令
+            const text = new state.Token('text', '', 0)
+            text.content = alt.trim()
+            child.children = [text]
+          })
+        })
+      })
+    },
   },
   themeConfig: {
     lang: 'en-US',
