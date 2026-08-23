@@ -27,3 +27,12 @@ for htmlFile in docs/.vuepress/dist/*/*.html docs/.vuepress/dist/*.html; do
 done
 
 mv docs/.vuepress/dist/* ${NGINX_DIR}/
+
+# nginx serves pre-built .gz/.br blindly (gzip_static/brotli_static), so the
+# deploy is not done until the precompressed artifacts are refreshed; this
+# also removes orphaned .gz/.br left by the previous build's hashed assets.
+if command -v precompress-static.sh >/dev/null; then
+    precompress-static.sh "${NGINX_DIR}"
+else
+    echo "WARNING: precompress-static.sh not found - .gz/.br artifacts are stale!" >&2
+fi
