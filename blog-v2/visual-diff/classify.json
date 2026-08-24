@@ -1,0 +1,30 @@
+[
+  {
+    "url": "/Spider/jsdecoder.html",
+    "viewport": "desktop",
+    "ratio": 0.057307726945244955,
+    "w": 1280,
+    "h": 8675,
+    "sameSize": false,
+    "oldH": 8663,
+    "newH": 8675,
+    "red": 636345,
+    "redInCode": 120737,
+    "inCodePct": 19,
+    "outsideRatio": 4.64
+  },
+  {
+    "url": "/other/numpy.html",
+    "viewport": "mobile",
+    "ratio": 0.011030881349322414,
+    "w": 390,
+    "h": 4208,
+    "sameSize": true,
+    "oldH": 4208,
+    "newH": 4208,
+    "red": 18103,
+    "redInCode": 17188,
+    "inCodePct": 94.9,
+    "outsideRatio": 0.06
+  }
+]
