@@ -1,0 +1,478 @@
+/* 冻结自旧站 Vuetify 1 运行时注入的 #vuetify-theme-stylesheet(themeConfig.colors 生成的主题色类) */
+a { color: #07527a; }
+.primary {
+  background-color: #07527a !important;
+  border-color: #07527a !important;
+}
+.primary--text {
+  color: #07527a !important;
+}
+.primary--text input,
+.primary--text textarea {
+  caret-color: #07527a !important;
+}
+.primary--after::after {
+  background: #07527a !important;
+}
+.primary.lighten-5 {
+  background-color: #a1d4ff !important;
+  border-color: #a1d4ff !important;
+}
+.primary--text.text--lighten-5 {
+  color: #a1d4ff !important;
+}
+.primary--text.text--lighten-5 input,
+.primary--text.text--lighten-5 textarea {
+  caret-color: #a1d4ff !important;
+}
+.primary.lighten-5--after::after {
+  background: #a1d4ff !important;
+}
+.primary.lighten-4 {
+  background-color: #85b8e6 !important;
+  border-color: #85b8e6 !important;
+}
+.primary--text.text--lighten-4 {
+  color: #85b8e6 !important;
+}
+.primary--text.text--lighten-4 input,
+.primary--text.text--lighten-4 textarea {
+  caret-color: #85b8e6 !important;
+}
+.primary.lighten-4--after::after {
+  background: #85b8e6 !important;
+}
+.primary.lighten-3 {
+  background-color: #699dca !important;
+  border-color: #699dca !important;
+}
+.primary--text.text--lighten-3 {
+  color: #699dca !important;
+}
+.primary--text.text--lighten-3 input,
+.primary--text.text--lighten-3 textarea {
+  caret-color: #699dca !important;
+}
+.primary.lighten-3--after::after {
+  background: #699dca !important;
+}
+.primary.lighten-2 {
+  background-color: #4d83af !important;
+  border-color: #4d83af !important;
+}
+.primary--text.text--lighten-2 {
+  color: #4d83af !important;
+}
+.primary--text.text--lighten-2 input,
+.primary--text.text--lighten-2 textarea {
+  caret-color: #4d83af !important;
+}
+.primary.lighten-2--after::after {
+  background: #4d83af !important;
+}
+.primary.lighten-1 {
+  background-color: #306a94 !important;
+  border-color: #306a94 !important;
+}
+.primary--text.text--lighten-1 {
+  color: #306a94 !important;
+}
+.primary--text.text--lighten-1 input,
+.primary--text.text--lighten-1 textarea {
+  caret-color: #306a94 !important;
+}
+.primary.lighten-1--after::after {
+  background: #306a94 !important;
+}
+.primary.darken-1 {
+  background-color: #003b61 !important;
+  border-color: #003b61 !important;
+}
+.primary--text.text--darken-1 {
+  color: #003b61 !important;
+}
+.primary--text.text--darken-1 input,
+.primary--text.text--darken-1 textarea {
+  caret-color: #003b61 !important;
+}
+.primary.darken-1--after::after {
+  background: #003b61 !important;
+}
+.primary.darken-2 {
+  background-color: #002649 !important;
+  border-color: #002649 !important;
+}
+.primary--text.text--darken-2 {
+  color: #002649 !important;
+}
+.primary--text.text--darken-2 input,
+.primary--text.text--darken-2 textarea {
+  caret-color: #002649 !important;
+}
+.primary.darken-2--after::after {
+  background: #002649 !important;
+}
+.primary.darken-3 {
+  background-color: #001132 !important;
+  border-color: #001132 !important;
+}
+.primary--text.text--darken-3 {
+  color: #001132 !important;
+}
+.primary--text.text--darken-3 input,
+.primary--text.text--darken-3 textarea {
+  caret-color: #001132 !important;
+}
+.primary.darken-3--after::after {
+  background: #001132 !important;
+}
+.primary.darken-4 {
+  background-color: #00001e !important;
+  border-color: #00001e !important;
+}
+.primary--text.text--darken-4 {
+  color: #00001e !important;
+}
+.primary--text.text--darken-4 input,
+.primary--text.text--darken-4 textarea {
+  caret-color: #00001e !important;
+}
+.primary.darken-4--after::after {
+  background: #00001e !important;
+}
+.secondary {
+  background-color: #6d6d6d !important;
+  border-color: #6d6d6d !important;
+}
+.secondary--text {
+  color: #6d6d6d !important;
+}
+.secondary--text input,
+.secondary--text textarea {
+  caret-color: #6d6d6d !important;
+}
+.secondary--after::after {
+  background: #6d6d6d !important;
+}
+.secondary.lighten-5 {
+  background-color: #f4f4f4 !important;
+  border-color: #f4f4f4 !important;
+}
+.secondary--text.text--lighten-5 {
+  color: #f4f4f4 !important;
+}
+.secondary--text.text--lighten-5 input,
+.secondary--text.text--lighten-5 textarea {
+  caret-color: #f4f4f4 !important;
+}
+.secondary.lighten-5--after::after {
+  background: #f4f4f4 !important;
+}
+.secondary.lighten-4 {
+  background-color: #d7d7d7 !important;
+  border-color: #d7d7d7 !important;
+}
+.secondary--text.text--lighten-4 {
+  color: #d7d7d7 !important;
+}
+.secondary--text.text--lighten-4 input,
+.secondary--text.text--lighten-4 textarea {
+  caret-color: #d7d7d7 !important;
+}
+.secondary.lighten-4--after::after {
+  background: #d7d7d7 !important;
+}
+.secondary.lighten-3 {
+  background-color: #bbbbbb !important;
+  border-color: #bbbbbb !important;
+}
+.secondary--text.text--lighten-3 {
+  color: #bbbbbb !important;
+}
+.secondary--text.text--lighten-3 input,
+.secondary--text.text--lighten-3 textarea {
+  caret-color: #bbbbbb !important;
+}
+.secondary.lighten-3--after::after {
+  background: #bbbbbb !important;
+}
+.secondary.lighten-2 {
+  background-color: #a0a0a0 !important;
+  border-color: #a0a0a0 !important;
+}
+.secondary--text.text--lighten-2 {
+  color: #a0a0a0 !important;
+}
+.secondary--text.text--lighten-2 input,
+.secondary--text.text--lighten-2 textarea {
+  caret-color: #a0a0a0 !important;
+}
+.secondary.lighten-2--after::after {
+  background: #a0a0a0 !important;
+}
+.secondary.lighten-1 {
+  background-color: #868686 !important;
+  border-color: #868686 !important;
+}
+.secondary--text.text--lighten-1 {
+  color: #868686 !important;
+}
+.secondary--text.text--lighten-1 input,
+.secondary--text.text--lighten-1 textarea {
+  caret-color: #868686 !important;
+}
+.secondary.lighten-1--after::after {
+  background: #868686 !important;
+}
+.secondary.darken-1 {
+  background-color: #555555 !important;
+  border-color: #555555 !important;
+}
+.secondary--text.text--darken-1 {
+  color: #555555 !important;
+}
+.secondary--text.text--darken-1 input,
+.secondary--text.text--darken-1 textarea {
+  caret-color: #555555 !important;
+}
+.secondary.darken-1--after::after {
+  background: #555555 !important;
+}
+.secondary.darken-2 {
+  background-color: #3e3e3e !important;
+  border-color: #3e3e3e !important;
+}
+.secondary--text.text--darken-2 {
+  color: #3e3e3e !important;
+}
+.secondary--text.text--darken-2 input,
+.secondary--text.text--darken-2 textarea {
+  caret-color: #3e3e3e !important;
+}
+.secondary.darken-2--after::after {
+  background: #3e3e3e !important;
+}
+.secondary.darken-3 {
+  background-color: #282828 !important;
+  border-color: #282828 !important;
+}
+.secondary--text.text--darken-3 {
+  color: #282828 !important;
+}
+.secondary--text.text--darken-3 input,
+.secondary--text.text--darken-3 textarea {
+  caret-color: #282828 !important;
+}
+.secondary.darken-3--after::after {
+  background: #282828 !important;
+}
+.secondary.darken-4 {
+  background-color: #131313 !important;
+  border-color: #131313 !important;
+}
+.secondary--text.text--darken-4 {
+  color: #131313 !important;
+}
+.secondary--text.text--darken-4 input,
+.secondary--text.text--darken-4 textarea {
+  caret-color: #131313 !important;
+}
+.secondary.darken-4--after::after {
+  background: #131313 !important;
+}
+.accent {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.accent--text {
+  color: #ffffff !important;
+}
+.accent--text input,
+.accent--text textarea {
+  caret-color: #ffffff !important;
+}
+.accent--after::after {
+  background: #ffffff !important;
+}
+.accent.lighten-5 {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.accent--text.text--lighten-5 {
+  color: #ffffff !important;
+}
+.accent--text.text--lighten-5 input,
+.accent--text.text--lighten-5 textarea {
+  caret-color: #ffffff !important;
+}
+.accent.lighten-5--after::after {
+  background: #ffffff !important;
+}
+.accent.lighten-4 {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.accent--text.text--lighten-4 {
+  color: #ffffff !important;
+}
+.accent--text.text--lighten-4 input,
+.accent--text.text--lighten-4 textarea {
+  caret-color: #ffffff !important;
+}
+.accent.lighten-4--after::after {
+  background: #ffffff !important;
+}
+.accent.lighten-3 {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.accent--text.text--lighten-3 {
+  color: #ffffff !important;
+}
+.accent--text.text--lighten-3 input,
+.accent--text.text--lighten-3 textarea {
+  caret-color: #ffffff !important;
+}
+.accent.lighten-3--after::after {
+  background: #ffffff !important;
+}
+.accent.lighten-2 {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.accent--text.text--lighten-2 {
+  color: #ffffff !important;
+}
+.accent--text.text--lighten-2 input,
+.accent--text.text--lighten-2 textarea {
+  caret-color: #ffffff !important;
+}
+.accent.lighten-2--after::after {
+  background: #ffffff !important;
+}
+.accent.lighten-1 {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.accent--text.text--lighten-1 {
+  color: #ffffff !important;
+}
+.accent--text.text--lighten-1 input,
+.accent--text.text--lighten-1 textarea {
+  caret-color: #ffffff !important;
+}
+.accent.lighten-1--after::after {
+  background: #ffffff !important;
+}
+.accent.darken-1 {
+  background-color: #e2e2e2 !important;
+  border-color: #e2e2e2 !important;
+}
+.accent--text.text--darken-1 {
+  color: #e2e2e2 !important;
+}
+.accent--text.text--darken-1 input,
+.accent--text.text--darken-1 textarea {
+  caret-color: #e2e2e2 !important;
+}
+.accent.darken-1--after::after {
+  background: #e2e2e2 !important;
+}
+.accent.darken-2 {
+  background-color: #c6c6c6 !important;
+  border-color: #c6c6c6 !important;
+}
+.accent--text.text--darken-2 {
+  color: #c6c6c6 !important;
+}
+.accent--text.text--darken-2 input,
+.accent--text.text--darken-2 textarea {
+  caret-color: #c6c6c6 !important;
+}
+.accent.darken-2--after::after {
+  background: #c6c6c6 !important;
+}
+.accent.darken-3 {
+  background-color: #ababab !important;
+  border-color: #ababab !important;
+}
+.accent--text.text--darken-3 {
+  color: #ababab !important;
+}
+.accent--text.text--darken-3 input,
+.accent--text.text--darken-3 textarea {
+  caret-color: #ababab !important;
+}
+.accent.darken-3--after::after {
+  background: #ababab !important;
+}
+.accent.darken-4 {
+  background-color: #919191 !important;
+  border-color: #919191 !important;
+}
+.accent--text.text--darken-4 {
+  color: #919191 !important;
+}
+.accent--text.text--darken-4 input,
+.accent--text.text--darken-4 textarea {
+  caret-color: #919191 !important;
+}
+.accent.darken-4--after::after {
+  background: #919191 !important;
+}
+.error {
+  background-color: #dc143c !important;
+  border-color: #dc143c !important;
+}
+.error--text {
+  color: #dc143c !important;
+}
+.error--text input,
+.error--text textarea {
+  caret-color: #dc143c !important;
+}
+.error--after::after {
+  background: #dc143c !important;
+}
+.info {
+  background-color: #00b8d4 !important;
+  border-color: #00b8d4 !important;
+}
+.info--text {
+  color: #00b8d4 !important;
+}
+.info--text input,
+.info--text textarea {
+  caret-color: #00b8d4 !important;
+}
+.info--after::after {
+  background: #00b8d4 !important;
+}
+.success {
+  background-color: #1da57a !important;
+  border-color: #1da57a !important;
+}
+.success--text {
+  color: #1da57a !important;
+}
+.success--text input,
+.success--text textarea {
+  caret-color: #1da57a !important;
+}
+.success--after::after {
+  background: #1da57a !important;
+}
+.warning {
+  background-color: #e6af5f !important;
+  border-color: #e6af5f !important;
+}
+.warning--text {
+  color: #e6af5f !important;
+}
+.warning--text input,
+.warning--text textarea {
+  caret-color: #e6af5f !important;
+}
+.warning--after::after {
+  background: #e6af5f !important;
+}
