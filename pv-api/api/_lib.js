@@ -32,9 +32,14 @@ export function setCors(req, res) {
   if (origin) {
     res.setHeader('Access-Control-Allow-Origin', origin)
     res.setHeader('Access-Control-Allow-Credentials', 'true')
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS')
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,x-admin-token')
   }
+}
+
+// 文章 slug 即 matchSlug(path) 的结果,如 LLMLingua_en、1040
+export function isValidSlug(slug) {
+  return typeof slug === 'string' && /^[A-Za-z0-9_.-]{1,100}$/.test(slug)
 }
 
 // 与旧 Java BaseResponse 结构保持一致
