@@ -35,3 +35,18 @@ jobs:
         with:
           node-version: 24
       - run: find pv-api/api -name '*.js' -exec node --check {} \;
+
+  test-comments-api:
+    name: Comment API smoke test (real Upstash)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # 随机 test slug 直连真实 Upstash,测完自动清理;覆盖提交/匿名/蜜罐/校验/限流/删评
+      - run: node pv-api/scripts/test-comments.mjs
+        env:
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+          COMMENTS_ADMIN_TOKEN: ${{ secrets.COMMENTS_ADMIN_TOKEN }}
