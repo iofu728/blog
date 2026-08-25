@@ -24,7 +24,7 @@ description: 网易云音乐 爬虫 db版
 
 整体架构图
 
-<center><img width="700" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1540344152388-7382ef87-a7e9-492c-a7ca-deca6e8bb148.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1540344152388-7382ef87-a7e9-492c-a7ca-deca6e8bb148.png"></center>
 
 ## Trouble
 

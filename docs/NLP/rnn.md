@@ -172,7 +172,7 @@ Output Gate 负责到点把东西从传送带输出（Forget 是无用的 Output
 
 结合下图再理解下
 
-<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541336967649-07d979b9-a8c4-45c1-bfdd-8526dbc7cace.png"></center>
+<center><img width="750" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541336967649-07d979b9-a8c4-45c1-bfdd-8526dbc7cace.png"></center>
 
 ## GRU
 

@@ -1,0 +1,7 @@
+[Unit]
+Description=Push yesterday's crawler count from nginx logs to pv-api (Upstash)
+
+[Service]
+Type=oneshot
+Nice=19
+ExecStart=/usr/local/bin/update-pv-spider

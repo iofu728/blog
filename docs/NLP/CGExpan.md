@@ -26,7 +26,7 @@ _Yunyi Zhang, Jiaming Shen, Jingbo Shang, Jiawei Han_
 
 本文从这个角度出发，通过两个 query 分别预测实体类别和实体, 试图更好的利用预训练模型中的语言知识。
 
-<center><img width="500" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1592151138136-28c0c5fd-dc82-41ce-aeca-fc5206b6aa1f.png"></center>
+<center><img width="700" src="https://cdn.nlark.com/yuque/0/2020/png/104214/1592151138136-28c0c5fd-dc82-41ce-aeca-fc5206b6aa1f.png"></center>
 
 初看可能思路比较简单，只是做一个 MLM 的预测。
 但如果只是这样，最多只是让生成的实体更符合生成的 class name，但很容易产生误差传递的问题, 并没解决语义偏移的问题。

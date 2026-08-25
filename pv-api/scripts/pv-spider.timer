@@ -1,0 +1,9 @@
+[Unit]
+Description=Daily update of pv-api crawler stats
+
+[Timer]
+OnCalendar=*-*-* 00:47:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

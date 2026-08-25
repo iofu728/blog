@@ -129,7 +129,7 @@ A 厂主营业务 TB 的`『千人千面』`算法
 
 举个 🌰 ，如图 每个节点转移出去的概率为`$1-\alpha$`, 留在节点的概率为`$\alpha$`, 则
 
-<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541483176417-5d7ca3f9-3d13-4f24-bdef-808ed347a811.png"></center>
+<center><img width="650" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541483176417-5d7ca3f9-3d13-4f24-bdef-808ed347a811.png"></center>
 
 - 第一个节点没分配的时候`$\pi_f(s,s)=\alpha$`, `$r_f(s,s)=1-\alpha$`
 - 当分配到第二轮的时候`$\pi_f(s,s)=\alpha$`, `$r_f(s,s)=0$`, `$r_f(s,v_i)=(1-\alpha)/3$`
@@ -152,7 +152,7 @@ A 厂主营业务 TB 的`『千人千面』`算法
 - `Reserve`: `$\pi_b(v,t)$`从 v 出发，运行到 t, 且停在 t
 - `Residue`: `$r_b(v,t)$`从 v 出发, 当前走到 t，不停
 
-<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541485485421-498f5f0b-f72c-4950-b907-424e2911438d.png"></center>
+<center><img width="750" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541485485421-498f5f0b-f72c-4950-b907-424e2911438d.png"></center>
 
 同样可以推出
 `\begin{equation}\pi(s,t)=\pi_b(s,t)+\sum\limits_{v\in V}r_b(v,t)\dot{}\pi(s,v)\end{equation}`
@@ -172,7 +172,7 @@ A 厂主营业务 TB 的`『千人千面』`算法
 
 在计算较大`$\pi_f$`时使用 Forward 当 Forward 进入停止迭代尾项的时候 使用 MC 进行计算 以提高精度
 
-<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541486227755-b3e8283e-fcc9-4ee0-8048-58e891afce8c.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541486227755-b3e8283e-fcc9-4ee0-8048-58e891afce8c.png"></center>
 
 MC 那么精确 那为啥不一开始就用 MC 呢
 
@@ -183,7 +183,7 @@ Forward 的 cost 大概在 MC 的`$1-\alpha$`倍左右, 举个栗子 还是 Forw
 
 这在数据量较大的情况下 差距还是比较可观的
 
-<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541486787842-80d2e97b-3653-4e6e-9367-b5a110496124.png"></center>
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541486787842-80d2e97b-3653-4e6e-9367-b5a110496124.png"></center>
 
 ## Alias Method
 
@@ -209,7 +209,7 @@ Alias Method 是一种大图中经常会用到的带权采样算法
 
 如图，先掷一次骰子, 先确定是四种情况中的哪一种，如果是 A，则 100%采样 A; 如果是 B, 则$\dfrac{2}{3}$概率为 B，$\dfrac{1}{3}$概率重试
 
-<center><img width="500" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541585266431-be4c92ce-4879-4935-9cf6-ded9f860b035.png"></center>
+<center><img width="600" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541585266431-be4c92ce-4879-4935-9cf6-ded9f860b035.png"></center>
 
 我们来考虑下复杂度, 最好的情况，一次就结束`$O(1)$`，不好的情况一直一直迭代下去，平均复杂度`$O(n)$`
 
@@ -409,7 +409,7 @@ T-温度，直观的感受，随着时间的增大，T 随之减小 那么在分
 
 然后根据前面说的`banbit`算法估计前 k 个 PPR
 
-<center><img width="700" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541575141776-d9ffe5e4-7eca-40db-8f58-1016c7f8edd1.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541575141776-d9ffe5e4-7eca-40db-8f58-1016c7f8edd1.png"></center>
 
 ## TopPPR algorithm
 
@@ -419,7 +419,7 @@ MC 的实际精度表现的比较低，于是又学者考虑把 FORA 和 Backwar
 
 利用 Backward search 改善精度，得到了 TopPPR algorithm
 
-<center><img width="700" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541575717225-029d8e44-0415-41ff-a04c-c50dc75406b5.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2018/png/104214/1541575717225-029d8e44-0415-41ff-a04c-c50dc75406b5.png"></center>
 
 `\begin{equation}\pi(s,t)=\pi_f(s,t)+\sum\limits_{u\in V}r_f(s,u)\pi_b(u,t)+\sum\limits_{u,v\in V}r_f(s,u)\pi(u,v)r_b(v,t)\end{equation}`
 

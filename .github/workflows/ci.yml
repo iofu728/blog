@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master, develop]
+
+jobs:
+  build-blog:
+    name: Build blog-v2 (VitePress)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: blog-v2/package-lock.json
+      # --omit=dev: 与 Vercel 预览部署的安装方式一致,playwright/pixelmatch 仅验收用
+      - run: npm --prefix blog-v2 ci --omit=dev
+      # 干净克隆全量构建,能抓到 redirect.json 这类本地缓存掩盖的缺失文件
+      - run: npm --prefix blog-v2 run build
+      - name: Page count sanity check
+        run: |
+          count=$(find blog-v2/.vitepress/dist -name '*.html' | wc -l)
+          echo "built $count html files"
+          [ "$count" -ge 140 ]
+
+  check-pv-api:
+    name: Syntax check pv-api
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: find pv-api/api -name '*.js' -exec node --check {} \;
+
+  test-comments-api:
+    name: Comment API smoke test (real Upstash)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # 随机 test slug 直连真实 Upstash,测完自动清理;覆盖提交/匿名/蜜罐/校验/限流/删评
+      - run: node pv-api/scripts/test-comments.mjs
+        env:
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+          COMMENTS_ADMIN_TOKEN: ${{ secrets.COMMENTS_ADMIN_TOKEN }}

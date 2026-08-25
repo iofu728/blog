@@ -1,0 +1,146 @@
+html
+  overflow-y: auto
+  scroll-behavior: smooth
+
+img
+  max-width 100%
+
+ol.reset,
+ul.reset
+  list-style none
+  li
+    list-style none
+
+a
+  text-decoration: inherit
+
+.application
+  color: rgba(0, 0, 0, 0.75);
+  word-break: break-all;
+  // 旧站构建时 $body-font-family 被 config.styl 覆盖(vuetify stylus 变量),
+  // 冻结的 vendor-vuetify.css 里是默认值 Roboto,这里补回旧站字体栈
+  font-family: $body-font-family;
+
+.application--wrap
+  background $body-background
+
+.blog-container
+  max-width $container-max-width!important
+  min-height: calc(100vh - 56px - 122px)
+
+.title,
+.headline,
+.subheading,
+.capitalize
+  text-transform: capitalize
+  font-weight 555
+
+.fake-hide
+  position: absolute;
+  top: -9999px;
+  right: -9999px;
+  z-index: -1;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  opacity: 0;
+
+.blog-progress.progress-linear
+  position fixed
+  top 0
+  left 0
+  right 0
+  z-index 9999
+  margin 0
+  background: #fff
+
+.medium-zoom-overlay
+  z-index: 100;
+
+.medium-zoom-overlay ~ img
+  z-index: 101;
+
+@media (min-width: ($MQMobile + 1px))
+  .theme-container.no-sidebar
+    .sidebar
+      display none
+    .page
+      padding-left 0
+
+// Vue 3 transition 起始类是 -enter-from(Vue 2 是 -enter),
+// 冻结的 vendor-vuetify.css 里只有旧类名,这里补齐别名
+.scale-transition-enter-from
+  opacity 0
+  transform scale(0)
+
+// VitePress 的标题锚点原本在标题文字之后且内容是零宽字符;
+// config.js 的 anchorCompatPlugin 已把锚点 token 移到标题文字之前(与旧站一致),
+// 这里只需用 ::before 补上 '#' 字形(inline 锚点会占据行宽、影响折行——这正是旧站行为)
+.content.custom
+  h1, h2, h3, h4, h5, h6
+    .header-anchor
+      &:before
+        content '#'
+
+// 注意:旧站代码块高度差只出现在「源码 fence 收尾有空行」的页面
+// (旧渲染器保留该空行,shiki 会裁掉),不是全局差异,不能用统一 padding 补
+
+// 旧站 .comment 容器规则(padding:0 1rem,1rem=14px)意外泄漏到 prism 的 .token.comment,
+// 代码注释整体右移 14px(影响移动端折行点);span 上的 class 由 config.js fence 后处理添加
+// (prism 块注释是单 span:首行仅左 padding、末行仅右 padding、中间行无)
+.content.custom code span.old-comment
+  padding 0 14px
+.content.custom code span.old-comment-l
+  padding-left 14px
+.content.custom code span.old-comment-r
+  padding-right 14px
+
+// 不引入 VitePress 默认主题样式,shiki 双主题色所需的 CSS 变量挂钩自己补
+// (one-dark-pro 亮暗相同,直接用 --shiki-dark 也可,这里按标准写法)
+.shiki span
+  color var(--shiki-light)
+html.dark .shiki span
+  color var(--shiki-dark)
+
+// 语言标签:对齐旧站 pre:before 的位置与样式;复制按钮(无默认主题 JS)隐藏
+div[class*='language-'] > span.lang
+  position absolute
+  top 0.8em
+  right 1em
+  font-size 0.86em
+  color rgba(255, 255, 255, 0.7)
+  z-index 3
+div[class*='language-'] > button.copy
+  display none
+
+// 旧站代码块 pre 带 language-* class,`.content.custom pre[class*=language-]` 的 5.75em
+// 左 padding 压过了 line-numbers-mode 的 4.5rem;shiki 的 pre 没有 language-* class,
+// 优先级反转导致 padding 变成 63px(旧站是 92px),这里补回旧站表现
+.content.custom pre.vp-code
+  padding-left 5.75em
+  overflow auto
+
+// 旧站代码块字体来自 prism-tomorrow 的 pre[class*=language-] 规则;
+// shiki 的 pre 没有 language-* class,会退化成 content.styl 的 Georgia,这里补回
+.content.custom pre.vp-code
+  font-family Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace
+
+// 旧 vuepress 默认主题的行内 code 两侧 \A0 窄空格
+// (pre 内的 code 由 content.styl 既有规则重置为 content:'')
+.content.custom
+  code, kbd
+    &:before, &:after
+      content '\A0'
+      letter-spacing -1px
+
+@require './mobile.styl'
+
+// mobile.styl 的 .hidden-xs-only{font-weight:300} 与上面 .title{font-weight:555} 同优先级,
+// 谁后定义谁生效:旧站产物里 555 在后(prev/next 标题 computed=555),新站构建顺序相反。
+// hidden-xs-only 全站只用于 prev/next 标题,这里后置一条同规则还原旧站层叠结果
+.title
+  font-weight 555

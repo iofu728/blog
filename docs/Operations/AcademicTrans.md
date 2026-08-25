@@ -166,7 +166,7 @@ Filebeat 是极其轻量的，可以定义一些 js 脚本处理格式等问题�
 
 整体架构如下图所示，
 
-<center><img width="700" src="https://cdn.nlark.com/yuque/0/2021/png/22152648/1626610331854-341f66dd-af0e-4cfd-b838-c43e8329b969.png"></center>
+<center><img width="800" src="https://cdn.nlark.com/yuque/0/2021/png/22152648/1626610331854-341f66dd-af0e-4cfd-b838-c43e8329b969.png"></center>
 
 大部分时间花在搭建和配置上了，即使是用 docker。贴一下搭建过程中踩的坑
 
