@@ -202,8 +202,7 @@ export default defineConfig({
     ['meta', { name: 'msapplication-TileImage', content: '/icons/192.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#07527a' }],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
-    // 第三方域名提前解析 DNS(评论、数学公式、统计)
-    ['link', { rel: 'dns-prefetch', href: 'https://utteranc.es' }],
+    // 第三方域名提前解析 DNS(数学公式、统计)
     ['link', { rel: 'dns-prefetch', href: 'https://cdnjs.cloudflare.com' }],
     ['link', { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }],
     ['script', { type: 'text/x-mathjax-config' },
