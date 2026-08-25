@@ -38,6 +38,8 @@ export default async function handler(req, res) {
   await redis([
     ['RPUSH', `comments:${slug}`, JSON.stringify(comment)],
     ['LTRIM', `comments:${slug}`, -MAX_COMMENTS_PER_POST, -1],
+    // 通知收件箱:每日汇总推送的数据源,由 /api/comments/notify 消费后清空
+    ['RPUSH', 'comments:inbox', JSON.stringify({ slug, ...comment })],
   ])
   return ok(res, { added: true, comment })
 }
